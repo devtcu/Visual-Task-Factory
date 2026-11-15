@@ -12,7 +12,7 @@ handoff, the tennis tasks, and a local dashboard that runs them all.
 | `vendor/Team6_Track2/` | The team's merged 7-pipeline draft (SPC charts, fiber patching, EEG, roadway cross sections, finance, instrument reading, visual reconstruction) |
 | `vendor/devtcu/` | Brain Connections: brain-network resilience tasks (generator, checks, 105 tasks, pilot results, notes) |
 | `vendor/tennis/` | Tennis 3D line-call tasks (5 tasks, 3 camera views each; generator not included) |
-| `zips/` | The original archives, unchanged: `Team6_Track2.zip`, `handoff_devtcu.zip`, `TENNIS-3D.zip` |
+| `original-archives/` | The archives these folders were unpacked from, unchanged apart from their names: `team6-merged-submission-draft.zip` (received as Team6_Track2.zip), `brain-connections-handoff.zip` (handoff_devtcu.zip), `tennis-3d-line-call-tasks.zip` (TENNIS-3D.zip) |
 
 ## Run the dashboard
 Needs macOS or Linux with Python 3.10+ (on Windows use WSL).
