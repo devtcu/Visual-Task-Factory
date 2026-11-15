@@ -1,6 +1,6 @@
 # Team 6 Visual Task Factory
 
-Innodata Hackathon, Track 2 (Visual Task Factory), 14 November 2026. Pipelines that draw realistic images from
+Innodata Hackathon. Pipelines that draw realistic images from
 structured data, ask a question whose answer is computed by code, check that the image matches the data, and test
 Claude Haiku 5.5 and GPT-6 Luna on them. This repo holds the team's merged submission draft, the Brain Connections
 handoff, the tennis tasks, and a local dashboard that runs them all.
@@ -30,9 +30,3 @@ levels end in a circular connectogram with one-way curves crossing the centre. E
 and checked by an independent solver; each task records in advance the wrong answer each common mistake produces.
 Pilot results (57 tasks): Haiku 52/57, Luna 42/57; at level 6, Haiku 14/18 and Luna 8/18. Every miss came from
 misreading the picture, most often an arrow's direction.
-
-## Credits
-Each pipeline belongs to the team member who built it (see `vendor/Team6_Track2/README.md`, "Team contributions").
-Brain Connections and the dashboard: Devansh KM. Tennis 3D: a teammate (generator not yet shared).
-
-No API keys are stored anywhere in this repo; keys are read from the environment at run time.
