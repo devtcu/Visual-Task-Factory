@@ -30,3 +30,13 @@ levels end in a circular connectogram with one-way curves crossing the centre. E
 and checked by an independent solver; each task records in advance the wrong answer each common mistake produces.
 Pilot results (57 tasks): Haiku 52/57, Luna 42/57; at level 6, Haiku 14/18 and Luna 8/18. Every miss came from
 misreading the picture, most often an arrow's direction.
+
+## Showcase site (Vercel)
+
+A read-only version of the demo: every gallery task with its image, question, correct answer and the recorded Haiku and Luna
+answers, scored with the team's scoring code. It holds no API key and makes no model calls.
+
+```bash
+.venv/bin/python export_site.py      # builds site/ from the gallery and the saved answers in runs/eval/raw
+npx vercel deploy site --prod        # first time: npx vercel login
+```
