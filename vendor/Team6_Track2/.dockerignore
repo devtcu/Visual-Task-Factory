@@ -1,0 +1,14 @@
+.git
+.venv
+**/__pycache__
+**/*.pyc
+.env*
+tasks
+results
+prior_results
+legacy_eval
+member_notes
+out
+tests
+*.zip
+*.tar

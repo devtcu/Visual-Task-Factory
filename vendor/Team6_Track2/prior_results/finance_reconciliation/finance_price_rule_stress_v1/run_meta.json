@@ -1,0 +1,13 @@
+{
+  "generator": "visionforge_finance",
+  "seed": 2400,
+  "count": 12,
+  "created_utc": "2026-11-14T18:04:13.968017+00:00",
+  "renderer": "SVG -> Playwright Chromium PNG at 1654x2339",
+  "financial_math": "Decimal, ROUND_HALF_UP to cents",
+  "references": [
+    "https://aclanthology.org/2025.acl-long.1138/",
+    "https://arxiv.org/abs/2605.17962",
+    "https://ojs.aaai.org/index.php/AAAI/article/view/39785"
+  ]
+}

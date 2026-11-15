@@ -1,0 +1,16 @@
+{
+ "models": [
+  "anthropic/claude-haiku-5.5",
+  "openai/gpt-6-luna"
+ ],
+ "temperature": 0,
+ "max_tokens": 32000,
+ "reasoning": {
+  "effort": "high"
+ },
+ "timeout_s": 600,
+ "max_retries": 6,
+ "prompt_template": "{question}\n\nLook at the image(s) carefully. You may reason step by step. Finish with one last line in exactly this form:\nFINAL ANSWER: <your answer>",
+ "endpoint": "https://openrouter.ai/api/v1/chat/completions",
+ "scoring": "eval/score.py: FINAL ANSWER line, typed compare, stated tolerance"
+}

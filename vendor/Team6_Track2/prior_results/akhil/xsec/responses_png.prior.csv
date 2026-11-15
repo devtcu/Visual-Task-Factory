@@ -1,0 +1,101 @@
+model,task_id,status,parsed,question_type,response,ref_answer,correct,finish_reason,error,fingerprint,tokens
+anthropic/claude-haiku-5.5,xsec_easy_cut_total_20260006,ok,2592.0,cut_total,"## Approach
+
+The sheet gives four sections at 50-ft spacing (13+00, 13+50, 14+00, 14+50). For each, I estimated the cut area as the region where existing ground lies above the proposed template, measured from the daylight points. Fill is not netted against cut. Scale is 1"" = 20' horizontal and 1"" = 10' vertical, so the areas below are read from the plotted coordinates.
+
+## Cut areas (estimated, ft²)
+
+- **STA 13+00:** Cut runs from about offset -38 to +66. Integrating the depth (EG − PT) gives about **385 ft²**.
+- **STA 13+50:** Cut runs from about -40 to +64. Integrating gives about **417 ft²**.
+- **STA 14+00:** Cut runs from about -38 to +68. Integrating gives about **497 ft²**.
+- **STA 14+50:** Cut runs from about -37 to +70. Integrating gives about **585 ft²**.
+
+## Average end-area volumes
+
+V = (A1 + A2)/2 × L / 27, with L = 50 ft.
+
+- 13+00 to 13+50: (385.2 + 417.4)/2 × 50 / 27 ≈ 743 CY
+- 13+50 to 14+00: (417.4 + 496.8)/2 × 50 / 27 ≈ 847 CY
+- 14+00 to 14+50: (496.8 + 585.5)/2 × 50 / 27 ≈ 1002 CY
+
+## Total
+
+Total cut ≈ 743 + 847 + 1002 ≈ 2592 CY. The areas were read by eye from the plot, so the result is approximate.
+
+FINAL ANSWER: 2592",2606.3,1,stop,,,12132
+anthropic/claude-haiku-5.5,xsec_medium_cut_total_20260121,ok,4257.0,cut_total,"## Approach
+
+Cut area at each section is the region where existing ground lies above the proposed template. Where the template sits above existing ground, that area is fill and is ignored, since net cut against fill is not allowed.
+
+## Cut areas (estimated from the sheet)
+
+- **STA 12+00:** Cut is large on both sides of the template, with the left 3:1 slope cutting deepest. Estimated cut area ≈ 1090 sq ft.
+- **STA 12+75:** Cut on both sides, with the left slope cut deepest. Estimated cut area ≈ 673 sq ft.
+- **STA 13+50:** Cut mainly on the left slope and a small cut on the right. Estimated cut area ≈ 267 sq ft.
+- **STA 14+25:** Cut only on the left slope, ending near offset −18. Estimated cut area ≈ 48 sq ft.
+- **STA 15+00:** The template lies above existing ground across the section, so this is all fill. Cut area = 0.
+- **STA 15+25:** Also all fill, with no cut. Cut area = 0.
+
+## Volumes (average end area, V = (A₁ + A₂)/2 × L / 27)
+
+| Interval | L (ft) | A₁ (sq ft) | A₂ (sq ft) | Cut volume (cy) |
+|---|---|---|---|---|
+| 12+00 to 12+75 | 75 | 1089.8 | 673.4 | 2448.9 |
+| 12+75 to 13+50 | 75 | 673.4 | 266.6 | 1305.6 |
+| 13+50 to 14+25 | 75 | 266.6 | 47.6 | 436.4 |
+| 14+25 to 15+00 | 75 | 47.6 | 0 | 66.1 |
+| 15+00 to 15+25 | 25 | 0 | 0 | 0 |
+
+## Total
+
+2448.9 + 1305.6 + 436.4 + 66.1 + 0 ≈ 4257 cy
+
+The areas were read by eye from the plotted profiles, so the result carries some digitizing error; the tolerance is ±5%.
+
+FINAL ANSWER: 4257",4246.8,1,stop,,,19994
+anthropic/claude-haiku-5.5,xsec_hard_cut_total_20260415,api_error,,cut_total,,3528.0,0,,"http 400: {""message"": ""Provider returned error"", ""code"": 400, ""metadata"": {""raw"": ""{\""type\"":\""error\"",\""error\"":{\""type\"":\""invalid_request_error\"",\""message\"":\""messages.0.content.1.image.source.base64: image exceeds 10 MB maximum: 16219492 bytes > 10485760 bytes\""},\""request_id\"":\""req_011Ch3KPP8JGHrvUPcCM",,
+anthropic/claude-haiku-5.5,xsec_hard_max_cut_interval_20260707,api_error,,max_cut_interval,,15+75-16+50,0,,"http 400: {""message"": ""Provider returned error"", ""code"": 400, ""metadata"": {""raw"": ""{\""type\"":\""error\"",\""error\"":{\""type\"":\""invalid_request_error\"",\""message\"":\""messages.0.content.1.image.source.base64: image exceeds 10 MB maximum: 16541856 bytes > 10485760 bytes\""},\""request_id\"":\""req_011Ch3KPHF63j1YfQEdr",,
+anthropic/claude-haiku-5.5,xsec_expert_cut_total_20260807,api_error,,cut_total,,3138.7,0,,"http 400: {""message"": ""Provider returned error"", ""code"": 400, ""metadata"": {""raw"": ""{\""type\"":\""error\"",\""error\"":{\""type\"":\""invalid_request_error\"",\""message\"":\""messages.0.content.1.image.source.base64: image exceeds 10 MB maximum: 17968784 bytes > 10485760 bytes\""},\""request_id\"":\""req_011Ch3KPZXs7QcUEPEcS",,
+anthropic/claude-haiku-5.5,xsec_expert_cut_between_20260924,api_error,,cut_between,,496.1,0,,"http 400: {""message"": ""Provider returned error"", ""code"": 400, ""metadata"": {""raw"": ""{\""type\"":\""error\"",\""error\"":{\""type\"":\""invalid_request_error\"",\""message\"":\""messages.0.content.1.image.source.base64: image exceeds 10 MB maximum: 18467584 bytes > 10485760 bytes\""},\""request_id\"":\""req_011Ch3KPFMErufQDNwvr",,
+openai/gpt-6-luna,xsec_easy_cut_total_20260006,ok,2620.0,cut_total,"The estimated cut cross-sectional areas are approximately 355, 460, 492, and 571 sq ft at Sta 13+00, 13+50, 14+00, and 14+50, respectively.
+
+Using the average end-area method over the three 50-ft intervals gives a total of about 2,620 cubic yards of cut.
+
+FINAL ANSWER: 2,620 cubic yards",2606.3,1,stop,,,8272
+openai/gpt-6-luna,xsec_medium_cut_total_20260121,ok,4226.0,cut_total,"Using the average end-area method, the estimated cut areas are approximately 1,067, 680, 274, 34, 0, and 0 sq ft at Sta 12+00, 12+75, 13+50, 14+25, 15+00, and 15+25, respectively. Applying the shown intervals (75, 75, 75, 75, and 25 ft) gives about 4,226 cubic yards of cut. Fill is not netted against cut.
+
+FINAL ANSWER: 4,226 cubic yards",4246.8,1,stop,,,18413
+openai/gpt-6-luna,xsec_hard_cut_total_20260415,ok,3528.0,cut_total,"Estimating the cut areas from the cross sections gives approximately 901, 554, 220, 93, and 43 sq ft at Sta 11+00, 11+75, 12+50, 13+00, and 13+25, respectively. The later sections show no cut area.
+
+Using the shown intervals and the average end-area method:
+
+\[
+V=\frac{75(901+554)+75(554+220)+50(220+93)+25(93+43)+100(43+0)}{2(27)}
+\approx 3{,}528\text{ yd}^3
+\]
+
+FINAL ANSWER: 3528 cubic yards",3528.0,1,stop,,,20693
+openai/gpt-6-luna,xsec_hard_max_cut_interval_20260707,ok,11 25 12 25,max_cut_interval,"The largest CUT volume is between **11+25 and 12+25**. The cross sections have substantial cut area at both ends of this 100-ft interval.
+
+FINAL ANSWER: 11+25-12+25",15+75-16+50,0,stop,,unpredicted,10482
+openai/gpt-6-luna,xsec_expert_cut_total_20260807,ok,3229.0,cut_total,"Using the average end-area method, the approximate CUT areas read from the cross sections are:
+
+| Station | CUT area (sq ft) |
+|---|---:|
+| 14+00 | 0 |
+| 14+50 | 0 |
+| 15+25 | 0 |
+| 15+50 | 34 |
+| 15+75 | 58 |
+| 16+00 | 99 |
+| 16+50 | 222 |
+| 17+25 | 413 |
+| 17+50 | 450 |
+| 18+25 | 644 |
+
+Applying each station interval shown, with cut kept separate from fill, gives approximately **3,229 cubic yards of CUT**.
+
+FINAL ANSWER: 3,229 cubic yards",3138.7,1,stop,,,23189
+openai/gpt-6-luna,xsec_expert_cut_between_20260924,ok,501.0,cut_between,"Reading the cut portions of the cross sections gives approximate areas of 58, 36, 32, 50, and 67 sq ft at Sta 12+75, 13+50, 14+25, 15+00, and 15+75, respectively. Applying the average end-area method over each 75-ft interval gives about 501 cubic yards of cut.
+
+FINAL ANSWER: 501 cubic yards",496.1,1,stop,,,21195

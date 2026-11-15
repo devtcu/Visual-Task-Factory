@@ -1,0 +1,287 @@
+{
+  "task_id": "visual_reconstruction_global_spatial_reconstruction_s20261114",
+  "seed": 20261114,
+  "generator_version": "visual_reconstruction-2.0",
+  "question_type": "global_spatial_reconstruction",
+  "source_sha256": "57af731930d61efffe3400d153a62906e52bdc7c35822ec9c5ddd93abd43e4e5",
+  "source_attribution_file": "generators/visual_reconstruction/assets/SOURCE_LICENSE.json",
+  "patch_size_px": 520,
+  "display_scale": 0.8,
+  "num_missing_regions": 5,
+  "num_candidates": 15,
+  "component_images": {
+    "puzzle": "images/visual_reconstruction_global_spatial_reconstruction_s20261114_puzzle.png",
+    "candidate_sheet": "images/visual_reconstruction_global_spatial_reconstruction_s20261114_candidate_sheet.png"
+  },
+  "component_sha256": {
+    "puzzle": "79d8e99d33ad6bacce3e90a2ed21358d9a3c54eea8aa70782bd9f7ffaad48e90",
+    "candidate_sheet": "ec496638539be549782dd8276a2add6c87c2abf5b7b2c7bb56d57653bfdf5d0b"
+  },
+  "patch_files": {
+    "A": "images/visual_reconstruction_global_spatial_reconstruction_s20261114_patches/A.png",
+    "B": "images/visual_reconstruction_global_spatial_reconstruction_s20261114_patches/B.png",
+    "C": "images/visual_reconstruction_global_spatial_reconstruction_s20261114_patches/C.png",
+    "D": "images/visual_reconstruction_global_spatial_reconstruction_s20261114_patches/D.png",
+    "E": "images/visual_reconstruction_global_spatial_reconstruction_s20261114_patches/E.png",
+    "F": "images/visual_reconstruction_global_spatial_reconstruction_s20261114_patches/F.png",
+    "G": "images/visual_reconstruction_global_spatial_reconstruction_s20261114_patches/G.png",
+    "H": "images/visual_reconstruction_global_spatial_reconstruction_s20261114_patches/H.png",
+    "I": "images/visual_reconstruction_global_spatial_reconstruction_s20261114_patches/I.png",
+    "J": "images/visual_reconstruction_global_spatial_reconstruction_s20261114_patches/J.png",
+    "K": "images/visual_reconstruction_global_spatial_reconstruction_s20261114_patches/K.png",
+    "L": "images/visual_reconstruction_global_spatial_reconstruction_s20261114_patches/L.png",
+    "M": "images/visual_reconstruction_global_spatial_reconstruction_s20261114_patches/M.png",
+    "N": "images/visual_reconstruction_global_spatial_reconstruction_s20261114_patches/N.png",
+    "O": "images/visual_reconstruction_global_spatial_reconstruction_s20261114_patches/O.png"
+  },
+  "ground_truth": {
+    "seed": 20261114,
+    "position_jitter_px": 120,
+    "patch_size_px": 520,
+    "image_width": 1920,
+    "image_height": 2560,
+    "num_missing_regions": 5,
+    "source_sha256": "57af731930d61efffe3400d153a62906e52bdc7c35822ec9c5ddd93abd43e4e5",
+    "missing_regions": [
+      {
+        "hole_id": 1,
+        "segment_id": "H",
+        "bounding_box": [
+          703,
+          3,
+          520,
+          520
+        ],
+        "center_xy": [
+          962.5,
+          262.5
+        ],
+        "candidate_creation_rotation_clockwise": 90,
+        "candidate_creation_reflection": "horizontal",
+        "required_undo_rotation_clockwise": 270,
+        "required_undo_reflection": "horizontal",
+        "segment_file": "images/visual_reconstruction_global_spatial_reconstruction_s20261114_patches/H.png",
+        "is_genuine": true
+      },
+      {
+        "hole_id": 2,
+        "segment_id": "A",
+        "bounding_box": [
+          1299,
+          3,
+          520,
+          520
+        ],
+        "center_xy": [
+          1558.5,
+          262.5
+        ],
+        "candidate_creation_rotation_clockwise": 270,
+        "candidate_creation_reflection": "none",
+        "required_undo_rotation_clockwise": 90,
+        "required_undo_reflection": "none",
+        "segment_file": "images/visual_reconstruction_global_spatial_reconstruction_s20261114_patches/A.png",
+        "is_genuine": true
+      },
+      {
+        "hole_id": 3,
+        "segment_id": "C",
+        "bounding_box": [
+          56,
+          740,
+          520,
+          520
+        ],
+        "center_xy": [
+          315.5,
+          999.5
+        ],
+        "candidate_creation_rotation_clockwise": 180,
+        "candidate_creation_reflection": "horizontal",
+        "required_undo_rotation_clockwise": 180,
+        "required_undo_reflection": "horizontal",
+        "segment_file": "images/visual_reconstruction_global_spatial_reconstruction_s20261114_patches/C.png",
+        "is_genuine": true
+      },
+      {
+        "hole_id": 4,
+        "segment_id": "F",
+        "bounding_box": [
+          1388,
+          1310,
+          520,
+          520
+        ],
+        "center_xy": [
+          1647.5,
+          1569.5
+        ],
+        "candidate_creation_rotation_clockwise": 270,
+        "candidate_creation_reflection": "horizontal",
+        "required_undo_rotation_clockwise": 90,
+        "required_undo_reflection": "horizontal",
+        "segment_file": "images/visual_reconstruction_global_spatial_reconstruction_s20261114_patches/F.png",
+        "is_genuine": true
+      },
+      {
+        "hole_id": 5,
+        "segment_id": "D",
+        "bounding_box": [
+          695,
+          1374,
+          520,
+          520
+        ],
+        "center_xy": [
+          954.5,
+          1633.5
+        ],
+        "candidate_creation_rotation_clockwise": 0,
+        "candidate_creation_reflection": "horizontal",
+        "required_undo_rotation_clockwise": 0,
+        "required_undo_reflection": "horizontal",
+        "segment_file": "images/visual_reconstruction_global_spatial_reconstruction_s20261114_patches/D.png",
+        "is_genuine": true
+      }
+    ],
+    "distractors": [
+      {
+        "segment_id": "L",
+        "source_coordinates": [
+          952,
+          728,
+          520,
+          520
+        ],
+        "rotation_applied_clockwise": 90,
+        "reflection_applied": "none",
+        "similarity_distance": 0.2950330376625061
+      },
+      {
+        "segment_id": "B",
+        "source_coordinates": [
+          840,
+          840,
+          520,
+          520
+        ],
+        "rotation_applied_clockwise": 180,
+        "reflection_applied": "none",
+        "similarity_distance": 0.29971837997436523
+      },
+      {
+        "segment_id": "E",
+        "source_coordinates": [
+          168,
+          168,
+          520,
+          520
+        ],
+        "rotation_applied_clockwise": 90,
+        "reflection_applied": "horizontal",
+        "similarity_distance": 0.3734854757785797
+      },
+      {
+        "segment_id": "M",
+        "source_coordinates": [
+          784,
+          560,
+          520,
+          520
+        ],
+        "rotation_applied_clockwise": 180,
+        "reflection_applied": "none",
+        "similarity_distance": 0.38484716415405273
+      },
+      {
+        "segment_id": "O",
+        "source_coordinates": [
+          616,
+          728,
+          520,
+          520
+        ],
+        "rotation_applied_clockwise": 270,
+        "reflection_applied": "horizontal",
+        "similarity_distance": 0.2333184778690338
+      },
+      {
+        "segment_id": "I",
+        "source_coordinates": [
+          616,
+          784,
+          520,
+          520
+        ],
+        "rotation_applied_clockwise": 180,
+        "reflection_applied": "horizontal",
+        "similarity_distance": 0.24551662802696228
+      },
+      {
+        "segment_id": "K",
+        "source_coordinates": [
+          1400,
+          784,
+          520,
+          520
+        ],
+        "rotation_applied_clockwise": 180,
+        "reflection_applied": "none",
+        "similarity_distance": 0.27210599184036255
+      },
+      {
+        "segment_id": "J",
+        "source_coordinates": [
+          1344,
+          784,
+          520,
+          520
+        ],
+        "rotation_applied_clockwise": 90,
+        "reflection_applied": "none",
+        "similarity_distance": 0.2807067036628723
+      },
+      {
+        "segment_id": "G",
+        "source_coordinates": [
+          1176,
+          784,
+          520,
+          520
+        ],
+        "rotation_applied_clockwise": 270,
+        "reflection_applied": "none",
+        "similarity_distance": 0.2083195596933365
+      },
+      {
+        "segment_id": "N",
+        "source_coordinates": [
+          168,
+          1512,
+          520,
+          520
+        ],
+        "rotation_applied_clockwise": 180,
+        "reflection_applied": "none",
+        "similarity_distance": 0.20948000252246857
+      }
+    ],
+    "candidate_order": [
+      "H",
+      "D",
+      "B",
+      "F",
+      "O",
+      "N",
+      "J",
+      "E",
+      "K",
+      "G",
+      "I",
+      "C",
+      "M",
+      "L",
+      "A"
+    ]
+  }
+}

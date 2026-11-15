@@ -1,0 +1,9 @@
+{
+  "evaluation_status": "not_run; seven-task draft awaiting three additional tasks",
+  "models": ["anthropic/claude-haiku-5.5", "openai/gpt-6-luna"],
+  "temperature": 0,
+  "reasoning": {"effort": "high"},
+  "max_tokens": 32768,
+  "prompt_template": "Exact task.question and ordered task images; response instructions are defined in eval/run_eval.py",
+  "results_present": false
+}

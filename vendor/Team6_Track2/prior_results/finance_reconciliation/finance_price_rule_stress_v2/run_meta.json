@@ -1,0 +1,43 @@
+{
+  "generator": "visionforge_finance",
+  "seed": 2400,
+  "count": 12,
+  "created_utc": "2026-11-14T18:12:35.288682+00:00",
+  "renderer": "SVG -> Playwright Chromium PNG at 1654x2339",
+  "financial_math": "Decimal, ROUND_HALF_UP to cents",
+  "references": [
+    "https://aclanthology.org/2025.acl-long.1138/",
+    "https://arxiv.org/abs/2605.17962",
+    "https://ojs.aaai.org/index.php/AAAI/article/view/39785"
+  ],
+  "challenge_design": {
+    "document_count_per_case": 6,
+    "hard_line_items": 12,
+    "amendment_lines_up_to": 3,
+    "price_exceptions_up_to": 3,
+    "hard_exception_unit_price_delta_usd": [
+      "0.02",
+      "0.03",
+      "0.05",
+      "0.08",
+      "0.40"
+    ],
+    "question_type": "multi-line total merchandise overcharge after effective amendments, line discounts, and split billing",
+    "inspiration": [
+      "SynthDocBench: independently vary document length/layout/question type and distribute evidence across sections",
+      "Khan et al. (2025), Evaluating LLMs for visualization generation and understanding: close visual boundaries and non-binary quantitative questions reveal errors"
+    ]
+  },
+  "evaluation_settings": {
+    "openrouter_gpt_6_luna": {
+      "temperature": 0,
+      "reasoning_effort": "high",
+      "max_tokens": 16384
+    },
+    "claude_haiku_5_5": {
+      "temperature": "unsupported by model API",
+      "reasoning_effort": "high",
+      "max_tokens": 16384
+    }
+  }
+}

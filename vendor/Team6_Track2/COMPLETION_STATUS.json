@@ -1,0 +1,33 @@
+{
+  "team": "Team 6",
+  "stage": "seven-task draft",
+  "reported_tasks": 7,
+  "required_final_tasks": 10,
+  "remaining_tasks": 3,
+  "model_evaluation": "deferred at user request until remaining three tasks arrive",
+  "ready_for_final_upload": false,
+  "pending": [
+    "Add three supplied tasks",
+    "Review all ten tasks",
+    "Run both models on all ten with complete responses",
+    "Fill remaining human contributor names",
+    "Run final submission checker and package"
+  ],
+  "draft_package_complete": true,
+  "validation": {
+    "reported_tasks_passed": 7,
+    "docker_reproduction": "all frozen outputs match",
+    "fresh_generation": "fiber seed 7001 passed; not reported",
+    "offline_scoring_cases_passed": 42
+  },
+  "format_checker": {
+    "passed": false,
+    "passes": 24,
+    "warnings": 1,
+    "failures": 1,
+    "intentional_pending_items": [
+      "7 of required 10 tasks",
+      "Final responses absent; evaluation deferred"
+    ]
+  }
+}

@@ -1,0 +1,16 @@
+{
+  "akhil_fiber_trace_7001": {
+    "task_id": "akhil_fiber_trace_7001",
+    "pipeline": "fiber",
+    "seed": 7001,
+    "question": "In this as-built AI cluster fiber diagram, start at GPU-TRAY-07 port 01 (red circle). The path runs GPU-TRAY-07 -> stage 1 cords -> PP-A -> stage 2 MTP trunk -> PP-B -> stage 3 cords -> PP-C -> stage 4 MTP trunk -> PP-D -> stage 5 cords -> SW-CORE-02. Cords may cross without connecting. In each trunk, the fibre entering at port n of the left panel exits at the right-panel port given by that trunk's printed polarity type. Which SW-CORE-02 port does the path end at? Answer with the port number only.",
+    "answer": 9,
+    "answer_type": "integer",
+    "generator_version": "fiber-3.0+team6.2",
+    "tolerances": {},
+    "files": {
+      "data/akhil_fiber_trace_7001.json": "03a43b061a5caea1b84b63fe8e438e3f50e719f11cb5365155d46d073a58fe94",
+      "images/akhil_fiber_trace_7001.png": "690ed8cb9e3c419899a6f8548ef88cfe8b795ac6c657c918f9a456970df21d61"
+    }
+  }
+}

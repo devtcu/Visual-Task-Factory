@@ -1,0 +1,10 @@
+task_id,status,parsed_value,parsed_unit,value_correct,unit_correct,correct,signed_error,absolute_error,latency_seconds
+mbext_analog_dial_73_00_one_tick,ok,0.5,bar,False,True,False,0.3,0.3,14.052
+mbext_analog_dial_1082_01_one_tick,ok,0.5,bar,False,True,False,0.3,0.3,15.363
+mbext_analog_dial_2091_02_one_tick,ok,0.5,bar,False,True,False,0.3,0.3,9.53
+mbext_analog_dial_3100_03_one_tick,ok,1.0,bar,False,True,False,0.8,0.8,20.262
+mbext_analog_dial_4109_04_one_tick,ok,0.5,bar,False,True,False,0.3,0.3,25.231
+mbext_analog_dial_5118_05_one_tick,ok,0.5,bar,False,True,False,0.3,0.3,22.63
+mbext_analog_dial_6127_06_one_tick,ok,0.2,bar,True,True,True,0.0,0.0,11.83
+mbext_analog_dial_7136_07_one_tick,ok,0.5,bar,False,True,False,0.3,0.3,17.955
+mbext_analog_dial_8145_08_one_tick,ok,1.0,bar,False,True,False,0.8,0.8,19.748

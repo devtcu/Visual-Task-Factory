@@ -1,0 +1,40 @@
+{
+  "member": "visual_reconstruction",
+  "generator_package": "generators/visual_reconstruction",
+  "generator_version": "visual_reconstruction-1.0",
+  "entry_points": {
+    "generate": "adapter.generate_task",
+    "validate": "adapter.validate_task"
+  },
+  "domain": "real-photo spatial reconstruction and image-patch matching",
+  "image_types": [
+    "real architectural photograph with five square masked regions",
+    "shuffled candidate patch sheet composited beside the masked photograph"
+  ],
+  "question_types": [
+    "global_spatial_reconstruction"
+  ],
+  "answer_types": [
+    "sequence"
+  ],
+  "language": "python",
+  "python_version": "3.12.7",
+  "requirements": "requirements.txt",
+  "system_packages": "system_packages.txt",
+  "seeds_used": [
+    1,
+    2,
+    3,
+    4,
+    5
+  ],
+  "n_tasks": 5,
+  "n_valid": 5,
+  "deterministic": true,
+  "has_own_eval_code": true,
+  "known_issues": [
+    "One licensed source photograph and one question type only.",
+    "No human ambiguity review was performed.",
+    "The existing 5-hole pilot results use repeated seeds from the same source photo; instance 10 has no completed GPT-6 Luna answer."
+  ]
+}

@@ -1,0 +1,1 @@
+"""Task factory generator namespace."""

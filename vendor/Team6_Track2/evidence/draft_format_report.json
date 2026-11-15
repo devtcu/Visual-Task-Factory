@@ -1,0 +1,167 @@
+{
+  "checker_version": "1.0.0",
+  "submission": "/input/Team6_Track2.zip",
+  "reported_folders": {
+    "tasks": "tasks/final",
+    "results": "results/final"
+  },
+  "passed": false,
+  "counts": {
+    "PASS": 24,
+    "INFO": 4,
+    "WARN": 1,
+    "FAIL": 1
+  },
+  "checks": [
+    {
+      "section": "1. Upload (the judges' app refuses the file if these fail)",
+      "level": "PASS",
+      "message": "ZIP size 30.8 MB (limit 200 MB)."
+    },
+    {
+      "section": "1. Upload (the judges' app refuses the file if these fail)",
+      "level": "PASS",
+      "message": "File name Team6_Track2.zip has the form TeamName_Track2.zip."
+    },
+    {
+      "section": "1. Upload (the judges' app refuses the file if these fail)",
+      "level": "PASS",
+      "message": "No absolute or parent-relative paths."
+    },
+    {
+      "section": "1. Upload (the judges' app refuses the file if these fail)",
+      "level": "PASS",
+      "message": "Unpacks to 32.2 MB (limit 2000 MB)."
+    },
+    {
+      "section": "1. Upload (the judges' app refuses the file if these fail)",
+      "level": "PASS",
+      "message": "Every file in the ZIP reads back intact (CRC check)."
+    },
+    {
+      "section": "2. Repository layout",
+      "level": "INFO",
+      "message": "All files sit in one top-level folder (Team6_Track2/); the judge treats it as the repository root."
+    },
+    {
+      "section": "2. Repository layout",
+      "level": "PASS",
+      "message": "README.md at the repository root."
+    },
+    {
+      "section": "2. Repository layout",
+      "level": "PASS",
+      "message": "Dockerfile at the repository root."
+    },
+    {
+      "section": "2. Repository layout",
+      "level": "PASS",
+      "message": "validate/ at the root with 15 code file(s)."
+    },
+    {
+      "section": "2. Repository layout",
+      "level": "PASS",
+      "message": "eval/ at the root with 3 code file(s)."
+    },
+    {
+      "section": "2. Repository layout",
+      "level": "PASS",
+      "message": "Dependencies: member_notes/akhil/requirements.txt, member_notes/finance_reconciliation/requirements.txt, member_notes/measurebench_ext/requirements.txt, member_notes/visual_reconstruction/requirements.txt \u2026 (+1 more)."
+    },
+    {
+      "section": "3. Secrets (no API keys or .env files anywhere)",
+      "level": "PASS",
+      "message": "No API keys or secrets files found."
+    },
+    {
+      "section": "4. README.md sections",
+      "level": "PASS",
+      "message": "\"Reported folders\" section (line 25)."
+    },
+    {
+      "section": "4. README.md sections",
+      "level": "PASS",
+      "message": "\"Pilot results\" section (line 32)."
+    },
+    {
+      "section": "4. README.md sections",
+      "level": "PASS",
+      "message": "\"Run in Docker\" section (line 91)."
+    },
+    {
+      "section": "4. README.md sections",
+      "level": "PASS",
+      "message": "Hand-check notes section \"Hand-check notes\"."
+    },
+    {
+      "section": "4. README.md sections",
+      "level": "PASS",
+      "message": "Headings cover the other README content Section 5 lists."
+    },
+    {
+      "section": "5. Reported folders (what the judges' app offers after upload)",
+      "level": "INFO",
+      "message": "Task folders the app offers: tasks/final (7 tasks)"
+    },
+    {
+      "section": "5. Reported folders (what the judges' app offers after upload)",
+      "level": "INFO",
+      "message": "Results folders the app offers: prior_results/akhil/factory_easy, prior_results/akhil/factory_heads_v11, prior_results/akhil/fiber_v3, prior_results/akhil/tennis_v3, prior_results/finance_reconciliation/finance_price_rule_stress_v1, prior_results/finance_reconciliation/finance_price_rule_stress_v2, prior_results/visual_reconstruction/level3_square_520, prior_results/visual_reconstruction/level3_uniform_patches, prior_results/visual_reconstruction/level3_uniform_patches_v2, prior_results/visual_reconstruction/level3_urban_reconstruction \u2026 (+10 more)"
+    },
+    {
+      "section": "5. Reported folders (what the judges' app offers after upload)",
+      "level": "PASS",
+      "message": "Reported tasks folder named in the README: tasks/final/ (the app preselects it)."
+    },
+    {
+      "section": "5. Reported folders (what the judges' app offers after upload)",
+      "level": "PASS",
+      "message": "Reported results folder named in the README: results/final/ (the app preselects it)."
+    },
+    {
+      "section": "6. Task file: tasks/final/tasks.jsonl",
+      "level": "WARN",
+      "message": "7 task(s); the reported set should have 10 accepted tasks."
+    },
+    {
+      "section": "6. Task file: tasks/final/tasks.jsonl",
+      "level": "PASS",
+      "message": "Every task has task_id, image, question, answer, answer_type in the required form; image paths resolve; tolerances set where needed."
+    },
+    {
+      "section": "6. Task file: tasks/final/tasks.jsonl",
+      "level": "INFO",
+      "message": "Answer types: sequence 2, label 2, number 2, integer 1."
+    },
+    {
+      "section": "6. Task file: tasks/final/tasks.jsonl",
+      "level": "PASS",
+      "message": "Automatic check results: checks, tasks/final/validation.json."
+    },
+    {
+      "section": "6. Task file: tasks/final/tasks.jsonl",
+      "level": "PASS",
+      "message": "The README's hand-check notes mention every reported task."
+    },
+    {
+      "section": "7. Results: results/final/",
+      "level": "FAIL",
+      "message": "No responses.csv or responses.jsonl directly in results/final/."
+    },
+    {
+      "section": "8. README \"Run in Docker\" commands",
+      "level": "PASS",
+      "message": "4 `docker run` commands."
+    },
+    {
+      "section": "8. README \"Run in Docker\" commands",
+      "level": "PASS",
+      "message": "`docker build` command present."
+    },
+    {
+      "section": "8. README \"Run in Docker\" commands",
+      "level": "PASS",
+      "message": "OPENROUTER_API_KEY is passed at run time."
+    }
+  ]
+}

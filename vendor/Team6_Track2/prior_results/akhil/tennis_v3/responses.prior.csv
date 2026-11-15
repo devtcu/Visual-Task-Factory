@@ -1,0 +1,231 @@
+model,task_id,status,parsed,question_type,response,ref_answer,correct,finish_reason,error,fingerprint,tokens
+anthropic/claude-haiku-5.5,tennis_01_speed_lost,ok,32.0,speed_lost,"**Method**
+
+1. **Scale:** The x-axis runs from -14 m at about px 44 to +14 m at about px 2530, so 88.8 px per metre, with x = 0 at px ≈ 1287. Height is measured from the ground line at about py ≈ 528, using the same 88.8 px per metre.
+
+2. **Ball positions (x, z in metres), read from the image:**
+
+| Frame | x (m) | z (m) |
+|---|---|---|
+| 1 | -10.11 | 1.28 |
+| 2 | -8.23 | 1.53 |
+| 12 | 7.42 | 0.76 |
+| 13 | 8.74 | 0.42 |
+
+3. **Frames 1 → 2:** Δx = 1.88 m, Δz = 0.25 m, so the displacement is √(1.88² + 0.25²) ≈ 1.90 m. Speed = 1.90 / 0.06 s ≈ 31.6 m/s ≈ 113.8 km/h.
+
+4. **Frames 12 → 13:** Δx = 1.32 m, Δz = -0.34 m, so the displacement is √(1.32² + 0.34²) ≈ 1.36 m. Speed = 1.36 / 0.06 s ≈ 22.7 m/s ≈ 81.7 km/h.
+
+5. **Difference:** 113.8 − 81.7 ≈ 32 km/h slower between frames 12 and 13.
+
+The bounce occurs near frame 14, so frames 12–13 are on the post-bounce descent, which is consistent with the ball having lost speed.
+
+FINAL ANSWER: 32",32.0,1,stop,,,4321
+anthropic/claude-haiku-5.5,tennis_02_bounce_speed,ok,84.0,bounce_speed,"**Setting up the scale**
+
+- Horizontal: the grid lines give 2 m per 178 px, so 89 px per metre. The net (x = 0) sits at about pixel 1287.
+- Vertical: the ground (0 m) is at about pixel 527, and the 1 m line at pixel 439, so about 88.5 px per metre.
+
+**Frame 12** (ball centre at about pixel (2097, 493)):
+- x = (2097 − 1287) / 89 ≈ 9.10 m
+- y = (527 − 493) / 88.5 ≈ 0.38 m
+
+**Frame 13** (ball centre at about pixel (2218, 524)):
+- x = (2218 − 1287) / 89 ≈ 10.46 m
+- y = (527 − 524) / 88.5 ≈ 0.03 m
+
+**Displacement over the 60 ms interval**
+- Δx ≈ 1.36 m (horizontal)
+- Δy ≈ −0.35 m (the ball is falling)
+- Distance ≈ √(1.36² + 0.35²) ≈ 1.40 m
+
+**Speed**
+- v = 1.40 m / 0.060 s ≈ 23.4 m/s
+- 23.4 m/s × 3.6 ≈ 84 km/h
+
+FINAL ANSWER: 84",84.4,1,stop,,,3722
+anthropic/claude-haiku-5.5,tennis_03_net_clear,ok,0.33,net_clear,"## Reading the positions
+
+**Scales.** The grid gives about 88.7 px per metre horizontally (-14 m at x≈44 px, +14 m at x≈2530 px, so 0 m is at x≈1287 px). Vertically, 0 m is at y≈527 px and 1 m at y≈439 px, so about 88.5 px per metre.
+
+**Net top.** At 0.914 m the net top is at y ≈ 527 − 0.914×88.5 ≈ 446 px.
+
+**Ball positions (frame: x, height):**
+
+| Frame | x (m) | h (m) |
+|---|---|---|
+| 6 | −2.47 | 1.31 |
+| 7 | −1.08 | 1.28 |
+| 8 | +0.27 | 1.23 |
+| 9 | +1.58 | 1.14 |
+
+The ball bounces between frames 16 and 17 (height ≈ 0.03 m at frame 16), so the bounce is well after the net.
+
+## Ball height at the net
+
+The ball crosses x = 0 between frames 7 and 8. Interpolating horizontally, the crossing is at fraction 1.08/1.35 ≈ 0.80 of the way from frame 7 to frame 8, i.e. at t ≈ 7.8 frames.
+
+Using a quadratic through frames 7, 8 and 9, with s = 0.8:
+
+- First difference (7→8): −0.05 m
+- Second difference: 1.14 − 2×1.23 + 1.28 = −0.04 m
+
+h(7.8) ≈ 1.28 + 0.8(−0.05) + ½(0.8)(−0.2)(−0.04) ≈ 1.28 − 0.04 + 0.006 ≈ 1.25 m
+
+The vertical second differences across the whole arc are consistent with this (a smooth, slightly decelerating trajectory), so the estimate is robust to pixel-level reading error.
+
+## Clearance
+
+1.25 m − 0.914 m ≈ 0.33 m
+
+FINAL ANSWER: 0.33",0.32,1,stop,,,6904
+anthropic/claude-haiku-5.5,tennis_04_close_call,ok,out,close_call,"**Reading the grid**
+
+- Horizontal scale: -14 m at x≈44 px and +14 m at x≈2530 px, so 1 m ≈ 88.8 px, with 0 m (net) at x≈1287 px.
+- Vertical scale: ground (0 m) at y≈527 px, with 1 m ≈ 88.5 px.
+- The baseline at +11.885 m sits at x≈1287 + 11.885 × 88.8 ≈ 2342 px, which matches the white baseline marker at +12 m.
+
+**Ball positions near the bounce**
+
+| Frame | x (px) | y (px) | x (m) | height (m) |
+|---|---|---|---|---|
+| 18 | 2284 | 502 | ≈ +11.2 | ≈ 0.28 |
+| 19 | 2378 | 524 | ≈ +12.3 | ≈ 0.03 |
+| 20 | 2441 | 508 | ≈ +13.0 | ≈ 0.21 |
+| 21 | 2504 | 496 | ≈ +13.7 | ≈ 0.35 |
+
+**Locating the bounce**
+
+Fitting a parabola to the heights of frames 18–20 puts the vertical minimum at about frame 19.08. Horizontal travel is roughly 65–95 px per frame, so the bounce point shifts only about 5–10 px from frame 19. The ball's centre at contact is about 3 cm above the court surface (its radius), so the landing point is about +12.3 m.
+
+**Decision**
+
+The bounce is at roughly +12.3 m, about 0.4 m beyond the baseline at +11.885 m. The ball did not touch the baseline, so it is out.
+
+FINAL ANSWER: Out",out,1,stop,,,4402
+anthropic/claude-haiku-5.5,tennis_05_call_trap,ok,yes,call_trap,"The printed call of OUT is correct. Frame 18 is the bounce, and the ball lands beyond the baseline.
+
+**Scale:** The grid spacing is about 177.6 px per 2 m, so 1 m ≈ 88.8 px. The net (x = 0) is at pixel ≈ 1287, and the ground (y = 0) is at pixel ≈ 527.
+
+**Frame 18:** The ball centre is at pixel ≈ (2376, 523), which gives x ≈ (2376 − 1287) / 88.8 ≈ +12.26 m and a centre height of about 0.04 m, so it is at the bounce.
+
+**Contact point check:** Using the pre-bounce vertical speed (about 0.43 m per frame near the bounce) and the ball's height of about 0.04 m, contact occurs roughly 0.1 frame before frame 18. Horizontal speed near the bounce is about 1.05 m per frame, so the contact point is at about x ≈ +12.16 m. This is still past the baseline.
+
+**Baseline:** x = 11.885 m corresponds to pixel ≈ 2342. The bounce is roughly 0.3–0.4 m beyond it, so the ball is out.
+
+FINAL ANSWER: yes",yes,1,stop,,,6365
+anthropic/claude-haiku-5.5,tennis_06_stats_trap,ok,A,stats_trap,"**Reading the positions**
+
+Scale from the axis labels: about 88.7 px per metre horizontally (0 m at x≈1287 px, ±14 m at ≈45 and ≈2530 px), and about 88.5 px per metre vertically, with ground at y≈527 px.
+
+Converting the ball centres gives approximately (x, height) in metres:
+
+| Frame | x (m) | h (m) | Frame | x (m) | h (m) |
+|---|---|---|---|---|---|
+| 1 | −9.99 | 1.37 | 10 | 3.09 | 1.53 |
+| 2 | −8.36 | 1.61 | 11 | 4.34 | 1.33 |
+| 3 | −6.78 | 1.79 | 12 | 5.56 | 1.05 |
+| 4 | −5.25 | 1.92 | 13 | 6.75 | 0.76 |
+| 5 | −3.77 | 2.00 | 14 | 7.91 | 0.41 |
+| 6 | −2.40 | 2.01 | 15 | 9.06 | 0.04 |
+| 7 | −1.00 | 1.98 | 16 | 9.93 | 0.31 |
+| 8 | 0.47 | 1.89 | 17 | 10.80 | 0.53 |
+| 9 | 1.79 | 1.72 | 18 | 11.66 | 0.71 |
+
+**Checking each stat**
+
+- **A (frames 1–2, 75 km/h):** The ball moves about 1.63 m horizontally and 0.24 m vertically in 60 ms. That is about 1.65 m per frame, or 27.5 m/s, which is roughly 99 km/h. Frames 2–3 and 3–4 give about 95 and 92 km/h, so the early shot is clearly faster than 75 km/h. This does not match.
+- **B (frames 14–15, 71 km/h):** The displacement is about 1.15 m horizontally and 0.37 m vertically, i.e. 1.21 m in 60 ms, or about 72 km/h. This matches within reading error. The bounce occurs just after frame 15, so this pair is pre-bounce.
+- **C (net clearance, 0.97 m):** Interpolating between frames 7 and 8 at x = 0 gives a ball height of about 1.92 m. Subtracting the 0.914 m net height gives about 1.00 m. This matches within reading error.
+
+Only entry A is inconsistent with the tracked positions.
+
+FINAL ANSWER: A",A,1,stop,,,5398
+anthropic/claude-haiku-5.5,tennis_07_spin_rpm,ok,1500.0,spin_rpm,"The logo's position on the ball's face gives the spin rate. I estimated each logo's offset from the ball's centre in pixels, using a ball radius of about 210 px.
+
+**Logo angles (image plane, measured from the centre):**
+
+| Frame | Time | Logo offset (px) | Angle |
+|---|---|---|---|
+| 1 | 0 ms | (−3, 119) | ≈ 91.4° |
+| 2 | 3 ms | (50, 107) | ≈ 65.0° |
+| 3 | 6 ms | (93, 72) | ≈ 37.7° |
+| 4 | 9 ms | (115, 22) | ≈ 10.8° |
+| 5 | 12 ms | (112, −33) | ≈ −16.4° |
+
+The logo's distance from the centre stays nearly constant, at about 0.82 of the radius in the view direction. This means the spin is close to the viewing axis, so the image-plane angle gives the rotation directly.
+
+**Rotation per frame:** the successive differences are 26.4°, 27.3°, 26.9° and 27.2°, so about 27° per 3 ms frame. Since this is under half a turn, the alias ambiguity is excluded and 27° is the true step.
+
+**Spin rate:**
+- 27° per 3 ms = 9° per ms = 9000° per second
+- 9000 ÷ 360 = 25 revolutions per second
+- 25 × 60 = 1500 revolutions per minute
+
+FINAL ANSWER: 1500",1506.0,1,stop,,,3991
+anthropic/claude-haiku-5.5,tennis_08_spin_type,ok,slice backspin,spin_type,"The ball's blue logo moves steadily in one direction across the frames, which fixes the spin direction.
+
+1. **Logo path (screen coordinates, relative to the ball's centre):**
+   - t = 0 ms: lower right, about −5° from the horizontal.
+   - t = 3 ms: right, about +22°.
+   - t = 6 ms: upper right, about +50°.
+   - t = 9 ms: near the top, about +76°.
+   - t = 12 ms: near the top, slightly left, about +103°.
+
+2. **Direction:** The angle increases steadily by roughly 27° per frame, so the logo rotates counterclockwise as seen by the viewer. The visible face moves upward on the right side of the ball, over the top.
+
+3. **Top of the ball:** For a counterclockwise rotation, the top of the ball moves toward the left. The ball travels to the right, so the top surface moves backward, opposite to the direction of travel.
+
+4. **Aliasing check:** Each step is about 27° forward, under half a turn. The alternative reading, about 333° backward, violates the stated constraint, so the forward reading is the correct one.
+
+Since the top of the ball moves backward relative to the direction of travel, this is a slice (backspin).
+
+FINAL ANSWER: Slice (backspin)",slice (backspin),1,stop,,,3480
+anthropic/claude-haiku-5.5,tennis_09_scoresheet,ok,mbeki 4 3,scoresheet,"**Who serves first in the tie-break:** Twelve games have been played, and service alternates each game. Game 1 was Mbeki's, so game 13 (the tie-break) is also Mbeki's. Mbeki serves the first tie-break point.
+
+**Service pattern:** Mbeki serves point 1, then Castillo serves points 2–3, Mbeki points 4–5, Castillo points 6–7, Mbeki points 8–9, and so on.
+
+**Points on the sheet (7 recorded):** C, C, C, M, M, C, M
+- Castillo: points 1, 2, 3, 6 = 4
+- Mbeki: points 4, 5, 7 = 3
+
+**Next point:** Point 8 falls in Mbeki's serving block, so Mbeki serves. The score is Castillo 4, Mbeki 3.
+
+Mbeki, 4-3
+
+FINAL ANSWER: Mbeki, 4-3","Mbeki, 4-3",1,stop,,,3406
+anthropic/claude-haiku-5.5,tennis_10_mark_gap,ok,5.4,mark_gap,"The white baseline spans roughly x = 639 to x = 962 pixels, so its 10 cm width corresponds to about 323 px, or about 32.3 px per cm.
+
+The ball mark is an ellipse spanning roughly x = 1138 to x = 1434. Its nearest point to the line is its left edge at x ≈ 1138, so the gap to the line's right edge at x ≈ 962 is about 176 px.
+
+176 px ÷ 32.3 px/cm ≈ 5.4 cm. The thin dark strip just beside the white band could shift this slightly, to about 5.3 cm, which is still within the ±0.5 cm tolerance.
+
+FINAL ANSWER: 5.4",5.6,1,stop,,,2763
+openai/gpt-6-luna,tennis_01_speed_lost,ok,33.0,speed_lost,"Using the 1 m grid, the ball travels about 1.91 m from frame 1 to 2 and 1.37 m from frame 12 to 13. Over 60 ms per interval, those are roughly 115 km/h and 82 km/h, respectively—a difference of about 33 km/h.
+
+FINAL ANSWER: 33 km/h slower",32.0,1,stop,,,3955
+openai/gpt-6-luna,tennis_02_bounce_speed,ok,84.0,bounce_speed,"From frames 12 to 13, the ball moves about 1.37 m horizontally and 0.35 m vertically, for a total displacement of roughly 1.41 m. Over 0.060 s, that corresponds to about 84 km/h.
+
+FINAL ANSWER: 84 km/h",84.4,1,stop,,,3821
+openai/gpt-6-luna,tennis_03_net_clear,ok,0.32,net_clear,"The tracked path is about 1.23 m high where it crosses \(x=0\). Subtracting the net height gives \(1.23-0.914\approx0.32\) m of clearance.
+
+FINAL ANSWER: 0.32 m",0.32,1,stop,,,5459
+openai/gpt-6-luna,tennis_04_close_call,ok,out,close_call,"Frame 19’s ball centre is roughly at \(x=+12.3\) m by the 1 m grid, beyond the \(+11.885\) m baseline. The ball is far enough past the line that its edge does not touch it, so the bounce was out.
+
+FINAL ANSWER: Out.",out,1,stop,,,4113
+openai/gpt-6-luna,tennis_05_call_trap,ok,yes,call_trap,"Frame 18, the bounce, is at approximately \(x=+12.26\) m—past the \(+11.885\) m baseline—so the printed OUT call is correct.
+
+FINAL ANSWER: yes",yes,1,stop,,,3820
+openai/gpt-6-luna,tennis_06_stats_trap,ok,A,stats_trap,"A is wrong. Frames 1–2 are about 1.6 m apart, giving a speed near 98 km/h over 60 ms—not 75 km/h. Frames 14–15 are about 1.18 m apart in 2D, consistent with 71 km/h, and the net clearance is consistent with 0.97 m.
+
+FINAL ANSWER: A",A,1,stop,,,4297
+openai/gpt-6-luna,tennis_07_spin_rpm,ok,1500.0,spin_rpm,"The logo advances by about \(27^\circ\) every 3.0 ms, or roughly \(108^\circ\) over 12 ms. That is \(0.30\) revolutions in \(0.012\) s, giving about \(25\) revolutions per second.
+
+FINAL ANSWER: 1500 rpm",1506.0,1,stop,,,2494
+openai/gpt-6-luna,tennis_08_spin_type,ok,a slice backspin,spin_type,"The blue logo moves from the right side of the ball toward the top, indicating counterclockwise rotation in the side view. With the ball traveling to the right, that means its top moves backward: a slice.
+
+FINAL ANSWER: A slice (backspin)",slice (backspin),0,stop,,unpredicted,2233
+openai/gpt-6-luna,tennis_09_scoresheet,ok,mbeki 4 3,scoresheet,"Mbeki serves the first tie-break point. After seven points, the score is Castillo 4, Mbeki 3, and Mbeki serves point eight.
+
+FINAL ANSWER: Mbeki, 4-3","Mbeki, 4-3",1,stop,,,2460
+openai/gpt-6-luna,tennis_10_mark_gap,ok,5.5,mark_gap,FINAL ANSWER: 5.5 cm,5.6,1,stop,,,2184

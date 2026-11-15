@@ -1,0 +1,71 @@
+model,task_id,status,parsed,question_type,response,ref_answer,correct,finish_reason,error,fingerprint,tokens
+anthropic/claude-haiku-5.5,fiber2_11,ok,3,fiber_trace_trunk_B,"The path runs GPU-TRAY-07 port 01 → PP-A port 03 (stage 1) → trunk position 3 → PP-C port 10 (Type B: 13 − 3 = 10) → SW-CORE-02 port 03 (stage 3).
+
+I read the stage 3 crossings by eye and they are the least certain step: the steep curves from PP-C ports 10–12 converge near the middle, so the PP-C 10 → SW-CORE-02 03 link is the most likely reading rather than a certain one.
+
+FINAL ANSWER: 03",2,0,stop,,predicted:neighbour_port_below,3515
+anthropic/claude-haiku-5.5,fiber2_22,ok,5,fiber_trace_trunk_C,"The path runs GPU-TRAY-07 port 07 → PP-A port 06 → trunk position 6 → PP-C port 05 → SW-CORE-02 port 05.
+
+- **Stage 1:** The duplex cord from GPU-TRAY-07 port 07 rises to PP-A port 06.
+- **Stage 2:** The trunk is Type C, where pairs are flipped (1↔2, 3↔4, 5↔6, …). Position 6 therefore exits at PP-C port 5.
+- **Stage 3:** PP-C port 05 connects by a straight horizontal cord to SW-CORE-02 port 05.
+
+FINAL ANSWER: 05",5,1,stop,,,2427
+anthropic/claude-haiku-5.5,fiber2_33,ok,4,fiber_trace_trunk_C,"The path runs GPU-TRAY-07 port 01 → PP-A port 01 → trunk position 1 → PP-C port 02 → SW-CORE-02 port 04.
+
+1. **Stage 1:** The duplex cord from GPU-TRAY-07 port 01 runs straight across to PP-A port 01.
+2. **Stage 2:** Type C polarity flips pairs (1↔2, 3↔4, …). Trunk position 1 therefore exits to PP-C port 02.
+3. **Stage 3:** The cord from PP-C port 02 curves down to SW-CORE-02 port 04.
+
+FINAL ANSWER: 4",4,1,stop,,,2470
+anthropic/claude-haiku-5.5,fiber2_44,ok,7,fiber_trace_trunk_C,"I traced the path step by step, but the stage 1 and stage 3 cords are dense near their crossings, so parts of the trace are my best reading rather than certain.
+
+1. **Stage 1:** GPU-TRAY-07 port 02 runs down to PP-A port 05. I read it as the less steep of the two curves that cross near the start, which ends at 05 rather than 06.
+2. **Stage 2 (MTP-12 Type C):** The rule flips pairs (1↔2, 3↔4, …, 11↔12). Trunk position 5 enters from PP-A 05 and exits at PP-C 06, since 5 is odd and maps to 6.
+3. **Stage 3:** PP-C 06 runs to SW-CORE-02 port 07. The curves from PP-C 06 and PP-C 07 cross at the centre, so this is the least certain step.
+
+FINAL ANSWER: 07",7,1,stop,,,6283
+anthropic/claude-haiku-5.5,fiber2_55,ok,9,fiber_trace_trunk_B,"The path runs GPU-TRAY-07 port 04 → PP-A port 01 → trunk position 1 → PP-C port 12 → SW-CORE-02 port 09.
+
+1. Stage 1: the cord from GPU-TRAY-07 port 04 rises to PP-A port 01.
+2. Stage 2: Type B polarity maps trunk position n to position 13 − n, so position 1 exits at PP-C port 12.
+3. Stage 3: PP-C port 12 is the cord that curves up to SW-CORE-02 port 09. This is the least certain step, because the curves from PP-C 11 and 12 cross near the bottom right. I resolved it by checking that the full stage-3 mapping forms a permutation using all 12 SW-CORE-02 ports.
+
+FINAL ANSWER: 09",9,1,stop,,,4621
+anthropic/claude-haiku-5.5,fiber2_66,ok,9,fiber_trace_trunk_B,"I traced the path using the port positions and the Type B polarity rule.
+
+1. **Stage 1:** GPU-TRAY-07 port 09 runs to PP-A port 03.
+2. **Stage 2:** Type B sends trunk position n to position 13 − n. Position 3 therefore exits at position 10, so it reaches PP-C port 10.
+3. **Stage 3:** PP-C port 10 runs to SW-CORE-02 port 09.
+
+I read several of the curved cords from the image, so the stage 1 and stage 3 endpoints are my best reading rather than certain.
+
+FINAL ANSWER: 09",12,0,stop,,unpredicted,4214
+anthropic/claude-haiku-5.5,fiber2_77,ok,1,fiber_trace_trunk_B,"**Tracing the path:**
+
+1. **Stage 1:** GPU-TRAY-07 port 06 runs up to PP-A port 01.
+2. **Stage 2:** Type B trunk maps position n to 13 − n. PP-A port 01 is trunk position 1, which exits at position 12. That leads to PP-C port 12.
+3. **Stage 3:** PP-C port 12 curves steeply up to SW-CORE-02 port 01.
+
+This last step is the least certain, because several steep stage-3 curves cross near the right side. I read the PP-C 12 curve as ending at SW-CORE-02 port 01, but it is the one step I'd double-check against the image.
+
+FINAL ANSWER: 01",3,0,stop,,unpredicted,4452
+anthropic/claude-haiku-5.5,fiber2_88,ok,3,fiber_trace_trunk_B,"## Tracing the path
+
+1. **Patch stage 1:** GPU-TRAY-07 port 02 runs straight across to **PP-A port 02**. The red-circled start is a horizontal cord with no crossings.
+
+2. **Patch stage 2 (MTP-12 Type B):** Type B maps trunk position n to position 13 − n. PP-A port 02 therefore exits at **PP-C port 11**.
+
+3. **Patch stage 3:** I followed the cord from PP-C port 11 up to SW-CORE-02. The curves in this region cross closely, so this step is the least certain. My best reading is that PP-C 11 terminates at SW-CORE-02 port 03.
+
+Cross-checking the other stage-3 cords shows the remaining PP-C ports 10, 11 and 12 must map to SW-CORE ports 02, 03 and 04 in some order, so the ambiguity is limited to those three ports.
+
+FINAL ANSWER: 03",4,0,stop,,predicted:neighbour_port_above,5366
+openai/gpt-6-luna,fiber2_11,ok,4,fiber_trace_trunk_B,FINAL ANSWER: 04,2,0,stop,,unpredicted,2169
+openai/gpt-6-luna,fiber2_22,ok,5,fiber_trace_trunk_C,FINAL ANSWER: 05,5,1,stop,,,1753
+openai/gpt-6-luna,fiber2_33,ok,12,fiber_trace_trunk_C,FINAL ANSWER: 12,4,0,stop,,predicted:ignored_trunk_polarity,3116
+openai/gpt-6-luna,fiber2_44,ok,7,fiber_trace_trunk_C,FINAL ANSWER: 07,7,1,stop,,,1736
+openai/gpt-6-luna,fiber2_55,ok,9,fiber_trace_trunk_B,FINAL ANSWER: 09,9,1,stop,,,1710
+openai/gpt-6-luna,fiber2_66,ok,3,fiber_trace_trunk_B,FINAL ANSWER: 03,12,0,stop,,unpredicted,1999
+openai/gpt-6-luna,fiber2_77,ok,11,fiber_trace_trunk_B,FINAL ANSWER: 11,3,0,stop,,unpredicted,1859
+openai/gpt-6-luna,fiber2_88,ok,2,fiber_trace_trunk_B,FINAL ANSWER: 02,4,0,stop,,unpredicted,1938

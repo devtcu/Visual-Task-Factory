@@ -1,0 +1,160 @@
+﻿provider,model,task_id,question,gold_answer,model_answer,parsed_value,correct,status,temperature,reasoning,max_tokens
+openrouter,anthropic/claude-sonnet-4.5,mbext_analog_dial_73_00_one_tick,"Comparing image A with image B, how much did instrument PG-104 increase? Report in bar.",0.2 bar,"Looking at the two pressure gauge images for instrument PG-104:
+
+**Image A:** The needle points straight up (12 o'clock position), indicating approximately **5 bar**
+
+**Image B:** The needle points slightly to the right of straight up (approximately 1 o'clock position), indicating approximately **5.5 bar**
+
+**Increase: 0.5 bar**
+
+The instrument PG-104 increased by approximately **0.5 bar** between image A and image B.",0.5,False,ok,0,high,8192
+openrouter,anthropic/claude-sonnet-4.5,mbext_analog_dial_1082_01_one_tick,"Comparing image A with image B, how much did instrument PG-104 increase? Report in bar.",0.2 bar,"Looking at the two pressure gauge images:
+
+**Image A (first image):** The needle is pointing at approximately **4.5 bar**
+
+**Image B (second image):** The needle is pointing at approximately **5.0 bar**
+
+**Increase: 0.5 bar**
+
+The instrument PG-104 increased by approximately **0.5 bar** between images A and B.",0.5,False,ok,0,high,8192
+openrouter,anthropic/claude-sonnet-4.5,mbext_analog_dial_2091_02_one_tick,"Comparing image A with image B, how much did instrument PG-104 increase? Report in bar.",0.2 bar,"Looking at the two pressure gauge images for instrument PG-104:
+
+**Image A:** The needle points to approximately **5 bar**
+
+**Image B:** The needle points to approximately **5.5 bar**
+
+**Increase: 0.5 bar**
+
+The instrument PG-104 increased by approximately **0.5 bar** when comparing image A to image B.",0.5,False,ok,0,high,8192
+openrouter,anthropic/claude-sonnet-4.5,mbext_analog_dial_3100_03_one_tick,"Comparing image A with image B, how much did instrument PG-104 increase? Report in bar.",0.2 bar,"Looking at the two pressure gauges:
+
+- **Image A** (second image): The needle points to approximately **7 bar**
+- **Image B** (first image): The needle points to approximately **8 bar**
+
+The instrument PG-104 increased by approximately **1 bar**.",1.0,False,ok,0,high,8192
+openrouter,anthropic/claude-sonnet-4.5,mbext_analog_dial_4109_04_one_tick,"Comparing image A with image B, how much did instrument PG-104 increase? Report in bar.",0.2 bar,"Looking at the two pressure gauges:
+
+**Image A** (second image): The needle points to approximately **5.2 bar**
+
+**Image B** (first image): The needle points to approximately **5.7 bar**
+
+**Increase: approximately 0.5 bar**
+
+The instrument PG-104 increased by about **0.5 bar** when comparing image A to image B.",0.5,False,ok,0,high,8192
+openrouter,anthropic/claude-sonnet-4.5,mbext_analog_dial_5118_05_one_tick,"Comparing image A with image B, how much did instrument PG-104 increase? Report in bar.",0.2 bar,"Looking at the two pressure gauge images for instrument PG-104:
+
+**Image A:** The needle points straight up (12 o'clock position), indicating **5 bar**
+
+**Image B:** The needle points slightly clockwise from straight up, indicating approximately **5.5 bar**
+
+**Increase: 0.5 bar**",0.5,False,ok,0,high,8192
+openrouter,anthropic/claude-sonnet-4.5,mbext_analog_dial_6127_06_one_tick,"Comparing image A with image B, how much did instrument PG-104 increase? Report in bar.",0.2 bar,"Looking at both images:
+
+**Image A**: The needle is pointing at approximately **4.8-5.0 bar**
+
+**Image B**: The needle is pointing at approximately **5.0 bar**
+
+The increase in instrument PG-104 from Image A to Image B is approximately **0 to 0.2 bar**.
+
+The needle positions appear nearly identical in both images, suggesting minimal to no change in pressure reading between the two measurements.",0.2,True,ok,0,high,8192
+openrouter,anthropic/claude-sonnet-4.5,mbext_analog_dial_7136_07_one_tick,"Comparing image A with image B, how much did instrument PG-104 increase? Report in bar.",0.2 bar,"Looking at both pressure gauge images for instrument PG-104:
+
+**Image A:** The needle points to approximately **3.5 bar**
+
+**Image B:** The needle points to approximately **4.0 bar**
+
+**Increase: 0.5 bar**
+
+The instrument PG-104 increased by approximately **0.5 bar** between image A and image B.",0.5,False,ok,0,high,8192
+openrouter,anthropic/claude-sonnet-4.5,mbext_analog_dial_8145_08_one_tick,"Comparing image A with image B, how much did instrument PG-104 increase? Report in bar.",0.2 bar,"Looking at the two pressure gauge images:
+
+**Image A (first image):** The needle points to approximately **8 bar**
+
+**Image B (second image):** The needle points to approximately **7 bar**
+
+The change from Image A to Image B is:
+**7 - 8 = -1 bar**
+
+PG-104 **decreased by 1 bar** (not increased). The instrument shows a reduction of approximately **1 bar** between the two readings.",1.0,False,ok,0,high,8192
+anthropic,claude-sonnet-4-5-20250929,mbext_analog_dial_73_00_one_tick,"Comparing image A with image B, how much did instrument PG-104 increase? Report in bar.",0.2 bar,"Looking at the two pressure gauge images for instrument PG-104:
+
+Image A: The needle points to approximately 5 bar
+
+Image B: The needle points to approximately 5.5-6 bar
+
+Increase: approximately 0.5 to 1 bar
+
+The needle has rotated slightly clockwise between the two images, indicating an increase of roughly 0.5-1 bar in pressure.",-1.0,False,ok,not supported with extended thinking; omitted,"budgeted thinking, 4096 tokens",8192
+anthropic,claude-sonnet-4-5-20250929,mbext_analog_dial_1082_01_one_tick,"Comparing image A with image B, how much did instrument PG-104 increase? Report in bar.",0.2 bar,"Looking at the two pressure gauges for instrument PG-104:
+
+**Image A:** The needle points to approximately **4.3 bar**
+
+**Image B:** The needle points to approximately **4.8 bar**
+
+**Increase: 0.5 bar**
+
+The instrument PG-104 increased by approximately **0.5 bar**.",0.5,False,ok,not supported with extended thinking; omitted,"budgeted thinking, 4096 tokens",8192
+anthropic,claude-sonnet-4-5-20250929,mbext_analog_dial_2091_02_one_tick,"Comparing image A with image B, how much did instrument PG-104 increase? Report in bar.",0.2 bar,"Looking at the two images of instrument PG-104:
+
+**Image A (first image):** The needle points to approximately **5 bar**
+
+**Image B (second image):** The needle points to approximately **5.5 bar**
+
+**Increase: 0.5 bar**
+
+The instrument PG-104 increased by approximately **0.5 bar** when comparing image A to image B.",0.5,False,ok,not supported with extended thinking; omitted,"budgeted thinking, 4096 tokens",8192
+anthropic,claude-sonnet-4-5-20250929,mbext_analog_dial_3100_03_one_tick,"Comparing image A with image B, how much did instrument PG-104 increase? Report in bar.",0.2 bar,"Looking at the two pressure gauges:
+
+**Image A**: The needle points to approximately **8 bar**
+
+**Image B**: The needle points to approximately **7 bar**
+
+The instrument PG-104 actually **decreased by approximately 1 bar** from image A to image B, rather than increased. 
+
+If you're asking about the change from A to B, it's a **-1 bar change** (a decrease of 1 bar).",1.0,False,ok,not supported with extended thinking; omitted,"budgeted thinking, 4096 tokens",8192
+anthropic,claude-sonnet-4-5-20250929,mbext_analog_dial_4109_04_one_tick,"Comparing image A with image B, how much did instrument PG-104 increase? Report in bar.",0.2 bar,"Looking at the two pressure gauges:
+
+- **Image A** (first image): The needle points to approximately **6 bar**
+- **Image B** (second image): The needle points to approximately **5 bar**
+
+The instrument PG-104 actually **decreased by 1 bar** (from 6 bar to 5 bar), rather than increased.
+
+If you're asking for the increase value: **-1 bar** (or a decrease of 1 bar)",1.0,False,ok,not supported with extended thinking; omitted,"budgeted thinking, 4096 tokens",8192
+anthropic,claude-sonnet-4-5-20250929,mbext_analog_dial_5118_05_one_tick,"Comparing image A with image B, how much did instrument PG-104 increase? Report in bar.",0.2 bar,"Looking at the two pressure gauge images for instrument PG-104:
+
+**Image A:** The needle points straight up (12 o'clock position), indicating **5 bar** (midway between 4 and 6)
+
+**Image B:** The needle points slightly clockwise from straight up, indicating approximately **5.5 bar**
+
+**Increase: 0.5 bar**",0.5,False,ok,not supported with extended thinking; omitted,"budgeted thinking, 4096 tokens",8192
+anthropic,claude-sonnet-4-5-20250929,mbext_analog_dial_6127_06_one_tick,"Comparing image A with image B, how much did instrument PG-104 increase? Report in bar.",0.2 bar,"# Analysis of PG-104 Pressure Gauge Readings
+
+**Image A Reading:** Approximately **5.0 bar**
+
+**Image B Reading:** Approximately **5.0 bar**
+
+**Increase:** Approximately **0 bar** (or negligible difference)
+
+The needle position in both images appears to be virtually identical, pointing upward between the 4 and 6 markings at approximately the 5 bar position. If there is any difference between the two readings, it is minimal and difficult to discern from the images provided - likely less than 0.2 bar.
+
+The two gauges appear to show the same reading, suggesting no significant increase occurred between measurements A and B.",0.2,True,ok,not supported with extended thinking; omitted,"budgeted thinking, 4096 tokens",8192
+anthropic,claude-sonnet-4-5-20250929,mbext_analog_dial_7136_07_one_tick,"Comparing image A with image B, how much did instrument PG-104 increase? Report in bar.",0.2 bar,"Looking at the two pressure gauges:
+
+**Image A:** The needle points to approximately **3.5 bar**
+
+**Image B:** The needle points to approximately **4 bar**
+
+**Increase: 0.5 bar**
+
+The instrument PG-104 increased by approximately **0.5 bar** between image A and image B.",0.5,False,ok,not supported with extended thinking; omitted,"budgeted thinking, 4096 tokens",8192
+anthropic,claude-sonnet-4-5-20250929,mbext_analog_dial_8145_08_one_tick,"Comparing image A with image B, how much did instrument PG-104 increase? Report in bar.",0.2 bar,"Looking at the two pressure gauges for instrument PG-104:
+
+**Image A** (first image): The needle points to approximately **8 bar**
+
+**Image B** (second image): The needle points to approximately **7 bar**
+
+Comparing image A with image B: **7 - 8 = -1 bar**
+
+This represents a **decrease of 1 bar**, not an increase. 
+
+However, if you meant to ask about the change from B to A, then the instrument **increased by 1 bar**.",1.0,False,ok,not supported with extended thinking; omitted,"budgeted thinking, 4096 tokens",8192

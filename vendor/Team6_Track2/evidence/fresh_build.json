@@ -1,0 +1,11 @@
+{
+  "valid": 1,
+  "total": 1,
+  "pipelines": [
+    "fiber"
+  ],
+  "wall_seconds": 1.81,
+  "python": "3.12.10",
+  "platform": "Linux-6.6.87.2-microsoft-standard-WSL2-x86_64-with-glibc2.36",
+  "verified_reported": false
+}

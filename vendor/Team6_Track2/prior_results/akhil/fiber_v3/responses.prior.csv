@@ -1,0 +1,187 @@
+model,task_id,status,parsed,question_type,response,ref_answer,correct,finish_reason,error,fingerprint,tokens
+anthropic/claude-haiku-5.5,fiber3_11_trace,ok,3,fiber3_trace_BB,"Tracing the path stage by stage:
+
+1. **Stage 1 (duplex cords):** GPU-TRAY-07 port 11 runs to PP-A port 09.
+2. **Stage 2 (MTP trunk, Type B):** position n exits at 13 − n, so PP-A 09 goes to PP-B 04.
+3. **Stage 3 (duplex cords):** PP-B port 04 runs to PP-C port 11.
+4. **Stage 4 (MTP trunk, Type B):** PP-C 11 exits at 13 − 11 = 2, so PP-D port 02.
+5. **Stage 5 (duplex cords):** PP-D port 02 runs to SW-CORE-02 port 03.
+
+Stages 1 and 3 were read from the curves in the image, so those two hops are the least certain steps.
+
+FINAL ANSWER: 03",7,0,stop,,unpredicted,3463
+anthropic/claude-haiku-5.5,fiber3_11_fault,ok,7,fiber3_fault_BB,"The cut is the stage 3 cord that ends at PP-C port 02. Tracing it back:
+
+- **Stage 3 cord into PP-C 02:** comes from PP-B port 11. I read this from the image, and the red X sits at the PP-C 02 level, which supports it.
+- **Stage 2 (MTP trunk, Type B, position n → 13−n):** PP-B 11 is fed by PP-A port 2.
+- **Stage 1 cord into PP-A 02:** comes from GPU-TRAY-07 port 07, which rises from port 07 to PP-A 02 in the image.
+
+So GPU-TRAY-07 port 07 is the one whose only path to SW-CORE-02 ran through the cut cord.
+
+FINAL ANSWER: 07",6,0,stop,,unpredicted,6373
+anthropic/claude-haiku-5.5,fiber3_22_trace,ok,4,fiber3_trace_CC,"I traced the path through each stage, but the crossings in the dense middle stages are hard to read with certainty, so this is a best reading rather than a verified one.
+
+1. **Stage 1 (duplex cords):** GPU-TRAY-07 port 03 runs to PP-A port 05.
+2. **Stage 2 (MTP Type C, pairs flipped):** PP-A port 05 exits at PP-B port 06.
+3. **Stage 3 (duplex cords):** PP-B port 06 runs to PP-C port 11.
+4. **Stage 4 (MTP Type C, pairs flipped):** PP-C port 11 exits at PP-D port 12.
+5. **Stage 5 (duplex cords):** PP-D port 12 runs to SW-CORE-02 port 04.
+
+FINAL ANSWER: 4",8,0,stop,,unpredicted,6774
+anthropic/claude-haiku-5.5,fiber3_22_fault,ok,8,fiber3_fault_CC,"## Tracing the broken path
+
+**1. Locate the cut.** The X sits on the stage 5 cord between PP-D port 05 and SW-CORE-02 port 06, so the cut cord is PP-D 05 → SW-CORE 06.
+
+**2. Stage 4 (MTP TYPE C, pairs flipped 1↔2, 3↔4, …, 11↔12).** PP-D 05 is fed by PP-C 06, since 5↔6 is a pair.
+
+**3. Stage 3 (duplex cords).** From the image, PP-B 11 connects to PP-C 06. So PP-C 06 is fed by PP-B 11.
+
+**4. Stage 2 (MTP TYPE C).** PP-B 11 is fed by PP-A 12, since 11↔12 is a pair.
+
+**5. Stage 1 (duplex cords).** PP-A 12 connects back to GPU-TRAY-07 port 08. This is the least certain step, because the cord crossings in the image are dense. The curve from GPU 08 descends to PP-A 12, which is the best reading of the diagram.
+
+So the chain is GPU 08 → PP-A 12 → PP-B 11 → PP-C 06 → PP-D 05 → (cut) SW-CORE 06, and GPU port 08 has lost its link.
+
+FINAL ANSWER: 08",8,1,stop,,,5830
+anthropic/claude-haiku-5.5,fiber3_33_trace,ok,11,fiber3_trace_CB,"**Tracing the path:**
+
+1. **GPU-TRAY-07 port 02 → stage 1 cords → PP-A port 12.** The steep curve from port 02 runs to the bottom of PP-A.
+2. **Stage 2 (MTP trunk, Type C: pairs flipped):** PP-A 12 → PP-B 11.
+3. **Stage 3 (duplex cords):** PP-B 11 → PP-C 09.
+4. **Stage 4 (MTP trunk, Type B: position n → 13 − n):** PP-C 09 → PP-D 04.
+5. **Stage 5 (duplex cords):** PP-D 04 → SW-CORE-02 port 11.
+
+The stage 1 and stage 5 endpoints are the least certain readings from the crossing curves, so treat this as my best trace rather than a certain one.
+
+FINAL ANSWER: 11",10,0,stop,,unpredicted,4473
+anthropic/claude-haiku-5.5,fiber3_33_fault,ok,3,fiber3_fault_CB,"**Tracing the cut:** The red X sits on the stage 3 cord between PP-B 12 and PP-C 11, so that is the broken link.
+
+**Working backward:**
+- **Stage 2 (MTP-12 TYPE C, pairs flipped 1↔2, 3↔4, …, 11↔12):** PP-B 12 is reached only from PP-A 11.
+- **Stage 1:** The cord arriving at PP-A 11 comes from GPU-TRAY-07 port 03. This follows from the crossing pattern of the steep cords from ports 02 and 03 (02 → PP-A 12, 03 → PP-A 11). I read this from the image, so it is the least certain step, but it is consistent with the rest of the stage 1 mapping being a full permutation.
+
+So GPU-TRAY-07 port 03 is the path that runs through the cut cord and has lost its link.
+
+FINAL ANSWER: 03",3,1,stop,,,5768
+anthropic/claude-haiku-5.5,fiber3_44_trace,ok,2,fiber3_trace_BC,"I traced the path segment by segment, but several cord endpoints were hard to read in the diagram, so the final port is a best estimate.
+
+1. **Stage 1 (duplex cords):** GPU-TRAY-07 port 01 runs to PP-A port 06.
+2. **Stage 2 (MTP trunk, Type B):** position n exits at 13 − n, so PP-A 06 → PP-B 07.
+3. **Stage 3 (duplex cords):** PP-B 07 runs to PP-C 07 (uncertain; PP-C 06 was also plausible).
+4. **Stage 4 (MTP trunk, Type C):** pairs flipped (7↔8), so PP-C 07 → PP-D 08.
+5. **Stage 5 (duplex cords):** PP-D 08 runs up to SW-CORE-02 port 02 (least certain step).
+
+FINAL ANSWER: 02",7,0,stop,,unpredicted,5982
+anthropic/claude-haiku-5.5,fiber3_44_fault,ok,8,fiber3_fault_BC,"## Tracing the cut cord
+
+The red X sits on the stage 5 cord leaving **PP-D port 01**, which runs to SW-CORE-02 port 04. Tracing backward from PP-D 01 identifies the GPU port that depends on it.
+
+1. **Stage 4 (MTP trunk, Type C):** Type C flips pairs (1↔2, 3↔4, …). PP-D 01 is fed by PP-C 02.
+2. **Stage 3 (duplex cords, PP-B → PP-C):** PP-C 02 is fed by PP-B 11. I read this from the diagram, but the stage 3 crossings are dense, so this link is the least certain step.
+3. **Stage 2 (MTP trunk, Type B):** Type B maps port n to 13 − n. PP-B 11 is therefore fed by PP-A 02.
+4. **Stage 1 (duplex cords, GPU → PP-A):** PP-A 02 is fed by GPU-TRAY-07 port 08.
+
+Port 08 is therefore the GPU port whose only path to SW-CORE-02 runs through the cut cord.
+
+FINAL ANSWER: 08",8,1,stop,,,9047
+anthropic/claude-haiku-5.5,fiber3_55_trace,ok,2,fiber3_trace_CB,"**Tracing the path:**
+
+1. **Stage 1 (duplex cords):** GPU-TRAY-07 port 04 runs up-right to PP-A port 01.
+2. **Stage 2 (MTP trunk, Type C, pairs flipped 1↔2, 3↔4, …, 11↔12):** PP-A port 01 maps to PP-B port 02.
+3. **Stage 3 (duplex cords):** PP-B port 02 runs straight across to PP-C port 02.
+4. **Stage 4 (MTP trunk, Type B, position n → 13 − n):** PP-C port 02 maps to PP-D port 11.
+5. **Stage 5 (duplex cords):** PP-D port 11 curves up to SW-CORE-02 port 02.
+
+I read the stage 5 curves from the image by eye, so the final hop is the least certain step.
+
+FINAL ANSWER: 2",4,0,stop,,unpredicted,2968
+anthropic/claude-haiku-5.5,fiber3_55_fault,ok,3,fiber3_fault_CB,"**Locating the cut:** The X sits on the stage 3 cord running from PP-B port 07 up to PP-C port 03. That is the only cord broken.
+
+**Tracing back through the trunks:**
+- **Stage 2 (MTP-12 TYPE C, PP-A to PP-B):** Type C flips pairs (1↔2, 3↔4, …, 11↔12). PP-B port 07 is paired with port 08, so the cut removes the PP-A 08 connection.
+- **Stage 1 (duplex cords, GPU-TRAY-07 to PP-A):** The cord landing on PP-A 08 comes from GPU-TRAY-07 port 03. I read this from the diagram, and it is the least certain step because the stage 1 crossings are dense.
+
+So GPU-TRAY-07 port 03 is the port whose only path to SW-CORE-02 ran through the cut cord.
+
+FINAL ANSWER: 03",6,0,stop,,predicted:ignored_both_trunks,8107
+anthropic/claude-haiku-5.5,fiber3_66_trace,ok,12,fiber3_trace_BC,"**Tracing the path:**
+
+1. **Stage 1 (duplex cords):** GPU-TRAY-07 port 10 runs to PP-A port 07.
+2. **Stage 2 (MTP TYPE B, position n → 13−n):** PP-A 07 → PP-B 06.
+3. **Stage 3 (duplex cords):** PP-B 06 runs to PP-C port 10. This is the step I'm least certain of, because several trunk-side curves cross near the middle of the stage.
+4. **Stage 4 (MTP TYPE C, pairs flipped 1↔2, 3↔4, …, 11↔12):** PP-C 10 → PP-D 09.
+5. **Stage 5 (duplex cords):** PP-D 09 runs to SW-CORE-02 port 12.
+
+The answer depends on the stage 3 link. If PP-B 06 actually went to PP-C 11 instead, the path would end at port 11.
+
+FINAL ANSWER: 12",12,1,stop,,,6517
+anthropic/claude-haiku-5.5,fiber3_66_fault,ok,3,fiber3_fault_BC,"The cut is the stage 3 cord between PP-B port 07 and PP-C port 06, which is the curve passing through the red X.
+
+**Working backward from the cut:**
+
+1. **Stage 2 (MTP-12 Type B):** Port n on the left panel exits at 13 − n on the right. PP-B port 07 is fed by PP-A port 13 − 7 = 06.
+2. **Stage 1 (duplex cords):** PP-A port 06 is reached from GPU-TRAY-07 port 03. I read this from the diagram, tracing the curve that descends from GPU 03 to PP-A 06. This is the one link I'm least certain of, since several stage 1 curves cross closely.
+
+So the GPU-TRAY-07 port whose path runs through the cut cord is port 03, and its link to SW-CORE-02 is lost.
+
+FINAL ANSWER: 03",3,1,stop,,,4746
+anthropic/claude-haiku-5.5,fiber3_77_trace,ok,12,fiber3_trace_BB,"The path ends at SW-CORE-02 port 12, though the Stage 1 trace is the least certain step.
+
+1. **Stage 1 (duplex cords):** GPU-TRAY-07 port 02 runs steeply down to PP-A port 12. The lower PP-A ports are crowded, so this is my best reading rather than a certain one.
+2. **Stage 2 (MTP trunk, Type B):** position n exits at 13 − n. PP-A 12 → PP-B 01.
+3. **Stage 3 (duplex cords):** PP-B 01 curves down to PP-C 07.
+4. **Stage 4 (MTP trunk, Type B):** PP-C 07 → PP-D 06 (13 − 7 = 6).
+5. **Stage 5 (duplex cords):** PP-D 06 descends to SW-CORE-02 port 12.
+
+FINAL ANSWER: 12",5,0,stop,,predicted:ignored_trunk2,3730
+anthropic/claude-haiku-5.5,fiber3_77_fault,ok,1,fiber3_fault_BB,"The cut is the stage 3 cord from **PP-B 11 to PP-C 09**. The red X sits on the curve rising from PP-B 11 toward PP-C 09.
+
+Working backward from that cord:
+
+1. **Stage 2 (MTP-12 TYPE B, n → 13−n):** PP-B 11 is fed from PP-A port 13 − 11 = **02**.
+2. **Stage 1 cords:** The cord from GPU-TRAY-07 port 01 dips slightly and lands on PP-A 02. That is the only stage 1 cord that reaches PP-A 02.
+
+So GPU-TRAY-07 port 01 is the one whose path runs through the cut cord.
+
+This depends on reading the curves from the image. The stage 1 identification of 01 → PP-A 02 is the clearest of the cords, and the cut location is consistent with it.
+
+FINAL ANSWER: 01",1,1,stop,,,5743
+anthropic/claude-haiku-5.5,fiber3_88_trace,ok,5,fiber3_trace_BB,"I traced the path stage by stage. The cord crossings are the hardest part to read, so the first and third stages are my best reading rather than certain.
+
+1. **Stage 1 (GPU-TRAY-07 → PP-A):** GPU port 11 rises to PP-A port 04.
+2. **Stage 2 (MTP trunk, Type B, n → 13−n):** PP-A port 04 → PP-B port 09.
+3. **Stage 3 (duplex cords, PP-B → PP-C):** PP-B port 09 descends to PP-C port 12.
+4. **Stage 4 (MTP trunk, Type B):** PP-C port 12 → PP-D port 01.
+5. **Stage 5 (duplex cords, PP-D → SW-CORE-02):** PP-D port 01 descends to SW-CORE-02 port 05.
+
+FINAL ANSWER: 05",5,1,stop,,,5099
+anthropic/claude-haiku-5.5,fiber3_88_fault,ok,11,fiber3_fault_BB,"## Tracing the path to the cut
+
+**Trunk polarity.** Both MTP trunks (stage 2 between PP-A and PP-B, stage 4 between PP-C and PP-D) are Type B, so port n exits at 13 − n.
+
+**Locating the cut.** The red X sits on a stage 3 duplex cord between PP-B and PP-C, on the curve running from PP-B 09 down to PP-C 12.
+
+**Working backward from the cut:**
+- The cut cord starts at PP-B 09.
+- Stage 2 (Type B trunk, PP-A n → PP-B 13 − n) delivers to PP-B 09 from PP-A port 13 − 9 = **04**.
+- Stage 1 cords run from GPU-TRAY-07 to PP-A. The cord ending at PP-A 04 comes from GPU-TRAY-07 port 11. I read this from the image, and the stage 1 crossings are hard to resolve, so this is the least certain step.
+
+Because each GPU port has exactly one path, the cut removes the only path through PP-A 04, which is the GPU port that lost its link.
+
+FINAL ANSWER: 11",11,1,stop,,,7506
+openai/gpt-6-luna,fiber3_11_trace,ok,11,fiber3_trace_BB,FINAL ANSWER: 11,7,0,stop,,unpredicted,2941
+openai/gpt-6-luna,fiber3_11_fault,ok,1,fiber3_fault_BB,FINAL ANSWER: 1,6,0,stop,,unpredicted,2696
+openai/gpt-6-luna,fiber3_22_trace,ok,9,fiber3_trace_CC,FINAL ANSWER: 09,8,0,stop,,unpredicted,3948
+openai/gpt-6-luna,fiber3_22_fault,ok,5,fiber3_fault_CC,FINAL ANSWER: 5,8,0,stop,,unpredicted,5132
+openai/gpt-6-luna,fiber3_33_trace,ok,11,fiber3_trace_CB,FINAL ANSWER: 11,10,0,stop,,unpredicted,3568
+openai/gpt-6-luna,fiber3_33_fault,ok,2,fiber3_fault_CB,FINAL ANSWER: 02,3,0,stop,,predicted:ignored_both_trunks,2666
+openai/gpt-6-luna,fiber3_44_trace,ok,10,fiber3_trace_BC,FINAL ANSWER: 10,7,0,stop,,unpredicted,3063
+openai/gpt-6-luna,fiber3_44_fault,ok,9,fiber3_fault_BC,FINAL ANSWER: 9,8,0,stop,,predicted:ignored_trunk2,4175
+openai/gpt-6-luna,fiber3_55_trace,ok,2,fiber3_trace_CB,FINAL ANSWER: 2,4,0,stop,,unpredicted,2542
+openai/gpt-6-luna,fiber3_55_fault,ok,12,fiber3_fault_CB,FINAL ANSWER: 12,6,0,stop,,unpredicted,3735
+openai/gpt-6-luna,fiber3_66_trace,ok,11,fiber3_trace_BC,FINAL ANSWER: 11,12,0,stop,,unpredicted,2903
+openai/gpt-6-luna,fiber3_66_fault,ok,2,fiber3_fault_BC,FINAL ANSWER: 2,3,0,stop,,unpredicted,2690
+openai/gpt-6-luna,fiber3_77_trace,ok,12,fiber3_trace_BB,FINAL ANSWER: 12,5,0,stop,,predicted:ignored_trunk2,2608
+openai/gpt-6-luna,fiber3_77_fault,ok,1,fiber3_fault_BB,FINAL ANSWER: 1,1,1,stop,,,2582
+openai/gpt-6-luna,fiber3_88_trace,ok,6,fiber3_trace_BB,FINAL ANSWER: 6,5,0,stop,,unpredicted,4169
+openai/gpt-6-luna,fiber3_88_fault,ok,11,fiber3_fault_BB,FINAL ANSWER: 11,11,1,stop,,,5411

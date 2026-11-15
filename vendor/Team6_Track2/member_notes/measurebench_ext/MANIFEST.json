@@ -1,0 +1,43 @@
+{
+  "member": "measurebench_ext",
+  "generator_package": "generators/measurebench_ext",
+  "generator_version": "measurebench_ext-1.0",
+  "entry_points": {
+    "generate": "adapter.generate_task",
+    "validate": "adapter.validate_task"
+  },
+  "domain": "Visual measurement reading",
+  "image_types": [
+    "analog pressure gauge",
+    "two-gauge composite pressure panel",
+    "vernier caliper",
+    "graduated cylinder with concave meniscus"
+  ],
+  "question_types": [
+    "analog_dial_single_reading",
+    "analog_dial_precision",
+    "analog_dial_one_tick_counterfactual",
+    "vernier_single_reading",
+    "vernier_precision",
+    "meniscus_single_reading",
+    "meniscus_meniscus_convention",
+    "composite_panel_single_reading",
+    "composite_panel_comparison",
+    "composite_panel_difference"
+  ],
+  "answer_types": ["number", "integer", "label"],
+  "language": "python",
+  "python_version": "3.13.5",
+  "requirements": "requirements.txt",
+  "system_packages": "system_packages.txt",
+  "seeds_used": [1, 2, 3, 4, 5],
+  "n_tasks": 50,
+  "n_valid": 50,
+  "deterministic": true,
+  "has_own_eval_code": true,
+  "known_issues": [
+    "The original evaluator uses OpenRouter only, max_tokens=128, and has no reasoning-effort or finish-reason field.",
+    "Only analog_dial_one_tick_counterfactual has saved pilot scores; the other question types remain unpiloted.",
+    "Meniscus answers use integer 5 mL marks and do not test interpolation."
+  ]
+}

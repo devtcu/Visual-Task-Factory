@@ -1,0 +1,27 @@
+{
+  "seed": 73,
+  "types": [
+    "analog_dial",
+    "vernier",
+    "meniscus",
+    "composite_panel"
+  ],
+  "num_per_type": 9,
+  "difficulties": [
+    "easy",
+    "medium",
+    "hard"
+  ],
+  "version": "measurebench_ext_v1",
+  "model_evaluation": {
+    "provider": "openrouter",
+    "model": "anthropic/claude-sonnet-4.5",
+    "attempts": 9,
+    "temperature": 0,
+    "reasoning_effort": "high",
+    "max_tokens": 8192
+  },
+  "accepted_samples": 36,
+  "counterfactual_pairs": 9,
+  "rejected_samples": 0
+}

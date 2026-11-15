@@ -1,0 +1,52 @@
+{
+  "member": "finance_reconciliation",
+  "generator_package": "generators/finance_reconciliation",
+  "generator_version": "finance-reconciliation-1.0",
+  "entry_points": {
+    "generate": "adapter.generate_task",
+    "validate": "adapter.validate_task"
+  },
+  "domain": "Synthetic accounts-payable invoice price reconciliation",
+  "image_types": [
+    "purchase_order",
+    "goods_receipt_note",
+    "tax_invoice",
+    "split_billing_invoice",
+    "purchase_order_amendment",
+    "contact_sheet"
+  ],
+  "question_types": [
+    "price_rule_L0",
+    "price_rule_L1",
+    "price_rule_L2"
+  ],
+  "answer_types": [
+    "number"
+  ],
+  "language": "python",
+  "python_version": "3.13.5",
+  "requirements": "requirements.txt",
+  "system_packages": "system_packages.txt",
+  "seeds_used": [
+    2400,
+    2401,
+    2401,
+    2403,
+    2404,
+    2405,
+    2406,
+    2407,
+    2408,
+    2409,
+    2410,
+    2411
+  ],
+  "n_tasks": 12,
+  "n_valid": 12,
+  "deterministic": true,
+  "has_own_eval_code": true,
+  "known_issues": [
+    "Prior model runs attached six full-resolution source PNGs separately; the required single-image field is a contact sheet that was not model-evaluated. Use each task record images array to reproduce the existing pilot input.",
+    "Claude Haiku 5.5 rejects a temperature field; existing Claude pilot used provider temperature default with high effort."
+  ]
+}

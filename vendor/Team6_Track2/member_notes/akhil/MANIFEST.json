@@ -1,0 +1,145 @@
+{
+ "member": "akhil",
+ "generator_package": "generators/akhil",
+ "generator_version": "akhil-1.0",
+ "entry_points": {
+  "generate": "adapter.generate_task",
+  "validate": "adapter.validate_task"
+ },
+ "domain": "Industrial/engineering and medical document reading: SPC control charts (filling heads), data-centre fiber patching, sleep study + EEG, roadway earthwork cross sections",
+ "image_types": [
+  "SPC individuals chart, 6 filling heads",
+  "fiber patching as-built (2 MTP trunks)",
+  "PSG hypnogram",
+  "PSG summary report",
+  "bipolar EEG page",
+  "roadway cross-section sheet"
+ ],
+ "question_types": [
+  "brain_awakenings",
+  "brain_find_fix",
+  "brain_rem_latency",
+  "brain_report_audit",
+  "brain_spike_location",
+  "fiber_fault",
+  "fiber_trace",
+  "heads_first_signal",
+  "xsec_cut_total_easy",
+  "xsec_cut_total_hard",
+  "xsec_cut_total_medium",
+  "xsec_max_cut_interval_hard"
+ ],
+ "answer_types": [
+  "integer",
+  "label",
+  "number",
+  "sequence"
+ ],
+ "language": "python",
+ "python_version": "3.12 (3.11 also used by the xsec Dockerfile)",
+ "requirements": "requirements.txt",
+ "system_packages": "system_packages.txt",
+ "seeds_used": [
+  11,
+  22,
+  33,
+  44,
+  55,
+  304,
+  305,
+  306,
+  307,
+  308,
+  401,
+  402,
+  403,
+  404,
+  405,
+  20260006,
+  20260121,
+  20260415,
+  20260707
+ ],
+ "seeds_by_question_type": {
+  "brain_awakenings": [
+   304,
+   305,
+   306,
+   307,
+   308
+  ],
+  "brain_find_fix": [
+   304,
+   305,
+   306,
+   307,
+   308
+  ],
+  "brain_rem_latency": [
+   304,
+   305,
+   306,
+   307,
+   308
+  ],
+  "brain_report_audit": [
+   304,
+   305,
+   306,
+   307,
+   308
+  ],
+  "brain_spike_location": [
+   304,
+   305,
+   306,
+   307,
+   308
+  ],
+  "fiber_fault": [
+   11,
+   22,
+   33,
+   44,
+   55
+  ],
+  "fiber_trace": [
+   11,
+   22,
+   33,
+   44,
+   55
+  ],
+  "heads_first_signal": [
+   401,
+   402,
+   403,
+   404,
+   405
+  ],
+  "xsec_cut_total_easy": [
+   20260006
+  ],
+  "xsec_cut_total_hard": [
+   20260415
+  ],
+  "xsec_cut_total_medium": [
+   20260121
+  ],
+  "xsec_max_cut_interval_hard": [
+   20260707
+  ]
+ },
+ "n_tasks": 44,
+ "n_valid": 44,
+ "deterministic": true,
+ "has_own_eval_code": true,
+ "known_issues": [
+  "Tennis: two received task sets (received/tennis3d: 5 hard; received/tennis_v3: 10 easy); generator code not available, so not in the adapter",
+  "xsec: adapter sets noise=0 because noisy PNGs are ~16 MB (over Anthropic's 10 MB image limit)",
+  "xsec: fill_total questions never pass the generator's own +/-5% reading check, so they are excluded",
+  "xsec: only 1 validated seed per xsec question type (its validator rejects many seeds; the dashed ground line trips its ink check)",
+  "heads_first_signal answer is a sequence [head, sample]; models should answer 'head, sample' (e.g. 3, 46)",
+  "Brain tasks use 1-2 images; extra images are listed in an 'images' field, 'image' is the first"
+ ]
+}

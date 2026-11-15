@@ -1,0 +1,15 @@
+{
+  "team": "Team 6",
+  "version": "team6-draft-seven-1.0",
+  "status": "Seven supplied pipelines; three additional tasks to be provided later",
+  "expected_final_tasks": 10,
+  "tasks": [
+    {"pipeline": "spc", "question_type": "heads_first_signal", "seed": 401},
+    {"pipeline": "fiber", "question_type": "fiber_trace", "seed": 22},
+    {"pipeline": "brain", "question_type": "brain_spike_location", "seed": 306},
+    {"pipeline": "cross_sections", "question_type": "xsec_max_cut_interval_hard", "seed": 20260707},
+    {"pipeline": "finance", "question_type": "price_rule_L0", "seed": 2400},
+    {"pipeline": "measurebench", "question_type": "analog_dial_one_tick_counterfactual", "seed": 6},
+    {"pipeline": "reconstruction", "question_type": "global_spatial_reconstruction", "seed": 20261114}
+  ]
+}

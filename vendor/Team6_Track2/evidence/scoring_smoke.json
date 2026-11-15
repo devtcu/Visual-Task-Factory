@@ -1,0 +1,792 @@
+{
+  "purpose": "Offline smoke verification of shared answer parsing/scoring on the seven delivered records; no model/API calls.",
+  "generated_at_utc": "2026-11-14T20:03:54.958657+00:00",
+  "runtime": {
+    "python": "3.12.7 (tags/v3.12.7:0b05ead, Oct  1 2024, 03:06:41) [MSC v.1941 64 bit (AMD64)]",
+    "executable": "D:\\final sub\\merge_work\\.venv\\Scripts\\python.exe",
+    "platform": "Windows-11-10.0.26300-SP0"
+  },
+  "inputs": {
+    "task_file": "tasks/final/tasks.jsonl",
+    "task_file_sha256": "63186c7feabc8057c53f9561e95527355fd263cca49f1edf6cac248967b45b98"
+  },
+  "code_sha256": {
+    "eval/scoring.py": "30b3adfad392bf364f9b91170088e1829e9a1d299284548e4de1b815eb3ce457",
+    "validate/visual_reconstruction/scoring.py": "f16890350a6f2707560fb7963094c85eeabf7ce6a1d0d93713503dba6a29e978"
+  },
+  "regression_fixed": "An empty stripped reply now returns None for all answer types, avoiding IndexError for label tasks.",
+  "cases": [
+    {
+      "task_id": "akhil_heads_401",
+      "pipeline": "spc",
+      "answer_type": "sequence",
+      "case": "gold_json",
+      "response": "FINAL ANSWER: [1, 29]",
+      "expected_correct": true,
+      "parsed": [
+        1,
+        29
+      ],
+      "score_result": {
+        "correct": true
+      },
+      "passed": true
+    },
+    {
+      "task_id": "akhil_heads_401",
+      "pipeline": "spc",
+      "answer_type": "sequence",
+      "case": "wrong_answer_json",
+      "response": "FINAL ANSWER: [999999, 29]",
+      "expected_correct": false,
+      "parsed": [
+        999999,
+        29
+      ],
+      "score_result": {
+        "correct": false
+      },
+      "passed": true
+    },
+    {
+      "task_id": "akhil_heads_401",
+      "pipeline": "spc",
+      "answer_type": "sequence",
+      "case": "malformed_empty_final_answer",
+      "response": "FINAL ANSWER:",
+      "expected_correct": false,
+      "parsed": null,
+      "score_result": {
+        "correct": false,
+        "reason": "No answer could be extracted"
+      },
+      "passed": true
+    },
+    {
+      "task_id": "akhil_heads_401",
+      "pipeline": "spc",
+      "answer_type": "sequence",
+      "case": "malformed_nonanswer",
+      "response": "FINAL ANSWER: This is not an answer.",
+      "expected_correct": false,
+      "parsed": [],
+      "score_result": {
+        "correct": false
+      },
+      "passed": true
+    },
+    {
+      "task_id": "akhil_heads_401",
+      "pipeline": "spc",
+      "answer_type": "sequence",
+      "case": "empty_raw_reply",
+      "response": "",
+      "expected_correct": false,
+      "parsed": null,
+      "score_result": {
+        "correct": false,
+        "reason": "No answer could be extracted"
+      },
+      "passed": true
+    },
+    {
+      "task_id": "akhil_heads_401",
+      "pipeline": "spc",
+      "answer_type": "sequence",
+      "case": "whitespace_final_answer",
+      "response": "FINAL ANSWER: \t\n  ",
+      "expected_correct": false,
+      "parsed": null,
+      "score_result": {
+        "correct": false,
+        "reason": "No answer could be extracted"
+      },
+      "passed": true
+    },
+    {
+      "task_id": "akhil_fiber_trace_22",
+      "pipeline": "fiber",
+      "answer_type": "integer",
+      "case": "gold_json",
+      "response": "FINAL ANSWER: 8",
+      "expected_correct": true,
+      "parsed": 8.0,
+      "score_result": {
+        "correct": true
+      },
+      "passed": true
+    },
+    {
+      "task_id": "akhil_fiber_trace_22",
+      "pipeline": "fiber",
+      "answer_type": "integer",
+      "case": "wrong_answer_json",
+      "response": "FINAL ANSWER: 1000008",
+      "expected_correct": false,
+      "parsed": 1000008.0,
+      "score_result": {
+        "correct": false
+      },
+      "passed": true
+    },
+    {
+      "task_id": "akhil_fiber_trace_22",
+      "pipeline": "fiber",
+      "answer_type": "integer",
+      "case": "malformed_empty_final_answer",
+      "response": "FINAL ANSWER:",
+      "expected_correct": false,
+      "parsed": null,
+      "score_result": {
+        "correct": false,
+        "reason": "No answer could be extracted"
+      },
+      "passed": true
+    },
+    {
+      "task_id": "akhil_fiber_trace_22",
+      "pipeline": "fiber",
+      "answer_type": "integer",
+      "case": "malformed_nonanswer",
+      "response": "FINAL ANSWER: This is not an answer.",
+      "expected_correct": false,
+      "parsed": null,
+      "score_result": {
+        "correct": false,
+        "reason": "No answer could be extracted"
+      },
+      "passed": true
+    },
+    {
+      "task_id": "akhil_fiber_trace_22",
+      "pipeline": "fiber",
+      "answer_type": "integer",
+      "case": "empty_raw_reply",
+      "response": "",
+      "expected_correct": false,
+      "parsed": null,
+      "score_result": {
+        "correct": false,
+        "reason": "No answer could be extracted"
+      },
+      "passed": true
+    },
+    {
+      "task_id": "akhil_fiber_trace_22",
+      "pipeline": "fiber",
+      "answer_type": "integer",
+      "case": "whitespace_final_answer",
+      "response": "FINAL ANSWER: \t\n  ",
+      "expected_correct": false,
+      "parsed": null,
+      "score_result": {
+        "correct": false,
+        "reason": "No answer could be extracted"
+      },
+      "passed": true
+    },
+    {
+      "task_id": "akhil_brain_p306_spike",
+      "pipeline": "brain",
+      "answer_type": "label",
+      "case": "gold_json",
+      "response": "FINAL ANSWER: \"T5\"",
+      "expected_correct": true,
+      "parsed": "T5",
+      "score_result": {
+        "correct": true
+      },
+      "passed": true
+    },
+    {
+      "task_id": "akhil_brain_p306_spike",
+      "pipeline": "brain",
+      "answer_type": "label",
+      "case": "wrong_answer_json",
+      "response": "FINAL ANSWER: \"__DELIBERATELY_WRONG_LABEL__\"",
+      "expected_correct": false,
+      "parsed": "__DELIBERATELY_WRONG_LABEL__",
+      "score_result": {
+        "correct": false
+      },
+      "passed": true
+    },
+    {
+      "task_id": "akhil_brain_p306_spike",
+      "pipeline": "brain",
+      "answer_type": "label",
+      "case": "malformed_empty_final_answer",
+      "response": "FINAL ANSWER:",
+      "expected_correct": false,
+      "parsed": null,
+      "score_result": {
+        "correct": false,
+        "reason": "No answer could be extracted"
+      },
+      "passed": true
+    },
+    {
+      "task_id": "akhil_brain_p306_spike",
+      "pipeline": "brain",
+      "answer_type": "label",
+      "case": "malformed_nonanswer",
+      "response": "FINAL ANSWER: This is not an answer.",
+      "expected_correct": false,
+      "parsed": "This is not an answer",
+      "score_result": {
+        "correct": false
+      },
+      "passed": true
+    },
+    {
+      "task_id": "akhil_brain_p306_spike",
+      "pipeline": "brain",
+      "answer_type": "label",
+      "case": "empty_raw_reply",
+      "response": "",
+      "expected_correct": false,
+      "parsed": null,
+      "score_result": {
+        "correct": false,
+        "reason": "No answer could be extracted"
+      },
+      "passed": true
+    },
+    {
+      "task_id": "akhil_brain_p306_spike",
+      "pipeline": "brain",
+      "answer_type": "label",
+      "case": "whitespace_final_answer",
+      "response": "FINAL ANSWER: \t\n  ",
+      "expected_correct": false,
+      "parsed": null,
+      "score_result": {
+        "correct": false,
+        "reason": "No answer could be extracted"
+      },
+      "passed": true
+    },
+    {
+      "task_id": "akhil_xsec_hard_max_cut_interval_20260707",
+      "pipeline": "cross_sections",
+      "answer_type": "label",
+      "case": "gold_json",
+      "response": "FINAL ANSWER: \"15+75-16+50\"",
+      "expected_correct": true,
+      "parsed": "15+75-16+50",
+      "score_result": {
+        "correct": true
+      },
+      "passed": true
+    },
+    {
+      "task_id": "akhil_xsec_hard_max_cut_interval_20260707",
+      "pipeline": "cross_sections",
+      "answer_type": "label",
+      "case": "wrong_answer_json",
+      "response": "FINAL ANSWER: \"__DELIBERATELY_WRONG_LABEL__\"",
+      "expected_correct": false,
+      "parsed": "__DELIBERATELY_WRONG_LABEL__",
+      "score_result": {
+        "correct": false
+      },
+      "passed": true
+    },
+    {
+      "task_id": "akhil_xsec_hard_max_cut_interval_20260707",
+      "pipeline": "cross_sections",
+      "answer_type": "label",
+      "case": "malformed_empty_final_answer",
+      "response": "FINAL ANSWER:",
+      "expected_correct": false,
+      "parsed": null,
+      "score_result": {
+        "correct": false,
+        "reason": "No answer could be extracted"
+      },
+      "passed": true
+    },
+    {
+      "task_id": "akhil_xsec_hard_max_cut_interval_20260707",
+      "pipeline": "cross_sections",
+      "answer_type": "label",
+      "case": "malformed_nonanswer",
+      "response": "FINAL ANSWER: This is not an answer.",
+      "expected_correct": false,
+      "parsed": "This is not an answer",
+      "score_result": {
+        "correct": false
+      },
+      "passed": true
+    },
+    {
+      "task_id": "akhil_xsec_hard_max_cut_interval_20260707",
+      "pipeline": "cross_sections",
+      "answer_type": "label",
+      "case": "empty_raw_reply",
+      "response": "",
+      "expected_correct": false,
+      "parsed": null,
+      "score_result": {
+        "correct": false,
+        "reason": "No answer could be extracted"
+      },
+      "passed": true
+    },
+    {
+      "task_id": "akhil_xsec_hard_max_cut_interval_20260707",
+      "pipeline": "cross_sections",
+      "answer_type": "label",
+      "case": "whitespace_final_answer",
+      "response": "FINAL ANSWER: \t\n  ",
+      "expected_correct": false,
+      "parsed": null,
+      "score_result": {
+        "correct": false,
+        "reason": "No answer could be extracted"
+      },
+      "passed": true
+    },
+    {
+      "task_id": "fin-02400-pri-h-L0",
+      "pipeline": "finance",
+      "answer_type": "number",
+      "case": "gold_json",
+      "response": "FINAL ANSWER: 5.15",
+      "expected_correct": true,
+      "parsed": 5.15,
+      "score_result": {
+        "correct": true
+      },
+      "passed": true
+    },
+    {
+      "task_id": "fin-02400-pri-h-L0",
+      "pipeline": "finance",
+      "answer_type": "number",
+      "case": "wrong_answer_json",
+      "response": "FINAL ANSWER: 1000005.15",
+      "expected_correct": false,
+      "parsed": 1000005.15,
+      "score_result": {
+        "correct": false
+      },
+      "passed": true
+    },
+    {
+      "task_id": "fin-02400-pri-h-L0",
+      "pipeline": "finance",
+      "answer_type": "number",
+      "case": "malformed_empty_final_answer",
+      "response": "FINAL ANSWER:",
+      "expected_correct": false,
+      "parsed": null,
+      "score_result": {
+        "correct": false,
+        "reason": "No answer could be extracted"
+      },
+      "passed": true
+    },
+    {
+      "task_id": "fin-02400-pri-h-L0",
+      "pipeline": "finance",
+      "answer_type": "number",
+      "case": "malformed_nonanswer",
+      "response": "FINAL ANSWER: This is not an answer.",
+      "expected_correct": false,
+      "parsed": null,
+      "score_result": {
+        "correct": false,
+        "reason": "No answer could be extracted"
+      },
+      "passed": true
+    },
+    {
+      "task_id": "fin-02400-pri-h-L0",
+      "pipeline": "finance",
+      "answer_type": "number",
+      "case": "empty_raw_reply",
+      "response": "",
+      "expected_correct": false,
+      "parsed": null,
+      "score_result": {
+        "correct": false,
+        "reason": "No answer could be extracted"
+      },
+      "passed": true
+    },
+    {
+      "task_id": "fin-02400-pri-h-L0",
+      "pipeline": "finance",
+      "answer_type": "number",
+      "case": "whitespace_final_answer",
+      "response": "FINAL ANSWER: \t\n  ",
+      "expected_correct": false,
+      "parsed": null,
+      "score_result": {
+        "correct": false,
+        "reason": "No answer could be extracted"
+      },
+      "passed": true
+    },
+    {
+      "task_id": "measurebench_ext_analog_dial_one_tick_counterfactual_0006",
+      "pipeline": "measurebench",
+      "answer_type": "number",
+      "case": "gold_json",
+      "response": "FINAL ANSWER: -0.6",
+      "expected_correct": true,
+      "parsed": -0.6,
+      "score_result": {
+        "correct": true
+      },
+      "passed": true
+    },
+    {
+      "task_id": "measurebench_ext_analog_dial_one_tick_counterfactual_0006",
+      "pipeline": "measurebench",
+      "answer_type": "number",
+      "case": "wrong_answer_json",
+      "response": "FINAL ANSWER: 999999.4",
+      "expected_correct": false,
+      "parsed": 999999.4,
+      "score_result": {
+        "correct": false
+      },
+      "passed": true
+    },
+    {
+      "task_id": "measurebench_ext_analog_dial_one_tick_counterfactual_0006",
+      "pipeline": "measurebench",
+      "answer_type": "number",
+      "case": "malformed_empty_final_answer",
+      "response": "FINAL ANSWER:",
+      "expected_correct": false,
+      "parsed": null,
+      "score_result": {
+        "correct": false,
+        "reason": "No answer could be extracted"
+      },
+      "passed": true
+    },
+    {
+      "task_id": "measurebench_ext_analog_dial_one_tick_counterfactual_0006",
+      "pipeline": "measurebench",
+      "answer_type": "number",
+      "case": "malformed_nonanswer",
+      "response": "FINAL ANSWER: This is not an answer.",
+      "expected_correct": false,
+      "parsed": null,
+      "score_result": {
+        "correct": false,
+        "reason": "No answer could be extracted"
+      },
+      "passed": true
+    },
+    {
+      "task_id": "measurebench_ext_analog_dial_one_tick_counterfactual_0006",
+      "pipeline": "measurebench",
+      "answer_type": "number",
+      "case": "empty_raw_reply",
+      "response": "",
+      "expected_correct": false,
+      "parsed": null,
+      "score_result": {
+        "correct": false,
+        "reason": "No answer could be extracted"
+      },
+      "passed": true
+    },
+    {
+      "task_id": "measurebench_ext_analog_dial_one_tick_counterfactual_0006",
+      "pipeline": "measurebench",
+      "answer_type": "number",
+      "case": "whitespace_final_answer",
+      "response": "FINAL ANSWER: \t\n  ",
+      "expected_correct": false,
+      "parsed": null,
+      "score_result": {
+        "correct": false,
+        "reason": "No answer could be extracted"
+      },
+      "passed": true
+    },
+    {
+      "task_id": "visual_reconstruction_global_spatial_reconstruction_s20261114",
+      "pipeline": "reconstruction",
+      "answer_type": "sequence",
+      "case": "gold_json",
+      "response": "FINAL ANSWER: [{\"hole_id\": 1, \"center\": [962.5, 262.5], \"candidate_id\": \"H\", \"undo_rotation_clockwise\": 270, \"undo_reflection\": \"horizontal\"}, {\"hole_id\": 2, \"center\": [1558.5, 262.5], \"candidate_id\": \"A\", \"undo_rotation_clockwise\": 90, \"undo_reflection\": \"none\"}, {\"hole_id\": 3, \"center\": [315.5, 999.5], \"candidate_id\": \"C\", \"undo_rotation_clockwise\": 180, \"undo_reflection\": \"horizontal\"}, {\"hole_id\": 4, \"center\": [1647.5, 1569.5], \"candidate_id\": \"F\", \"undo_rotation_clockwise\": 90, \"undo_reflection\": \"horizontal\"}, {\"hole_id\": 5, \"center\": [954.5, 1633.5], \"candidate_id\": \"D\", \"undo_rotation_clockwise\": 0, \"undo_reflection\": \"horizontal\"}]",
+      "expected_correct": true,
+      "parsed": [
+        {
+          "hole_id": 1,
+          "center": [
+            962.5,
+            262.5
+          ],
+          "candidate_id": "H",
+          "undo_rotation_clockwise": 270,
+          "undo_reflection": "horizontal"
+        },
+        {
+          "hole_id": 2,
+          "center": [
+            1558.5,
+            262.5
+          ],
+          "candidate_id": "A",
+          "undo_rotation_clockwise": 90,
+          "undo_reflection": "none"
+        },
+        {
+          "hole_id": 3,
+          "center": [
+            315.5,
+            999.5
+          ],
+          "candidate_id": "C",
+          "undo_rotation_clockwise": 180,
+          "undo_reflection": "horizontal"
+        },
+        {
+          "hole_id": 4,
+          "center": [
+            1647.5,
+            1569.5
+          ],
+          "candidate_id": "F",
+          "undo_rotation_clockwise": 90,
+          "undo_reflection": "horizontal"
+        },
+        {
+          "hole_id": 5,
+          "center": [
+            954.5,
+            1633.5
+          ],
+          "candidate_id": "D",
+          "undo_rotation_clockwise": 0,
+          "undo_reflection": "horizontal"
+        }
+      ],
+      "score_result": {
+        "correct": true,
+        "score": 1.0,
+        "details": [
+          {
+            "hole_id": 1,
+            "candidate_correct": true,
+            "transform_correct": true,
+            "center_correct": true,
+            "center_error_px": 0.0,
+            "correct": true
+          },
+          {
+            "hole_id": 2,
+            "candidate_correct": true,
+            "transform_correct": true,
+            "center_correct": true,
+            "center_error_px": 0.0,
+            "correct": true
+          },
+          {
+            "hole_id": 3,
+            "candidate_correct": true,
+            "transform_correct": true,
+            "center_correct": true,
+            "center_error_px": 0.0,
+            "correct": true
+          },
+          {
+            "hole_id": 4,
+            "candidate_correct": true,
+            "transform_correct": true,
+            "center_correct": true,
+            "center_error_px": 0.0,
+            "correct": true
+          },
+          {
+            "hole_id": 5,
+            "candidate_correct": true,
+            "transform_correct": true,
+            "center_correct": true,
+            "center_error_px": 0.0,
+            "correct": true
+          }
+        ]
+      },
+      "passed": true
+    },
+    {
+      "task_id": "visual_reconstruction_global_spatial_reconstruction_s20261114",
+      "pipeline": "reconstruction",
+      "answer_type": "sequence",
+      "case": "wrong_answer_json",
+      "response": "FINAL ANSWER: [{\"hole_id\": 1, \"center\": [962.5, 262.5], \"candidate_id\": \"__WRONG_CANDIDATE__\", \"undo_rotation_clockwise\": 270, \"undo_reflection\": \"horizontal\"}, {\"hole_id\": 2, \"center\": [1558.5, 262.5], \"candidate_id\": \"A\", \"undo_rotation_clockwise\": 90, \"undo_reflection\": \"none\"}, {\"hole_id\": 3, \"center\": [315.5, 999.5], \"candidate_id\": \"C\", \"undo_rotation_clockwise\": 180, \"undo_reflection\": \"horizontal\"}, {\"hole_id\": 4, \"center\": [1647.5, 1569.5], \"candidate_id\": \"F\", \"undo_rotation_clockwise\": 90, \"undo_reflection\": \"horizontal\"}, {\"hole_id\": 5, \"center\": [954.5, 1633.5], \"candidate_id\": \"D\", \"undo_rotation_clockwise\": 0, \"undo_reflection\": \"horizontal\"}]",
+      "expected_correct": false,
+      "parsed": [
+        {
+          "hole_id": 1,
+          "center": [
+            962.5,
+            262.5
+          ],
+          "candidate_id": "__WRONG_CANDIDATE__",
+          "undo_rotation_clockwise": 270,
+          "undo_reflection": "horizontal"
+        },
+        {
+          "hole_id": 2,
+          "center": [
+            1558.5,
+            262.5
+          ],
+          "candidate_id": "A",
+          "undo_rotation_clockwise": 90,
+          "undo_reflection": "none"
+        },
+        {
+          "hole_id": 3,
+          "center": [
+            315.5,
+            999.5
+          ],
+          "candidate_id": "C",
+          "undo_rotation_clockwise": 180,
+          "undo_reflection": "horizontal"
+        },
+        {
+          "hole_id": 4,
+          "center": [
+            1647.5,
+            1569.5
+          ],
+          "candidate_id": "F",
+          "undo_rotation_clockwise": 90,
+          "undo_reflection": "horizontal"
+        },
+        {
+          "hole_id": 5,
+          "center": [
+            954.5,
+            1633.5
+          ],
+          "candidate_id": "D",
+          "undo_rotation_clockwise": 0,
+          "undo_reflection": "horizontal"
+        }
+      ],
+      "score_result": {
+        "correct": false,
+        "score": 0.8,
+        "details": [
+          {
+            "hole_id": 1,
+            "candidate_correct": false,
+            "transform_correct": true,
+            "center_correct": true,
+            "center_error_px": 0.0,
+            "correct": false
+          },
+          {
+            "hole_id": 2,
+            "candidate_correct": true,
+            "transform_correct": true,
+            "center_correct": true,
+            "center_error_px": 0.0,
+            "correct": true
+          },
+          {
+            "hole_id": 3,
+            "candidate_correct": true,
+            "transform_correct": true,
+            "center_correct": true,
+            "center_error_px": 0.0,
+            "correct": true
+          },
+          {
+            "hole_id": 4,
+            "candidate_correct": true,
+            "transform_correct": true,
+            "center_correct": true,
+            "center_error_px": 0.0,
+            "correct": true
+          },
+          {
+            "hole_id": 5,
+            "candidate_correct": true,
+            "transform_correct": true,
+            "center_correct": true,
+            "center_error_px": 0.0,
+            "correct": true
+          }
+        ]
+      },
+      "passed": true
+    },
+    {
+      "task_id": "visual_reconstruction_global_spatial_reconstruction_s20261114",
+      "pipeline": "reconstruction",
+      "answer_type": "sequence",
+      "case": "malformed_empty_final_answer",
+      "response": "FINAL ANSWER:",
+      "expected_correct": false,
+      "parsed": null,
+      "score_result": {
+        "correct": false,
+        "reason": "No answer could be extracted"
+      },
+      "passed": true
+    },
+    {
+      "task_id": "visual_reconstruction_global_spatial_reconstruction_s20261114",
+      "pipeline": "reconstruction",
+      "answer_type": "sequence",
+      "case": "malformed_nonanswer",
+      "response": "FINAL ANSWER: This is not an answer.",
+      "expected_correct": false,
+      "parsed": null,
+      "score_result": {
+        "correct": false,
+        "reason": "No answer could be extracted"
+      },
+      "passed": true
+    },
+    {
+      "task_id": "visual_reconstruction_global_spatial_reconstruction_s20261114",
+      "pipeline": "reconstruction",
+      "answer_type": "sequence",
+      "case": "empty_raw_reply",
+      "response": "",
+      "expected_correct": false,
+      "parsed": null,
+      "score_result": {
+        "correct": false,
+        "reason": "No answer could be extracted"
+      },
+      "passed": true
+    },
+    {
+      "task_id": "visual_reconstruction_global_spatial_reconstruction_s20261114",
+      "pipeline": "reconstruction",
+      "answer_type": "sequence",
+      "case": "whitespace_final_answer",
+      "response": "FINAL ANSWER: \t\n  ",
+      "expected_correct": false,
+      "parsed": null,
+      "score_result": {
+        "correct": false,
+        "reason": "No answer could be extracted"
+      },
+      "passed": true
+    }
+  ],
+  "summary": {
+    "task_count": 7,
+    "case_count": 42,
+    "passed": 42,
+    "failed": 0,
+    "all_passed": true
+  }
+}

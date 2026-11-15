@@ -1,0 +1,254 @@
+model,task_id,status,parsed,question_type,response,ref_answer,correct,finish_reason,error,fingerprint,tokens
+anthropic/claude-haiku-5.5,factory_heads_401,ok,"[5, 82]",heads_first_signal,"**Answer: head 5, sample 82**
+
+**Chart scale:** Sigma is 2 g, so the lines are: UCL 506 (+3σ), +2σ 504, +1σ 502, CL 500, −1σ 498, −2σ 496, LCL 494.
+
+**Rule 1 (beyond ±3σ):** H4 drops to about 493 at sample 95, below the LCL. That is a signal, but it comes after sample 82.
+
+**Rule 2 (two of three beyond 2σ on one side):** Reading the chart, no head is beyond 504 before sample 99. The closest points below the −2σ line (496) before sample 80 are about 496.8 (H1 at 75, H3 at 48, H5 at 56, H4 at 24), which are not beyond 496. H5 is at about 495.0 at sample 80 and about 494.6 at sample 82. Samples 80 and 82 are both beyond −2σ within the window 80–82, so H5 signals at sample 82.
+
+**Rules 3 and 4:** I could not read every point reliably enough to rule out an earlier Rule 3 or Rule 4 signal on another head. Rule 3 needs four of five points beyond 1σ on one side, and Rule 4 needs eight consecutive points on one side of the centre line. Neither is clearly met before sample 82 on the chart as I read it, so this is the earliest signal I can identify.
+
+FINAL ANSWER: 5, 82","[1, 29]",0,stop,,unpredicted,6093
+anthropic/claude-haiku-5.5,factory_heads_402,ok,"[6, 15]",heads_first_signal,"**Answer: head 6, sample 15**
+
+Sigma is 2 g, so the lines sit at 494 (−3σ), 496 (−2σ), 498 (−1σ), 502 (+1σ), 504 (+2σ) and 506 (+3σ). I checked each head against the rules from the start of the chart.
+
+- **H6, Rule 3:** Samples 12, 13, 14 and 15 all fall below 498 (−1σ), at roughly 496.4, 496.7, 496.2 and 497.8. Four of five consecutive samples beyond 1σ on the same side is satisfied, and the signal falls at the fourth sample, sample 15.
+- **H1, Rule 2:** Samples 19 and 21 are below 496 (−2σ), which would fire at sample 21. This comes later than H6's signal at sample 15.
+- **H3, Rule 1:** Sample 82 is below 494 (−3σ). This is also later.
+
+I did not find any earlier signal from any head. Reading the marker positions from the chart is approximate, so the H6 readings at samples 12–15 are the decisive ones.
+
+FINAL ANSWER: 6, 15","[2, 8]",0,stop,,unpredicted,6701
+anthropic/claude-haiku-5.5,factory_heads_403,ok,"[1, 62]",heads_first_signal,"**Answer: head 1, sample 62**
+
+The 1, 2 and 3 sigma limits are 498/502, 496/504 and 494/506, with the centre line at 500 g.
+
+- **Rule 1 (beyond 3σ):** H1 at sample 62 drops to about 493 g, below the LCL of 494 g. This is the first Rule 1 signal on any head.
+- **Rule 2 (two of three beyond 2σ):** the only points beyond 2σ before sample 62 are none; the first ones are H5 at about 505.5 g (sample 66) and the H1 point at 62. So no Rule 2 signal occurs before sample 62.
+- **Rule 3 and Rule 4:** I checked the early runs of points that lie beyond 1σ or on one side of the centre line for each head. Several heads have isolated points beyond 1σ (for example H5 at sample 10, H6 at 31–35, H3 at 39), but none has four of five beyond 1σ on the same side, or eight consecutive on one side, before sample 62. This check was made by reading the plotted points, so near-threshold values are the least certain part.
+
+FINAL ANSWER: 1, 62","[6, 50]",0,stop,,predicted:rule1_only,6729
+anthropic/claude-haiku-5.5,factory_heads_404,ok,"[6, 8]",heads_first_signal,"**Answer: head 6, sample 8**
+
+I read the values from the chart by eye, so the sample-level readings are approximate.
+
+- **Rule 1:** H1 drops to about 492.6 at sample 86, the first point beyond the 494 LCL. That is the earliest Rule 1 signal I can see, but it comes late.
+- **Rule 2:** The 2σ limits are at 496 and 504. Before sample 86, no head clearly passes beyond either limit (the nearest are about 497.0, 503.8 and 496.8), so Rule 2 cannot trigger earlier.
+- **Rule 3:** Four of five consecutive points beyond 1σ on one side need a cluster of points beyond 498 or 502. No head shows that before sample 86.
+- **Rule 4:** This is the only rule that fires early. H6 appears to sit below the centre line (500) at every sample from 1 to 8 (about 499.8, 499.3, 499.5, 497.4, 498.7, 499.5, 497.6, 499.0). That gives eight consecutive points on the same side, so the signal is at sample 8. H1 has only seven consecutive points below the line (samples 2–8) before sample 9 breaks the run, so it does not reach eight.
+
+FINAL ANSWER: 6, 8","[6, 8]",1,stop,,,8092
+anthropic/claude-haiku-5.5,factory_heads_405,ok,"[6, 38]",heads_first_signal,"**Answer: head H6, sample 38**
+
+I read the values from the chart by eye, so the sample numbers are approximate.
+
+- **Rule 1 (beyond 3σ, above 506 or below 494):** H1 at sample 66 (about 507.6) is the first point outside the limits. That is later than the H6 signal below.
+- **Rule 2 (two of three beyond 2σ, above 504 or below 496):** The first such pair is H3 at samples 67 and 69, so the signal is at 69. That is also later.
+- **Rule 3 (four of five beyond 1σ, above 502 or below 498):** H6 is above 502 at samples 35 (about 502.3), 36 (about 503.4), 37 (about 502.7) and 38 (about 502.4). Four consecutive points beyond 1σ on the same side give a signal at the fourth sample, 38. I found no earlier Rule 3 run for any head.
+- **Rule 4 (eight consecutive on one side of 500):** I did not find an eight-sample run on one side of the centre line before sample 38 for any head.
+
+The H6 Rule 3 signal at sample 38 is the earliest I could identify.
+
+FINAL ANSWER: 6, 38","[3, 9]",0,stop,,unpredicted,6279
+anthropic/claude-haiku-5.5,factory_heads_406,ok,"[5, 60]",heads_first_signal,"## Analysis
+
+**Scale:** CL = 500, so ±1σ = 502/498, ±2σ = 504/496, ±3σ = 506/494 (sigma = 2 g).
+
+**Rule 1 candidates:** H4 at sample 75 (about 507.3, above UCL) is a clear signal, but it occurs late. Nothing earlier exceeds 506 or falls below 494.
+
+**Rule 2 candidates:** H2 has two points below 496 at samples 64 (about 495.2) and 66 (about 495.0). Under Rule 2 that signals at sample 66. I found no earlier pair of points beyond 2σ on the same side for any head.
+
+**Rule 3 candidates (beyond 1σ, i.e. above 502 or below 498):**
+- H5 has points above 502 at samples 56 (about 503.4), 58 (about 502.9), 59 (about 502.2) and 60 (about 502.6). Sample 57 is about 501.7, inside the band.
+- Within the five-sample window 56–60, four points are beyond 1σ. The fourth of those is sample 60, so this signals at 60.
+- The 59 reading is close to the 502 line, so it is the main uncertainty in this reading.
+- No other head produces four beyond-1σ points in five consecutive samples before sample 60. The earlier isolated excursions (H3 at 17, H2 at 1, H4 at 25 and 39, H5 at 56) do not form four-of-five clusters.
+
+**Rule 4:** I found no run of eight consecutive samples on one side of the centre line that completes before sample 60.
+
+Since H5's Rule 3 signal at sample 60 is the earliest identified, H5 is the first head to signal.
+
+FINAL ANSWER: 5, 60","[4, 17]",0,stop,,unpredicted,9201
+anthropic/claude-haiku-5.5,factory_heads_407,ok,"[2, 34]",heads_first_signal,"The first signal is from head H2 at sample 34, under Rule 3. I read the values from the chart by eye, so the reading is approximate.
+
+- **H2, samples 31–34:** the square markers sit at roughly 503.3, 502.8, 502.8 and 502.2. All four are beyond +1 sigma (502) on the same side of the centre line, and sample 30 (about 501.0) is not. Four of five consecutive samples beyond 1 sigma fires Rule 3 at the fourth sample, 34.
+- **H3 at sample 86:** the teal triangle sits near 492.3, below LCL (494). That is a Rule 1 signal, but it comes later.
+- **H1 at sample 100:** Rule 2 fires here (samples 98 and 100 both above +2 sigma), but that is also later.
+- **Earlier candidates:** I found no Rule 1 or Rule 2 signal before sample 34. Points beyond 2 sigma are rare before then, and no head shows a clear run of eight on one side of the centre line. I did not verify every Rule 3 and Rule 4 run in samples 1–33 exhaustively, so this is the most likely answer rather than a fully checked one.
+
+FINAL ANSWER: 2, 34","[6, 19]",0,stop,,unpredicted,9603
+anthropic/claude-haiku-5.5,factory_heads_408,ok,"[5, 70]",heads_first_signal,"**Answer: head 5, sample 70**
+
+Reading the chart with sigma = 2 g, the 1σ lines are at 498 and 502, the 2σ lines at 496 and 504, and the 3σ lines at 494 and 506. I read the values from the plot by eye, so some points near a line are approximate.
+
+- **Rule 1 (beyond 3σ):** H1 at sample 95 (about 507) is the first clear Rule 1 signal, since no earlier point exceeds 506 or falls below 494.
+- **Rule 2 (two of three beyond 2σ):** H4 at samples 87 (about 495.3) and 89 (about 495.0) are both below 496, giving a signal at 89. No earlier point is beyond 2σ for any head.
+- **Rule 3 (four of five beyond 1σ, same side):** H5 has points below 498 at samples 66 (about 497.8), 67 (about 497.3), 69 (about 496.5) and 70 (about 497.3). Sample 68 (about 498.3) is not beyond 1σ. Four of the five consecutive samples 66–70 are beyond 1σ, so the signal is at the fourth, sample 70.
+
+I did not fully check Rule 4 (eight consecutive on one side) for every head across all earlier samples, so an earlier Rule 4 signal cannot be fully excluded. From the points I could read, H5 at sample 70 is the first signal.
+
+FINAL ANSWER: 5, 70","[1, 44]",0,stop,,unpredicted,8603
+anthropic/claude-haiku-5.5,factory_heads_409,ok,"[1, 81]",heads_first_signal,"I checked each head against the four rules, with 1σ = 2 g, so the lines sit at 498/502 (±1σ), 496/504 (±2σ), and 494/506 (±3σ). Samples 1–77 show no clear signal, so the first one appears at sample 81.
+
+- **Rule 1 (beyond ±3σ):** The first points beyond 506 are at samples 80 (H6, about 505.4), 84 (H4, about 506.8), and possibly 82. None occur before sample 80.
+- **Rule 2 (two of three beyond ±2σ):** Nothing beyond 504 or below 496 before sample 80. The closest points are H1 at about 503.2 and H6 at about 503.2, which are not beyond 504, and H1 at about 496.4 at sample 78, which is above 496.
+- **Rule 3 (four of five beyond ±1σ, same side):** H1 is below 498 at samples 78, 79, 80 and 81 (about 496.4, 497.1, 497.8, 497.5). Sample 77 is about 498.2, which is not beyond 1σ, so the first four-of-five run is complete at sample 81. The only earlier candidates I found, H2 and H3 near samples 4–8, fail the four-of-five test.
+- **Rule 4 (eight consecutive on one side):** I found no run of eight before sample 81.
+
+The values are read by eye from the plot, so the sample-81 reading for H1 is the least certain part of this answer.
+
+FINAL ANSWER: 1, 81","[4, 42]",0,stop,,unpredicted,9384
+anthropic/claude-haiku-5.5,factory_heads_410,ok,"[6, 54]",heads_first_signal,"**Answer: head 6, sample 54**
+
+Each head was checked against the rules, using the 1σ, 2σ and 3σ lines (498/502, 496/504, 494/506).
+
+- **Rule 1 (beyond 3σ):** H6 at sample 54 sits near 493.4, below the LCL of 494. That is a Rule 1 signal at sample 54.
+- **Rule 2 (two of three beyond 2σ):** H2 has two points above 504 near samples 92 and 94, but these are later than sample 54.
+- **Earlier candidates:** Several early points lie beyond 1σ (for example H6 at about 496.8 near sample 23, H2 near 497.2 at sample 20, H3 near 497.3 at sample 17). None of these shows the four-of-five run needed for Rule 3, or the eight-in-a-row run needed for Rule 4, before sample 54. I read these values from the chart by eye, so the early-sample checks are the least certain part of this reasoning.
+
+FINAL ANSWER: 6, 54","[3, 46]",0,stop,,predicted:rule1_only,5977
+anthropic/claude-haiku-5.5,factory_heads_411,ok,"[3, 63]",heads_first_signal,"I read the chart by eye, so the values below are approximate. I checked Rules 2–4 for the early samples and found no earlier signal, so the first signal comes from Rule 1.
+
+- **Rule 1 (beyond 3σ):** H3 at sample 63 drops to about 493.5, below the LCL of 494. No other head goes beyond 506 or below 494.
+- **Rule 2 (two of three beyond 2σ):** The first candidate is H2 at samples 65 and 67 (both near 495, below 496). That signal would be at 67, which is later than 63.
+- **Rules 3 and 4:** I found no head with four of five samples beyond 1σ, or eight consecutive samples on one side of the centre line, before sample 63.
+
+FINAL ANSWER: 3, 63","[6, 28]",0,stop,,predicted:rule1_only,5934
+anthropic/claude-haiku-5.5,factory_heads_412,ok,"[6, 61]",heads_first_signal,"**Answer: head 6, sample 61**
+
+I read the values from the chart by eye, so the sample numbers are approximate. The key deciding evidence is the H6 run at samples 58–61.
+
+- **Rule 3 for H6:** Samples 58, 59, 60 and 61 all sit above 502 (about 502.2, 502.5, 503.0 and 503.4). That is four consecutive samples beyond 1 sigma on the same side, so the signal is at the fourth, sample 61.
+- **Rule 2 above 2 sigma:** The first samples beyond 504 are H2 at 75 and 77, which signal only at 77. No head has two points beyond 504 earlier than that.
+- **Rule 1:** The first point beyond 506 or below 494 is H1 at sample 97, which is later.
+- **Rule 4:** I could not read the H6 values around samples 38–48 precisely enough to rule out an eight-sample run below 500 before sample 61. This is the main uncertainty in the answer.
+
+FINAL ANSWER: 6, 61","[1, 9]",0,stop,,unpredicted,11711
+anthropic/claude-haiku-5.5,factory_heads_413,ok,"[5, 61]",heads_first_signal,"**Answer: head 5, sample 61**
+
+I read the values from the chart by eye, so the sample numbers are approximate.
+
+- **Rule 1 (beyond 506 or below 494):** H3 reaches about 506.8 at sample 97, so it signals there. No earlier head does.
+- **Rule 2 (two of three beyond 504 or 496):** No head has two of three consecutive points beyond these lines before sample 97.
+- **Rule 4 (eight on one side of 500):** Nothing I could identify before sample 61 reaches eight consecutive samples on one side.
+- **Rule 3 (four of five beyond 502 or 498):** H5 falls below 498 at about samples 58, 59, 60 and 61 (roughly 497.5, 497.1, 497.3 and 496.7). That gives four consecutive samples beyond 1σ on the low side, so the signal is at the fourth, sample 61.
+
+I found no earlier rule 3 signal from the other heads, so H5 at sample 61 is the first signal. The reading of H5 at sample 57 is the least certain part; if it were also below 498, the signal would move to sample 60.
+
+FINAL ANSWER: 5, 61","[5, 61]",1,stop,,,7452
+anthropic/claude-haiku-5.5,factory_heads_414,ok,"[6, 89]",heads_first_signal,"I checked the chart by eye, so the exact values are estimates and the earlier-signal checks are less certain than the final point.
+
+- **Rule 1 (beyond 3σ, i.e. above 506 or below 494):** H6 at sample 89 sits near 492.5, clearly below the LCL of 494. This is the one unambiguous signal. The highest points (H2 near 84, about 505.3) stay below UCL.
+- **Rule 2 (beyond 2σ, i.e. above 504 or below 496):** Only isolated points exceed these lines, with no pair within three consecutive samples on the same side, so no earlier signal.
+- **Rule 3 and Rule 4:** These are hard to read reliably. H6 has a run of about seven consecutive samples above 500 (samples 12–18). Whether sample 19 continues that run is the key uncertainty. I read it as below 500, so no Rule 4 signal there, but this is the most likely place my reading could be wrong.
+
+On this reading, the first signal is H6 at sample 89, by Rule 1.
+
+FINAL ANSWER: 6, 89","[5, 37]",0,stop,,predicted:rule1_only,7594
+anthropic/claude-haiku-5.5,factory_heads_415,ok,"[1, 79]",heads_first_signal,"The first signal is on **H1 at sample 79** under Rule 1. Its value is about 492.6 g, below the LCL of 494 g (−3σ). I did not check every head against Rules 2–4 across the whole run. Some readings near samples 59–65 (H5) are close to the 1σ line, so I can't fully rule out an earlier Rule 3 signal there. The other excursions I checked, such as H4 at samples 87 and 89, come later.
+
+FINAL ANSWER: 1, 79","[5, 64]",0,stop,,unpredicted,8580
+anthropic/claude-haiku-5.5,factory_heads_416,ok,"[4, 99]",heads_first_signal,"I read the chart by eye, so the values are approximate. Working through each head's points against the limits (UCL 506, +2σ 504, +1σ 502, CL 500, -1σ 498, -2σ 496, LCL 494):
+
+- **Rule 1 (beyond ±3σ):** H4 at sample 99 sits at about 507, above the UCL of 506. This is the only point beyond ±3σ.
+- **Rule 2 (two of three beyond 2σ):** H5 falls below 496 at samples 97 and 99 (about 495.3 and 495.6), with sample 98 between them near 501. That gives a signal at 99, the same sample as H4.
+- **Rules 3 and 4:** I checked the early and middle stretches for each head, including the H1 and H5 points near 45 and 39, the H3 cluster near 78–80, and the H2 points near 8–10. None shows four of five beyond 1σ on one side, or eight consecutive on one side of the centre line. Earlier points beyond 2σ (H1 at 45, H5 at 19, 25) are isolated, so they do not trigger Rule 2.
+
+The earliest signal is therefore at sample 99. H4 signals there under Rule 1, and H5 also signals there under Rule 2. I'm giving H4 because it is the head whose rule is triggered by the single point beyond 3σ, and I'm treating the tie at sample 99 as resolved in favour of H4 (head order). The sample number is the same either way.
+
+FINAL ANSWER: 4, 99","[1, 50]",0,stop,,predicted:rule1_only,9817
+anthropic/claude-haiku-5.5,factory_heads_417,ok,"[4, 75]",heads_first_signal,"**Approach:** Sigma is 2 g, so the limits are: 1σ at 498/502, 2σ at 496/504, 3σ at 494/506. I checked each rule against the points I could read from the chart, starting from the earliest samples.
+
+- **Rule 1 (beyond ±3σ):** The first points below 494 are H4 at about sample 73 and H3 at about sample 91. Those lie at about 494.6 and 494.3, which are not beyond 3σ in any case I could confirm before sample 73 (the H4 points near 73 and 75 sit at about 494.6 and 494.7, just above the LCL), so no Rule 1 signal appears before that.
+- **Rule 2 (two of three beyond 2σ):** No point reaches 504 before the 49–59 region. The first points below 496 are H4 at about sample 73 (≈494.6) and sample 75 (≈494.7). Samples 73 and 75 are both beyond 2σ on the same side, with sample 74 between them, so H4 signals at sample 75. The nearest candidates before this, H5 at about sample 53 (≈496.8) and H6 at about sample 7 (≈496.8), are inside 2σ.
+- **Rules 3 and 4:** Points beyond 1σ occur early on (e.g. H3 at sample 2, H5 at 7, H4 at 16 and 21), but I could not find four of five beyond 1σ, or eight in a row on one side, for any head before sample 75. Upper-side candidates such as H6 around samples 33–35 fall short of four of five.
+
+The earliest signal I can identify is therefore H4 at sample 75 under Rule 2. The reading of the points near samples 73–75 is the least certain part, and a Rule 3 or 4 run that I could not resolve in the dense early region could alter the result.
+
+FINAL ANSWER: 4, 75","[6, 12]",0,stop,,unpredicted,9056
+anthropic/claude-haiku-5.5,factory_heads_418,ok,"[6, 47]",heads_first_signal,"## Answer: head 6, sample 47
+
+**Scale:** CL = 500 and sigma = 2 g, so the 1, 2 and 3 sigma lines sit at 498/502, 496/504 and 494/506.
+
+**Rule 2 for H1 (sample 71):** H1 reads about 495.4 at sample 69, about 500.7 at sample 70 and about 495.5 at sample 71. Samples 69 and 71 are both below 496 (beyond 2 sigma) within three consecutive samples, so H1 signals at 71.
+
+**H2 at sample 93:** H2 reads about 506.7, above UCL, so it triggers Rule 1 at 93. That is later than 71.
+
+**H6, samples 41–48:** Reading the purple pentagon markers, H6 is below the centre line at every sample from 41 to 48 (roughly 497.5, 499.7, 498.8, 497.6, 496.5, 497.8, 496.6, 497.0). This gives:
+- **Rule 3:** samples 44, 45, 46 and 47 are all beyond 1 sigma below (under 498), which is four of five consecutive. The signal is at 47.
+- **Rule 4:** samples 41 to 48 are eight consecutive samples below the centre line. This would signal at 48, which is later than 47.
+
+**Other heads:** I did not find an earlier signal for any other head, though the readings are approximate and some points near 1 sigma are hard to separate by marker.
+
+So the first signal is H6 at sample 47, which comes before H1's Rule 2 signal at 71.
+
+FINAL ANSWER: 6, 47","[1, 9]",0,stop,,unpredicted,9073
+anthropic/claude-haiku-5.5,factory_heads_419,ok,"[4, 22]",heads_first_signal,"**Answer: head H4, sample 22**
+
+I read the chart against the limits: 1σ = 498/502, 2σ = 496/504, 3σ = 494/506.
+
+- **Rule 1 (beyond 3σ):** H3 drops to about 493 at sample 47, which is the first clear 3σ breach. This is later than the H4 signal below.
+- **Rule 2 (two of three beyond 2σ):** No head has a 2σ pair before about sample 47. H2 reaches about 494.8 at sample 62, which is later.
+- **Rule 3 (four of five beyond 1σ, same side):** H4 gives the earliest signal. Its values at samples 18, 19, 21 and 22 are about 497.3, 497.5, 497.0 and 497.4, all below 498. Sample 20 (about 498.3) is not beyond 1σ, so it does not count. The fourth beyond-1σ sample in this run is sample 22.
+- **Rule 4 (eight on one side):** H4 would only reach eight consecutive below the centre line at sample 23 or 24, which is later than the Rule 3 signal.
+
+I checked the other heads over samples 1–21 for runs that would signal earlier, and none meets any rule. Readings near the 1σ lines are estimated from the image, so the H4 run at samples 18–22 is the most sensitive part of this answer.
+
+FINAL ANSWER: 4, 22","[4, 20]",0,stop,,unpredicted,7297
+anthropic/claude-haiku-5.5,factory_heads_420,ok,"[4, 63]",heads_first_signal,"**Answer: head 4, sample 63**
+
+I read the values from the chart by eye, so the exact positions are approximate. The rule 3 signal for H4 is the most robust finding, but the sample 60 reading in particular is uncertain.
+
+Sigma is 2 g, so the lines are: CL 500, ±1σ at 502/498, ±2σ at 504/496, ±3σ at 506/494.
+
+- **H4 (light blue diamonds)** drops below 498 (the −1σ line) around sample 60 and stays there. Reading the points: about 497.4 at sample 60, 496.8 at 61, 497.7 at 62 and 497.1 at 63. Four consecutive samples beyond 1σ on the low side meets rule 3, and the fourth sample is 63.
+- **Earlier candidates:** I found no earlier rule 1, 2, 3 or 4 signal on any head. No point appears beyond +2σ, and the earlier 1σ runs do not reach four of five.
+- **Later candidates:** The low points near samples 78–81 (about 493, 495.5 and 494.8) would give rule 1 or rule 2 signals, but those come after sample 63.
+
+FINAL ANSWER: 4, 63","[1, 25]",0,stop,,unpredicted,7414
+openai/gpt-6-luna,factory_heads_401,ok,"[3, 21]",heads_first_signal,"FINAL ANSWER: 3, 21","[1, 29]",0,stop,,unpredicted,13007
+openai/gpt-6-luna,factory_heads_402,ok,"[6, 15]",heads_first_signal,"H6 is the first to signal: its samples 12–15 are all below the −1 sigma line, so Rule 3 signals at the fourth sample.
+
+FINAL ANSWER: 6, 15","[2, 8]",0,stop,,unpredicted,4918
+openai/gpt-6-luna,factory_heads_403,ok,"[2, 57]",heads_first_signal,"H2 is the first to signal: it has four samples below −1σ among samples 53–57, with the fourth at sample 57.
+
+FINAL ANSWER: 2, 57","[6, 50]",0,stop,,unpredicted,10290
+openai/gpt-6-luna,factory_heads_404,ok,"[3, 15]",heads_first_signal,"FINAL ANSWER: 3, 15","[6, 8]",0,stop,,unpredicted,14043
+openai/gpt-6-luna,factory_heads_405,ok,"[6, 38]",heads_first_signal,"Applying the rules separately to each head, H6 is the first to signal: it has four samples beyond +1 sigma within a five-sample window, with the fourth such sample at sample 38.
+
+FINAL ANSWER: 6, 38","[3, 9]",0,stop,,unpredicted,11101
+openai/gpt-6-luna,factory_heads_406,ok,"[5, 60]",heads_first_signal,"Head 5 has four of five consecutive samples beyond +1 sigma at samples 56, 58, 59, and 60, so it signals at sample 60 under Rule 3.
+
+FINAL ANSWER: 5, 60","[4, 17]",0,stop,,unpredicted,6531
+openai/gpt-6-luna,factory_heads_407,ok,"[2, 34]",heads_first_signal,"FINAL ANSWER: 2, 34","[6, 19]",0,stop,,unpredicted,9381
+openai/gpt-6-luna,factory_heads_408,ok,"[4, 89]",heads_first_signal,"Head 4 has two samples beyond the −2σ line within three consecutive samples, at samples 87 and 89. Its signal is at the later sample, 89.
+
+FINAL ANSWER: 4, 89","[1, 44]",0,stop,,unpredicted,13535
+openai/gpt-6-luna,factory_heads_409,ok,"[3, 15]",heads_first_signal,"H3 has eight consecutive samples above the centre line from samples 8 through 15, so it signals at sample 15.
+
+FINAL ANSWER: 3, 15","[4, 42]",0,stop,,unpredicted,9527
+openai/gpt-6-luna,factory_heads_410,ok,"[5, 28]",heads_first_signal,"FINAL ANSWER: 5, 28","[3, 46]",0,stop,,unpredicted,16361
+openai/gpt-6-luna,factory_heads_411,ok,"[4, 36]",heads_first_signal,"FINAL ANSWER: 4, 36","[6, 28]",0,stop,,unpredicted,10607
+openai/gpt-6-luna,factory_heads_412,ok,"[6, 62]",heads_first_signal,"FINAL ANSWER: 6, 62","[1, 9]",0,stop,,unpredicted,13359
+openai/gpt-6-luna,factory_heads_413,ok,"[5, 61]",heads_first_signal,"FINAL ANSWER: 5, 61","[5, 61]",1,stop,,,14842
+openai/gpt-6-luna,factory_heads_414,ok,"[2, 8]",heads_first_signal,"H2 is the first to signal under Rule 4: its first eight samples are all above the centre line.
+
+FINAL ANSWER: 2, 8","[5, 37]",0,stop,,unpredicted,10831
+openai/gpt-6-luna,factory_heads_415,ok,"[4, 24]",heads_first_signal,"H4 is the first to signal under Rule 4: it has eight consecutive samples on the same side of the centre line, ending at sample 24.
+
+FINAL ANSWER: 4, 24","[5, 64]",0,stop,,unpredicted,16638
+openai/gpt-6-luna,factory_heads_416,ok,"[3, 8]",heads_first_signal,"H3 is the first to signal: it has eight consecutive samples above the centre line, ending at sample 8.
+
+FINAL ANSWER: 3, 8","[1, 50]",0,stop,,unpredicted,18719
+openai/gpt-6-luna,factory_heads_417,ok,"[5, 60]",heads_first_signal,"Head 5 has eight consecutive samples below the centre line from samples 53 through 60, so it first signals under Rule 4 at sample 60.
+
+FINAL ANSWER: 5, 60","[6, 12]",0,stop,,unpredicted,15948
+openai/gpt-6-luna,factory_heads_418,ok,"[6, 46]",heads_first_signal,"H6 first signals under Rule 3: its fourth sample below −1 sigma in the qualifying five-sample window is sample 46.
+
+FINAL ANSWER: 6, 46","[1, 9]",0,stop,,unpredicted,8839
+openai/gpt-6-luna,factory_heads_419,ok,"[4, 22]",heads_first_signal,"H4 first signals under Rule 3: in samples 18–22, samples 18, 19, 21 and 22 are below the −1 sigma line. The signal is at the fourth qualifying sample, sample 22.
+
+FINAL ANSWER: 4, 22","[4, 20]",0,stop,,unpredicted,7957
+openai/gpt-6-luna,factory_heads_420,ok,"[1, 39]",heads_first_signal,"FINAL ANSWER: 1, 39","[1, 25]",0,stop,,unpredicted,14693

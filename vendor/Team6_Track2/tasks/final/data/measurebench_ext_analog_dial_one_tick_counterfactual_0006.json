@@ -1,0 +1,67 @@
+{
+  "task_id": "measurebench_ext_analog_dial_one_tick_counterfactual_0006",
+  "seed": 6,
+  "generator_version": "measurebench_ext-2.0",
+  "source_generator_version": "measurebench_ext_v2",
+  "generator": "analog_dial",
+  "question_type": "analog_dial_one_tick_counterfactual",
+  "base_question_type": "one_tick_counterfactual",
+  "difficulty": "easy",
+  "style": "industrial_stainless",
+  "instrument_ids": [
+    "PG-104"
+  ],
+  "values": [
+    3.0
+  ],
+  "unit": "bar",
+  "answer": -0.6,
+  "answer_type": "number",
+  "tolerance_abs": 0.099,
+  "question": "Compare the two views of instrument PG-104. Image A is the left gauge and Image B is the right gauge. Calculate the signed pressure change from A to B: reading B minus reading A. A decrease must be reported as a negative number. Allowed absolute error: ±0.099 bar. Answer with a number and the unit.",
+  "image": "images/measurebench_ext_analog_dial_one_tick_counterfactual_0006.png",
+  "image_sha256": "ecb1677584a4c02e6a93feb01af5bf369e8677d8c9f5cef6104fac17e94d086b",
+  "geometry": [
+    {
+      "needle_angle_deg": 144.0,
+      "needle_tip": [
+        -0.61485291572496,
+        0.4467167917422797
+      ],
+      "scale_min": 0,
+      "scale_max": 10,
+      "center_px": [
+        612.0,
+        461.7847619047619
+      ],
+      "unit_radius_px": 273.6190476190477,
+      "needle_color": "#b83b32"
+    }
+  ],
+  "pair_components": {
+    "image_a": "images/measurebench_analog_dial_0006.png",
+    "image_a_sha256": "87eb7a7fabb66bbffa3f0c71b24078ffa9c8e8c42cae51ec3e76eef1955b5074",
+    "image_b": "images/measurebench_analog_dial_0006_view_b.png",
+    "image_b_sha256": "58f64b15002edfc8fa178944bbb7ffe263b09247d9ed4213ae154500bc873de2",
+    "value_a": 3.0,
+    "value_b": 2.4,
+    "geometry_b": [
+      {
+        "needle_angle_deg": 160.2,
+        "needle_tip": [
+          -0.7150693844052113,
+          0.2574408193864217
+        ],
+        "scale_min": 0,
+        "scale_max": 10,
+        "center_px": [
+          612.0,
+          461.7847619047619
+        ],
+        "unit_radius_px": 273.6190476190477,
+        "needle_color": "#b83b32"
+      }
+    ],
+    "delta": -0.6
+  }
+}

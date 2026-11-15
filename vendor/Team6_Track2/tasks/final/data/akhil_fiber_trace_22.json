@@ -1,0 +1,86 @@
+{
+ "seed": 22,
+ "generator_version": "fiber-3.0",
+ "stage1": [
+  5,
+  2,
+  11,
+  7,
+  9,
+  10,
+  6,
+  12,
+  8,
+  1,
+  4,
+  3
+ ],
+ "trunk1": "C",
+ "stage3": [
+  4,
+  2,
+  9,
+  8,
+  5,
+  12,
+  11,
+  7,
+  3,
+  10,
+  6,
+  1
+ ],
+ "trunk2": "C",
+ "stage5": [
+  10,
+  8,
+  9,
+  1,
+  6,
+  11,
+  12,
+  2,
+  3,
+  4,
+  7,
+  5
+ ],
+ "trace": {
+  "source_port": 3,
+  "path": [
+   3,
+   11,
+   12,
+   1,
+   2,
+   8
+  ],
+  "answer": 8,
+  "traps": {
+   "ignored_both_trunks": 11,
+   "ignored_trunk1": 6,
+   "ignored_trunk2": 10
+  }
+ },
+ "fault": {
+  "cut_stage": 5,
+  "cut_cord_from_port": 5,
+  "cut_cord_to_port": 6,
+  "cut_point_index": 52,
+  "answer": 8,
+  "victim_path": [
+   8,
+   12,
+   11,
+   6,
+   5,
+   6
+  ],
+  "traps": {
+   "ignored_both_trunks": 1,
+   "ignored_trunk1": 3,
+   "ignored_trunk2": 7,
+   "read_cut_cord_far_end": 9
+  }
+ }
+}

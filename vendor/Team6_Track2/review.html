@@ -1,0 +1,242 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>Team 6 · Seven-task draft review</title>
+    <style>
+    :root{color-scheme:light;--ink:#172638;--muted:#596879;--line:#dce3ea;--blue:#175da4}*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:#f1f4f7;color:var(--ink);font:16px/1.65 system-ui,-apple-system,Segoe UI,sans-serif}a{color:var(--blue);text-underline-offset:3px}header{background:#142b45;color:#fff;padding:48px max(24px,calc((100vw - 1140px)/2)) 38px}header h1{font-size:clamp(28px,4vw,44px);line-height:1.2;margin:8px 0 16px;letter-spacing:-1px}header p{max-width:850px;color:#d6e2ed;margin:0}header a{color:#c1e2ff}.eyebrow{font-size:12px;font-weight:750;letter-spacing:1.4px}.draft{margin:22px 0 0;padding:12px 16px;background:#fff0cc;color:#5b3c00;border-radius:6px;max-width:900px}.layout{display:grid;grid-template-columns:205px minmax(0,1fr);gap:28px;max-width:1190px;margin:30px auto;padding:0 24px}nav{position:sticky;top:24px;align-self:start}nav a{display:block;padding:8px 10px;border-radius:5px;font-size:14px;text-decoration:none}nav a:hover{background:#e1e9f2}nav .notes{margin-top:20px;border-top:1px solid var(--line);padding-top:14px}article{padding:28px;background:#fff;border:1px solid var(--line);border-radius:10px;margin-bottom:28px;scroll-margin-top:20px;box-shadow:0 3px 16px #15263806}.card-top{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}.status{font-size:12px;font-weight:650;color:#215f3a;background:#e8f5ed;padding:2px 9px;border-radius:20px}h2{font-size:26px;line-height:1.2;margin:18px 0 6px}.task-id{font-size:12px;color:var(--muted);overflow-wrap:anywhere;margin:0}.question{margin:22px 0;white-space:pre-wrap}.meta{font-size:12px;color:var(--muted);padding-bottom:16px;border-bottom:1px solid var(--line);overflow-wrap:anywhere}figure{margin:22px 0}figure img{display:block;width:100%;height:auto;border:1px solid var(--line)}figcaption{color:var(--muted);font-size:12px;margin-top:5px}details{margin-top:22px;border-top:1px solid var(--line);padding-top:16px}summary{cursor:pointer;font-weight:650}pre{font:12px/1.6 ui-monospace,Consolas,monospace;white-space:pre-wrap;overflow-wrap:anywhere;background:#f2f5f8;padding:16px;border-radius:6px}footer{max-width:1140px;margin:0 auto 40px;padding:0 24px;color:var(--muted);font-size:13px}@media(max-width:780px){.layout{display:block;padding:0 14px}nav{position:static;display:flex;gap:4px;flex-wrap:wrap;margin-bottom:20px}nav .notes{border:0;margin:0;padding:0}article{padding:19px}header{padding:30px 22px}.question{font-size:15px}}@media print{nav{display:none}.layout{display:block}article{break-before:page;box-shadow:none}details{display:block}body{background:white}}
+    </style></head><body><header><div class="eyebrow">TEAM 6 · TRACK 2 · VISUAL TASK FACTORY</div><h1>Seven pipelines. Seven tasks.</h1><p>Review the exact questions and images included in this draft. Open any image at full resolution; expand the reference answer after checking the task.</p><div class="draft"><strong>Preparation draft.</strong> Three more tasks and the final two-model evaluation are pending. These validation results are software checks, not model scores or human team signoff.</div></header><div class="layout"><nav aria-label="Task navigation">NAVIGATION<div><a href="#task-1">1. Spc</a><a href="#task-2">2. Fiber</a><a href="#task-3">3. Brain</a><a href="#task-4">4. Cross Sections</a><a href="#task-5">5. Finance</a><a href="#task-6">6. Measurebench</a><a href="#task-7">7. Reconstruction</a></div><div class="notes"><a href="HANDCHECK.md">Hand-check notes</a><a href="README.md">Setup and submission notes</a><a href="COMPLETION_STATUS.json">Completion status</a></div></nav><main><article id="task-1">
+          <div class="card-top"><span class="eyebrow">TASK 01 / 07</span><span class="status">Validation passed &middot; 9 checks</span></div>
+          <h2>Spc</h2><p class="task-id">akhil_heads_401</p>
+          <p class="question">This control chart shows fill weights from six filling heads (H1-H6) of one rotary filler, one colour and marker shape per head (see the legend), all sampled at the same times. The centre line and the 1, 2 and 3 sigma lines are labelled on the right; they apply to every head. Sample numbers are labelled every 10th sample, with one light gridline per sample. Apply these rules to each head separately, and only these: Rule 1: one sample beyond 3 sigma (above UCL or below LCL). The signal is at that sample. Rule 2: two of any three consecutive samples beyond 2 sigma on the same side of the centre line. The signal is at the later of those two samples. Rule 3: four of any five consecutive samples beyond 1 sigma on the same side of the centre line. The signal is at the fourth of those samples. Rule 4: eight consecutive samples on the same side of the centre line. The signal is at the eighth sample. A sample exactly on a line is not beyond it. Which head is the first to signal, and at which sample number? Answer in the form: head number, sample number (for example: 4, 37).</p>
+          <div class="meta">Seed 401 &middot; factory-heads-1.1+team6.2 &middot; <a href="tasks/final/data/akhil_heads_401.json">Structured data</a></div>
+          <div class="images"><figure><a href="tasks/final/images/akhil_heads_401.png" target="_blank" rel="noopener"><img src="tasks/final/images/akhil_heads_401.png" alt="Spc" loading="lazy"></a><figcaption>Spc &middot; <a href="tasks/final/images/akhil_heads_401.png" target="_blank" rel="noopener">Open full resolution</a></figcaption></figure></div>
+          <details><summary>Reference answer and validation</summary><pre>[
+  1,
+  29
+]</pre><pre>{
+  &quot;passed&quot;: true,
+  &quot;checks&quot;: {
+    &quot;image_ok&quot;: true,
+    &quot;answer_recomputed&quot;: true,
+    &quot;unique_first&quot;: true,
+    &quot;points_clear_of_lines&quot;: true,
+    &quot;image_matches_saved_data&quot;: true,
+    &quot;member_validation&quot;: true,
+    &quot;required_fields&quot;: true,
+    &quot;image_path&quot;: true,
+    &quot;data_path&quot;: true
+  }
+}</pre></details>
+        </article><article id="task-2">
+          <div class="card-top"><span class="eyebrow">TASK 02 / 07</span><span class="status">Validation passed &middot; 9 checks</span></div>
+          <h2>Fiber</h2><p class="task-id">akhil_fiber_trace_22</p>
+          <p class="question">In this as-built AI cluster fiber diagram, start at GPU-TRAY-07 port 03 (red circle). The path runs GPU-TRAY-07 -&gt; stage 1 cords -&gt; PP-A -&gt; stage 2 MTP trunk -&gt; PP-B -&gt; stage 3 cords -&gt; PP-C -&gt; stage 4 MTP trunk -&gt; PP-D -&gt; stage 5 cords -&gt; SW-CORE-02. Cords may cross without connecting. In each trunk, the fibre entering at port n of the left panel exits at the right-panel port given by that trunk&#x27;s printed polarity type. Which SW-CORE-02 port does the path end at? Answer with the port number only.</p>
+          <div class="meta">Seed 22 &middot; fiber-3.0+team6.2 &middot; <a href="tasks/final/data/akhil_fiber_trace_22.json">Structured data</a></div>
+          <div class="images"><figure><a href="tasks/final/images/akhil_fiber_trace_22.png" target="_blank" rel="noopener"><img src="tasks/final/images/akhil_fiber_trace_22.png" alt="Fiber" loading="lazy"></a><figcaption>Fiber &middot; <a href="tasks/final/images/akhil_fiber_trace_22.png" target="_blank" rel="noopener">Open full resolution</a></figcaption></figure></div>
+          <details><summary>Reference answer and validation</summary><pre>8</pre><pre>{
+  &quot;passed&quot;: true,
+  &quot;checks&quot;: {
+    &quot;image_ok&quot;: true,
+    &quot;stages_are_permutations&quot;: true,
+    &quot;answer_recomputed&quot;: true,
+    &quot;traps_differ_from_answer&quot;: true,
+    &quot;image_matches_saved_data&quot;: true,
+    &quot;member_validation&quot;: true,
+    &quot;required_fields&quot;: true,
+    &quot;image_path&quot;: true,
+    &quot;data_path&quot;: true
+  }
+}</pre></details>
+        </article><article id="task-3">
+          <div class="card-top"><span class="eyebrow">TASK 03 / 07</span><span class="status">Validation passed &middot; 8 checks</span></div>
+          <h2>Brain</h2><p class="task-id">akhil_brain_p306_spike</p>
+          <p class="question">This EEG page uses a longitudinal bipolar montage: each channel shows the first electrode minus the second, and negative is drawn upward. One focal sharp wave appears on this page (ignore the eye blink in the frontopolar channels). A sharp wave that deflects in opposite directions in two neighbouring channels of the same chain (a phase reversal) is located at the electrode those two channels share. At which electrode is the sharp wave located?</p>
+          <div class="meta">Seed 306 &middot; brain-factory-1.0+team6.2 &middot; <a href="tasks/final/data/akhil_brain_p306_spike.json">Structured data</a></div>
+          <div class="images"><figure><a href="tasks/final/images/akhil_brain_p306_spike.png" target="_blank" rel="noopener"><img src="tasks/final/images/akhil_brain_p306_spike.png" alt="Brain" loading="lazy"></a><figcaption>Brain &middot; <a href="tasks/final/images/akhil_brain_p306_spike.png" target="_blank" rel="noopener">Open full resolution</a></figcaption></figure></div>
+          <details><summary>Reference answer and validation</summary><pre>&quot;T5&quot;</pre><pre>{
+  &quot;passed&quot;: true,
+  &quot;checks&quot;: {
+    &quot;image_ok&quot;: true,
+    &quot;answer_recomputed_from_phase_reversal&quot;: true,
+    &quot;sharp_wave_visible&quot;: true,
+    &quot;image_matches_saved_data&quot;: true,
+    &quot;member_validation&quot;: true,
+    &quot;required_fields&quot;: true,
+    &quot;image_path&quot;: true,
+    &quot;data_path&quot;: true
+  }
+}</pre></details>
+        </article><article id="task-4">
+          <div class="card-top"><span class="eyebrow">TASK 04 / 07</span><span class="status">Validation passed &middot; 16 checks</span></div>
+          <h2>Cross Sections</h2><p class="task-id">akhil_xsec_hard_max_cut_interval_20260707</p>
+          <p class="question">The sheet shows roadway cross sections of existing ground and the proposed template. Use the average end-area method, V = (A1 + A2)/2 x L / 27, and use the station intervals shown on the sheet. Between which two consecutive stations is the CUT volume largest? Answer in the form 11+00-11+50.</p>
+          <div class="meta">Seed 20260707 &middot; xsec-0.2+team6.2 &middot; <a href="tasks/final/data/akhil_xsec_hard_max_cut_interval_20260707.json">Structured data</a></div>
+          <div class="images"><figure><a href="tasks/final/images/akhil_xsec_hard_max_cut_interval_20260707.png" target="_blank" rel="noopener"><img src="tasks/final/images/akhil_xsec_hard_max_cut_interval_20260707.png" alt="Cross Sections" loading="lazy"></a><figcaption>Cross Sections &middot; <a href="tasks/final/images/akhil_xsec_hard_max_cut_interval_20260707.png" target="_blank" rel="noopener">Open full resolution</a></figcaption></figure></div>
+          <details><summary>Reference answer and validation</summary><pre>&quot;15+75-16+50&quot;</pre><pre>{
+  &quot;passed&quot;: true,
+  &quot;checks&quot;: {
+    &quot;image_ok&quot;: true,
+    &quot;dense_integration&quot;: true,
+    &quot;shapely_clipping&quot;: true,
+    &quot;answer_recompute&quot;: true,
+    &quot;unique_answer&quot;: true,
+    &quot;daylight_on_ground&quot;: true,
+    &quot;no_coincident&quot;: true,
+    &quot;image_rerender&quot;: true,
+    &quot;image_matches_data&quot;: true,
+    &quot;legibility&quot;: true,
+    &quot;reading_sensitivity&quot;: true,
+    &quot;mixed_cut_fill&quot;: true,
+    &quot;member_validation&quot;: true,
+    &quot;required_fields&quot;: true,
+    &quot;image_path&quot;: true,
+    &quot;data_path&quot;: true
+  }
+}</pre></details>
+        </article><article id="task-5">
+          <div class="card-top"><span class="eyebrow">TASK 05 / 07</span><span class="status">Validation passed &middot; 23 checks</span></div>
+          <h2>Finance</h2><p class="task-id">fin-02400-pri-h-L0</p>
+          <p class="question">Use the six document pages: the purchase order, two goods receipts, the main and split invoices, and the authorized amendment. For invoice INV-44808, reconcile every billed line to the PO price effective on the invoice date (including any authorized amendment). For both the authorized PO rate and the billed invoice rate, apply the line discount, then round the discounted unit price to the nearest USD cent using ROUND_HALF_UP (an exact half-cent rounds up). Compare those rounded unit rates. Multiply each positive difference by the combined billed quantity for that line, including linked split invoices, and sum the line overcharges. Do not offset an overcharge with an undercharge. What is the total merchandise overcharge in USD, excluding freight and tax? Return one amount to two decimal places. Accepted answer tolerance is $0.01. Answer as a USD amount to two decimal places.</p>
+          <div class="meta">Seed 2400 &middot; finance-reconciliation-1.1 &middot; <a href="tasks/final/data/fin-02400-pri-h-L0.json">Structured data</a></div>
+          <div class="images"><figure><a href="tasks/final/images/fin-02400-pri-h-L0/01_purchase_order.png" target="_blank" rel="noopener"><img src="tasks/final/images/fin-02400-pri-h-L0/01_purchase_order.png" alt="Finance, page 1" loading="lazy"></a><figcaption>Finance, page 1 &middot; <a href="tasks/final/images/fin-02400-pri-h-L0/01_purchase_order.png" target="_blank" rel="noopener">Open full resolution</a></figcaption></figure><figure><a href="tasks/final/images/fin-02400-pri-h-L0/02_grn1.png" target="_blank" rel="noopener"><img src="tasks/final/images/fin-02400-pri-h-L0/02_grn1.png" alt="Finance, page 2" loading="lazy"></a><figcaption>Finance, page 2 &middot; <a href="tasks/final/images/fin-02400-pri-h-L0/02_grn1.png" target="_blank" rel="noopener">Open full resolution</a></figcaption></figure><figure><a href="tasks/final/images/fin-02400-pri-h-L0/03_grn2.png" target="_blank" rel="noopener"><img src="tasks/final/images/fin-02400-pri-h-L0/03_grn2.png" alt="Finance, page 3" loading="lazy"></a><figcaption>Finance, page 3 &middot; <a href="tasks/final/images/fin-02400-pri-h-L0/03_grn2.png" target="_blank" rel="noopener">Open full resolution</a></figcaption></figure><figure><a href="tasks/final/images/fin-02400-pri-h-L0/04_invoice.png" target="_blank" rel="noopener"><img src="tasks/final/images/fin-02400-pri-h-L0/04_invoice.png" alt="Finance, page 4" loading="lazy"></a><figcaption>Finance, page 4 &middot; <a href="tasks/final/images/fin-02400-pri-h-L0/04_invoice.png" target="_blank" rel="noopener">Open full resolution</a></figcaption></figure><figure><a href="tasks/final/images/fin-02400-pri-h-L0/05_invoice_sibling.png" target="_blank" rel="noopener"><img src="tasks/final/images/fin-02400-pri-h-L0/05_invoice_sibling.png" alt="Finance, page 5" loading="lazy"></a><figcaption>Finance, page 5 &middot; <a href="tasks/final/images/fin-02400-pri-h-L0/05_invoice_sibling.png" target="_blank" rel="noopener">Open full resolution</a></figcaption></figure><figure><a href="tasks/final/images/fin-02400-pri-h-L0/06_amendment.png" target="_blank" rel="noopener"><img src="tasks/final/images/fin-02400-pri-h-L0/06_amendment.png" alt="Finance, page 6" loading="lazy"></a><figcaption>Finance, page 6 &middot; <a href="tasks/final/images/fin-02400-pri-h-L0/06_amendment.png" target="_blank" rel="noopener">Open full resolution</a></figcaption></figure></div>
+          <details><summary>Reference answer and validation</summary><pre>5.15</pre><pre>{
+  &quot;passed&quot;: true,
+  &quot;checks&quot;: {
+    &quot;source_pages_valid&quot;: true,
+    &quot;question_matches_scene_exactly&quot;: true,
+    &quot;model_visible_rounding_rule&quot;: true,
+    &quot;question_states_tolerance&quot;: true,
+    &quot;answer_type_and_tolerance&quot;: true,
+    &quot;independent_answer_recompute&quot;: true,
+    &quot;generator_answer_agrees&quot;: true,
+    &quot;evidence_ids_are_visible&quot;: true,
+    &quot;seed_and_version_match&quot;: true,
+    &quot;six_source_images_exist&quot;: true,
+    &quot;source_image_dimensions&quot;: true,
+    &quot;contact_sheet_dimensions&quot;: true,
+    &quot;recorded_render_hashes_match&quot;: true,
+    &quot;document_order_recorded&quot;: true,
+    &quot;saved_pages_match_data&quot;: true,
+    &quot;contact_sheet_matches_source_pages&quot;: true,
+    &quot;rendered_text_inside_canvas&quot;: true,
+    &quot;minimum_font_size&quot;: true,
+    &quot;render_bounds_evidence_matches&quot;: true,
+    &quot;member_validation&quot;: true,
+    &quot;required_fields&quot;: true,
+    &quot;image_path&quot;: true,
+    &quot;data_path&quot;: true
+  }
+}</pre></details>
+        </article><article id="task-6">
+          <div class="card-top"><span class="eyebrow">TASK 06 / 07</span><span class="status">Validation passed &middot; 15 checks</span></div>
+          <h2>Measurebench</h2><p class="task-id">measurebench_ext_analog_dial_one_tick_counterfactual_0006</p>
+          <p class="question">Compare the two views of instrument PG-104. Image A is the left gauge and Image B is the right gauge. Calculate the signed pressure change from A to B: reading B minus reading A. A decrease must be reported as a negative number. Allowed absolute error: ±0.099 bar. Answer with a number and the unit.</p>
+          <div class="meta">Seed 6 &middot; measurebench_ext-2.0 &middot; <a href="tasks/final/data/measurebench_ext_analog_dial_one_tick_counterfactual_0006.json">Structured data</a></div>
+          <div class="images"><figure><a href="tasks/final/images/measurebench_ext_analog_dial_one_tick_counterfactual_0006.png" target="_blank" rel="noopener"><img src="tasks/final/images/measurebench_ext_analog_dial_one_tick_counterfactual_0006.png" alt="Measurebench" loading="lazy"></a><figcaption>Measurebench &middot; <a href="tasks/final/images/measurebench_ext_analog_dial_one_tick_counterfactual_0006.png" target="_blank" rel="noopener">Open full resolution</a></figcaption></figure></div>
+          <details><summary>Reference answer and validation</summary><pre>-0.6</pre><pre>{
+  &quot;passed&quot;: true,
+  &quot;checks&quot;: {
+    &quot;data_exists&quot;: true,
+    &quot;image_hash_matches&quot;: true,
+    &quot;image_decodes_and_is_legible_size&quot;: true,
+    &quot;task_data_identity_matches&quot;: true,
+    &quot;generator_seed_values_match&quot;: true,
+    &quot;answer_recomputed&quot;: true,
+    &quot;image_rerender_matches_saved_data&quot;: true,
+    &quot;question_states_tolerance_and_unit&quot;: true,
+    &quot;both_needle_pixels_match_values&quot;: true,
+    &quot;signed_change_matches_visible_needles&quot;: true,
+    &quot;pair_data_matches_components&quot;: true,
+    &quot;member_validation&quot;: true,
+    &quot;required_fields&quot;: true,
+    &quot;image_path&quot;: true,
+    &quot;data_path&quot;: true
+  }
+}</pre></details>
+        </article><article id="task-7">
+          <div class="card-top"><span class="eyebrow">TASK 07 / 07</span><span class="status">Validation passed &middot; 27 checks</span></div>
+          <h2>Reconstruction</h2><p class="task-id">visual_reconstruction_global_spatial_reconstruction_s20261114</p>
+          <p class="question">Restore the masked photograph using the shuffled candidate patches. The photo panel is 1920 pixels wide and 2560 pixels high. Its origin (0,0) is the center of its upper-left pixel; x increases right to 1919, and y increases down to 2559. The page is displayed at reduced size: use its printed coordinate rulers, not page-image pixels. Ignore the surrounding page margins. The five gray regions are labeled H1-H5. For each hole, select the matching candidate letter and the transformation that restores the source photo. Estimate the hole center [x,y] in original-photo pixels; Euclidean error of at most 30 pixels is accepted. Apply undo_rotation_clockwise (0,90,180,270 degrees) FIRST, then undo_reflection (&#x27;none&#x27;, &#x27;horizontal&#x27; meaning a left-right flip, or &#x27;vertical&#x27; meaning a top-bottom flip). Equivalent rotation/reflection combinations are accepted. Return only a JSON array of exactly five objects, each with hole_id (integer 1-5 matching the H label), center [x,y], candidate_id (printed letter), undo_rotation_clockwise, and undo_reflection. Array order does not matter. Use every hole once and each selected candidate once; the other candidates are distractors.</p>
+          <div class="meta">Seed 20261114 &middot; visual_reconstruction-2.0 &middot; <a href="tasks/final/data/visual_reconstruction_global_spatial_reconstruction_s20261114.json">Structured data</a></div>
+          <div class="images"><figure><a href="tasks/final/images/visual_reconstruction_global_spatial_reconstruction_s20261114.png" target="_blank" rel="noopener"><img src="tasks/final/images/visual_reconstruction_global_spatial_reconstruction_s20261114.png" alt="Reconstruction" loading="lazy"></a><figcaption>Reconstruction &middot; <a href="tasks/final/images/visual_reconstruction_global_spatial_reconstruction_s20261114.png" target="_blank" rel="noopener">Open full resolution</a></figcaption></figure></div>
+          <details><summary>Reference answer and validation</summary><pre>[
+  {
+    &quot;hole_id&quot;: 1,
+    &quot;center&quot;: [
+      962.5,
+      262.5
+    ],
+    &quot;candidate_id&quot;: &quot;H&quot;,
+    &quot;undo_rotation_clockwise&quot;: 270,
+    &quot;undo_reflection&quot;: &quot;horizontal&quot;
+  },
+  {
+    &quot;hole_id&quot;: 2,
+    &quot;center&quot;: [
+      1558.5,
+      262.5
+    ],
+    &quot;candidate_id&quot;: &quot;A&quot;,
+    &quot;undo_rotation_clockwise&quot;: 90,
+    &quot;undo_reflection&quot;: &quot;none&quot;
+  },
+  {
+    &quot;hole_id&quot;: 3,
+    &quot;center&quot;: [
+      315.5,
+      999.5
+    ],
+    &quot;candidate_id&quot;: &quot;C&quot;,
+    &quot;undo_rotation_clockwise&quot;: 180,
+    &quot;undo_reflection&quot;: &quot;horizontal&quot;
+  },
+  {
+    &quot;hole_id&quot;: 4,
+    &quot;center&quot;: [
+      1647.5,
+      1569.5
+    ],
+    &quot;candidate_id&quot;: &quot;F&quot;,
+    &quot;undo_rotation_clockwise&quot;: 90,
+    &quot;undo_reflection&quot;: &quot;horizontal&quot;
+  },
+  {
+    &quot;hole_id&quot;: 5,
+    &quot;center&quot;: [
+      954.5,
+      1633.5
+    ],
+    &quot;candidate_id&quot;: &quot;D&quot;,
+    &quot;undo_rotation_clockwise&quot;: 0,
+    &quot;undo_reflection&quot;: &quot;horizontal&quot;
+  }
+]</pre><pre>{
+  &quot;passed&quot;: true,
+  &quot;checks&quot;: {
+    &quot;source_asset_hash_verified&quot;: true,
+    &quot;source_dimensions_verified&quot;: true,
+    &quot;metadata_consistent&quot;: true,
+    &quot;five_unique_labeled_holes&quot;: true,
+    &quot;valid_crop_geometry&quot;: true,
+    &quot;hole_boxes_nonoverlapping&quot;: true,
+    &quot;fifteen_unique_candidate_files&quot;: true,
+    &quot;all_candidate_patches_520_square&quot;: true,
+    &quot;unique_pixel_verified_candidate_and_orientation_per_hole&quot;: true,
+    &quot;answer_independently_recomputed_from_source_pixels&quot;: true,
+    &quot;ground_truth_centers_match_geometry&quot;: true,
+    &quot;all_candidates_match_archived_source_data&quot;: true,
+    &quot;distractors_avoid_missing_regions&quot;: true,
+    &quot;component_hashes_match_data&quot;: true,
+    &quot;masked_photo_matches_source_geometry_and_labels&quot;: true,
+    &quot;candidate_order_is_complete_permutation&quot;: true,
+    &quot;candidate_sheet_pixels_and_labels_match_data&quot;: true,
+    &quot;independent_pixel_exact_oracle_reconstruction&quot;: true,
+    &quot;public_composite_matches_verified_components&quot;: true,
+    &quot;public_image_under_9_5_mb&quot;: true,
+    &quot;coordinate_conventions_and_tolerance_stated&quot;: true,
+    &quot;task_specific_scoring_contract&quot;: true,
+    &quot;sequence_answer_type&quot;: true,
+    &quot;member_validation&quot;: true,
+    &quot;required_fields&quot;: true,
+    &quot;image_path&quot;: true,
+    &quot;data_path&quot;: true
+  }
+}</pre></details>
+        </article></main></div><footer>Offline gallery. No network requests, tracking, API keys, or external libraries. Generated from tasks/final/tasks.jsonl by tools/build_review.py.</footer></body></html>

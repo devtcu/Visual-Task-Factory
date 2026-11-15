@@ -1,0 +1,16 @@
+[
+  {
+    "provider": "openrouter",
+    "model": "anthropic/claude-sonnet-4.5",
+    "evaluated": 9,
+    "correct": 1,
+    "accuracy": 0.1111111111111111
+  },
+  {
+    "provider": "anthropic",
+    "model": "claude-sonnet-4-5-20250929",
+    "evaluated": 9,
+    "correct": 1,
+    "accuracy": 0.1111111111111111
+  }
+]

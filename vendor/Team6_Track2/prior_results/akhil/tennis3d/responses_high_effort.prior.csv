@@ -1,0 +1,35 @@
+model,task_id,status,parsed,question_type,response,ref_answer,correct,finish_reason,error,fingerprint,tokens
+anthropic/claude-haiku-5.5,tennis3d_01,truncated,,multiview_corner_call,,16.4,0,length,cut off by max_tokens,,41067
+anthropic/claude-haiku-5.5,tennis3d_02,ok,-20,multiview_corner_call,"I could not reconstruct the court geometry reliably enough for a precise answer, so this is a rough estimate.
+
+- **Broadcast view (Image 1):** Instants 16–17 reach the far baseline near the singles right sideline. Instant 17 is slightly beyond the baseline and just outside the singles line, and instant 16 sits near the corner.
+- **Low corner view (Image 3):** The ball's height above its shadow is smallest at instants 16 and 17, so the bounce falls between them. Shadow positions put 17 just outside the baseline and 16 close to it.
+- **Side view (Image 2):** The ball's lateral position at instants 16–17 is near or just outside the doubles sideline, which is consistent with a point outside the singles court. This view is the least reliable because I could not cleanly identify the singles lines.
+
+Taking the bounce as slightly outside the far baseline and just outside the singles sideline gives a negative value of roughly 20 cm.
+
+FINAL ANSWER: -20",11.1,0,stop,,unpredicted,36784
+anthropic/claude-haiku-5.5,tennis3d_03,truncated,,multiview_corner_call,,41.5,0,length,cut off by max_tokens,,41067
+anthropic/claude-haiku-5.5,tennis3d_04,ok,10,multiview_corner_call,"## Estimate
+
+I could not pin this down precisely. The three views disagree on details, so the answer is a rough estimate.
+
+**Lateral position (CAM 2).** The ball's ground shadows all sit on a line at about y≈745 in CAM 2. The near singles sideline is at y≈768, and the local scale there is about 49 px/m. That puts the bounce about 23 px, or roughly 0.5–0.65 m, inside the singles sideline. CAM 1 gives a similar lateral value of about 0.7 m inside.
+
+**Depth position (CAM 2).** The ball's image-vertical gap to its shadow is smallest around instants 16–17, so the bounce is near that time. Interpolating the ball's horizontal position at about instant 16.9 gives a point just inside the far baseline. The baseline at that height is at x≈141 and the interpolated ball is at x≈148, about 6–10 px inside, or roughly 0.1 m.
+
+**Other views.** CAM 1 and CAM 3 both put the ball close to the far baseline around instants 16–17, which is consistent with a bounce very near the baseline. Neither gives a sign-reliable depth.
+
+**Result.** The sideline distance (~50–65 cm) is larger than the baseline distance (~10 cm), so the minimum is the baseline distance. I estimate the contact point is about 10 cm inside the far baseline. The sign is the least certain part of this estimate.
+
+FINAL ANSWER: 10",25.8,0,stop,,unpredicted,39373
+anthropic/claude-haiku-5.5,tennis3d_05,truncated,,multiview_corner_call,,28,0,length,cut off by max_tokens,,41067
+openai/gpt-6-luna,tennis3d_01,ok,18,multiview_corner_call,"The bounce is approximately 18 cm inside the far baseline; the sideline is farther away.
+
+FINAL ANSWER: 18 cm",16.4,1,stop,,,17530
+openai/gpt-6-luna,tennis3d_02,ok,-15,multiview_corner_call,FINAL ANSWER: -15 cm,11.1,0,stop,,predicted:flipped_sign,22786
+openai/gpt-6-luna,tennis3d_03,ok,0,multiview_corner_call,FINAL ANSWER: 0 cm,41.5,0,stop,,unpredicted,22682
+openai/gpt-6-luna,tennis3d_04,ok,-27,multiview_corner_call,FINAL ANSWER: -27 cm,25.8,0,stop,,predicted:flipped_sign,18029
+openai/gpt-6-luna,tennis3d_05,ok,-10,multiview_corner_call,FINAL ANSWER: -10 cm,28,0,stop,,unpredicted,19862
+,,,,,,,,,,,
+,,,,,,,,,cut off by max_tokens,,

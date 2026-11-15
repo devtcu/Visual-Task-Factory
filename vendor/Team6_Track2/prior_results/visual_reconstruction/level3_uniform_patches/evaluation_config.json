@@ -1,0 +1,21 @@
+{
+  "provider": "openrouter",
+  "models": [
+    "anthropic/claude-haiku-5.5",
+    "openai/gpt-6-luna"
+  ],
+  "temperature": 0,
+  "max_completion_tokens": 8192,
+  "images_sent": [
+    {
+      "file": "public/puzzle.png",
+      "mime": "image/jpeg"
+    },
+    {
+      "file": "public/candidate_sheet.png",
+      "mime": "image/png"
+    }
+  ],
+  "answer_key_sent": false,
+  "prompt_sha256": "4cac71751382e87a701658d1d70cdb76313dce9dcb13017cd4d8994bfb8e7cae"
+}

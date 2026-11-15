@@ -1,0 +1,1228 @@
+model,task_id,status,parsed,question_type,response,ref_answer,correct,finish_reason,error,fingerprint,tokens
+anthropic/claude-haiku-5.5,factory_s301_L1_first_signal,ok,0,first_signal,"I checked every plotted point against the control limits. The UCL is 1009 g and the LCL is 991 g. The highest point is sample 3 at about 1003.3 g, and the lowest is around 997.4 g (samples 8, 18, 24 and 25 are all near there). Every sample sits well inside the ±3σ limits, so Rule 1 is never triggered and no sample signals.
+
+0
+
+FINAL ANSWER: 0",0,1,stop,,,1654
+anthropic/claude-haiku-5.5,factory_s301_L1_count_beyond_2s,ok,0,count_beyond_2s,"I read each sample against the 2-sigma lines at 1006 (upper) and 994 (lower). The 3-sigma lines at 1009 and 991 are outside the plotted data, so they don't affect the count.
+
+The highest point is sample 3 at about 1003.3, which is between the +1 and +2 sigma lines. The lowest points are samples 15, 18, 24 and 25, at roughly 997.4 to 997.6, which sit between the -1 and -2 sigma lines. Every sample lies inside the ±2 sigma band, so none is beyond 2 sigma.
+
+FINAL ANSWER: 0",0,1,stop,,,1986
+anthropic/claude-haiku-5.5,factory_s301_L1_longest_run_above,ok,3,longest_run_above,"I read each sample against the centre line at 1000 g, then looked for the longest consecutive stretch above it.
+
+- Samples 1–2: below
+- Sample 3: above (~1003.3)
+- Sample 4: below
+- Samples 5–7: above (~1001.0, ~1001.2, ~1000.6), a run of 3
+- Sample 8: below
+- Sample 9: above (~1000.7)
+- Sample 10: below
+- Samples 11–12: above, a run of 2
+- Sample 13: below
+- Sample 14: above (~1000.4)
+- Samples 15–16: below
+- Sample 17: above (~1001.2)
+- Samples 18–19: below
+- Samples 20–21: above, a run of 2
+- Sample 22: below
+- Sample 23: above (~1001.4)
+- Samples 24–25: below
+
+The longest run above the centre line is samples 5 to 7, which is 3 samples.
+
+FINAL ANSWER: 3",3,1,stop,,,2115
+anthropic/claude-haiku-5.5,factory_s301_L2_first_signal,ok,6,first_signal,"**Reading the chart** (CL = 330, σ = 1.5 g, so 2σ lines at 333 and 327, 3σ lines at 334.5 and 325.5):
+
+- Samples 1–4 (about 330.5, 331.3, 332.8, 331.2) have no point beyond 2σ. Sample 3 sits just below the +2σ line at 333.
+- Sample 5 (about 333.5) is beyond +2σ, but it is the only point beyond +2σ among samples 3–5, so Rule 2 is not met.
+- Sample 6 (about 334.1) is beyond +2σ but still below the UCL of 334.5, so Rule 1 is not met. Samples 5 and 6 are both beyond +2σ on the same side, and they are two of three consecutive samples (4–6), so Rule 2 signals at the later one, sample 6.
+
+No earlier sample signals. Sample 21 (about 324.7) also falls below the LCL, but it comes later.
+
+FINAL ANSWER: 6",6,1,stop,,,2302
+anthropic/claude-haiku-5.5,factory_s301_L2_count_beyond_2s,ok,3,count_beyond_2s,"I estimated each sample's value from its position relative to the 2-sigma lines at 333 (upper) and 327 (lower).
+
+**Beyond +2σ (above 333):**
+- Sample 5 (about 333.6)
+- Sample 6 (about 334.1)
+
+Sample 3 (about 332.8) is below the 333 line, so it does not count.
+
+**Beyond −2σ (below 327):**
+- Sample 21 (about 324.7)
+
+Sample 24 (about 327.5) is above the 327 line, so it does not count.
+
+No sample lies beyond the ±3σ lines, so the total is 2 + 1 = 3.
+
+FINAL ANSWER: 3",3,1,stop,,,2077
+anthropic/claude-haiku-5.5,factory_s301_L2_longest_run_above,ok,8,longest_run_above,"Reading each point against the centre line at 330 g:
+
+- Samples 1–8 are all above the line (values about 330.5, 331.3, 332.8, 331.2, 333.5, 334.1, 330.2, 330.5). That is a run of 8.
+- Samples 9 and 10 are below, then 11–13 are above (a run of 3).
+- Samples 14–15 are below, 16–17 are above (a run of 2).
+- Samples 18–21 are below, 22–23 are above (a run of 2).
+- The rest are below, except none form a longer run.
+
+The longest run above the centre line is samples 1 to 8.
+
+FINAL ANSWER: 8",8,1,stop,,,1942
+anthropic/claude-haiku-5.5,factory_s301_L2_signal_time,ok,07 40,signal_time,"**Setting up the limits:** sigma = 1.5 g, so the 2σ lines are at 333 and 327 g, the 3σ lines at 334.5 and 325.5 g.
+
+**Checking each sample in order:**
+
+- Samples 1–4 (about 330.5, 331.3, 332.8, 331.2) never go beyond the 2σ lines. Sample 3 sits just below the +2σ line at 333.
+- Sample 5 (about 333.5) is above +2σ. Sample 4 is not beyond a line, so samples 4–6 do not yet satisfy Rule 2.
+- Sample 6 (about 334.1) is also above +2σ. Samples 5 and 6 are two consecutive samples beyond 2σ on the same side, so Rule 2 signals at sample 6, the later of the two.
+- Sample 6 is below UCL (334.5), so Rule 1 does not fire there.
+
+Rule 1 would fire later, at sample 21 (about 324.7, below LCL 325.5), but that comes after sample 6, so it is not the first signal.
+
+**Converting to clock time:** sample 1 is at 06:00 and samples are 20 minutes apart. Sample 6 is 5 intervals later, i.e. 100 minutes, so it was taken at 07:40.
+
+FINAL ANSWER: 07:40",07:40,1,stop,,,3050
+anthropic/claude-haiku-5.5,factory_s301_L3_first_signal,ok,28,first_signal,"Using CL = 1500 g and sigma = 4 g, the limits are ±1σ at 1496/1504, ±2σ at 1492/1508, and ±3σ at 1488/1512.
+
+- **Rule 1 (beyond 3σ):** The first point beyond 3σ is sample 48 (about 1485 g), so this does not signal before sample 28.
+- **Rule 2 (2 of 3 beyond 2σ, same side):** Only sample 1 (about 1489.6 g) is beyond 2σ before sample 48, so this never signals earlier.
+- **Rule 3 (4 of 5 beyond 1σ, same side):** Samples 24, 25, 27 and 28 are all above 1504 g (about 1504.5, 1504.9, 1504.5 and 1505.5 g). Sample 26 (about 1503.5 g) is not. Within samples 24–28 that is four beyond 1σ on the upper side, and the fourth is sample 28. No earlier window reaches four.
+- **Rule 4 (8 consecutive on one side of CL):** The run of points above 1500 g starts at sample 24 and only reaches eight at sample 31, which is later. No earlier run of eight exists.
+
+The first signal is therefore at sample 28, under Rule 3.
+
+FINAL ANSWER: 28",28,1,stop,,,4351
+anthropic/claude-haiku-5.5,factory_s301_L3_count_beyond_2s,ok,2,count_beyond_2s,"I estimated each point's value from its position against the labelled lines. The 2-sigma limits are 1508 (upper) and 1492 (lower), and the chart has a 16.7 px-per-gram scale.
+
+- **Above +2σ (1508):** The highest point is sample 29 at about 1506.4, so none are beyond.
+- **Below −2σ (1492):** Sample 1 (about 1489.6) and sample 48 (about 1485.3, also below −3σ) are beyond. Samples 33 (about 1493.2) and 50 (about 1493.2) sit just above the line, so they don't count.
+
+That gives 2 samples.
+
+FINAL ANSWER: 2",2,1,stop,,,2504
+anthropic/claude-haiku-5.5,factory_s301_L3_longest_run_above,ok,9,longest_run_above,"I read each sample's position against the centre line (CL = 1500 g), estimating values from the plot.
+
+The runs of consecutive samples above the centre line are:
+- Samples 2–4: 3
+- Samples 9, 19, 21: 1 each
+- Samples 11–12: 2
+- Samples 14–15: 2
+- Samples 24–32: 9
+- Samples 35–36: 2
+- Samples 40–41: 2
+- Samples 43–45: 3
+- Samples 47 and 49: 1 each
+
+The longest run is samples 24 to 32, nine samples. Sample 32 (about 1500.5 g) is only just above the line, so that run's length depends on it, but it sits visibly above the centre line.
+
+FINAL ANSWER: 9",9,1,stop,,,2514
+anthropic/claude-haiku-5.5,factory_s301_L3_signal_time,ok,04 45,signal_time,"**Reading the chart**
+
+- Sigma = 4 g, so the lines are: UCL (+3σ) 1512, +2σ 1508, +1σ 1504, CL 1500, −1σ 1496, −2σ 1492, LCL (−3σ) 1488.
+- Sample 1 is at 22:00, with one sample every 15 minutes.
+
+**Checking the rules in order of sample number**
+
+- **Rule 1 (beyond 3σ):** The first sample outside the limits is sample 48 (about 1485), so the earliest possible signal from this rule is at 48.
+- **Rule 2 (two of three beyond 2σ):** Only sample 1 (about 1489.6) lies below 1492, and no sample exceeds 1508. No signal.
+- **Rule 3 (four of five beyond 1σ on one side):**
+  - Upper side (above 1504): samples 24 (~1504.5), 25 (~1504.9), 27 (~1504.5) and 28 (~1505.5) are beyond 1σ, with sample 26 (~1503.5) below it. Within samples 24–28, four samples are beyond 1σ, and the fourth of these is sample 28. No earlier window reaches four (samples 23–27 contain only three).
+  - Lower side (below 1496): no window reaches four.
+- **Rule 4 (eight in a row on one side of CL):** The first run above CL that reaches eight is samples 24–31, which signals at 31. That is later than sample 28.
+
+**Earliest signal**
+
+The first signalling sample is sample 28, from Rule 3.
+
+**Clock time**
+
+Sample 28 is 27 intervals after sample 1. 27 × 15 min = 405 min = 6 h 45 min. 22:00 + 6:45 = 04:45.
+
+FINAL ANSWER: 04:45",04:45,1,stop,,,4513
+anthropic/claude-haiku-5.5,factory_s301_L3_cause_event,ok,E,cause_event,"**Reading the chart** (σ = 4 g, CL = 1500, so 1σ lines at 1496/1504, 2σ at 1492/1508, 3σ at 1488/1512):
+
+- **Rule 1:** Sample 1 (~1489.6) is below 2σ but not beyond 3σ (LCL 1488). The first sample beyond 3σ is sample 48 (~1485), which comes much later.
+- **Rule 2:** Only samples 1 and 33 come near the 2σ lines, and neither is beyond them. Sample 1 is alone on the low side, so no signal.
+- **Rule 3:** Samples 24, 25, 27 and 28 are all above 1504 (1σ), and sample 26 (~1503.5) is not. That is four of five consecutive samples beyond 1σ on the same side, so the signal is at sample 28 (~1505.5). No earlier window of five reaches four samples beyond 1σ.
+- **Rule 4:** Samples 24–32 are all above the centre line. The eighth is sample 31, which is later than sample 28.
+
+So the first signal is **sample 28** from Rule 3.
+
+**Clock time:** Sample 1 is at 22:00 and samples are 15 minutes apart. Sample 28 is 27 × 15 = 405 min (6 h 45 min) later, which gives **04:45**.
+
+**Logged events before 04:45:**
+- 04:13 – Nozzle 4 replaced (most recent)
+- 04:49 – Conveyor guard re-latched (after the signal)
+- 05:36 – Line stopped, jam at capper (after the signal)
+
+E
+
+FINAL ANSWER: E",E,1,stop,,,4705
+anthropic/claude-haiku-5.5,factory_s301_L4_first_signal,ok,25,first_signal,"The first signal is at sample 25, under Rule 4.
+
+Reading the chart (CL = 500 g, σ = 2 g, so 1σ lines at 498/502, 2σ at 496/504, 3σ at 494/506), samples 18 to 25 all sit below the centre line. Sample 17 (about 501.5 g) is above it, so this run starts at sample 18. Its eighth sample is sample 25.
+
+Checking the other rules for anything earlier:
+- **Rule 1:** Sample 11 (about 505.4 g) is below the UCL of 506 g, so no signal.
+- **Rule 2:** Only sample 11 is beyond 2σ above, and nothing is beyond 2σ below before sample 75, so no signal.
+- **Rule 3:** No window of five before sample 25 has four samples beyond 1σ on one side. The 1σ-above samples (2, 10, 11, 15) and 1σ-below samples (14, 25) never cluster enough.
+- **Rule 4:** The only earlier same-side runs are shorter than eight (for example, samples 6–8 and 10–13 above the centre line, and samples 1–2 above).
+
+FINAL ANSWER: 25",25,1,stop,,,5460
+anthropic/claude-haiku-5.5,factory_s301_L4_count_beyond_2s,ok,2,count_beyond_2s,"Beyond 2σ means above 504 g or below 496 g (the ±2σ lines are at 504 and 496, with CL at 500).
+
+- **Above 504:** Sample 11 (about 505.4 g) is clearly beyond. Samples 15 and 45 (about 503.7 g) are just below the line, so they don't count.
+- **Below 496:** Sample 32 (about 496.3 g) is just above the line, so it doesn't count. Sample 75 (about 493.1 g) is beyond, and it is also beyond the −3σ line.
+
+That gives 2 samples.
+
+FINAL ANSWER: 2",2,1,stop,,,2526
+anthropic/claude-haiku-5.5,factory_s301_L4_longest_run_above,ok,10,longest_run_above,"I read each sample's value against the centre line at 500 g, then looked for the longest stretch above it.
+
+- Samples 6–8 and 10–13 give runs of 3 and 4.
+- Samples 27–30 give a run of 4.
+- Samples 61–70 are all above 500 g. Sample 60 (about 499.6) falls just below, and sample 71 (about 498.9) is below, so this run is 10 samples long.
+
+No other run reaches 10.
+
+FINAL ANSWER: 10",10,1,stop,,,2965
+anthropic/claude-haiku-5.5,factory_s301_L4_signal_time,ok,10 00,signal_time,"## Finding the first signal
+
+**Reference lines:** CL = 500, 1σ = 498/502, 2σ = 496/504, 3σ = 494/506.
+
+**Checking each rule in sample order:**
+
+- **Rule 1 (beyond 3σ):** Sample 11 (about 505.4) is below the UCL of 506. The first point beyond a 3σ line is sample 75 (about 493.1), far too late to be first.
+- **Rule 2 (two of three beyond 2σ, same side):** The only points near 2σ are samples 11 and 15 above and 14, 25 and 32 below, none of which are beyond 2σ, or the points beyond 2σ are isolated. No signal before sample 75.
+- **Rule 3 (four of five beyond 1σ, same side):** Checking every window, the clusters are at most 2 points (for example samples 10–11 above, or 14 and 25 below). The first 4-of-5 cluster is at samples 62–66 (above 502), which comes later.
+- **Rule 4 (eight consecutive on one side of CL):**
+  - Sample 17 (about 501.5) is above the CL.
+  - Samples 18 through 25 are all below 500: about 498.8, 498.4, 499.8, 499.8, 499.5, 499.3, 499.3, 497.5.
+  - That is eight consecutive samples below the CL, so the signal is at the eighth, sample 25.
+
+No earlier sample triggers any rule, so the first signal is at **sample 25**.
+
+**Clock time:** Sample 1 is at 22:00 and samples are 30 minutes apart. Sample 25 is 24 intervals later, i.e. 24 × 30 min = 12 hours after 22:00, which is 10:00 the next day.
+
+FINAL ANSWER: 10:00",10:00,1,stop,,,5208
+anthropic/claude-haiku-5.5,factory_s301_L4_cause_event,ok,C,cause_event,"**Reading the chart (CL = 500 g, σ = 2 g):** the 1σ, 2σ and 3σ lines are at 502/498, 504/496 and 506/494.
+
+**Rule checks, in sample order:**
+- **Rule 1:** No point beyond 506 or 494 until sample 75 (≈493.1), which is far later.
+- **Rule 2:** Only sample 11 (≈505.4) is beyond 504. No side has two of three beyond 2σ before sample 25.
+- **Rule 3:** Points beyond 1σ on the same side are sparse early on. Upper points 2, 10, 11 and 15 never give four of five on one side, and the lower points 14 and 25 are too few. The first genuine four-of-five upper run is at samples 64–67, which is later.
+- **Rule 4:** Samples 18–25 are all below 500 (≈498.8, 498.4, 499.8, 499.8, 499.5, 499.3, 499.3, 497.5). Sample 17 (≈501.5) is above the line, so this is a run of eight starting at sample 18 and ending at sample 25. No earlier run of eight exists; the longest earlier run is four.
+
+**First signal:** Rule 4 at sample 25.
+
+**Clock time:** Sample 1 is at 22:00 and samples are 30 min apart, so sample 25 is 24 × 30 min = 12 h later, i.e. 10:00.
+
+**Logged events before 10:00:**
+- 00:44 line stopped (jam at capper)
+- 02:34 cap hopper topped up
+- 09:16 fill-height probe recalibrated (JM)
+
+The 10:04 lab sample and the 10:41 guard re-latch come after 10:00, and the 17:47 magazine refill falls after 10:00 as well. The most recent event before the sample was the fill-height probe recalibration at 09:16.
+
+FINAL ANSWER: C",C,1,stop,,,7753
+anthropic/claude-haiku-5.5,factory_s301_L5_first_signal,ok,84,first_signal,"The first signal is at sample 84, under Rule 3.
+
+Reading the chart (CL 330, 1σ at 331.5 / 328.5, 2σ at 333 / 327, 3σ at 334.5 / 325.5):
+
+- **Rule 1:** Sample 100 (about 324.8) is the only point below LCL 325.5, so it signals at 100.
+- **Rule 2:** The only point beyond 2σ on the low side is sample 84 (about 326.9), with no second point beyond 2σ in its window. No signal.
+- **Rule 3:** Samples 80 (about 327.7), 82 (about 328.1), 83 (about 328.0) and 84 (about 326.9) are all below 328.5, while sample 81 (about 329.3) is not. Four of the five consecutive samples 80–84 are beyond 1σ, and the fourth of those is sample 84. No earlier window reaches four points beyond 1σ on the same side.
+- **Rule 4:** Samples 80–91 are all below the CL, so the eighth sample of that run is 87. This comes after sample 84.
+
+The earliest signal is therefore Rule 3 at sample 84.
+
+FINAL ANSWER: 84",84,1,stop,,,5634
+anthropic/claude-haiku-5.5,factory_s301_L5_count_beyond_2s,ok,2,count_beyond_2s,"Samples beyond 2 sigma are those above 333 or below 327.
+
+- **Above 333:** No sample reaches this line. The highest point is sample 20 at about 332.0.
+- **Below 327:** Two samples fall below this line:
+  - Sample 84 at about 326.8.
+  - Sample 100 at about 324.8, which is also beyond the −3 sigma line at 325.5.
+
+Sample 32 sits just above 327 (about 327.3), so it does not count.
+
+FINAL ANSWER: 2",2,1,stop,,,2961
+anthropic/claude-haiku-5.5,factory_s301_L5_longest_run_above,ok,4,longest_run_above,"I read each sample's value against the centre line at 330 g and looked for the longest unbroken streak above it.
+
+The longest runs are four samples long:
+- Samples 36–39 (about 331.1, 330.2, 330.6, 331.3)
+- Samples 59–62 (about 330.9, 330.2, 331.0, 330.2)
+
+No run reaches five. The other above-centre-line streaks are shorter: 28–30 (three), 52–54 (three), 77–79 (three), and several of length one or two.
+
+Values were estimated by eye from the plot, so a point sitting very close to 330 could be misread, but none of the runs of four or more depends on such a point.
+
+FINAL ANSWER: 4",4,1,stop,,,3966
+anthropic/claude-haiku-5.5,factory_s301_L5_signal_time,ok,02 45,signal_time,"The first signal is at sample 84, under Rule 3.
+
+**Limits:** CL = 330 g, σ = 1.5 g, so the 1σ lines are 331.5 and 328.5, the 2σ lines are 333 and 327, and the 3σ lines are 334.5 and 325.5.
+
+**Checking each rule in sample order:**
+
+- **Rule 1 (beyond 3σ):** The only sample beyond a 3σ line is sample 100 (about 324.8 g, below 325.5). That is later than sample 84.
+- **Rule 2 (two of three beyond 2σ, same side):** Samples beyond 2σ are 84 (about 326.9 g) and 100 (about 324.8 g). No two such samples fall within three consecutive samples before 84. Sample 32 (about 327.3 g) is not beyond 2σ.
+- **Rule 3 (four of five beyond 1σ, same side):** Samples beyond 1σ below the CL before sample 84 are 13, 32, 44 and 80 (80 is about 327.7 g). Samples 82, 83 and 84 are also below 328.5 (about 328.1, 328.0 and 326.9 g). Samples 80, 82, 83 and 84 are four of the five consecutive samples 80–84, all beyond 1σ below. The fourth of these is sample 84. No earlier window of five contains four such samples.
+- **Rule 4 (eight consecutive on one side):** No run of eight on one side of the CL ends before sample 84. The longest run below the CL that includes sample 80 only reaches eight at sample 87, which is later than sample 84.
+
+Sample 84 is therefore the first signalling sample.
+
+**Clock time:** Sample 1 is at 06:00 and samples are 15 minutes apart, so sample 84 is at 06:00 + 83 × 15 min = 06:00 + 20 h 45 min = 02:45 the next day.
+
+FINAL ANSWER: 02:45",02:45,1,stop,,,6123
+anthropic/claude-haiku-5.5,factory_s301_L5_cause_event,ok,E,cause_event,"**Setup:** CL = 330, σ = 1.5 g. The 1σ limits are 328.5 and 331.5, the 2σ limits are 327 and 333, and the 3σ limits are 325.5 and 334.5. Sample *n* is taken at 06:00 + (n−1)×15 min.
+
+**Checking the rules in sample order:**
+
+- **Rule 1 (beyond 3σ):** The only point beyond a 3σ limit is sample 100 (324.8 g), so this cannot be the first signal.
+- **Rule 2 (2 of 3 beyond 2σ):** Sample 84 (326.9 g) is the only point beyond −2σ before sample 100, and no two such points fall within three consecutive samples before then.
+- **Rule 3 (4 of 5 beyond 1σ, same side):** Beyond −1σ (below 328.5) are samples 80 (327.7), 82 (328.1), 83 (328.0) and 84 (326.9). Sample 81 (329.2) is not beyond, so the window 80–84 contains exactly four such points. The fourth of these is sample 84. No earlier window reaches four points on either side.
+- **Rule 4 (8 consecutive on one side of CL):** The run of points below 330 starting at sample 81 reaches eight only at sample 88, which is later than sample 84.
+
+The first signal is therefore **sample 84 (Rule 3)**.
+
+**Clock time:** 06:00 + 83 × 15 min = 06:00 + 20 h 45 min = **02:45**.
+
+**Most recent logged event before 02:45:** The 02:31 entry (""New CO2 cylinder connected"") is the latest one before 02:45. The 02:49 operator break cover entry falls after the sample, so it is not the answer.
+
+FINAL ANSWER: E",E,1,stop,,,6791
+anthropic/claude-haiku-5.5,factory_s302_L1_first_signal,ok,7,first_signal,"Only Rule 1 applies here: a sample beyond the UCL (506 g) or LCL (494 g).
+
+Checking the points in order, samples 1 to 6 all sit between about 498 and 502.5 g, well inside the limits. Sample 7 is at about 507.5 g, which is above the UCL of 506 g, so it is the first signal.
+
+FINAL ANSWER: 7",7,1,stop,,,1704
+anthropic/claude-haiku-5.5,factory_s302_L1_count_beyond_2s,ok,1,count_beyond_2s,"Reading the chart against the sigma lines (CL 500 g, 2 sigma at 504 g and 496 g):
+
+- **Above +2 sigma (504 g):** Only sample 7 (about 507.5 g) is beyond this line. Sample 9 (about 503.4 g) is above +1 sigma but below +2 sigma.
+- **Below −2 sigma (496 g):** No sample falls below this line. The lowest points, samples 14 and 15, are about 497.6 g and 497.5 g.
+
+So exactly one sample lies beyond 2 sigma.
+
+FINAL ANSWER: 1",1,1,stop,,,1986
+anthropic/claude-haiku-5.5,factory_s302_L1_longest_run_above,ok,6,longest_run_above,"Reading each point against the centre line at 500 g:
+
+- Samples 1, 3, 5, 8, 10, 11, 12 are below the line.
+- Samples 2, 4, 6, 7, 9 are above, but they are interrupted by below-line points, so the longest runs there are only 2 (samples 6–7).
+- Sample 13 is just above (about 500.2), followed by a drop below at 14–15. Sample 16 is above, followed by a drop at 17.
+- Samples 17, 18, 19 are below.
+- Samples 20 through 25 are all above the line: about 501.4, 501.4, 502.6, 500.6, 502.3, 500.6.
+
+The longest run is therefore samples 20–25, which is 6 consecutive points.
+
+FINAL ANSWER: 6",6,1,stop,,,1995
+anthropic/claude-haiku-5.5,factory_s302_L1_signal_time,ok,07 30,signal_time,"Sample 7 is the first point beyond a control limit. It plots at about 507.5 g, above the UCL of 506 g (+3 sigma). Samples 1 to 6 all lie between the limits.
+
+Sample 1 was taken at 06:00, and samples are 15 minutes apart. Sample 7 is 6 intervals after sample 1, which is 6 × 15 = 90 minutes. So sample 7 was taken at 06:00 + 01:30 = 07:30.
+
+FINAL ANSWER: 07:30",07:30,1,stop,,,1766
+anthropic/claude-haiku-5.5,factory_s302_L2_first_signal,ok,12,first_signal,"The first signal is at sample 12, under Rule 2.
+
+Reading the chart (CL 1500, sigma 4 g), the 2-sigma lines are at 1508 and 1492, and the 3-sigma lines are at 1512 and 1488.
+
+- **Samples 1–10:** all lie between 1492 and 1508, so none is beyond 2 sigma.
+- **Sample 11 (about 1508.9):** just above the +2 sigma line at 1508, so it is beyond 2 sigma on the upper side. This is the first such sample, so no signal yet.
+- **Sample 12 (about 1510.0):** also beyond +2 sigma. Samples 11 and 12 are two of three consecutive samples beyond 2 sigma on the same side, so Rule 2 signals at the later one, sample 12.
+- **Sample 19 (about 1485.8)** would trigger Rule 1, but it comes after sample 12.
+
+Sample 7 (about 1492.5) is above the −2 sigma line, so it does not count.
+
+FINAL ANSWER: 12",12,1,stop,,,2895
+anthropic/claude-haiku-5.5,factory_s302_L2_count_beyond_2s,ok,3,count_beyond_2s,"I read each sample against the ±2 sigma lines at 1508 (upper) and 1492 (lower).
+
+- **Above +2 sigma (1508):** Samples 11 (about 1508.8) and 12 (about 1510.0).
+- **Below −2 sigma (1492):** Sample 19 (about 1485.8). Sample 7 sits at about 1492.5, just above the line, so it does not count.
+
+All other samples fall between the 2 sigma lines. Sample 19 is also beyond the −3 sigma limit, but it is counted once.
+
+Total: 3 samples beyond 2 sigma.
+
+FINAL ANSWER: 3",3,1,stop,,,2302
+anthropic/claude-haiku-5.5,factory_s302_L2_longest_run_above,ok,3,longest_run_above,"Reading each point against the centre line at 1500 (the chart's y-axis runs roughly 1485 to 1515):
+
+- Samples 2–4 are above the line (about 1501.2, 1500.5, 1502.7): a run of 3.
+- Samples 11–13 are above the line (about 1508.8, 1510.0, 1502.9): a run of 3.
+- Samples 16–18 are above the line (about 1502.2, 1500.8, 1502.0): a run of 3.
+- Samples 6, 23 and 24 sit just below the centre line, so they break any run.
+- Sample 25 is above, but it is isolated after sample 24.
+
+The longest run of consecutive samples above the centre line is 3.
+
+FINAL ANSWER: 3",3,1,stop,,,2045
+anthropic/claude-haiku-5.5,factory_s302_L2_signal_time,ok,08 45,signal_time,"The first signalling sample is sample 12, taken at 08:45.
+
+**Reading the chart:** sigma = 4 g, so the ±2σ lines are at 1492 and 1508, and the ±3σ lines are at 1488 and 1512.
+
+**Checking for signals in order:**
+- **Samples 1–10:** none is beyond 3σ. Sample 7 (about 1492.5) sits just above the −2σ line at 1492, so it is not beyond 2σ. No Rule 2 signal.
+- **Sample 11 (about 1508.8):** beyond +2σ (above 1508) but not beyond +3σ. Only one sample in its window is beyond 2σ, so no signal yet.
+- **Sample 12 (about 1510.0):** beyond +2σ. Samples 11 and 12 are two of three consecutive samples beyond 2σ on the same side, so Rule 2 signals at sample 12, the later of the two.
+
+**Timing:** sample 1 is at 06:00 and samples are 15 minutes apart, so sample 12 is at 06:00 + 11 × 15 min = 06:00 + 165 min = 08:45.
+
+FINAL ANSWER: 08:45",08:45,1,stop,,,2678
+anthropic/claude-haiku-5.5,factory_s302_L3_first_signal,ok,27,first_signal,"The first signal is at sample 27, under Rule 3.
+
+Sigma is 4 g, so the zone lines are: 1 sigma at 1504 and 1496, 2 sigma at 1508 and 1492, and 3 sigma at 1512 and 1488.
+
+- **Rule 1:** Sample 36 (about 1515) is the first sample beyond UCL, so it signals at 36, which is later than 27.
+- **Rule 2:** Sample 14 (about 1508.6) is the only sample beyond +2 sigma before 27. No two samples in any three-sample window are beyond 2 sigma on the same side before 27.
+- **Rule 3 (below 1496):** Samples 23 (about 1493.4), 24 (about 1494.9), 26 (about 1493.8) and 27 (about 1491.5) are beyond -1 sigma. Sample 25 (about 1499.5) is not. Within samples 23–27, four are beyond -1 sigma, and the fourth of them is sample 27. No earlier five-sample window has four beyond 1 sigma on the same side.
+- **Rule 4:** Samples 23 through 31 are all below the centre line, a run of nine. The eighth sample of that run is 30, which is later than 27.
+
+FINAL ANSWER: 27",27,1,stop,,,4519
+anthropic/claude-haiku-5.5,factory_s302_L3_count_beyond_2s,ok,3,count_beyond_2s,"I read each point against the ±2 sigma lines (1508 and 1492), counting any point strictly beyond them.
+
+- **Above +2σ (1508):** sample 14 (about 1508.6), sample 36 (about 1514.8).
+- **Below −2σ (1492):** sample 27 (about 1491.5).
+
+Near misses that are not beyond 2σ: sample 47 (about 1507.6, just under +2σ), sample 39 (about 1492.6) and sample 17 (about 1493.5).
+
+FINAL ANSWER: 3",3,1,stop,,,2350
+anthropic/claude-haiku-5.5,factory_s302_L3_longest_run_above,ok,4,longest_run_above,"I read each sample's position relative to the centre line at 1500 g, then looked for the longest consecutive stretch above it.
+
+Runs of samples above the centre line:
+- Samples 2–3: 2 samples
+- Samples 5–7: 3 samples
+- Samples 13–14: 2 samples
+- Samples 20–22: 3 samples
+- Samples 32–34: 3 samples
+- Samples 36–37: 2 samples
+- Samples 43–45: 3 samples
+- Samples 47–50: 4 samples
+
+The longest run is samples 47 to 50, with all four plotted above 1500 g.
+
+FINAL ANSWER: 4",4,1,stop,,,2337
+anthropic/claude-haiku-5.5,factory_s302_L3_signal_time,ok,11 00,signal_time,"## Reading the chart
+
+Sigma is 4 g, so the sigma lines are: 1 σ = 1504/1496, 2 σ = 1508/1492, 3 σ = 1512/1488, with CL = 1500.
+
+## Checking each rule for the earliest signal
+
+- **Rule 1 (beyond 3σ):** The first sample beyond a 3σ line is sample 36 (about 1514.8 g).
+- **Rule 2 (two of three beyond 2σ, same side):** The only points beyond 2σ are samples 14 (above), 27 (about 1491.5, below) and 36 (above). None of these fall within three consecutive samples of each other on the same side, so no signal.
+- **Rule 3 (four of five beyond 1σ, same side):**
+  - Below 1496 before sample 27, the points are 17, 23, 24, 26 and 27. Samples 23, 24, 26 and 27 are four of the five consecutive samples 23–27, and the fourth one is sample 27. Sample 25 (about 1499.5) is not beyond 1σ.
+  - Earlier windows contain at most three qualifying points. For example, samples 22–26 contain only 23, 24 and 26.
+  - Above 1504 before sample 27, only sample 14 qualifies, so there is no signal there.
+- **Rule 4 (eight consecutive on one side):** Samples 23–30 are all below CL (23, 24, 25 at about 1499.5, 26, 27, 28, 29, 30 at about 1497.7). That gives a signal at sample 30, which is later than sample 27.
+
+The earliest signal is therefore at **sample 27**.
+
+## Converting to clock time
+
+Sample 1 is at 22:00 and samples are 30 minutes apart. Sample 27 is 26 intervals later:
+
+26 × 30 min = 780 min = 13 h
+
+22:00 + 13 h = 11:00 the following day.
+
+FINAL ANSWER: 11:00",11:00,1,stop,,,6245
+anthropic/claude-haiku-5.5,factory_s302_L3_cause_event,ok,E,cause_event,"**Reading the chart (σ = 4 g, CL = 1500):**
+
+- **Rule 1 (beyond ±3σ):** The first point beyond a 3σ limit is sample 36 (about 1514.8, above the 1512 UCL), which is later than the other signals below.
+- **Rule 2 (2 of 3 beyond 2σ, same side):** Sample 14 (about 1508.6) is the only point beyond +2σ before sample 27. Sample 27 (about 1491.5) is the first point beyond −2σ, but sample 26 (about 1493.9) is not, so no signal yet.
+- **Rule 3 (4 of 5 beyond 1σ, same side):** Below 1496, the points are samples 17, 23, 24, 26, 27, and so on. In the window 23–27, samples 23, 24, 26 and 27 are all below 1496, which is four of five. The fourth of these is sample 27. No earlier window of five reaches four points on one side beyond 1σ. Above 1504, the windows around samples 32–36 and 46–50 only reach three.
+- **Rule 4 (8 consecutive on one side):** No run of eight on one side of the centre line occurs before sample 27.
+
+So the first signal is at **sample 27** from Rule 3.
+
+**Clock time:** Sample 1 is at 22:00 and samples are 30 minutes apart, so sample 27 is at 22:00 + 26 × 30 min = 22:00 + 13 h = **11:00**.
+
+**Most recent logged event before 11:00:**
+- 03:59 Conveyor guard re-latched
+- 10:59 Fill-height probe recalibrated
+- 11:25 Shift supervisor walk-round (after the sample)
+- 15:09 and 22:11 events are later still, so they don't count.
+
+The most recent event before 11:00 is the fill-height probe recalibration at 10:59.
+
+E
+
+FINAL ANSWER: E",E,1,stop,,,5753
+anthropic/claude-haiku-5.5,factory_s302_L4_first_signal,ok,67,first_signal,"**Reading the chart:** CL = 1000, so ±1σ = 997/1003, ±2σ = 994/1006, and ±3σ = 991/1009.
+
+- **Rule 1 (beyond 3σ):** Sample 67 sits at about 1011, above the UCL of 1009. No earlier sample exceeds 1009 or falls below 991.
+- **Rule 2 (two of three beyond 2σ):** The only sample beyond 2σ before 67 is sample 33 (about 994.7), which is above the −2σ line of 994. So no signal there.
+- **Rule 3 (four of five beyond 1σ):** Samples beyond +1σ before 67 are only 2 (about 1003.3). Samples beyond −1σ are 18, 19, 28, 31, 32, 33, 40 and 62. Samples 28, 31, 32 and 33 give at most three in any five-sample window, because 29 and 30 are not beyond −1σ. No signal.
+- **Rule 4 (eight on one side):** The longest same-side runs before sample 67 are about 5 samples, so no signal.
+
+Sample 67 is the first to signal, under Rules 1 and 2.
+
+FINAL ANSWER: 67",37,0,stop,,predicted:rule1_only,4874
+anthropic/claude-haiku-5.5,factory_s302_L4_count_beyond_2s,ok,1,count_beyond_2s,"I counted the points lying above the +2 sigma line (1006 g) or below the −2 sigma line (994 g).
+
+- **Above +2 sigma (1006 g):** Sample 67 is at about 1011 g, so it is beyond 2 sigma. The next-highest points, samples 2 and 53 at about 1003 g, are inside the limit.
+- **Below −2 sigma (994 g):** The lowest points are sample 33 at about 994.7 g and sample 19 at about 995.1 g. Both are above the 994 line, so neither counts.
+
+Sample 67 is the only one beyond 2 sigma. It is below 3 sigma (1009 g), so it is not an extra case.
+
+FINAL ANSWER: 1",1,1,stop,,,2257
+anthropic/claude-haiku-5.5,factory_s302_L4_longest_run_above,ok,5,longest_run_above,"I read each sample's value against the centre line at 1000 g and counted consecutive runs above it.
+
+The longest runs above the centre line are five samples long, and two runs tie at that length:
+- Samples 56–60 (about 1001.2, 1000.4, 1002.2, 1000.9, 1002.6)
+- Samples 66–70 (about 1002.4, 1011.2, 1002.1, 1000.4, 1000.4)
+
+Samples 55 and 65 are below the line, so neither run extends further. The other runs are shorter, at most four (samples 12–15).
+
+FINAL ANSWER: 5",5,1,stop,,,3270
+anthropic/claude-haiku-5.5,factory_s302_L4_signal_time,ok,07 00,signal_time,"## Reading the chart
+
+Scale: CL = 1000, 1σ = 3 g (lines at 997 and 1003), 2σ = 994 and 1006, 3σ = 991 and 1009.
+
+Estimated values for the relevant samples:
+
+- 30 to 37 are all below 1000, with 30 to 35 near 994.7 to 997.4. Sample 30 is about 997.4, which is above the −1σ line.
+- Sample 67 is about 1011.2, above UCL.
+
+## Checking each rule in order
+
+**Rule 4 (eight consecutive on one side of CL):** Samples 1 to 29 contain no run of eight on one side. Sample 29 is above CL (about 1002.2), and samples 30 to 38 are all below CL. The run starts at sample 30, so the eighth sample is sample 37.
+
+**Rule 3 (four of five beyond 1σ on one side):**
+- Above 1003: the first beyond-1σ sample is sample 2 (about 1003.3), and the next is sample 53. No signal before sample 53.
+- Below 997: samples 18, 19, 28 and 31 to 33 are beyond, but no five-sample window contains four of them. Windows ending at sample 33 contain at most three (samples 31 to 33). Samples 30, 34 to 37 are not beyond 997.
+
+**Rule 2 (two of three beyond 2σ on one side):** Only sample 67 (above 1006) is beyond 2σ, and sample 33 (about 994.7) is not beyond 994. No signal before sample 67.
+
+**Rule 1 (beyond 3σ):** First at sample 67.
+
+So the earliest signal is Rule 4 at sample 37.
+
+## Clock time
+
+Sample 1 is at 22:00 and samples are 15 minutes apart. Sample 37 is 36 intervals later, which is 36 × 15 = 540 minutes = 9 hours after 22:00, giving 07:00 the next day.
+
+FINAL ANSWER: 07:00",07:00,1,stop,,,6012
+anthropic/claude-haiku-5.5,factory_s302_L4_cause_event,ok,B,cause_event,"**Reading the chart:** Sample 1 is at 22:00 and samples are 15 minutes apart, so sample n is at 22:00 + (n−1)×15 min.
+
+**Checking the rules in order:**
+
+- **Rule 1 (beyond 3σ):** The first point beyond UCL (1009) is sample 67 at about 1011, so this signal comes late.
+- **Rule 2 (2 of 3 beyond 2σ, i.e. above 1006 or below 994):** Sample 67 is the only point beyond 2σ before the signal region. Samples 19 (≈995.1) and 33 (≈994.7) are not beyond 994.
+- **Rule 3 (4 of 5 beyond 1σ, i.e. above 1003 or below 997):** No window of five contains four such points before sample 67. The closest is samples 31–34, which has only three (31, 32, 33), since sample 30 (≈997.4) and sample 34 (≈998.3) are not beyond 997.
+- **Rule 4 (8 consecutive on one side of the centre line):** Samples 1–29 have no run of eight on one side. Sample 29 (≈1002.2) is above the centre line, and samples 30 through 38 are all below it (9 in a row). The eighth of these is sample 37.
+
+So the first signal is **Rule 4 at sample 37**.
+
+**Clock time of sample 37:** 22:00 + 36 × 15 min = 36 × 15 = 540 min = 9 h, giving **07:00**.
+
+**Logged events before 07:00:**
+- 06:57 Nozzle 4 replaced (RT), which is 3 minutes before the sample.
+- 07:07 Line stopped (jam at capper) is after the sample, so it does not count.
+
+The most recent event before the signalling sample is the nozzle replacement.
+
+FINAL ANSWER: B",B,1,stop,,,6259
+anthropic/claude-haiku-5.5,factory_s302_L5_first_signal,ok,25,first_signal,"**Reading the chart:** CL = 500, 1σ lines at 498/502, 2σ lines at 496/504, 3σ lines at 494/506.
+
+- **Rule 1 (beyond 3σ):** The lowest point is sample 4 at about 495.2, which is above the 494 LCL. The first breach is sample 34 at about 493.3, which is much later.
+- **Rule 2 (two of three beyond 2σ, same side):** No point exceeds 504. Only sample 4 (about 495.2) falls below 496, and no second point joins it within a three-sample window. No signal before sample 34.
+- **Rule 3 (four of five beyond 1σ, same side):** Samples 22 (about 502.3), 23 (about 503.5), 24 (about 502.6) and 25 (about 502.6) are all above 502. Sample 21 (about 501.8) is not. The fourth of these consecutive points above 502 is sample 25. Earlier windows reach only three points above 502 (for example, samples 19, 22, 23).
+- **Rule 4 (eight consecutive on one side of CL):** Samples 18 through 25 are all above 500. Sample 18 (about 500.6) is the first, so the eighth is sample 25. No earlier run of eight exists: the other runs above or below 500 are shorter than eight.
+
+The earliest signal is at sample 25, from Rules 3 and 4 together.
+
+FINAL ANSWER: 25",25,1,stop,,,5273
+anthropic/claude-haiku-5.5,factory_s302_L5_count_beyond_2s,ok,2,count_beyond_2s,"I counted the samples lying strictly beyond the ±2 sigma lines (above 504 g or below 496 g).
+
+- **Above 504 g:** The highest points are around sample 26 (about 503.6) and sample 19 (about 503.5), both below 504. None are beyond the upper 2 sigma line.
+- **Below 496 g:** Sample 4 (about 495.2) and sample 34 (about 493.3, beyond the −3 sigma line at 494) are beyond. Samples 36 (about 496.2) and 43 (about 496.4) sit just above 496, so they don't count.
+
+Total: 2 samples beyond 2 sigma, both on the low side.
+
+FINAL ANSWER: 2",2,1,stop,,,2863
+anthropic/claude-haiku-5.5,factory_s302_L5_longest_run_above,ok,10,longest_run_above,"I read each sample's approximate value from the chart and looked for the longest consecutive stretch above the 500 g centre line.
+
+The longest run is samples 18 to 27 (ten samples). Sample 18 sits at about 500.6, and samples 19 to 27 all lie above 502, before sample 28 drops to about 498.3. The other runs above the centre line are shorter: samples 58 to 61 give four, and every other run is two or fewer.
+
+FINAL ANSWER: 10",10,1,stop,,,3641
+anthropic/claude-haiku-5.5,factory_s302_L5_signal_time,ok,06 00,signal_time,"**Reading the chart**
+
+Sigma is 2 g, so the limits are: 1σ at 498 and 502, 2σ at 496 and 504, 3σ at 494 and 506. Checking the rules in sample order:
+
+- **Rule 1 (beyond 3σ):** The first sample outside 494–506 is sample 34 (about 493.3), so the earliest possible Rule 1 signal is at 34.
+- **Rule 2 (two of three beyond 2σ):** Below 496, only samples 4 and 34 qualify, and they are not within three consecutive samples. Nothing above 504. No signal before 34.
+- **Rule 3 (four of five beyond 1σ):** Samples 19, 22, 23, 24 and 25 are above 502 (sample 20 at about 501.2 and sample 21 at about 501.8 are not). Samples 22–25 are four consecutive samples beyond 1σ above the centre line, so the signal is at sample 25. No earlier window of five contains four such samples.
+- **Rule 4 (eight consecutive on one side of CL):** The run above 500 starts at sample 18 (about 500.6) and continues through 27. Samples 18–25 are eight consecutive samples above the centre line, so the signal is at sample 25. No earlier run reaches eight: the earlier runs above and below 500 are all shorter.
+
+So the first signalling sample is sample 25 (Rules 3 and 4 both signal there).
+
+**Clock time**
+
+Sample 1 is at 22:00 and samples are 20 minutes apart. Sample 25 is 24 intervals later, which is 480 minutes or 8 hours. 22:00 + 8:00 = 06:00 the following day.
+
+FINAL ANSWER: 06:00",06:00,1,stop,,,5841
+anthropic/claude-haiku-5.5,factory_s302_L5_cause_event,ok,F,cause_event,"Sample 1 is at 22:00 and samples are 20 minutes apart, so sample n is at 22:00 + (n−1)×20 min.
+
+Reading the chart (CL 500, σ = 2 g, so 1σ = 502/498, 2σ = 504/496, 3σ = 506/494):
+
+- **Rule 1:** The first point beyond 3σ is sample 34 (about 493.3), which is later than the candidate below.
+- **Rule 2:** The only point beyond 2σ before sample 34 is sample 4 (about 495.2), a single point, so no signal.
+- **Rule 3:** Samples 22 (502.3), 23 (503.5), 24 (502.6) and 25 (502.6) are all beyond +1σ. Samples 21 (501.8) and 20 (501.2) are not, so these four form the first four-of-five run. The fourth is sample 25.
+- **Rule 4:** Samples 18 through 25 are all above the centre line, giving eight in a row at sample 25. Sample 17 (499.5) breaks any earlier run, so this also signals at sample 25.
+
+The first signalling sample is therefore sample 25, at 22:00 + 24 × 20 min = 22:00 + 8 h = **06:00**.
+
+The log entries before 06:00 are 02:19 (conveyor guard re-latched) and 05:50 (product tank switched to tank B). The most recent is 05:50, the product tank switch.
+
+FINAL ANSWER: F",F,1,stop,,,5751
+anthropic/claude-haiku-5.5,factory_s303_L1_first_signal,ok,0,first_signal,"Only Rule 1 applies: a sample must fall beyond the UCL (1512 g) or the LCL (1488 g). The plotted points range from about 1496.5 g (sample 3 and sample 24, the lowest) to about 1503.5 g (samples 1, 15, 18 and 25, the highest). All of them sit between the 1 sigma and 2 sigma lines or nearer the centre line, far inside the 3 sigma limits. No sample is beyond either control limit, so no signal occurs.
+
+FINAL ANSWER: 0",0,1,stop,,,1766
+anthropic/claude-haiku-5.5,factory_s303_L1_count_beyond_2s,ok,0,count_beyond_2s,"I checked each of the 25 points against the ±2 sigma lines, which are at 1508 (upper) and 1492 (lower). The highest points are about 1503.5 (samples 1, 15, 18, 25) and the lowest is about 1496.5 (sample 3). All points lie between the +1 sigma and −1 sigma lines or close to them, well inside the ±2 sigma lines. No sample is beyond 2 sigma on either side, and none reaches 3 sigma.
+
+FINAL ANSWER: 0",0,1,stop,,,1834
+anthropic/claude-haiku-5.5,factory_s303_L1_longest_run_above,ok,2,longest_run_above,"Reading each point against the centre line at 1500 g (above = greater than 1500):
+
+- Samples 1–2: above, above (run of 2)
+- Sample 3: below
+- Sample 4: above (run of 1)
+- Samples 5–7: below
+- Sample 8: above (run of 1, since sample 9 is below)
+- Samples 9–14: below
+- Sample 15: above (run of 1)
+- Samples 16–17: below
+- Sample 18: above (run of 1)
+- Samples 19–20: below
+- Samples 21–22: above, above (run of 2)
+- Samples 23–24: below
+- Sample 25: above (run of 1)
+
+The longest run above the centre line is 2 samples, occurring at samples 1–2 and again at samples 21–22.
+
+FINAL ANSWER: 2",2,1,stop,,,2161
+anthropic/claude-haiku-5.5,factory_s303_L2_first_signal,ok,10,first_signal,"Reading the chart against the limits (CL 1000, +2σ 1006, −2σ 994, UCL 1009, LCL 991):
+
+- **Samples 1–8:** No sample is beyond 2σ. Sample 7 (about 1005.6) is just below the +2σ line, and sample 6 (about 995.6) is above the −2σ line.
+- **Sample 9:** About 1008.2, beyond +2σ. Only one sample in the window so far is beyond 2σ, so no Rule 2 signal yet.
+- **Sample 10:** About 1007.9, also beyond +2σ. Samples 9 and 10 are two of three consecutive samples beyond 2σ on the same side, so Rule 2 signals at sample 10.
+- **Sample 13:** About 990.2, below LCL. This would trigger Rule 1, but it comes after sample 10.
+
+The first signal is therefore at sample 10.
+
+FINAL ANSWER: 10",10,1,stop,,,2437
+anthropic/claude-haiku-5.5,factory_s303_L2_count_beyond_2s,ok,3,count_beyond_2s,"I read each sample against the lines: CL 1000, ±2σ at 1006 and 994, and ±3σ at 1009 and 991.
+
+- **Samples beyond +2σ (above 1006):** sample 9 (about 1008.2) and sample 10 (about 1007.9).
+- **Samples beyond −2σ (below 994):** sample 13 (about 990.2), which is also beyond −3σ.
+- **Near the limits but inside:** sample 7 (about 1005.6) and sample 6 (about 995.5) both sit between the 2σ lines.
+
+No other samples go past the 2σ lines, so the total is 3.
+
+FINAL ANSWER: 3",3,1,stop,,,2420
+anthropic/claude-haiku-5.5,factory_s303_L2_longest_run_above,ok,3,longest_run_above,"I read each sample's value against the centre line at 1000 g:
+
+- **Above CL:** samples 1, 3–5, 7, 9–10, 12, 14, 16, 18
+- **Below CL:** samples 2, 6, 8, 11, 13, 15, 17, 19–25
+
+The runs above the centre line are 1 (length 1), 3–5 (length 3), 7 (length 1), 9–10 (length 2), 12 (length 1), 14 (length 1), 16 (length 1) and 18 (length 1). The longest is samples 3–5, with 3 consecutive points.
+
+FINAL ANSWER: 3",3,1,stop,,,1902
+anthropic/claude-haiku-5.5,factory_s303_L2_signal_time,ok,09 00,signal_time,"The first signal is at sample 10, taken at 09:00.
+
+**Reading the chart:** Sigma is 3 g, so the 2-sigma lines are at 994 and 1006, the 3-sigma lines at 991 and 1009.
+
+**Checking samples in order:**
+- Samples 1–8: none is beyond 1006 or below 994. Sample 7 (about 1005.6) sits just under the +2 sigma line, so it does not count.
+- Sample 9 (about 1008.2) is beyond +2 sigma. Sample 10 (about 1007.9) is also beyond +2 sigma, on the same side. Two of three consecutive samples beyond 2 sigma on the same side triggers Rule 2, and the signal is at the later sample, sample 10.
+- Sample 13 (about 990.2) is below the LCL and would trigger Rule 1, but it comes after sample 10.
+
+**Clock time:** Sample 1 is at 06:00 and samples are 20 minutes apart. Sample 10 is 9 intervals later, i.e. 9 × 20 = 180 minutes, so 06:00 + 3 h = 09:00.
+
+FINAL ANSWER: 09:00",09:00,1,stop,,,2702
+anthropic/claude-haiku-5.5,factory_s303_L3_first_signal,ok,23,first_signal,"Reading the chart against the CL (1500), 1σ = 4 g, and the limits, I checked each rule in sample order.
+
+- **Rule 1 (beyond 3σ):** No point exceeds 1512 before sample 38 (about 1513.9), so the first Rule 1 signal is at 38.
+- **Rule 2 (two of three beyond 2σ):** No point exceeds 1508 or falls below 1492 before sample 38, so no signal there.
+- **Rule 3 (four of five beyond 1σ):** Points above 1504 before sample 38 are 5, 23, 25, 26, 29 and 33. No five-sample window contains four of them. Points below 1496 are 27 and 35 only, so no signal.
+- **Rule 4 (eight consecutive on one side):** Sample 15 (about 1497.5) is below the CL, and samples 16 through 26 are all above it. Counting from 16, the eighth consecutive sample on the same side is sample 23. No earlier run reaches eight: the longest earlier run is samples 7–10, which has only four.
+
+Rule 4 therefore signals at sample 23, before the Rule 1 signal at 38.
+
+FINAL ANSWER: 23",23,1,stop,,,3877
+anthropic/claude-haiku-5.5,factory_s303_L3_count_beyond_2s,ok,1,count_beyond_2s,"Samples beyond 2 sigma are those above +2σ (1508) or below −2σ (1492).
+
+- **Above +2σ (1508):** Sample 38 (about 1514) is clearly beyond. Samples 5 and 33 sit at about 1507.5, just below the line, so they don't count.
+- **Below −2σ (1492):** The lowest points, samples 27 and 35 at about 1495.5, are well above 1492, so none count.
+
+That gives one sample beyond 2 sigma.
+
+FINAL ANSWER: 1",1,1,stop,,,2356
+anthropic/claude-haiku-5.5,factory_s303_L3_longest_run_above,ok,11,longest_run_above,"I read each sample's value against the centre line at 1500 g and counted consecutive runs above it.
+
+- Samples 1, 3–5, 7–10, 12–13, and 16–26 are above, along with several shorter runs elsewhere.
+- The longest is samples 16 through 26, which is 11 consecutive samples (sample 15 is below at about 1497.5 g, and sample 27 is below at about 1495.6 g).
+
+The next longest runs are 4 (samples 7–10) and 3 (samples 3–5).
+
+FINAL ANSWER: 11",11,1,stop,,,2351
+anthropic/claude-haiku-5.5,factory_s303_L3_signal_time,ok,09 00,signal_time,"The first signal is at sample 23, under Rule 4, taken at 09:00.
+
+**Reading the chart** (σ = 4 g, so 1σ lines at 1504/1496, 2σ at 1508/1492, 3σ at 1512/1488):
+
+- **Rule 1 (beyond 3σ):** Sample 38 (about 1514) is the only point beyond UCL, so this signals at 38, later than sample 23.
+- **Rule 2 (two of three beyond 2σ, same side):** Only sample 38 exceeds 1508 (sample 5 is about 1507.5, just short of the line). No signal before sample 38.
+- **Rule 3 (four of five beyond 1σ, same side):** Upper-side windows reach at most 3 of 5 before sample 33 (for example, samples 23, 25, 26 in the 23–27 window). The only point below 1496 before sample 27 is none; samples 27 and 35 are the lower exceedances. No signal before sample 23.
+- **Rule 4 (eight consecutive on one side):** Samples 16 to 26 are all above the centre line (1500), with sample 27 (about 1495.6) the first point below. That is 11 consecutive samples above, and the eighth of them is sample 16 + 7 = **sample 23**. Nothing earlier has eight in a row: samples 7–10 form a run of only four.
+
+So the first signalling sample is sample 23.
+
+**Clock time:** Sample 1 is at 22:00 and samples are every 30 minutes, so sample 23 is 22 × 30 min = 660 min = 11 h after 22:00, which is 09:00 the next day.
+
+FINAL ANSWER: 09:00",09:00,1,stop,,,4447
+anthropic/claude-haiku-5.5,factory_s303_L3_cause_event,ok,F,cause_event,"**Reading the chart:** CL = 1500 g, σ = 4 g, so the 1σ, 2σ and 3σ limits are 1496/1504, 1492/1508 and 1488/1512.
+
+**Checking the rules in sample order:**
+
+- **Rule 1 (beyond 3σ):** The first sample above 1512 is sample 38 (about 1514). Nothing earlier qualifies.
+- **Rule 2 (two of three beyond 2σ, same side):** Only sample 38 is beyond 1508 on the high side, and no sample is beyond 1492 on the low side. Nothing qualifies before 38.
+- **Rule 3 (four of five beyond 1σ, same side):** Upper-side 1σ exceedances occur at samples 5, 23, 25, 26, 29, 33, 38 and 39. No five-sample window contains four of them. Sample 27 (about 1495.6) and sample 35 (about 1495.6) are the only lower-side exceedances, so there is no four-of-five run on either side.
+- **Rule 4 (eight consecutive on one side of CL):** Sample 15 (about 1497.5) is below CL, so a new run starts at sample 16. Samples 16 to 23 are all above 1500 (16: 1500.6, 17: 1502.7, 18: 1502.9, 19: 1503.5, 20: 1502.2, 21: 1502.8, 22: 1501.0, 23: 1504.9). The eighth of these is sample 23, which is the first signal.
+
+**Clock time of sample 23:** Sample 1 is at 22:00 and samples are 30 min apart, so sample 23 is 22 × 30 = 660 min later, which is 09:00.
+
+**Most recent logged event before 09:00:** The 08:42 entry, ""Filler valve seals changed"" (the 09:11 carton magazine refill came after the sample).
+
+FINAL ANSWER: F",F,1,stop,,,4671
+anthropic/claude-haiku-5.5,factory_s303_L4_first_signal,ok,34,first_signal,"The first signal is at sample 34, under Rule 4.
+
+Reading the chart (CL = 330, 1σ = 1.5 g, so the lines sit at 331.5/328.5, 333/327 and 334.5/325.5):
+
+- **Rule 4:** Samples 27 to 34 all lie above the centre line (sample 26 is about 329.7, below it). Sample 34 is the eighth consecutive sample on that side, so it signals. Earlier runs on one side are shorter than eight (for example, samples 10 to 14 and 2 to 5).
+- **Rule 3:** Samples 33 to 36 are the first four of any five consecutive samples beyond 331.5, so this would signal at 36. Samples 28 to 30 and 29 to 33 give only three beyond 1σ in any five-sample window, so there is no earlier Rule 3 signal.
+- **Rule 2:** The highest points before sample 62 are about 332.75 (samples 10 and 49), which is below the 2σ line at 333. No Rule 2 signal occurs.
+- **Rule 1:** The first point beyond 334.5 is sample 62 (about 335.6), which is later.
+
+FINAL ANSWER: 34",34,1,stop,,,4844
+anthropic/claude-haiku-5.5,factory_s303_L4_count_beyond_2s,ok,1,count_beyond_2s,"I checked each point against the +2σ line at 333 and the −2σ line at 327.
+
+- **Above +2σ (333):** Sample 62 sits at about 335.6, which is beyond it, and also beyond the +3σ line at 334.5. The highest points near the line, samples 10 and 49 at about 332.7, are below 333.
+- **Below −2σ (327):** The lowest point, sample 44 at about 327.5, is still above 327. Sample 74 at about 327.7 is also above it.
+
+Only one sample lies beyond the 2σ lines.
+
+FINAL ANSWER: 1",1,1,stop,,,2151
+anthropic/claude-haiku-5.5,factory_s303_L4_longest_run_above,ok,10,longest_run_above,"The longest run of consecutive samples above the centre line (330 g) is samples 27 to 36, which is 10 samples. Sample 27 is about 331.1 g and sample 36 is about 331.7 g, with sample 37 (about 329.8 g) falling below the line. The next-longest runs are samples 10–14 (5 samples) and samples 2–5 (4 samples). These values are read by eye from the chart, so the boundaries are approximate, but the run at 27–36 is clearly the longest.
+
+FINAL ANSWER: 10",10,1,stop,,,2902
+anthropic/claude-haiku-5.5,factory_s303_L4_signal_time,ok,22 15,signal_time,"The first signal is at sample 34, detected by Rule 4.
+
+**Reading the chart:** Sigma is 1.5 g, so the lines are CL = 330, ±1σ at 331.5/328.5, ±2σ at 333/327, and ±3σ at 334.5/325.5.
+
+**Checking the rules in order of sample number:**
+
+- **Rule 1 (beyond 3σ):** The first point beyond 334.5 is sample 62 (about 335.6), so this does not signal earlier.
+- **Rule 2 (two of three beyond 2σ):** No point before sample 62 is beyond 333 or below 327. The closest are sample 10 (about 332.75) and samples 44 and 74 (about 327.5 and 327.75), none beyond the 2σ lines.
+- **Rule 3 (four of five beyond 1σ on one side):** Above 331.5, samples 28–30 form a run of three, and samples 33–36 form four consecutive points. The fourth of those (sample 36) would be the signal, but the samples 33–36 window does not complete until sample 36. Below 328.5, no five-sample window contains four such points before sample 62.
+- **Rule 4 (eight consecutive on one side of CL):** Sample 26 (about 329.65) is below the centre line, so an unbroken run above 330 starts at sample 27. Samples 27, 28, 29, 30, 31, 32, 33, 34 are all above 330, which makes sample 34 the eighth in the run. No earlier run of eight exists on either side.
+
+So the first signal is at sample 34, under Rule 4.
+
+**Clock time:** Sample 1 is at 14:00 and samples are 15 minutes apart. Sample 34 is 33 intervals after sample 1, which is 33 × 15 = 495 minutes = 8 h 15 min. 14:00 + 8:15 = 22:15.
+
+FINAL ANSWER: 22:15",22:15,1,stop,,,5037
+anthropic/claude-haiku-5.5,factory_s303_L4_cause_event,ok,C,cause_event,"**Setting up:** CL = 330 g, σ = 1.5 g, so the 1σ lines are 328.5 and 331.5, the 2σ lines are 327 and 333, and the 3σ lines are 325.5 and 334.5. Sample n is taken at 14:00 + (n−1)×15 min.
+
+**Checking the rules in sample order:**
+
+- **Rule 1:** The first point beyond 3σ is sample 62 (about 335.6 g). That is later than the signal below.
+- **Rule 2:** No point beyond 2σ until sample 62. The nearest candidates (samples 10, 28, 49 at about 332.75 and 332.25 g, and samples 44 and 74 at about 327.5 and 327.75 g) all fall inside 2σ.
+- **Rule 3:** Samples 28–30 are above 331.5 g, but sample 31 (about 330.9 g) breaks the run. The first 4-of-5 window is samples 32–36, which gives a signal at sample 36. That is later than the Rule 4 signal below.
+- **Rule 4:** Samples 27 through 34 are all above the centre line (27 ≈ 331.1, 28 ≈ 332.25, 29 ≈ 331.9, 30 ≈ 332.2, 31 ≈ 330.9, 32 ≈ 331.35, 33 ≈ 331.7, 34 ≈ 331.85). Sample 26 (about 329.65 g) is below, so the run starts at 27. The eighth sample in the run is sample 34.
+
+**First signal:** Rule 4 at sample 34. Its time is 14:00 + 33 × 15 min = 22:15.
+
+**Most recent logged event before 22:15:**
+- 16:02 Operator break cover: earlier.
+- 21:37 Filler speed raised 600 to 660 bpm: the latest event before 22:15.
+- 22:27 Line stopped, 22:30 Sample sent to lab: both after 22:15.
+- 05:04 and 05:21 events: next morning, so they are after the signal too.
+
+C
+
+FINAL ANSWER: C",C,1,stop,,,5837
+anthropic/claude-haiku-5.5,factory_s303_L5_first_signal,ok,10,first_signal,"The first signal is at sample 10, under Rule 4.
+
+Reading the chart (CL = 330, σ = 1.5 g, so the 1σ, 2σ and 3σ lines sit at 328.5/331.5, 327/333 and 325.5/334.5):
+
+- **Rule 4:** Samples 3 through 10 all lie below the centre line. Sample 2 (about 330.2) is above it and sample 11 (about 330.2) is above it, so this run is exactly eight samples long, and the eighth is sample 10.
+- **Rules 1–3 before sample 10:** No sample passes 3σ. No two of any three consecutive samples exceed 2σ on the same side, and no four of any five exceed 1σ on the same side. Samples 7 and 8 fall below 1σ, but only two of them in that stretch, so Rule 3 is not met.
+
+Rule 4 therefore fires first, at sample 10. The later signals (Rule 2 and Rule 3 at sample 50, Rule 1 at sample 99) come after it.
+
+FINAL ANSWER: 10",10,1,stop,,,5264
+anthropic/claude-haiku-5.5,factory_s303_L5_count_beyond_2s,ok,5,count_beyond_2s,"Using the chart's limits, the +2σ line is at 333 and the −2σ line is at 327. I'm reading the point values off the chart by eye, so borderline readings are approximate.
+
+**Above +2σ (333 g):**
+- Sample 37 (about 334.1)
+- Sample 48 (about 333.2)
+- Sample 50 (about 333.2)
+
+Sample 86 (about 332.4) is below 333, so it does not count.
+
+**Below −2σ (327 g):**
+- Sample 93 (about 326.8)
+- Sample 99 (about 324.2)
+
+Sample 98 (about 327.9) is above 327, so it does not count.
+
+Total beyond 2σ on either side: 3 + 2 = 5.
+
+FINAL ANSWER: 5",5,1,stop,,,2714
+anthropic/claude-haiku-5.5,factory_s303_L5_longest_run_above,ok,10,longest_run_above,"I read each sample's position relative to the centre line (330 g) from the chart. The longest unbroken run above the centre line is samples 46 to 55, which is 10 consecutive samples. Sample 45 (about 329.5 g) falls below the line, and sample 56 (about 329.4 g) does too. The next-longest runs are shorter: samples 47 to 55 would be 9, and samples 35 to 38 are 4.
+
+FINAL ANSWER: 10",10,1,stop,,,4739
+anthropic/claude-haiku-5.5,factory_s303_L5_signal_time,ok,16 15,signal_time,"**Reading the chart:** CL = 330, σ = 1.5 g, so the 1σ lines are 328.5 and 331.5, the 2σ lines are 327 and 333, and the 3σ lines are 325.5 and 334.5.
+
+**Checking the rules in sample order:**
+
+- **Rule 1 (beyond 3σ):** The first sample beyond a 3σ line is sample 99 (about 324.6 g, below LCL 325.5). Nothing earlier qualifies.
+- **Rule 2 (two of three beyond 2σ):** The first samples beyond 2σ are 37 (about 334.05) and then 48 and 50 (about 333.2–333.25). Two of the three samples 48–50 signal at sample 50. Nothing earlier qualifies.
+- **Rule 3 (four of five beyond 1σ):** The first qualifying window is samples 47–50, all beyond 1σ above the centre line, so the signal is at sample 50. The earlier points beyond 1σ (for example 7, 8, 16, 27, 31, 35) never reach four in any five-sample window.
+- **Rule 4 (eight consecutive on one side):** Samples 1 (≈329.8) and 2 (≈330.2) are on different sides, so a run starts at sample 3 (≈329.8, below CL). Samples 3 through 10 are all below CL (sample 11 ≈330.2 is above), giving eight consecutive samples on the same side. The signal is at sample 10.
+
+Rule 4 at sample 10 is the earliest signal.
+
+**Clock time:** Sample 1 is at 14:00 and samples are 15 minutes apart. Sample 10 is 9 intervals later, which is 9 × 15 = 135 minutes, i.e. 2 h 15 min. That gives 14:00 + 2:15 = 16:15.
+
+FINAL ANSWER: 16:15",16:15,1,stop,,,5658
+anthropic/claude-haiku-5.5,factory_s303_L5_cause_event,ok,E,cause_event,"**Setting up the limits:** CL = 330 g, σ = 1.5 g, so the 1σ bands are 328.5 and 331.5, the 2σ bands are 327 and 333, and the 3σ limits are 325.5 and 334.5. Sample *n* is taken at 14:00 + (n−1) × 15 min.
+
+**Scanning for the first signal:**
+
+- **Rule 1:** Sample 37 (≈334.1) is inside UCL. The first sample beyond a 3σ limit is sample 99 (≈324.6), so Rule 1 does not fire earlier.
+- **Rule 2:** The first pair beyond 2σ in a 3-sample window is samples 48 and 50 (both ≈333.2), so the signal is at 50.
+- **Rule 3:** Samples 47–50 are all above 331.5 (four of five), so the signal is at 50. The lower side has only two beyond 1σ before sample 99.
+- **Rule 4:** Samples 3–10 are all below 330 (≈329.8, 328.9, 328.9, 328.7, 328.3, 328.4, 329.2, 329.3). That is eight consecutive samples on the same side, so the signal is at sample 10. Sample 2 (≈330.2) is above the centre line and sample 11 (≈330.2) is also above, so the run is exactly 3–10.
+
+Nothing signals before sample 10, so the first signalling sample is **sample 10 (Rule 4)**.
+
+**Clock time:** 14:00 + 9 × 15 min = 16:15.
+
+**Most recent logged event before 16:15:**
+- 16:13 – Filler valve seals changed (RT)
+- 16:28 – Operator break cover (RT) is after the signal, so it does not count.
+
+The most recent event before 16:15 is the filler valve seals change at 16:13.
+
+FINAL ANSWER: E",E,1,stop,,,6790
+anthropic/claude-haiku-5.5,factory_s304_L1_first_signal,ok,9,first_signal,"Only Rule 1 applies here: a sample beyond the UCL (506 g) or LCL (494 g). Checking each point from sample 1 onward, all stay within the limits until sample 9. Sample 9 plots at about 493.5 g, which is below the LCL of 494 g, so it is the first signal.
+
+FINAL ANSWER: 9",9,1,stop,,,1657
+anthropic/claude-haiku-5.5,factory_s304_L1_count_beyond_2s,ok,1,count_beyond_2s,"Beyond the ±2 sigma lines (above 504 or below 496), only one sample qualifies:
+
+- **Sample 9** plots at about 493.5 g, below the LCL (−3σ) line at 494, so it is beyond 2 sigma on the low side.
+- The highest point, **sample 19** at about 502.5 g, sits between the +1σ (502) and +2σ (504) lines, so it does not count.
+- All other points lie between 496 and 504.
+
+FINAL ANSWER: 1",1,1,stop,,,1756
+anthropic/claude-haiku-5.5,factory_s304_L1_longest_run_above,ok,3,longest_run_above,"I read each sample's approximate value against the centre line at 500 g.
+
+- **Above the centre line:** samples 6–8 (three in a row), 10, 14, 16–17 (two in a row), 19, and 22–24 (three in a row).
+- **Below the centre line:** every other sample, which breaks up all the above-centre runs.
+
+The longest run of consecutive samples above the centre line is 3, occurring at samples 6–8 and again at samples 22–24.
+
+FINAL ANSWER: 3",3,1,stop,,,1837
+anthropic/claude-haiku-5.5,factory_s304_L1_signal_time,ok,08 40,signal_time,"The only point beyond a 3-sigma limit is **sample 9**, at about 493.5 g, below the LCL of 494 g. No other point crosses UCL (506 g) or LCL (494 g). The closest other point is sample 19 at about 502.5 g, which is well inside the limits.
+
+Sample 1 was taken at 06:00 and samples are 20 minutes apart. Sample 9 is 8 intervals after sample 1, so it was taken 8 × 20 = 160 minutes (2 h 40 min) after 06:00, which is 08:40.
+
+FINAL ANSWER: 08:40",08:40,1,stop,,,1810
+anthropic/claude-haiku-5.5,factory_s304_L2_first_signal,ok,9,first_signal,"Sigma is 4 g, so the limits are CL 1500, ±1σ at 1496/1504, ±2σ at 1492/1508, and ±3σ at 1488/1512.
+
+- **Rule 1 (beyond 3σ):** Sample 15 (about 1485) is the first point beyond the LCL of 1488. That is a signal at sample 15.
+- **Rule 2 (two of three beyond 2σ, same side):** Sample 2 is about 1507.5, just below the +2σ line at 1508, so it does not count. Sample 7 (about 1511.2) is beyond +2σ. Sample 8 (about 1499.5) is not. Sample 9 (about 1509.0) is beyond +2σ. Samples 7 and 9 are two of three consecutive points beyond +2σ on the same side, so Rule 2 signals at sample 9.
+
+Sample 9 is the earliest signal, occurring before sample 15.
+
+FINAL ANSWER: 9",9,1,stop,,,2677
+anthropic/claude-haiku-5.5,factory_s304_L2_count_beyond_2s,ok,3,count_beyond_2s,"Sigma is 4 g, so the ±2σ lines are at 1508 and 1492. Reading each sample against them:
+
+- **Above +2σ (1508):** Sample 7 (about 1511) and Sample 9 (about 1509). Sample 2 sits at about 1507.5, just below the line.
+- **Below −2σ (1492):** Sample 15 (about 1485), beyond the −3σ line. No other sample falls below 1492; the lowest other point, Sample 5, is about 1494.5.
+
+Three samples lie beyond 2σ.
+
+FINAL ANSWER: 3",3,1,stop,,,2392
+anthropic/claude-haiku-5.5,factory_s304_L2_longest_run_above,ok,3,longest_run_above,"Reading each point against the centre line at 1500 g (pixel y≈368):
+
+- Above: samples 2–3 (run of 2), 7 (1), 9 (1), 11–12 (run of 2), 14 (1), 16 (1), 18–20 (run of 3), 22 (1).
+- Below: samples 1, 4–6, 8, 10, 13, 15, 17, 21, 23–25.
+
+The longest run above the centre line is samples 18, 19 and 20. Sample 20 sits at about 1500.5 g, still above the line, and sample 21 drops to about 1497.4 g.
+
+FINAL ANSWER: 3",3,1,stop,,,2086
+anthropic/claude-haiku-5.5,factory_s304_L2_signal_time,ok,08 40,signal_time,"**Setting up the limits:** CL = 1500 g, σ = 4 g, so the 2σ lines are at 1492 and 1508 g, the 3σ lines at 1488 and 1512 g.
+
+**Checking each rule in sample order:**
+
+- **Samples 1–6:** No point is beyond 3σ. Sample 2 (about 1507.4 g) is just below the +2σ line at 1508 g, so it is not beyond 2σ. Nothing signals.
+- **Sample 7 (about 1511.2 g):** Beyond +2σ but still below UCL (1512 g), so Rule 1 is not triggered. Only one point is beyond 2σ so far, so Rule 2 is not triggered.
+- **Sample 8 (about 1499.5 g):** Inside the limits.
+- **Sample 9 (about 1509.0 g):** Beyond +2σ. Samples 7 and 9 are both beyond +2σ, and they fall within the three consecutive samples 7, 8, 9. Two of three beyond 2σ on the same side, so Rule 2 signals at sample 9.
+
+Sample 15 (about 1485.2 g, below the 1488 g LCL) would trigger Rule 1, but it comes later than sample 9.
+
+**Converting sample 9 to clock time:** Sample 1 is at 06:00 and samples are 20 minutes apart. Sample 9 is 8 intervals later, which is 160 minutes, or 2 h 40 min. 06:00 + 2:40 = 08:40.
+
+FINAL ANSWER: 08:40",08:40,1,stop,,,2754
+anthropic/claude-haiku-5.5,factory_s304_L3_first_signal,ok,41,first_signal,"**Reading the chart:** CL = 1500, sigma = 4 g, so 1σ = 1504/1496, 2σ = 1508/1492, 3σ = 1512/1488.
+
+- **Rule 1 (beyond 3σ):** The first point beyond 1512 or 1488 is sample 50 (about 1514). Nothing earlier.
+- **Rule 2 (2 of 3 beyond 2σ):** Only sample 45 (about 1491) is beyond 2σ on the low side, and sample 24 (about 1507.3) falls just short of 1508. No signal.
+- **Rule 3 (4 of 5 beyond 1σ, same side):** Samples 37, 38, 39 and 41 are all below 1496, with sample 40 (about 1499) between them. The fourth of these, sample 41, completes the pattern within a 5-sample window (37–41). Earlier windows have at most two points beyond 1σ on one side.
+- **Rule 4 (8 consecutive on one side):** The run below CL starts at sample 37 and would not reach its eighth point until sample 44, which is later than the Rule 3 signal at 41.
+
+The earliest signal is therefore Rule 3 at sample 41.
+
+FINAL ANSWER: 41",41,1,stop,,,4359
+anthropic/claude-haiku-5.5,factory_s304_L3_count_beyond_2s,ok,2,count_beyond_2s,"Samples beyond 2 sigma are those above the +2 sigma line (1508) or below the −2 sigma line (1492).
+
+- **Above 1508:** Sample 50 (about 1514, beyond the +3 sigma line too). Sample 24 is about 1507.5, just below the line, so it doesn't count.
+- **Below 1492:** Sample 45 (about 1491.3). Sample 37 is about 1493, so it doesn't count.
+
+That gives 2 samples.
+
+FINAL ANSWER: 2",2,1,stop,,,2323
+anthropic/claude-haiku-5.5,factory_s304_L3_longest_run_above,ok,4,longest_run_above,"I read each sample's value against the centre line (CL = 1500 g) and found the runs above it.
+
+Samples above the centre line, grouped into runs:
+- 4–6 (3 samples)
+- 8–11 (4 samples)
+- 15 (1)
+- 17 (1)
+- 20–21 (2)
+- 23–24 (2)
+- 26 (1)
+- 28–30 (3)
+- 33 (1)
+- 35–36 (2)
+- 46 (1)
+- 50 (1)
+
+The longest run is samples 8–11, with 4 consecutive samples above the centre line. The values near the centre line (e.g. samples 10 and 11) are close to 1500, so this reading is approximate.
+
+FINAL ANSWER: 4",4,1,stop,,,2410
+anthropic/claude-haiku-5.5,factory_s304_L3_signal_time,ok,10 00,signal_time,"## Reading the chart
+
+Sigma is 4 g, so the lines are 1σ = 1504/1496, 2σ = 1508/1492, and 3σ = 1512/1488. Reading the points approximately, the relevant ones are:
+
+- **Beyond 1σ above (>1504):** samples 24, 36, 46, 50
+- **Beyond 1σ below (<1496):** samples 14, 18, 25, 27, 37, 38, 39, 41, 44, 45, 48
+- **Beyond 2σ:** only sample 45 (about 1491.2, below 1492). Sample 24 (about 1507.3) is just short of 1508.
+- **Beyond 3σ:** only sample 50 (about 1514), which is later than the others.
+
+## Checking the rules in order of sample number
+
+- **Rule 1:** the only sample beyond 3σ is 50.
+- **Rule 2:** no two of three consecutive samples are beyond 2σ on the same side.
+- **Rule 3:** samples 37, 38, 39 and 41 are all below 1496, and sample 40 (about 1499.1) is not. That is four of the five consecutive samples 37–41 beyond 1σ on the same side. The signal falls at the fourth such sample, which is **sample 41**. No earlier window of five gives four points beyond 1σ on one side.
+- **Rule 4:** samples 37–45 form a run of nine below the centre line. The eighth sample in that run is sample 44, which comes after sample 41, so it does not take precedence. No earlier run of eight exists.
+
+The first signal is therefore at sample 41.
+
+## Clock time
+
+Sample 1 is at 14:00 and samples are 30 minutes apart, so sample 41 is 40 × 30 min = 1200 min = 20 h after sample 1. That gives 14:00 + 20 h = 10:00 the following day.
+
+FINAL ANSWER: 10:00",10:00,1,stop,,,5550
+anthropic/claude-haiku-5.5,factory_s304_L3_cause_event,ok,E,cause_event,"**Reading the chart (CL 1500, σ = 4 g):** 1 σ = ±4 g (1496/1504), 2 σ = ±8 g (1492/1508), 3 σ = ±12 g (1488/1512).
+
+**Rule checks, in sample order:**
+- **Rule 1:** No sample exceeds 1512 or falls below 1488 before sample 50 (1514.2), which is too late to be the first signal.
+- **Rule 2:** Only sample 24 (1507.3) and sample 45 (1491.2) approach 2 σ, and neither is beyond it on the same side as another within a three-sample window. No signal.
+- **Rule 3:** Samples beyond 1 σ below 1496 include 25, 27, 37, 38, 39, 41, 44, 45. Samples 37, 38, 39, 40, 41 give four beyond 1 σ in the window 37–41, with sample 40 (1499.1) not beyond. The fourth such sample is **sample 41**. Samples 42 (1496.5) and 43 (1496.5) are not beyond 1 σ, so they do not affect this.
+- **Rule 4:** The first run of eight on one side of the centre line is samples 37–44, which would signal at 44. That is later than sample 41.
+
+So the first signal is Rule 3 at **sample 41**.
+
+**Clock time:** Sample 1 is at 14:00 and samples are every 30 min, so sample 41 is 40 × 30 min = 20 h later, at **10:00 the next morning**.
+
+**Most recent logged event before 10:00:** The log entries before 10:00 are 06:38, 07:35, 07:48 and 09:41. The most recent is 09:41, ""Fill-height probe recalibrated"". The 10:19 carton magazine refill comes after the signal.
+
+This reading assumes the log times fall on the same 24-hour cycle as the shift, with the log running from the morning of day 2 onward.
+
+FINAL ANSWER: E",E,1,stop,,,6482
+anthropic/claude-haiku-5.5,factory_s304_L4_first_signal,ok,30,first_signal,"The first signal is at **sample 30**, under Rule 3.
+
+Reading the chart with σ = 4 g, the lines are: CL 1500, ±1σ at 1504/1496, ±2σ at 1508/1492, ±3σ at 1512/1488.
+
+- **Rule 1:** The first point beyond a 3σ line is sample 70 (about 1514.7). Sample 44 (about 1489.4) is above the LCL of 1488, so it does not count. This is the first Rule 1 signal, but it comes much later than sample 30.
+- **Rule 2:** Samples 2 and 8 are above 1508 but are more than two samples apart. Sample 44 is the only point below 1492 before sample 70, so no signal.
+- **Rule 3:** Samples 26, 28, 29 and 30 are all below 1496 (about 1495.2, 1495.6, 1492.7, 1495.5). Sample 27 (about 1497.3) is not, so the four qualifying samples fall within the window 26–30. The fourth of these is sample 30. Earlier windows contain at most three points beyond 1σ on the same side (for example, samples 25–29 contain only 26, 28 and 29), so this is the first Rule 3 signal.
+- **Rule 4:** Samples 25 through 35 are all below the centre line, so the eight-in-a-row run is first completed at sample 32. This is later than sample 30.
+
+FINAL ANSWER: 30",30,1,stop,,,5529
+anthropic/claude-haiku-5.5,factory_s304_L4_count_beyond_2s,ok,4,count_beyond_2s,"I estimated each sample's value from its position on the chart and compared it with the ±2 sigma lines (1508 and 1492).
+
+- **Above +2 sigma (1508):** samples 2 (about 1510.3), 8 (about 1510.3) and 70 (about 1514.7). Sample 70 is also above the +3 sigma line at 1512, but it still counts.
+- **Below −2 sigma (1492):** sample 44 (about 1489.4), which is also below the −3 sigma line at 1488? No, it is above 1488, so it is beyond 2 sigma only.
+
+The closest near-misses are samples 29 (about 1492.7) and 39 (about 1492.5), which sit just above the −2 sigma line and so do not count.
+
+Total beyond 2 sigma on either side: 3 + 1 = 4.
+
+FINAL ANSWER: 4",4,1,stop,,,2950
+anthropic/claude-haiku-5.5,factory_s304_L4_longest_run_above,ok,5,longest_run_above,"I read each sample against the centre line at 1500 g. The longest stretch above the centre line is samples 54 to 58 (about 1501, 1503, 1502, 1501 and 1501 g). Sample 53 sits just below the line at about 1499.5 g, and sample 59 drops to about 1495 g, so the run is bounded on both sides. The other runs are shorter: samples 40–43 and 65–68 each run for four samples.
+
+This reading is approximate, since values are estimated by eye from the plot.
+
+FINAL ANSWER: 5",5,1,stop,,,2861
+anthropic/claude-haiku-5.5,factory_s304_L4_signal_time,ok,12 30,signal_time,"The first signal is at sample 30, which was taken at 12:30.
+
+**Limits:** CL = 1500, σ = 4 g, so 1σ lines are 1496/1504, 2σ are 1492/1508, and 3σ are 1488/1512.
+
+**Checking the rules in time order:**
+
+- **Rule 1 (beyond 3σ):** The first sample beyond 1512 or below 1488 is sample 70 (about 1514.7). Nothing earlier qualifies.
+- **Rule 2 (two of three beyond 2σ, same side):** Samples 2 and 8 are above 1508 but never within three consecutive samples of each other. Sample 19 (about 1493.5) is the only other point beyond 2σ before sample 44, so no signal.
+- **Rule 3 (four of five beyond 1σ, same side):** Samples 26, 28, 29 and 30 are all below 1496, and sample 27 (about 1497.2) is not. So samples 26–30 contain four beyond 1σ on the low side, and the signal is at the fourth of those, sample 30. No earlier window reaches four.
+- **Rule 4 (eight consecutive on one side):** The run below CL starts at sample 25 and would give a signal at sample 32. That is later than sample 30.
+
+**Time of sample 30:** Sample 1 is at 22:00 and samples are 30 minutes apart, so sample 30 is 29 × 30 = 870 minutes (14 h 30 min) later. 22:00 + 14:30 = 12:30 the next day.
+
+FINAL ANSWER: 12:30",12:30,1,stop,,,5557
+anthropic/claude-haiku-5.5,factory_s304_L4_cause_event,ok,C,cause_event,"**Reading the chart:** CL = 1500, sigma = 4 g, so the 1σ lines are 1496/1504, the 2σ lines are 1492/1508, and the 3σ lines are 1488/1512. Sample 1 is at 22:00 and each later sample is 30 minutes apart, so sample n is at 22:00 + (n−1)×30 min.
+
+**Checking the rules in order:**
+- **Rule 1 (beyond 3σ):** The first points beyond the limits are sample 2 and sample 8 at about 1510, which are inside 1512. Sample 70 at about 1514.7 is the first breach, and it comes much later.
+- **Rule 2 (two of three beyond 2σ):** The upper 2σ exceedances at samples 2 and 8 are six samples apart, so they don't qualify. The lower 2σ exceedance at sample 44 is isolated.
+- **Rule 3 (four of five beyond 1σ):** Sample 19 (about 1493.5) is the first point below 1496. Within samples 26–30, the values are about 1495.2 (26), 1497.2 (27), 1495.5 (28), 1492.8 (29) and 1495.5 (30). Samples 26, 28, 29 and 30 are all below 1496, that is four of five consecutive, so the signal is at sample 30. No earlier window reaches four.
+- **Rule 4 (eight on one side):** Samples 25–32 are all below the CL, which would signal at sample 32. That is later than sample 30, so it does not decide the answer.
+
+**First signal:** Sample 30 (Rule 3). Its time is 22:00 + 29×30 min = 22:00 + 14 h 30 min = **12:30**.
+
+**Most recent logged event before 12:30:**
+- 08:22 Sample sent to lab
+- 11:45 Product tank switched to tank B (most recent before 12:30)
+- 12:33 Carton magazine refilled (after the signal)
+
+The answer is C.
+
+FINAL ANSWER: C",C,1,stop,,,8696
+anthropic/claude-haiku-5.5,factory_s304_L5_first_signal,ok,68,first_signal,"The first signal is at sample 68, from Rule 4.
+
+Reading the chart (CL = 330, σ = 1.5 g, so 1σ = 331.5/328.5, 2σ = 333/327, 3σ = 334.5/325.5):
+
+- **Rule 1:** Sample 91 (about 324.9) is below LCL 325.5. Sample 85 (about 334.3) is below UCL, so it does not signal. The first Rule 1 signal is at 91.
+- **Rule 2:** The points beyond 2σ are 24 (upper), and 69, 91, 96 (lower). None of these form two-in-three pairs before 91.
+- **Rule 3:** Samples 66, 67, 69 and 70 are beyond the lower 1σ line (328.5), but sample 68 (about 328.95) is not. The fourth such sample is 70, which is after 68. No earlier window has four of five.
+- **Rule 4:** Samples 61 through 68 are all below the CL of 330 (about 327.8, 328.0, 329.1, 328.3, 329.45, 327.35, 327.6, 328.95). That is eight consecutive samples on one side, so the signal is at sample 68. No earlier run reaches eight; the longest earlier runs are five (samples 1–5) and four.
+
+FINAL ANSWER: 68",68,1,stop,,,6861
+anthropic/claude-haiku-5.5,factory_s304_L5_count_beyond_2s,ok,5,count_beyond_2s,"I compared each point against the +2σ line (333 g) and the −2σ line (327 g). Taking the y-axis scale of about 44 px per gram, the samples beyond 2σ are:
+
+- **Above 333 g:** sample 24 (about 333.8) and sample 85 (about 334.3). Sample 59 (about 332.3) is inside the limit.
+- **Below 327 g:** sample 69 (about 326.3), sample 91 (about 324.9) and sample 96 (about 326.4). Sample 7 sits at about 327.25, so it is inside the limit, as are samples 50 and 53.
+
+Total: 2 + 3 = 5.
+
+FINAL ANSWER: 5",5,1,stop,,,3100
+anthropic/claude-haiku-5.5,factory_s304_L5_longest_run_above,ok,3,longest_run_above,"I read each sample's value against the centre line at 330 g and counted the longest consecutive run above it.
+
+The longest runs above the centre line are three samples long:
+- Samples 37–39 (about 332.0, 330.3, 330.9), with sample 40 below.
+- Samples 46–48 (about 330.3, 330.7, 331.7), with sample 49 below.
+- Samples 58–60 (about 330.6, 332.4, 330.2), with sample 61 below.
+
+No run reaches four. Readings are estimated from the plot, so a point close to 330 could be misread, but the runs of three are clear.
+
+FINAL ANSWER: 3",3,1,stop,,,3886
+anthropic/claude-haiku-5.5,factory_s304_L5_signal_time,ok,14 45,signal_time,"**Setting up the limits:** CL = 330, sigma = 1.5 g, so 1σ = 328.5 / 331.5, 2σ = 327 / 333, and 3σ = 325.5 / 334.5.
+
+**Checking each rule in sample order:**
+
+- **Rule 1 (beyond 3σ):** The first breach is sample 91 (about 324.9, below LCL). This comes much later than the candidates below.
+- **Rule 2 (two of three beyond 2σ, same side):** Samples 24 (≈333.8), 69, 85 and 91 are beyond 2σ, but no two of them fall within any three consecutive samples before sample 91.
+- **Rule 3 (four of five beyond 1σ, same side):** Before sample 68, no window of five has four samples beyond 1σ on one side. The low-side windows around samples 60–68 contain only three each (for example, 61, 62, 64 in the window 60–64). The first four-of-five low window is 66–70, which would signal at sample 70.
+- **Rule 4 (eight consecutive on one side of CL):** Tracking the runs relative to 330, the runs of samples 1–5, 10–15 and 32–36 are all shorter than eight. Samples 61 to 73 are all below the centre line, a run of 13. Counting from sample 61, the eighth sample is sample 68.
+
+Rule 4 at sample 68 is the earliest signal.
+
+**Converting to clock time:** Sample 1 is at 22:00 and samples are 15 minutes apart. Sample 68 is 67 intervals after sample 1, i.e. 67 × 15 = 1005 minutes = 16 h 45 min. 22:00 + 16:45 = 14:45 the next day.
+
+FINAL ANSWER: 14:45",14:45,1,stop,,,6704
+anthropic/claude-haiku-5.5,factory_s304_L5_cause_event,ok,C,cause_event,"**Signal location:** Reading the chart with sigma = 1.5 g (1σ = 331.5/328.5, 2σ = 333/327, 3σ = 334.5/325.5), I checked each rule in sample order.
+
+- **Rule 1:** The first point beyond 3σ is sample 85 (about 334.3). This is later than the signal below.
+- **Rule 2:** Sample 24 (about 333.8) is beyond 2σ above, but no second point on that side follows within three samples. Sample 69 (about 326.3) is beyond 2σ below, but it has no partner within its three-sample window before sample 68.
+- **Rule 3:** The first four-of-five run beyond 1σ below the centre line is samples 66, 67, 69 and 70 (window 66–70), which signals at sample 70. No earlier window reaches four of five.
+- **Rule 4:** Samples 61 through 68 are all below the centre line (CL = 330), with sample 60 above it. Eight consecutive samples on the same side is reached at **sample 68**. No earlier run of eight exists.
+
+So the first signalling sample is sample 68.
+
+**Clock time:** Sample 1 is at 22:00 and samples are 15 minutes apart. Sample 68 is 67 × 15 = 1005 min (16 h 45 min) after 22:00, which gives **14:45**.
+
+**Logged events before 14:45:**
+- 10:10 Carton magazine refilled
+- 13:39 Date coder ink replaced
+- 14:27 New CO2 cylinder connected
+- 14:53 Sample sent to lab is after the signal, so it does not count.
+
+The most recent event before 14:45 is the CO2 cylinder connection at 14:27.
+
+FINAL ANSWER: C",C,1,stop,,,7066
+openai/gpt-6-luna,factory_s301_L1_first_signal,ok,0,first_signal,FINAL ANSWER: 0,0,1,stop,,,1371
+openai/gpt-6-luna,factory_s301_L1_count_beyond_2s,ok,0,count_beyond_2s,FINAL ANSWER: 0,0,1,stop,,,1328
+openai/gpt-6-luna,factory_s301_L1_longest_run_above,ok,3,longest_run_above,FINAL ANSWER: 3,3,1,stop,,,1377
+openai/gpt-6-luna,factory_s301_L2_first_signal,ok,6,first_signal,FINAL ANSWER: 6,6,1,stop,,,1515
+openai/gpt-6-luna,factory_s301_L2_count_beyond_2s,ok,3,count_beyond_2s,FINAL ANSWER: 3,3,1,stop,,,1370
+openai/gpt-6-luna,factory_s301_L2_longest_run_above,ok,8,longest_run_above,FINAL ANSWER: 8,8,1,stop,,,1380
+openai/gpt-6-luna,factory_s301_L2_signal_time,ok,07 40,signal_time,"The first signal is at sample 6: samples 5 and 6 are both beyond +2 sigma. Sample 6 was taken 100 minutes after 06:00.
+
+FINAL ANSWER: 07:40",07:40,1,stop,,,1582
+openai/gpt-6-luna,factory_s301_L3_first_signal,ok,28,first_signal,FINAL ANSWER: 28,28,1,stop,,,2889
+openai/gpt-6-luna,factory_s301_L3_count_beyond_2s,ok,2,count_beyond_2s,FINAL ANSWER: 2,2,1,stop,,,1361
+openai/gpt-6-luna,factory_s301_L3_longest_run_above,ok,9,longest_run_above,"The longest run above the centre line is samples 24–32, which is 9 consecutive samples.
+
+FINAL ANSWER: 9",9,1,stop,,,1441
+openai/gpt-6-luna,factory_s301_L3_signal_time,ok,04 45,signal_time,"Samples 24, 25, 27 and 28 are beyond +1 sigma within the five-sample window 24–28. That meets Rule 3, with the signal at the fourth qualifying sample: sample 28. From sample 1 at 22:00, sample 28 is 27 × 15 minutes later, or 04:45.
+
+FINAL ANSWER: 04:45",04:45,1,stop,,,2619
+openai/gpt-6-luna,factory_s301_L3_cause_event,ok,E,cause_event,FINAL ANSWER: E,E,1,stop,,,2784
+openai/gpt-6-luna,factory_s301_L4_first_signal,ok,25,first_signal,FINAL ANSWER: 25,25,1,stop,,,2876
+openai/gpt-6-luna,factory_s301_L4_count_beyond_2s,ok,2,count_beyond_2s,"There are two samples beyond 2 sigma: sample 11 above the upper 2-sigma line and sample 75 below the lower 2-sigma line.
+
+FINAL ANSWER: 2",2,1,stop,,,1773
+openai/gpt-6-luna,factory_s301_L4_longest_run_above,ok,10,longest_run_above,"The longest run is samples 61–70, for a total of 10 consecutive samples above the centre line.
+
+FINAL ANSWER: 10",10,1,stop,,,2405
+openai/gpt-6-luna,factory_s301_L4_signal_time,ok,10 00,signal_time,"The first signal is Rule 4 at sample 25: it is the eighth consecutive sample below the centre line, counting from sample 18. Sample 25 is 24 half-hour intervals after sample 1 at 22:00, which is 10:00 the next day.
+
+FINAL ANSWER: 10:00",10:00,1,stop,,,2778
+openai/gpt-6-luna,factory_s301_L4_cause_event,ok,C,cause_event,FINAL ANSWER: C,C,1,stop,,,5119
+openai/gpt-6-luna,factory_s301_L5_first_signal,ok,84,first_signal,FINAL ANSWER: 84,84,1,stop,,,3814
+openai/gpt-6-luna,factory_s301_L5_count_beyond_2s,ok,2,count_beyond_2s,"There are 2 samples beyond 2 sigma.
+
+FINAL ANSWER: 2",2,1,stop,,,2248
+openai/gpt-6-luna,factory_s301_L5_longest_run_above,ok,4,longest_run_above,FINAL ANSWER: 4,4,1,stop,,,2771
+openai/gpt-6-luna,factory_s301_L5_signal_time,ok,02 45,signal_time,"Samples 80, 82, 83 and 84 are below the −1 sigma line within a five-sample window, so Rule 3 signals at sample 84. That is 83 intervals after sample 1: 20 hours 45 minutes after 06:00.
+
+FINAL ANSWER: 02:45",02:45,1,stop,,,4429
+openai/gpt-6-luna,factory_s301_L5_cause_event,ok,E,cause_event,FINAL ANSWER: E,E,1,stop,,,4421
+openai/gpt-6-luna,factory_s302_L1_first_signal,ok,7,first_signal,FINAL ANSWER: 7,7,1,stop,,,1362
+openai/gpt-6-luna,factory_s302_L1_count_beyond_2s,ok,1,count_beyond_2s,FINAL ANSWER: 1,1,1,stop,,,1332
+openai/gpt-6-luna,factory_s302_L1_longest_run_above,ok,6,longest_run_above,FINAL ANSWER: 6,6,1,stop,,,1415
+openai/gpt-6-luna,factory_s302_L1_signal_time,ok,07 30,signal_time,"The first sample beyond the 3-sigma limits is sample 7. Six 15-minute intervals after 06:00 is 07:30.
+
+FINAL ANSWER: 07:30",07:30,1,stop,,,1423
+openai/gpt-6-luna,factory_s302_L2_first_signal,ok,12,first_signal,FINAL ANSWER: 12,12,1,stop,,,1487
+openai/gpt-6-luna,factory_s302_L2_count_beyond_2s,ok,3,count_beyond_2s,FINAL ANSWER: 3,3,1,stop,,,1359
+openai/gpt-6-luna,factory_s302_L2_longest_run_above,ok,3,longest_run_above,FINAL ANSWER: 3,3,1,stop,,,1394
+openai/gpt-6-luna,factory_s302_L2_signal_time,ok,08 45,signal_time,FINAL ANSWER: 08:45,08:45,1,stop,,,1557
+openai/gpt-6-luna,factory_s302_L3_first_signal,ok,27,first_signal,FINAL ANSWER: 27,27,1,stop,,,2924
+openai/gpt-6-luna,factory_s302_L3_count_beyond_2s,ok,3,count_beyond_2s,FINAL ANSWER: 3,3,1,stop,,,1389
+openai/gpt-6-luna,factory_s302_L3_longest_run_above,ok,4,longest_run_above,FINAL ANSWER: 4,4,1,stop,,,1511
+openai/gpt-6-luna,factory_s302_L3_signal_time,ok,11 00,signal_time,"The first signal is Rule 3 at sample 27: in samples 23–27, four points are beyond the 1-sigma line below the centre line. Sample 27 was taken 13 hours after sample 1 at 22:00.
+
+FINAL ANSWER: 11:00",11:00,1,stop,,,2660
+openai/gpt-6-luna,factory_s302_L3_cause_event,ok,E,cause_event,FINAL ANSWER: E,E,1,stop,,,2547
+openai/gpt-6-luna,factory_s302_L4_first_signal,ok,37,first_signal,FINAL ANSWER: 37,37,1,stop,,,4426
+openai/gpt-6-luna,factory_s302_L4_count_beyond_2s,ok,1,count_beyond_2s,FINAL ANSWER: 1,1,1,stop,,,1661
+openai/gpt-6-luna,factory_s302_L4_longest_run_above,ok,5,longest_run_above,"The longest run is five consecutive samples above the centre line.
+
+FINAL ANSWER: 5",5,1,stop,,,2359
+openai/gpt-6-luna,factory_s302_L4_signal_time,ok,07 00,signal_time,"Samples 30 through 37 are eight consecutive samples below the centre line, so Rule 4 signals at sample 37. That sample is 36 intervals after sample 1: 36 × 15 minutes = 9 hours after 22:00.
+
+FINAL ANSWER: 07:00",07:00,1,stop,,,4563
+openai/gpt-6-luna,factory_s302_L4_cause_event,ok,A,cause_event,FINAL ANSWER: A,B,0,stop,,predicted:before_rule1_spike,3997
+openai/gpt-6-luna,factory_s302_L5_first_signal,ok,25,first_signal,FINAL ANSWER: 25,25,1,stop,,,3095
+openai/gpt-6-luna,factory_s302_L5_count_beyond_2s,ok,2,count_beyond_2s,FINAL ANSWER: 2,2,1,stop,,,2194
+openai/gpt-6-luna,factory_s302_L5_longest_run_above,ok,10,longest_run_above,"The longest run above the centre line is 10 consecutive samples.
+
+FINAL ANSWER: 10",10,1,stop,,,2218
+openai/gpt-6-luna,factory_s302_L5_signal_time,ok,06 00,signal_time,"The first signal is Rule 3: samples 22–25 are all above the +1σ line, so the signal occurs at sample 25. Sample 25 is 24 intervals after sample 1: 24 × 20 minutes = 8 hours after 22:00.
+
+FINAL ANSWER: 06:00",06:00,1,stop,,,3171
+openai/gpt-6-luna,factory_s302_L5_cause_event,ok,F,cause_event,FINAL ANSWER: F,F,1,stop,,,3557
+openai/gpt-6-luna,factory_s303_L1_first_signal,ok,0,first_signal,FINAL ANSWER: 0,0,1,stop,,,1362
+openai/gpt-6-luna,factory_s303_L1_count_beyond_2s,ok,0,count_beyond_2s,FINAL ANSWER: 0,0,1,stop,,,1326
+openai/gpt-6-luna,factory_s303_L1_longest_run_above,ok,2,longest_run_above,FINAL ANSWER: 2,2,1,stop,,,1366
+openai/gpt-6-luna,factory_s303_L2_first_signal,ok,10,first_signal,FINAL ANSWER: 10,10,1,stop,,,1545
+openai/gpt-6-luna,factory_s303_L2_count_beyond_2s,ok,3,count_beyond_2s,FINAL ANSWER: 3,3,1,stop,,,1356
+openai/gpt-6-luna,factory_s303_L2_longest_run_above,ok,3,longest_run_above,"The longest run above the centre line is samples 3–5, a run of 3.
+
+FINAL ANSWER: 3",3,1,stop,,,1405
+openai/gpt-6-luna,factory_s303_L2_signal_time,ok,09 00,signal_time,"Samples 9 and 10 are both beyond +2 sigma, so Rule 2 signals at sample 10. Sample 10 is nine 20-minute intervals after sample 1 at 06:00, which is 09:00.
+
+FINAL ANSWER: 09:00",09:00,1,stop,,,1579
+openai/gpt-6-luna,factory_s303_L3_first_signal,ok,23,first_signal,FINAL ANSWER: 23,23,1,stop,,,2312
+openai/gpt-6-luna,factory_s303_L3_count_beyond_2s,ok,1,count_beyond_2s,FINAL ANSWER: 1,1,1,stop,,,1357
+openai/gpt-6-luna,factory_s303_L3_longest_run_above,ok,11,longest_run_above,FINAL ANSWER: 11,11,1,stop,,,1592
+openai/gpt-6-luna,factory_s303_L3_signal_time,ok,09 00,signal_time,"Samples 16–23 are eight consecutive samples above the centre line, so Rule 4 signals at sample 23. That is 22 × 30 minutes after sample 1, taken at 22:00: 09:00 the next day.
+
+FINAL ANSWER: 09:00",09:00,1,stop,,,2714
+openai/gpt-6-luna,factory_s303_L3_cause_event,ok,F,cause_event,FINAL ANSWER: F,F,1,stop,,,3391
+openai/gpt-6-luna,factory_s303_L4_first_signal,ok,34,first_signal,FINAL ANSWER: 34,34,1,stop,,,3311
+openai/gpt-6-luna,factory_s303_L4_count_beyond_2s,ok,1,count_beyond_2s,"Only sample 62 is beyond the 2-sigma limits.  
+FINAL ANSWER: 1",1,1,stop,,,1707
+openai/gpt-6-luna,factory_s303_L4_longest_run_above,ok,10,longest_run_above,"The longest run above the centre line is 10 consecutive samples.
+
+FINAL ANSWER: 10",10,1,stop,,,2283
+openai/gpt-6-luna,factory_s303_L4_signal_time,ok,22 15,signal_time,"Samples 27–34 are eight consecutive points above the centre line, so Rule 4 first signals at sample 34. That is 33 intervals after sample 1: 14:00 + 8 hours 15 minutes.
+
+FINAL ANSWER: 22:15",22:15,1,stop,,,3539
+openai/gpt-6-luna,factory_s303_L4_cause_event,ok,C,cause_event,FINAL ANSWER: C,C,1,stop,,,3485
+openai/gpt-6-luna,factory_s303_L5_first_signal,ok,50,first_signal,FINAL ANSWER: 50,10,0,stop,,unpredicted,3744
+openai/gpt-6-luna,factory_s303_L5_count_beyond_2s,ok,5,count_beyond_2s,"There are 3 samples above +2 sigma and 2 below −2 sigma, for a total of 5.
+
+FINAL ANSWER: 5",5,1,stop,,,2293
+openai/gpt-6-luna,factory_s303_L5_longest_run_above,ok,10,longest_run_above,"The longest consecutive run above the centre line is 10 samples.
+
+FINAL ANSWER: 10",10,1,stop,,,2470
+openai/gpt-6-luna,factory_s303_L5_signal_time,ok,16 15,signal_time,"Samples 3 through 10 are all below the centre line, so Rule 4 signals at sample 10. That is 9 intervals of 15 minutes after sample 1 at 14:00, or 16:15.
+
+FINAL ANSWER: 16:15",16:15,1,stop,,,3284
+openai/gpt-6-luna,factory_s303_L5_cause_event,ok,A,cause_event,FINAL ANSWER: A,E,0,stop,,unpredicted,4991
+openai/gpt-6-luna,factory_s304_L1_first_signal,ok,9,first_signal,FINAL ANSWER: 9,9,1,stop,,,1366
+openai/gpt-6-luna,factory_s304_L1_count_beyond_2s,ok,1,count_beyond_2s,FINAL ANSWER: 1,1,1,stop,,,1332
+openai/gpt-6-luna,factory_s304_L1_longest_run_above,ok,3,longest_run_above,FINAL ANSWER: 3,3,1,stop,,,1351
+openai/gpt-6-luna,factory_s304_L1_signal_time,ok,08 40,signal_time,"The first sample beyond a 3-sigma limit is sample 9, below the LCL. It was taken 8 intervals after sample 1: 06:00 + 160 minutes.
+
+FINAL ANSWER: 08:40",08:40,1,stop,,,1444
+openai/gpt-6-luna,factory_s304_L2_first_signal,ok,9,first_signal,FINAL ANSWER: 9,9,1,stop,,,1490
+openai/gpt-6-luna,factory_s304_L2_count_beyond_2s,ok,3,count_beyond_2s,"Samples 7 and 9 are above +2 sigma, and sample 15 is below −2 sigma. That makes 3 samples.
+
+FINAL ANSWER: 3",3,1,stop,,,1368
+openai/gpt-6-luna,factory_s304_L2_longest_run_above,ok,3,longest_run_above,FINAL ANSWER: 3,3,1,stop,,,1391
+openai/gpt-6-luna,factory_s304_L2_signal_time,ok,08 40,signal_time,"The first signal is Rule 2 at sample 9: samples 7 and 9 are both beyond +2σ. Sample 9 was taken 8 intervals after sample 1, so the time is 08:40.
+
+FINAL ANSWER: 08:40",08:40,1,stop,,,1715
+openai/gpt-6-luna,factory_s304_L3_first_signal,ok,41,first_signal,FINAL ANSWER: 41,41,1,stop,,,2486
+openai/gpt-6-luna,factory_s304_L3_count_beyond_2s,ok,2,count_beyond_2s,"Samples 45 and 50 are beyond the 2-sigma lines.
+
+FINAL ANSWER: 2",2,1,stop,,,1384
+openai/gpt-6-luna,factory_s304_L3_longest_run_above,ok,4,longest_run_above,FINAL ANSWER: 4,4,1,stop,,,1682
+openai/gpt-6-luna,factory_s304_L3_signal_time,ok,10 00,signal_time,"The first signal is Rule 3 in samples 37–41: samples 37, 38, 39, and 41 are all more than 1 sigma below the centre line. The fourth qualifying sample—and thus the signal—is sample 41.
+
+Sample 41 is 40 half-hour intervals after sample 1 at 14:00, which is 10:00 the next day.
+
+FINAL ANSWER: 10:00",10:00,1,stop,,,3287
+openai/gpt-6-luna,factory_s304_L3_cause_event,ok,E,cause_event,FINAL ANSWER: E,E,1,stop,,,3372
+openai/gpt-6-luna,factory_s304_L4_first_signal,ok,30,first_signal,FINAL ANSWER: 30,30,1,stop,,,3190
+openai/gpt-6-luna,factory_s304_L4_count_beyond_2s,ok,4,count_beyond_2s,"Samples 2, 8, and 70 are above +2σ, and sample 44 is below −2σ. That makes 4 samples.
+
+FINAL ANSWER: 4",4,1,stop,,,1738
+openai/gpt-6-luna,factory_s304_L4_longest_run_above,ok,5,longest_run_above,FINAL ANSWER: 5,5,1,stop,,,2096
+openai/gpt-6-luna,factory_s304_L4_signal_time,ok,12 30,signal_time,"Samples 26, 28, 29, and 30 are all below the −1 sigma line, so Rule 3 signals at sample 30. That is 29 half-hour intervals after sample 1 at 22:00, giving 12:30 the next day.
+
+FINAL ANSWER: 12:30",12:30,1,stop,,,3677
+openai/gpt-6-luna,factory_s304_L4_cause_event,ok,C,cause_event,FINAL ANSWER: C,C,1,stop,,,3770
+openai/gpt-6-luna,factory_s304_L5_first_signal,ok,70,first_signal,FINAL ANSWER: 70,68,0,stop,,unpredicted,4780
+openai/gpt-6-luna,factory_s304_L5_count_beyond_2s,ok,5,count_beyond_2s,"There are 2 samples above +2σ and 3 below −2σ, for a total of 5.
+
+FINAL ANSWER: 5",5,1,stop,,,2305
+openai/gpt-6-luna,factory_s304_L5_longest_run_above,ok,3,longest_run_above,"The longest run above the centre line is 3 consecutive samples.
+
+FINAL ANSWER: 3",3,1,stop,,,2915
+openai/gpt-6-luna,factory_s304_L5_signal_time,ok,14 45,signal_time,"Samples 61–68 are eight consecutive points below the centre line, so Rule 4 signals at sample 68. That is 67 intervals of 15 minutes after sample 1 at 22:00, giving 14:45 the next day.
+
+FINAL ANSWER: 14:45",14:45,1,stop,,,4835
+openai/gpt-6-luna,factory_s304_L5_cause_event,ok,D,cause_event,FINAL ANSWER: D,C,0,stop,,predicted:just_after_signal,7694

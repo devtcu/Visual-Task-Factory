@@ -1,0 +1,164 @@
+{
+  "akhil_heads_401": {
+    "task_id": "akhil_heads_401",
+    "pipeline": "spc",
+    "seed": 401,
+    "question": "This control chart shows fill weights from six filling heads (H1-H6) of one rotary filler, one colour and marker shape per head (see the legend), all sampled at the same times. The centre line and the 1, 2 and 3 sigma lines are labelled on the right; they apply to every head. Sample numbers are labelled every 10th sample, with one light gridline per sample. Apply these rules to each head separately, and only these: Rule 1: one sample beyond 3 sigma (above UCL or below LCL). The signal is at that sample. Rule 2: two of any three consecutive samples beyond 2 sigma on the same side of the centre line. The signal is at the later of those two samples. Rule 3: four of any five consecutive samples beyond 1 sigma on the same side of the centre line. The signal is at the fourth of those samples. Rule 4: eight consecutive samples on the same side of the centre line. The signal is at the eighth sample. A sample exactly on a line is not beyond it. Which head is the first to signal, and at which sample number? Answer in the form: head number, sample number (for example: 4, 37).",
+    "answer": [
+      1,
+      29
+    ],
+    "answer_type": "sequence",
+    "generator_version": "factory-heads-1.1+team6.2",
+    "tolerances": {},
+    "files": {
+      "data/akhil_heads_401.json": "c8d3932b10b086a99c656c198ed7b802c389dadaf433bcbc91c2b79bdef74ab0",
+      "images/akhil_heads_401.png": "3f713503918a6bfd4afe02e349340a0a0e7b17083af4df40d9ee59b85b211eec"
+    }
+  },
+  "akhil_fiber_trace_22": {
+    "task_id": "akhil_fiber_trace_22",
+    "pipeline": "fiber",
+    "seed": 22,
+    "question": "In this as-built AI cluster fiber diagram, start at GPU-TRAY-07 port 03 (red circle). The path runs GPU-TRAY-07 -> stage 1 cords -> PP-A -> stage 2 MTP trunk -> PP-B -> stage 3 cords -> PP-C -> stage 4 MTP trunk -> PP-D -> stage 5 cords -> SW-CORE-02. Cords may cross without connecting. In each trunk, the fibre entering at port n of the left panel exits at the right-panel port given by that trunk's printed polarity type. Which SW-CORE-02 port does the path end at? Answer with the port number only.",
+    "answer": 8,
+    "answer_type": "integer",
+    "generator_version": "fiber-3.0+team6.2",
+    "tolerances": {},
+    "files": {
+      "data/akhil_fiber_trace_22.json": "4793aaa22f370c3ffc5480315486f027c4724efd9d1b6cee6fc1027d04b4cefc",
+      "images/akhil_fiber_trace_22.png": "5e5fb015a82f10f6216d247b701e245e800b68821c5f7172c4ce362b922d3c39"
+    }
+  },
+  "akhil_brain_p306_spike": {
+    "task_id": "akhil_brain_p306_spike",
+    "pipeline": "brain",
+    "seed": 306,
+    "question": "This EEG page uses a longitudinal bipolar montage: each channel shows the first electrode minus the second, and negative is drawn upward. One focal sharp wave appears on this page (ignore the eye blink in the frontopolar channels). A sharp wave that deflects in opposite directions in two neighbouring channels of the same chain (a phase reversal) is located at the electrode those two channels share. At which electrode is the sharp wave located?",
+    "answer": "T5",
+    "answer_type": "label",
+    "generator_version": "brain-factory-1.0+team6.2",
+    "tolerances": {},
+    "files": {
+      "data/akhil_brain_p306_spike.json": "eba85eb34f42c8b40d5dd9ad96d4df84fd8c672ea8324025c56f288b4fc3b375",
+      "images/akhil_brain_p306_spike.png": "85736f3003a9c35235ea0b1cda2660dc66d457274eee84a96d1b680f7b5fa70f"
+    }
+  },
+  "akhil_xsec_hard_max_cut_interval_20260707": {
+    "task_id": "akhil_xsec_hard_max_cut_interval_20260707",
+    "pipeline": "cross_sections",
+    "seed": 20260707,
+    "question": "The sheet shows roadway cross sections of existing ground and the proposed template. Use the average end-area method, V = (A1 + A2)/2 x L / 27, and use the station intervals shown on the sheet. Between which two consecutive stations is the CUT volume largest? Answer in the form 11+00-11+50.",
+    "answer": "15+75-16+50",
+    "answer_type": "label",
+    "generator_version": "xsec-0.2+team6.2",
+    "tolerances": {},
+    "files": {
+      "data/akhil_xsec_hard_max_cut_interval_20260707.json": "520e72b133abe3dbe687bbc0ad6167449b5bdb528225a3fc6f104203fbcbc797",
+      "images/akhil_xsec_hard_max_cut_interval_20260707.png": "76298105d3c02cb4c5091aa8066db7384b7bcb8501af7666c49fe5ca9f5ae52d"
+    }
+  },
+  "fin-02400-pri-h-L0": {
+    "task_id": "fin-02400-pri-h-L0",
+    "pipeline": "finance",
+    "seed": 2400,
+    "question": "Use the six document pages: the purchase order, two goods receipts, the main and split invoices, and the authorized amendment. For invoice INV-44808, reconcile every billed line to the PO price effective on the invoice date (including any authorized amendment). For both the authorized PO rate and the billed invoice rate, apply the line discount, then round the discounted unit price to the nearest USD cent using ROUND_HALF_UP (an exact half-cent rounds up). Compare those rounded unit rates. Multiply each positive difference by the combined billed quantity for that line, including linked split invoices, and sum the line overcharges. Do not offset an overcharge with an undercharge. What is the total merchandise overcharge in USD, excluding freight and tax? Return one amount to two decimal places. Accepted answer tolerance is $0.01. Answer as a USD amount to two decimal places.",
+    "answer": 5.15,
+    "answer_type": "number",
+    "generator_version": "finance-reconciliation-1.1",
+    "tolerances": {
+      "tolerance_abs": 0.01
+    },
+    "files": {
+      "data/fin-02400-pri-h-L0.json": "07a165404dfe80a0f61b5f5d973c382be9e5ca9e12e74bffee36adf76d20cc69",
+      "images/fin-02400-pri-h-L0/01_purchase_order.png": "1cd4bcafae3b98e430f109f7019f825f99ec682d5f2d333b97527fcd8d0d4201",
+      "images/fin-02400-pri-h-L0/02_grn1.png": "a663de5ce5e297b36b7bd027ee7adc9ec50f0dc2377fad4660c333e3bd7c2b7f",
+      "images/fin-02400-pri-h-L0/03_grn2.png": "6f3e8c148cb20816699d3c29c4aaa7e64ae0fcfdc9c44b26f8f44994756694fb",
+      "images/fin-02400-pri-h-L0/04_invoice.png": "66e24f321c8f1ab9fda438c196727432ff442517c328319b0a1b24490e01e0b6",
+      "images/fin-02400-pri-h-L0/05_invoice_sibling.png": "8a4b189c512cf87107e0d74d07a1acb0acdbed31ce32d926d4ad690722f970d6",
+      "images/fin-02400-pri-h-L0/06_amendment.png": "8ebd8e6d2efe13b11fb10b857de86f1a0e9593e558b4555268938e184ee55d87",
+      "images/fin-02400-pri-h-L0_contact.png": "a2931fff2ac85b9b2fb91f102473139cc10189254c162672812fba0038e86941"
+    }
+  },
+  "measurebench_ext_analog_dial_one_tick_counterfactual_0006": {
+    "task_id": "measurebench_ext_analog_dial_one_tick_counterfactual_0006",
+    "pipeline": "measurebench",
+    "seed": 6,
+    "question": "Compare the two views of instrument PG-104. Image A is the left gauge and Image B is the right gauge. Calculate the signed pressure change from A to B: reading B minus reading A. A decrease must be reported as a negative number. Allowed absolute error: ±0.099 bar. Answer with a number and the unit.",
+    "answer": -0.6,
+    "answer_type": "number",
+    "generator_version": "measurebench_ext-2.0",
+    "tolerances": {
+      "tolerance_abs": 0.099
+    },
+    "files": {
+      "data/measurebench_ext_analog_dial_one_tick_counterfactual_0006.json": "b52126ae4e5e9944e76e59b11ef7e4a7a0df6a55f6ac5dc7cd14b3626c73b598",
+      "images/measurebench_ext_analog_dial_one_tick_counterfactual_0006.png": "ecb1677584a4c02e6a93feb01af5bf369e8677d8c9f5cef6104fac17e94d086b"
+    }
+  },
+  "visual_reconstruction_global_spatial_reconstruction_s20261114": {
+    "task_id": "visual_reconstruction_global_spatial_reconstruction_s20261114",
+    "pipeline": "reconstruction",
+    "seed": 20261114,
+    "question": "Restore the masked photograph using the shuffled candidate patches. The photo panel is 1920 pixels wide and 2560 pixels high. Its origin (0,0) is the center of its upper-left pixel; x increases right to 1919, and y increases down to 2559. The page is displayed at reduced size: use its printed coordinate rulers, not page-image pixels. Ignore the surrounding page margins. The five gray regions are labeled H1-H5. For each hole, select the matching candidate letter and the transformation that restores the source photo. Estimate the hole center [x,y] in original-photo pixels; Euclidean error of at most 30 pixels is accepted. Apply undo_rotation_clockwise (0,90,180,270 degrees) FIRST, then undo_reflection ('none', 'horizontal' meaning a left-right flip, or 'vertical' meaning a top-bottom flip). Equivalent rotation/reflection combinations are accepted. Return only a JSON array of exactly five objects, each with hole_id (integer 1-5 matching the H label), center [x,y], candidate_id (printed letter), undo_rotation_clockwise, and undo_reflection. Array order does not matter. Use every hole once and each selected candidate once; the other candidates are distractors.",
+    "answer": [
+      {
+        "hole_id": 1,
+        "center": [
+          962.5,
+          262.5
+        ],
+        "candidate_id": "H",
+        "undo_rotation_clockwise": 270,
+        "undo_reflection": "horizontal"
+      },
+      {
+        "hole_id": 2,
+        "center": [
+          1558.5,
+          262.5
+        ],
+        "candidate_id": "A",
+        "undo_rotation_clockwise": 90,
+        "undo_reflection": "none"
+      },
+      {
+        "hole_id": 3,
+        "center": [
+          315.5,
+          999.5
+        ],
+        "candidate_id": "C",
+        "undo_rotation_clockwise": 180,
+        "undo_reflection": "horizontal"
+      },
+      {
+        "hole_id": 4,
+        "center": [
+          1647.5,
+          1569.5
+        ],
+        "candidate_id": "F",
+        "undo_rotation_clockwise": 90,
+        "undo_reflection": "horizontal"
+      },
+      {
+        "hole_id": 5,
+        "center": [
+          954.5,
+          1633.5
+        ],
+        "candidate_id": "D",
+        "undo_rotation_clockwise": 0,
+        "undo_reflection": "horizontal"
+      }
+    ],
+    "answer_type": "sequence",
+    "generator_version": "visual_reconstruction-2.0",
+    "tolerances": {},
+    "files": {
+      "data/visual_reconstruction_global_spatial_reconstruction_s20261114.json": "a7d98020fff63dd87969e9663b2de23096008c94d0624ece82874e44fafac58d",
+      "images/visual_reconstruction_global_spatial_reconstruction_s20261114.png": "36a03ffc7926c0f31f0860ff0a9ab91e01c5e9e9ed996db8b4df9a794ed3e6c3"
+    }
+  }
+}

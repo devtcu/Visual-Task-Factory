@@ -1,0 +1,148 @@
+{
+  "passed": true,
+  "n_tasks": 7,
+  "tasks": {
+    "akhil_heads_401": {
+      "passed": true,
+      "checks": {
+        "image_ok": true,
+        "answer_recomputed": true,
+        "unique_first": true,
+        "points_clear_of_lines": true,
+        "image_matches_saved_data": true,
+        "member_validation": true,
+        "required_fields": true,
+        "image_path": true,
+        "data_path": true
+      }
+    },
+    "akhil_fiber_trace_22": {
+      "passed": true,
+      "checks": {
+        "image_ok": true,
+        "stages_are_permutations": true,
+        "answer_recomputed": true,
+        "traps_differ_from_answer": true,
+        "image_matches_saved_data": true,
+        "member_validation": true,
+        "required_fields": true,
+        "image_path": true,
+        "data_path": true
+      }
+    },
+    "akhil_brain_p306_spike": {
+      "passed": true,
+      "checks": {
+        "image_ok": true,
+        "answer_recomputed_from_phase_reversal": true,
+        "sharp_wave_visible": true,
+        "image_matches_saved_data": true,
+        "member_validation": true,
+        "required_fields": true,
+        "image_path": true,
+        "data_path": true
+      }
+    },
+    "akhil_xsec_hard_max_cut_interval_20260707": {
+      "passed": true,
+      "checks": {
+        "image_ok": true,
+        "dense_integration": true,
+        "shapely_clipping": true,
+        "answer_recompute": true,
+        "unique_answer": true,
+        "daylight_on_ground": true,
+        "no_coincident": true,
+        "image_rerender": true,
+        "image_matches_data": true,
+        "legibility": true,
+        "reading_sensitivity": true,
+        "mixed_cut_fill": true,
+        "member_validation": true,
+        "required_fields": true,
+        "image_path": true,
+        "data_path": true
+      }
+    },
+    "fin-02400-pri-h-L0": {
+      "passed": true,
+      "checks": {
+        "source_pages_valid": true,
+        "question_matches_scene_exactly": true,
+        "model_visible_rounding_rule": true,
+        "question_states_tolerance": true,
+        "answer_type_and_tolerance": true,
+        "independent_answer_recompute": true,
+        "generator_answer_agrees": true,
+        "evidence_ids_are_visible": true,
+        "seed_and_version_match": true,
+        "six_source_images_exist": true,
+        "source_image_dimensions": true,
+        "contact_sheet_dimensions": true,
+        "recorded_render_hashes_match": true,
+        "document_order_recorded": true,
+        "saved_pages_match_data": true,
+        "contact_sheet_matches_source_pages": true,
+        "rendered_text_inside_canvas": true,
+        "minimum_font_size": true,
+        "render_bounds_evidence_matches": true,
+        "member_validation": true,
+        "required_fields": true,
+        "image_path": true,
+        "data_path": true
+      }
+    },
+    "measurebench_ext_analog_dial_one_tick_counterfactual_0006": {
+      "passed": true,
+      "checks": {
+        "data_exists": true,
+        "image_hash_matches": true,
+        "image_decodes_and_is_legible_size": true,
+        "task_data_identity_matches": true,
+        "generator_seed_values_match": true,
+        "answer_recomputed": true,
+        "image_rerender_matches_saved_data": true,
+        "question_states_tolerance_and_unit": true,
+        "both_needle_pixels_match_values": true,
+        "signed_change_matches_visible_needles": true,
+        "pair_data_matches_components": true,
+        "member_validation": true,
+        "required_fields": true,
+        "image_path": true,
+        "data_path": true
+      }
+    },
+    "visual_reconstruction_global_spatial_reconstruction_s20261114": {
+      "passed": true,
+      "checks": {
+        "source_asset_hash_verified": true,
+        "source_dimensions_verified": true,
+        "metadata_consistent": true,
+        "five_unique_labeled_holes": true,
+        "valid_crop_geometry": true,
+        "hole_boxes_nonoverlapping": true,
+        "fifteen_unique_candidate_files": true,
+        "all_candidate_patches_520_square": true,
+        "unique_pixel_verified_candidate_and_orientation_per_hole": true,
+        "answer_independently_recomputed_from_source_pixels": true,
+        "ground_truth_centers_match_geometry": true,
+        "all_candidates_match_archived_source_data": true,
+        "distractors_avoid_missing_regions": true,
+        "component_hashes_match_data": true,
+        "masked_photo_matches_source_geometry_and_labels": true,
+        "candidate_order_is_complete_permutation": true,
+        "candidate_sheet_pixels_and_labels_match_data": true,
+        "independent_pixel_exact_oracle_reconstruction": true,
+        "public_composite_matches_verified_components": true,
+        "public_image_under_9_5_mb": true,
+        "coordinate_conventions_and_tolerance_stated": true,
+        "task_specific_scoring_contract": true,
+        "sequence_answer_type": true,
+        "member_validation": true,
+        "required_fields": true,
+        "image_path": true,
+        "data_path": true
+      }
+    }
+  }
+}
