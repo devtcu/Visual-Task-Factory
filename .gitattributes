@@ -1,0 +1,2 @@
+# vendor/ holds the team's own pipelines, not third-party code: count it in the language stats
+vendor/** linguist-vendored=false
