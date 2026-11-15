@@ -1,0 +1,56 @@
+model,task_id,status,parsed,question_type,response,ref_answer,correct,trap_hit,finish_reason,error
+anthropic/claude-haiku-5.5,tennis3d_01,ok,15.0,multiview_corner_call,"I estimated the bounce point from the ball's shadow positions and the court lines in the broadcast view (CAM 1). This is a rough estimate, not a precise measurement.
+
+1. **Timing of the bounce.** Comparing each ball position with its shadow in CAM 3 gives the height above the ground. The gap is smallest at instants 14 and 15 (about 39 px and 25 px) and grows on either side, so the bounce falls around instant 14–15.
+
+2. **Ground position in CAM 1.** The shadow for that moment sits near (1153, 380). The far baseline runs at about y ≈ 370 at that x, so the contact point is roughly 8–10 px inside the baseline. At the far end, about 50 px corresponds to 1 m, so this is roughly 15–20 cm inside.
+
+3. **Distance to the sideline.** The far singles sideline is at about x ≈ 1248 at that depth, so the contact is about 90 px from it. The singles width spans about 607 px for 8.23 m, roughly 74 px/m, which puts the contact about 1.2 m inside the sideline.
+
+The baseline is therefore the nearest edge, at roughly 15 cm inside, which gives a positive value.
+
+FINAL ANSWER: 15",16.4,1,,stop,
+anthropic/claude-haiku-5.5,tennis3d_02,ok,-35.0,multiview_corner_call,"I could not measure this precisely from the three images, so the answer below is a rough estimate.
+
+**Locating the bounce:** The ball is on the far side of the net from about instant 6 onward. In Camera 3 (low, behind the far corner), the image height of the ball bottoms out at instant 17 (y≈633), with 16 and 18 slightly higher. That suggests the ball is closest to the ground around instants 16–17, which is where I place the bounce.
+
+**Position relative to the far lines:**
+- In Camera 1, instant 16 sits almost on the far right singles sideline, and instant 17 is roughly 20 px to the right of it. At the far baseline, about 74 px corresponds to 1 m, so that offset is roughly 0.3 m outside the sideline.
+- In Camera 1, both instants 16 and 17 also appear roughly 20–50 px beyond the far baseline in the image. Since a ball in the air also appears higher in the frame, the true ground distance beyond the baseline is likely smaller than this, probably under a metre.
+- Camera 3 shows the ball at instant 17 just beyond the far baseline line in the image.
+
+Combining these, the contact point looks to be outside the court, somewhat beyond the far baseline and near the singles sideline corner. My estimate for the signed distance to the nearest outer edge is about −35 cm.
+
+FINAL ANSWER: -35",11.1,0,,stop,
+anthropic/claude-haiku-5.5,tennis3d_03,ok,-3.0,multiview_corner_call,"I could not pin down the bounce point reliably, so this is a low-confidence estimate.
+
+The bounce is where the ball's height above its ground shadow falls to roughly zero. In the low camera (photo 3), the offset between each ball and its dark ground dot shrinks to its minimum around instants 13–14 (about 27 px at 13, 19 px at 14, then growing again). That places the contact near the far corner, close to the far baseline and the far singles sideline. The ball's ground dot at instant 14 sits almost on the lower thin white line, which I took to be the singles sideline, but I could not confirm which line is which or the exact distance. The high-side and broadcast views did not resolve the geometry for me. Based on this, the contact is probably within a few centimetres of the far corner, on or just outside the boundary, so I estimate a small negative value.
+
+FINAL ANSWER: -3",41.5,0,,stop,
+anthropic/claude-haiku-5.5,tennis3d_04,ok,15.0,multiview_corner_call,"I estimated the contact point from the trajectories in the three photos. This is a rough estimate, not a precise measurement.
+
+- **Photo 1 (broadcast, near baseline):** The ball crosses the net around instants 5–6 and is on the far side by instant 7. Instant 10 sits just inside the far baseline and inside the left singles sideline. Instant 11 is already beyond the baseline. The bounce looks to fall between instants 10 and 11, close to the baseline.
+- **Photo 3 (low, far corner):** The lowest image point of the ball's path is around instant 17, which sits right at the far baseline near the corner. This is consistent with a contact very near the baseline, though the perspective makes it hard to read exactly.
+- **Photo 2 (side camera):** The lateral position is hard to read reliably from this view, so I did not use it for the final estimate.
+
+Taking the contact point as just inside the far baseline, roughly 15 cm inside, gives a signed distance of about +15 cm. The uncertainty is large, so treat this as an approximation.
+
+FINAL ANSWER: 15",25.8,0,,stop,
+anthropic/claude-haiku-5.5,tennis3d_05,ok,30.0,multiview_corner_call,"I estimated the bounce from the trajectories in the three photos, but the cameras don't agree closely, so this is an approximate answer.
+
+**Locating the bounce.** In the high side camera (CAM 2), the ball's horizontal position reverses direction on the far side of the net, so the bounce is on the far court. The ball is lowest on screen around instants 14–15 in both CAM 1 and CAM 3, so the contact is at about instant 14.5–15.
+
+**Distances from the far corner (CAM 1).** The far singles corner sits at about the same image position as the ball at instant 14.5 (roughly 670, 377 in pixels). The ball's ground point is about 28 px inside the singles sideline and about 5–8 px inside the baseline. With roughly 74 px/m across the baseline and about 20 px/m in depth near the far end, that gives about 0.35–0.4 m from the sideline and about 0.25–0.4 m from the baseline.
+
+**Conflicts.**
+- CAM 2 puts the contact about 0.6–1.0 m inside the court, depending on the exact instant chosen.
+- CAM 3 seems to place the ball between the singles and doubles sidelines, which would make it negative. I read this as a pixel-level misreading, because CAM 1 and CAM 2 both place the ball inside.
+
+I take the contact to be just inside the far baseline, about 30 cm from the nearest edge, and I'm least confident in that figure.
+
+FINAL ANSWER: 30",28.0,1,,stop,
+openai/gpt-6-luna,tennis3d_01,ok,20.0,multiview_corner_call,FINAL ANSWER: 20 cm,16.4,1,,stop,
+openai/gpt-6-luna,tennis3d_02,ok,-20.0,multiview_corner_call,FINAL ANSWER: -20 cm,11.1,0,,stop,
+openai/gpt-6-luna,tennis3d_03,ok,25.0,multiview_corner_call,FINAL ANSWER: 25 cm,41.5,0,,stop,
+openai/gpt-6-luna,tennis3d_04,ok,-20.0,multiview_corner_call,FINAL ANSWER: -20 cm,25.8,0,,stop,
+openai/gpt-6-luna,tennis3d_05,ok,16.0,multiview_corner_call,FINAL ANSWER: 16 cm,28.0,0,,stop,
