@@ -1,0 +1,383 @@
+{
+ "data": {
+  "nodes": [
+   {
+    "name": "V4",
+    "module": "Sensory",
+    "x": 0.1463,
+    "y": 0.6315
+   },
+   {
+    "name": "V1",
+    "module": "Sensory",
+    "x": 0.2445,
+    "y": 0.4903
+   },
+   {
+    "name": "VA",
+    "module": "Thalamic",
+    "x": 0.4461,
+    "y": 0.2999
+   },
+   {
+    "name": "LGN",
+    "module": "Thalamic",
+    "x": 0.349,
+    "y": 0.1434
+   },
+   {
+    "name": "Pulv",
+    "module": "Thalamic",
+    "x": 0.5227,
+    "y": 0.135
+   },
+   {
+    "name": "PPC",
+    "module": "Association",
+    "x": 0.7001,
+    "y": 0.4312
+   },
+   {
+    "name": "TPJ",
+    "module": "Association",
+    "x": 0.8632,
+    "y": 0.3532
+   },
+   {
+    "name": "FEF",
+    "module": "Association",
+    "x": 0.8424,
+    "y": 0.5352
+   },
+   {
+    "name": "M1",
+    "module": "Motor",
+    "x": 0.6596,
+    "y": 0.7696
+   },
+   {
+    "name": "PMv",
+    "module": "Motor",
+    "x": 0.525,
+    "y": 0.9013
+   },
+   {
+    "name": "SMA",
+    "module": "Motor",
+    "x": 0.4912,
+    "y": 0.7271
+   }
+  ],
+  "directed": false,
+  "weighted": false,
+  "edges": [
+   [
+    "LGN",
+    "Pulv",
+    1,
+    0.0
+   ],
+   [
+    "M1",
+    "PMv",
+    1,
+    0.0
+   ],
+   [
+    "M1",
+    "SMA",
+    1,
+    0.0
+   ],
+   [
+    "PMv",
+    "SMA",
+    1,
+    0.0
+   ],
+   [
+    "PPC",
+    "FEF",
+    1,
+    0.0
+   ],
+   [
+    "PPC",
+    "M1",
+    1,
+    0.0
+   ],
+   [
+    "PPC",
+    "SMA",
+    1,
+    0.0
+   ],
+   [
+    "PPC",
+    "TPJ",
+    1,
+    0.0
+   ],
+   [
+    "Pulv",
+    "PPC",
+    1,
+    0.0
+   ],
+   [
+    "TPJ",
+    "FEF",
+    1,
+    0.0
+   ],
+   [
+    "V1",
+    "PMv",
+    1,
+    0.0
+   ],
+   [
+    "V1",
+    "PPC",
+    1,
+    0.0
+   ],
+   [
+    "V4",
+    "V1",
+    1,
+    0.0
+   ],
+   [
+    "VA",
+    "LGN",
+    1,
+    0.0
+   ],
+   [
+    "VA",
+    "PPC",
+    1,
+    0.0
+   ],
+   [
+    "VA",
+    "Pulv",
+    1,
+    0.0
+   ]
+  ],
+  "input": "V1",
+  "output": "SMA",
+  "candidates": {},
+  "label_t": {},
+  "modules": [
+   "Sensory",
+   "Thalamic",
+   "Association",
+   "Motor"
+  ]
+ },
+ "layout": {
+  "width": 1530,
+  "height": 1605,
+  "texts": [
+   {
+    "text": "V4",
+    "x0": 275.9,
+    "y0": 714.0,
+    "x1": 300.4,
+    "y1": 729.0,
+    "size": 8.0
+   },
+   {
+    "text": "V1",
+    "x0": 408.3,
+    "y0": 904.4,
+    "x1": 432.8,
+    "y1": 919.4,
+    "size": 8.0
+   },
+   {
+    "text": "VA",
+    "x0": 680.0,
+    "y0": 1161.1,
+    "x1": 704.6,
+    "y1": 1176.1,
+    "size": 8.0
+   },
+   {
+    "text": "LGN",
+    "x0": 542.2,
+    "y0": 1372.1,
+    "x1": 580.6,
+    "y1": 1387.1,
+    "size": 8.0
+   },
+   {
+    "text": "Pulv",
+    "x0": 775.4,
+    "y0": 1383.4,
+    "x1": 815.8,
+    "y1": 1398.4,
+    "size": 8.0
+   },
+   {
+    "text": "PPC",
+    "x0": 1016.5,
+    "y0": 984.1,
+    "x1": 1053.0,
+    "y1": 999.1,
+    "size": 8.0
+   },
+   {
+    "text": "TPJ",
+    "x0": 1239.8,
+    "y0": 1089.2,
+    "x1": 1269.5,
+    "y1": 1104.2,
+    "size": 8.0
+   },
+   {
+    "text": "FEF",
+    "x0": 1209.6,
+    "y0": 843.8,
+    "x1": 1243.7,
+    "y1": 858.8,
+    "size": 8.0
+   },
+   {
+    "text": "M1",
+    "x0": 966.0,
+    "y0": 527.8,
+    "x1": 994.3,
+    "y1": 542.8,
+    "size": 8.0
+   },
+   {
+    "text": "PMv",
+    "x0": 778.9,
+    "y0": 350.3,
+    "x1": 818.5,
+    "y1": 365.3,
+    "size": 8.0
+   },
+   {
+    "text": "SMA",
+    "x0": 732.3,
+    "y0": 585.1,
+    "x1": 773.9,
+    "y1": 600.1,
+    "size": 8.0
+   },
+   {
+    "text": "IN",
+    "x0": 311.5,
+    "y0": 906.1,
+    "x1": 335.6,
+    "y1": 925.1,
+    "size": 9.5
+   },
+   {
+    "text": "OUT",
+    "x0": 726.1,
+    "y0": 486.1,
+    "x1": 772.7,
+    "y1": 505.1,
+    "size": 9.5
+   },
+   {
+    "text": "Synthetic brain connectivity network (11 regions, 4 modules)",
+    "x0": 45.9,
+    "y0": 43.2,
+    "x1": 845.8,
+    "y1": 69.2,
+    "size": 12.5
+   },
+   {
+    "text": "Lines: bidirectional connections (all equivalent).",
+    "x0": 45.9,
+    "y0": 94.8,
+    "x1": 519.2,
+    "y1": 113.8,
+    "size": 9.5
+   },
+   {
+    "text": "Sensory",
+    "x0": 92.6,
+    "y0": 159.0,
+    "x1": 168.1,
+    "y1": 178.0,
+    "size": 9.0
+   },
+   {
+    "text": "Thalamic",
+    "x0": 231.9,
+    "y0": 159.0,
+    "x1": 317.2,
+    "y1": 178.0,
+    "size": 9.0
+   },
+   {
+    "text": "Association",
+    "x0": 381.0,
+    "y0": 159.0,
+    "x1": 487.6,
+    "y1": 178.0,
+    "size": 9.0
+   },
+   {
+    "text": "Motor",
+    "x0": 551.4,
+    "y0": 159.0,
+    "x1": 605.6,
+    "y1": 178.0,
+    "size": 9.0
+   }
+  ],
+  "expected_labels": [
+   "V4",
+   "V1",
+   "VA",
+   "LGN",
+   "Pulv",
+   "PPC",
+   "TPJ",
+   "FEF",
+   "M1",
+   "PMv",
+   "SMA",
+   "IN",
+   "OUT"
+  ],
+  "data_to_px": [
+   90.89999999999995,
+   1572.9,
+   1348.2000000000003,
+   -1348.2
+  ]
+ },
+ "uniqueness": {
+  "ok": true,
+  "why": "edge connectivity is a single number; one minimum cut: [('PMv', 'V1'), ('PPC', 'V1')]"
+ },
+ "facts": {
+  "one_minimum_cut": [
+   [
+    "PMv",
+    "V1"
+   ],
+   [
+    "PPC",
+    "V1"
+   ]
+  ],
+  "degrees": {
+   "V1": 3,
+   "SMA": 3
+  }
+ },
+ "level": 2,
+ "trap_margin": 2.0
+}

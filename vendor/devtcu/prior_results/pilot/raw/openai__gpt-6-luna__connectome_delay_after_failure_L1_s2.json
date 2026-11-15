@@ -1,0 +1,90 @@
+{
+ "status": "ok",
+ "response": "After X and Y fail, the shortest remaining route is S2 \u2192 MT \u2192 PMv \u2192 Cb \u2192 M1 \u2192 SMA, which uses 5 connections.\n\nFINAL ANSWER: 5",
+ "finish_reason": "stop",
+ "error": "",
+ "usage": {
+  "prompt_tokens": 3084,
+  "completion_tokens": 373,
+  "total_tokens": 3457,
+  "cost": 0.000571925,
+  "is_byok": false,
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "cache_write_tokens": 3081,
+   "audio_tokens": 0,
+   "video_tokens": 0
+  },
+  "cost_details": {
+   "upstream_inference_cost": 0.000571925,
+   "upstream_inference_prompt_cost": 0.000385425,
+   "upstream_inference_completions_cost": 0.0001865
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 328,
+   "image_tokens": 0,
+   "audio_tokens": 0
+  }
+ },
+ "raw": {
+  "id": "gen-1794674298-Bp1gQv8o2edUJNqVbAVz",
+  "object": "chat.completion",
+  "created": 1794674298,
+  "model": "openai/gpt-6-luna",
+  "provider": "OpenAI",
+  "system_fingerprint": null,
+  "service_tier": "default",
+  "choices": [
+   {
+    "index": 0,
+    "logprobs": null,
+    "finish_reason": "stop",
+    "native_finish_reason": "completed",
+    "message": {
+     "role": "assistant",
+     "content": "After X and Y fail, the shortest remaining route is S2 \u2192 MT \u2192 PMv \u2192 Cb \u2192 M1 \u2192 SMA, which uses 5 connections.\n\nFINAL ANSWER: 5",
+     "refusal": null,
+     "reasoning": "**Inspecting the graph**\n\nI need to analyze the graph to find the shortest path from S2 to SMA after removing certain connections. I'll identify the edges and nodes, which include S1, MT, S2, PPC, PCC, FEF, PMv, Cb, M1, and SMA. Some potential paths are: S2 to PPC, then to PCC, followed by FEF. Alternatively, S2 could connect through MT to PMv and then to SMA. After counting the routes carefully, it looks like there are at least five steps in the shortest path. I'll make sure to clarify the surviving path and label everything correctly.",
+     "reasoning_details": [
+      {
+       "type": "reasoning.summary",
+       "summary": "**Inspecting the graph**\n\nI need to analyze the graph to find the shortest path from S2 to SMA after removing certain connections. I'll identify the edges and nodes, which include S1, MT, S2, PPC, PCC, FEF, PMv, Cb, M1, and SMA. Some potential paths are: S2 to PPC, then to PCC, followed by FEF. Alternatively, S2 could connect through MT to PMv and then to SMA. After counting the routes carefully, it looks like there are at least five steps in the shortest path. I'll make sure to clarify the surviving path and label everything correctly.",
+       "format": "openai-responses-v1",
+       "index": 0
+      },
+      {
+       "type": "reasoning.encrypted",
+       "data": "gAAAAABq-I6A2577z9gNXDPZQ_XALGFcTWzmTYgbUdSzh2RPwLvhyuLymQ-bMAICr7R5UltpWnyvCXI408mDIsBrmIn9axpmuwbf7tkmOLfIPJLHnhv9CLqa9uzvmLOzE6zohLJoctztqKLe4-nVB0hqkrS6y_aFGu-CNIrIdnJfP-xURAI3Cql9ra5teCZhqboq0617nGWSPuLFCJdk_3gz1bzCke8MxJT34C5UwsnUWgidb0ieK1YCCS1lI0crAPpylsO4m0fX1uXByKXuvZXcasDwgLxIA_scuKoUQ2sMK0-RYgRalfo7NZqtcNrgqFK3XpHO0eB45lZ9YC_RgSQsHiq9Edul_gA8ryo4AmamZbjg2ian5C-9-VmJtmcKC0yitYYZAgrgn7xWtWFtI-k5QTPhFnTBVxu2GSEa8mPUkYD9Ydoltj356ugP0L-RZStAJkgbUAg72JBN31L2HwPd-bR33-Mul9uvFB8A6sBLBZTKbtIHqBrorVWkwFPnshJEtJcCjltLsx5LTJeliTxadQrD2hlox5D1ZZmdw_lbyB4d-B1-cKs2BWKIpv2QIQQ9eweBomQFyMOQXKTz2HHVTgziyk6YYOeMTnV0cjA-W0e6lHUnKyMDB7kh9ZuTA9XvVj_wKwtDU848jMz_o46gKUMaRI-llK1XAboNwMxl25h_TNioQPskkixqytX1xiBfUJIos-o0-8HeykSKoGUQIjWOyv2RMl8JNzEfAEUOXuAVbfBMlBu87i5VyD3xwPu4tZsnXrRA19w0xR-65Pj1QPa3wy1ycO-fqb_MsJQ0KGvxF0z6eHRrlhdSN8ZImukME0TEmknLw5aMEtYHNuAaibptIblXhlsTiGH3qFpLe4DINSE47_xnjylG7kTT5Z_EoW81eHeITwZuul-9o02x1lOCobF7qGYbbZtjvsA0Cxh63g67novLsWMZ6RADbLcApX9p3S1QeMrLaJrW-p9YhfktZTkycoyDywFtkss60fKLNUKviXxJ3bTJS6HfpE06kR5ujuRSSWIRMM5k6hjCgaajCpkbmtmK1GzdniiDfn7Ant-bdtKPaBjJZ6zw4S0iWZXsB_Wj0IinNG_Srz1DIJPH8mc7gae_tef-xgkEgGuBq7yfXYS575zd5-WCpKLbsT_glhIXh3O9GLjhZrFIA9B-8MvXvlXOt4iMo_sKiY7DbhKl4m_4Du28zXUetmEgzUL_Ztb1MPtdwJJkhchO1o6g1zsl4gZ4ytSfr2S5P7OvAnUTf-ds3jCTmidPQeEZ-9IUczUShITAaSCRa6SPYuucGtTpRwyNtUGrKMw73AszrfoEtGoDwobcZ0pHzKQAAUM7_ktZKhVKIKNuFSTZmoWdA8qvWAjuIbApMfH7OMuhFx_Ri48jtJ_AgcEGX82HUHmn-X7QP2qZGdervQ2AIirCnaVbBY1fwR0t495GProE5k7RWH5Expq1FneFC6mlviF-jfD4eA4PaaUlsi49c87AVUy2uNajaEaqcwmo5chqLUjM5A0jOn4_pbdfcPtOZtCL9Kus63CGLRNRtmnqxvy6SvDkd9NM-akhz8qSd6TnM_kiNOtnH3l-NoC1j0xiPq9p17ZdkhD97sYndTCnYUfTZe2PgzfHTgA-ihJv8dXCXKy42qM2rhRhNTuW48w6nSwCfrew4yOvs4ZWJkeylLRhLo_nOriyIpWwcWjVN1v7jbPvlGJHJQY0KY20b0d0rcEpetP2YoWAQXg7jRvToukC-s5X4fj6HCJ3egv1lCOrIPynUZCbTubttO1v3_k40a3MdAPDPsXgfd3ZnunUqRdidtmyZPzMQZ0yAeBGF4wiBdpZGzZozWA-W8ZqU2cm0ej1NjjQb37Ptwqb7OuB04_FRxw9YODu9bAHOdm2-XW6bY_R75iaxgY9cZQ-OC3uMixEvBFB90WH_QL-LZ-AUkx5LWsVt74ztDvd1UZL8jUC4yjpFptgL70Maux6BEhhFjfKa9sqEDgTbOE8HTqtK8wDdlblsVV_1dXTl-ANTBn6RuTx5fxbu0mqWh0KVwHQspoD4-uydAI3cY61ihUpgBBKhOnwHyspv67BiTibrGz7Y1uJQgH0edXM2U4LZzpUpVR1Ua0RUOuuxId2SB2gC7BMOhSMarH5y-dZhmMiLvtFr45SeoLsMEGfMaB6YT2tWiy4hxRVQPij0IkjdhwLh2Jqaqg_CikCh1ncRr3DRojFANaVg1MSVb1aPmIaI8JZBR1fEcyVl2O4XsSwHFe0Hqnv-jniH59gs6IlZTJlfTbyMhuvgM0U_Z9LBxEX7_t_YRy7QxjTcbnOgtWjDD9v9QAya9cr0W5LJlBzM5OqbPkE7UFT_GjetqcmqxKKVm4IF02HiTjX3u3J-uNXnhRkfjfxe8qOY1Xo43PufSH7Aq9FdNa4y86QzhksKkADjpnQP2hLxWNOhlxybL5O6gJd-mQ1L2XDOXgcbLuUx36g-NG5ztFPteCNXeXzx6EDkqj8UnGYxUUkJylFUCWYq00_mw0qoO7VoPHx_MwLThIYoGKl00mB2KQ_Qa0t0ASyiVUAk2s7z8cMpO5Xeik6vPGRrbWOsgwGZ5kP7jFxV3GBRBk_JCeg2Wjm_qTGDWGyrIwt1tVpjo1ofN_dKXw9mwd0vBTg9smRbMrockG68j82MgGdk6aXzbYTy4k4ngB7XBzcWuJt7_czflIdsseLlf8mMcXqLGTZwiWyzOzfMKmHFIceagpb16-jtQ23TYGEsi6efww-ZeNA8XefU2m0BTJWavCUnT1hK_4YsErmK3WCaNi1vCaC2BGinwE5VVoyzsPcyISDutiYuScziDcx0FeqPjS8rvA4IK3NnjvWzXWVB4kB3SN8QmyO4EZUGcm-Ibgc7bcXcvooDXVdPtorivZ-_5Gg9thIakVAn9gJ1dyjpebkkJMoflnHgdNlWvc1gLaVPaiE06GGbluMVZJoIBB8_tlTXYHDe3VBQHR_14yqnJrTYrtr5hKBQhoE9gsSVFWbZahHybfopADVFUAtJU0Oko92RDJJyWShwQSPbD2-zaTylI3VX71IYC0QABI-pyr5MqYodVZK1ZySEHnMml4vSoM_FA5hMQ5M4IayDNWxHikfTy6bwG9csHRKgwc8-E1hlOlQ7zsCl-XdXjhroENqpQJSq4ZebUEsmpyL1e0ki3OauUi5XXVeSUqLiIvkus0o6LSm5v1s3u5HcXn3KBzBbj644PVZ8DOljkL5yTZFMoMUZkO1dKeEysBHtLl6ZBrdYivS6CSJWkjwX8HrxSYAQvOTVvEj0ly0Q1Xh24-qjOaZ1y2Caa15oFg0V9a8juUAsyLpW6Ysj_x3cg8r_CZwtYu3PoHATP_lliofRrioppG4IJEymH6hyU_mYAHi0F7nHJCK5z2yyIf8CWYR6jMVNuaeml8l0LJtwhJ7PwCjrj7rotsZEFEUMoP1cSkCOlz2MLYOti4Ssxg-SesTZyZnlw5BGqBBFK9liLJlg6iJNGQoMz9qXl1fLzuh_Fn3G_wzmdRV3IWCmhsbxawwL7EozL0Hq5cwuRn6hpuxFcDu2VdjaXzWJTUgydxQJbvJ9VnFPcM1q745_JVOPccGEVqtoJS8C4Z7OBlXSvSkQDvLJuN6m55VabXYLBB6TQtpoJzHakYr4XzwdGX9MMh64kYb8Bsd9rtHYNZ2lnGB61jwjHdIER4pwuJ1kGO5Cp5FWPndoODRCq1-JAyJM9O7qb1ws-0c321rjxvam1ENieZlddBYr6YyTNdzTC6C49-qJr-T3FSF1kcbYNMJXyQeghOQ4IPfDZZlzW-ReoT_9GGVHROTA6GC20WpY5l8_voJKoHxo6d4yaC6wsX4_YVa7FIbwQUAIp7ll9kEJUZEDMuSWTXh-o-WI1ftcEs6Sl6WODQzv2LyhnE-KUMgj4lM2AVGObgxjuhzLC4ljhYROzEsMpHMeVILUTlZ9sIssyOGScJMGpINC7FOJGCQd8IfXz8gvuFdGiA8QGYWxIFwYQN4RG0l9709z8g7sUCABPZhaKuOYsgg5SWfOLW6sT4ZX0h1EvInvGDX4Spz2hhXT4iJQqqhpBfXiZa0-oCTBL0DetnKoNzPDPo-Eq2LHVpJ7g_EgfHv2SAHUx6_E24a0Oi6-xN3U4iSmZ7zg7kHLQOgohGsmwWMoNLcXmNkKwUlBi_O9omAStOIsg97ysKCrdIQKtHVhg7gfMQBFzueNjQEnWHJ6Sdskz0KyCWQhp3PV32Gxvg_D2CDjmyMALJZ5tuQm8kjI_YAmMvkcJETfZec4kh1t9sx304843zDgtLcFI9HzuZRH9FYEV64Xlz0ABpPTgwh9LVmqZ17bZ_0JVBx6GWSS8JNoqIRR7WNO5mu-t23NRiBMrthCeAUrhvJccSyWGgOb72icX6-2z0bzPDSl3wMvKyzYl802APdoYT1BPbUoIwVPPxhMRg6WcHcui21moEjGVS0M0WuLd4Gd5POUUNlNTikAomkfAk8Hbw3WVrm2Kj74Ii6C4OgTKIHiQ7E_3UaEDWu6ClZe4ScVNhwaxLUKYe53kfmGG6XYF-hnjxsaAf6mWsf12Wk2ka4wNvfawKESIffWzGJPzm8aT4TKzsyul8g2y4Ew_GIdngbwGTbyt-AAnik_SDRlYB57l9SmJW2enOhhkGTrf5fUftTq4Yk3xFSePoxrnVcmoPzRzCuyudYTm8n8Ze3Go8fho0elMlXpDtOp0oaK7EtATpYsdCMq0g_yaZZB4NfWuUIsvgvljwCXdrf6CVQZsibf99V7TEw4YrdLXIxH4arNsWDbYqzXJQBCgst4oJI9mBmmvVu8zup-EqZuRtRtGnZiG_R82ALTDoa30CPKVL_zOODkjY2Yt-oGh_GGkHVYmsLdsjoDJDX5pnF03I_LyKSqQfddwOU47iTmgik-VHVABLrhJR7npAdAZcEaXR1qrty7o-DYJAwLwCBMg==.eyJlbmRwb2ludF9zbHVnIjoib3BlbmFpL2dwdC02LWx1bmEtMjAyNjA5MjJ8b3BlbmFpIn0",
+       "format": "openai-responses-v1",
+       "id": "rs_03f16558f2ae2cdc016af88e7b6a5887d1b099390ecc40ff20",
+       "index": 1
+      }
+     ]
+    }
+   }
+  ],
+  "usage": {
+   "prompt_tokens": 3084,
+   "completion_tokens": 373,
+   "total_tokens": 3457,
+   "cost": 0.000571925,
+   "is_byok": false,
+   "prompt_tokens_details": {
+    "cached_tokens": 0,
+    "cache_write_tokens": 3081,
+    "audio_tokens": 0,
+    "video_tokens": 0
+   },
+   "cost_details": {
+    "upstream_inference_cost": 0.000571925,
+    "upstream_inference_prompt_cost": 0.000385425,
+    "upstream_inference_completions_cost": 0.0001865
+   },
+   "completion_tokens_details": {
+    "reasoning_tokens": 328,
+    "image_tokens": 0,
+    "audio_tokens": 0
+   }
+  }
+ }
+}

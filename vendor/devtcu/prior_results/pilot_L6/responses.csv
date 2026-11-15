@@ -1,0 +1,361 @@
+model,task_id,status,parsed,question_type,response,ref_answer,correct,trap_hit,finish_reason,error
+anthropic/claude-haiku-5.5,connectome_critical_count_L6_s1,ok,5,critical_count,"The shortest route from S1 to SMA is S1 → VPL → A1 → Pulv → BG → SMA, with total delay 2 + 2 + 1 + 4 + 5 = 14 ms. I checked each of its five connections:
+
+- **S1 → VPL (2):** S1's only outgoing connection, so removing it cuts off the network. Critical.
+- **VPL → A1 (2):** Without it, Pulv can only be reached via LGN (6 + 1 = 7 ms instead of 5), so the total rises. Critical.
+- **A1 → Pulv (1):** Without it, Pulv is reached at 7 ms via LGN instead of 5, so the total rises. Critical.
+- **Pulv → BG (4):** The alternative into BG is via Cb (8 + 2 = 10 ms instead of 9), so the total rises. Critical.
+- **BG → SMA (5):** BG is the only reachable region with a connection into SMA (S2 has no incoming connections, so it is unreachable), so removing it cuts off SMA. Critical.
+
+No other route ties for the shortest path, so removing any of the remaining connections leaves the 14 ms total unchanged.
+
+FINAL ANSWER: 5",5,1,,stop,
+anthropic/claude-haiku-5.5,connectome_critical_count_L6_s2,ok,7,critical_count,"## Tracing the network
+
+**Outgoing edges I read from the diagram** (the relevant ones):
+- V1 → FEF (2)
+- FEF → A1 (4)
+- A1 → S1 (3), A1 → VA (5)
+- VA → PPC (3), VA → FEF (3), VA → MGN (2)
+- PPC → IT (4), PPC → V1 (3), PPC–M1 (one 2ms and one 3ms line, both directions present)
+- IT → FEF (3)
+- M1 → BG (4)
+- BG → SMA (3)
+- Cb → SMA (1), Cb → S1 (1)
+- Pulv → M1 (2), Pulv → V1 (2), Pulv → VA (5)
+- S1 → MGN (2)
+
+**Reachability from V1:** V1 can only leave via FEF. FEF's only outgoing edge is to A1, and A1 leads to VA and S1. VA leads to PPC, and PPC leads to M1, which leads to BG and then SMA. Cb has no incoming edges and Pulv has no incoming edges, so neither can help reach SMA from V1.
+
+**Shortest route:** V1 → FEF → A1 → VA → PPC → M1 → BG → SMA. Its total delay is about 23–24 ms, depending on which of the two PPC–M1 lines carries which direction. Either way, the route passes through the PPC → M1 edge.
+
+**Criticality:** Every alternative path to SMA must go through the same chain, since there are no bypasses:
+- FEF is reachable only through V1, IT, PPC or VA. IT, PPC and VA are themselves only reachable through FEF, so V1 → FEF is the only entry.
+- A1 can only be entered from FEF.
+- VA can be entered from A1 or Pulv, but Pulv is unreachable, so only A1 → VA works.
+- PPC can only be entered from VA.
+- M1 can be entered from Pulv (unreachable) or PPC, so only PPC → M1 works.
+- BG can only be entered from M1.
+- SMA can be entered from BG or Cb, but Cb is unreachable, so only BG → SMA works.
+
+Removing any of these seven edges cuts off SMA entirely, so each is critical.
+
+**Critical connections:** V1→FEF, FEF→A1, A1→VA, VA→PPC, PPC→M1, M1→BG, BG→SMA = 7.
+
+FINAL ANSWER: 7",7,1,,stop,
+anthropic/claude-haiku-5.5,connectome_critical_count_L6_s3,ok,3,critical_count,"**Reading the network**
+
+The shortest route from V2 to BG is V2 → S2 → MT → BG, with total delay 1 + 1 + 5 = 7 ms.
+
+Checking the other paths:
+- BG can only be entered from FEF (1 ms) or MT (5 ms). FEF is reachable only through BG, so the only way in from outside is MT → BG.
+- MT's only incoming connection is from S2, and S2's only incoming connection is from V2 (1 ms).
+- Other branches (V2 → MD → Cb, V2 → STS, V2 → VPL, and so on) lead to regions with no route back to BG.
+
+**Testing each connection on the route**
+
+- **V2 → S2 (1 ms):** Removing it cuts off S2, MT and BG entirely, since no other route reaches S2 or MT. Critical.
+- **S2 → MT (1 ms):** MT has no other incoming connection, so removing it leaves BG unreachable. Critical.
+- **MT → BG (5 ms):** BG's only other entry, FEF → BG, can only be reached through BG itself, so removing this connection leaves BG unreachable. Critical.
+
+**Other connections**
+
+Every other connection is off the shortest route. Removing any of them leaves the 7 ms path intact, so none is critical.
+
+FINAL ANSWER: 3",3,1,,stop,
+anthropic/claude-haiku-5.5,connectome_critical_count_L6_s4,ok,7,critical_count,"## Reading the network
+
+**Edges relevant to the search (delay in ms):**
+- V1 → A1 (5), the only outgoing edge from V1
+- A1 → dlPFC (2), the only outgoing edge from A1
+- dlPFC → TPJ (3), dlPFC → FEF (3)
+- TPJ → Pulv (3)
+- Pulv → V4 (5), Pulv → VA (1), Pulv → FEF (5)
+- V4 → PMv (4)
+- PMv → M1 (1), PMv → SMA-side edges, PMv → VA (3), PMv → Pulv (1), PMv → FEF (2)
+- M1 → SMA (2), M1 → A1 (4)
+- VA → dlPFC (1), VA → TPJ (2), VA → LGN (2)
+- LGN → Pulv (1)
+- V2 → A1 (3), V2 → FEF (1), V2 → PMv (4). V2 has no incoming edges, so it is unreachable from V1.
+
+## Shortest route
+
+Every route leaves V1 through A1 (5), then dlPFC (7), then TPJ (10). From TPJ the route goes to Pulv (13), then V4 (18), then PMv (22), then M1 (23).
+
+Shortest total delay: **23 ms**, via V1 → A1 → dlPFC → TPJ → Pulv → V4 → PMv → M1.
+
+## Checking each edge on this route
+
+1. **V1 → A1:** the only exit from V1, so removing it cuts off everything. Critical.
+2. **A1 → dlPFC:** the only exit from A1, and A1 is reached only via V1. Critical.
+3. **dlPFC → TPJ:** the alternative into TPJ is through VA, but VA is reachable only via Pulv, which is itself downstream of TPJ. Removing this edge leaves Pulv, V4 and PMv unreachable. Critical.
+4. **TPJ → Pulv:** Pulv's other entries (LGN, PMv) are reachable only through Pulv or PMv, so removing this edge disconnects the route. Critical.
+5. **Pulv → V4:** V4's only incoming edge is from Pulv. Critical.
+6. **V4 → PMv:** the other entry to PMv is from V2, which is unreachable, and from SMA, which is reached only via M1 and PMv. Removing this edge cuts the route. Critical.
+7. **PMv → M1:** M1's only incoming edge is from PMv. Critical.
+
+Any edge off this route leaves the 23 ms path intact, so it cannot be critical.
+
+**Total critical connections: 7.**
+
+FINAL ANSWER: 7",6,0,,stop,
+anthropic/claude-haiku-5.5,connectome_critical_count_L6_s5,ok,4,critical_count,"## Reasoning
+
+**Reading the relevant edges.** The arrowheads show these key connections:
+- A1 → LGN (4), with the arrowhead at LGN's lower edge
+- LGN → MT (2), LGN → MD (3), LGN → VA (4)
+- MT → M1 (1), MD → M1 (1), VA → M1 (4)
+- M1 → PMv (4), the only edge into PMv
+- MGN → A1 (3), MT → A1 (3), V4 → A1 (1)
+
+**Reachability from A1.** A1 reaches LGN, then MT, MD and VA. MGN and V4 have no incoming routes from A1's region, and FEF/dlPFC are only reachable through V4, so they are unreachable.
+
+**Shortest distances (from A1):**
+- LGN: 4
+- MT: 4 + 2 = 6
+- MD: 4 + 3 = 7
+- VA: 4 + 4 = 8
+- M1: via MT = 6 + 1 = 7 (other options: via MD = 8, via VA = 12)
+- PMv: 7 + 4 = **11**
+
+The shortest route is A1 → LGN → MT → M1 → PMv, with total 11 ms. The next-best route, A1 → LGN → MD → M1 → PMv, costs 12 ms, so the shortest route is unique.
+
+**Critical connections.** Only edges on the unique shortest route can be critical, since removing any other edge leaves this route intact.
+- **A1 → LGN (4):** removing it cuts off everything, so it is critical.
+- **LGN → MT (2):** the detour via MD gives 4 + 3 + 1 + 4 = 12 instead of 11, so it is critical.
+- **MT → M1 (1):** the detour via MD gives 12 instead of 11, so it is critical.
+- **M1 → PMv (4):** it is the only edge into PMv, so it is critical.
+
+That gives 4 critical connections.
+
+FINAL ANSWER: 4",4,1,,stop,
+anthropic/claude-haiku-5.5,connectome_critical_count_L6_s6,ok,3,critical_count,"## Tracing the network
+
+I read the arrows and labels from the diagram. One direction is uncertain: the 1 ms connection between V4 and A1 appears to point into V4, but the graph has no route from V4 to SMA unless it points from V4 to A1. I took it as V4→A1, since the puzzle presupposes a route exists. Under that reading:
+
+- V4 → A1 (1), V4 → MD (1)
+- A1 → V1 (1), A1 → VPL (2), A1 → LGN (4), A1 → PCC (5), A1 → dlPFC (5), A1 → TPJ (2), A1 → PMv (4)
+- V1 → V4 (5), V1 → SMA (5)
+- VPL → V4 (1), VPL → LGN (2), MD → VPL (1), BG → VPL (3)
+- LGN → dlPFC (4), PCC → dlPFC (4), dlPFC → TPJ (3)
+- STS → PCC (5), STS → PMv (2), PCC → SMA (5), BG → PMv (2), BG → SMA (2), SMA → PMv (1), SMA → V1 (2)
+
+## Shortest route
+
+Routes from V4 to SMA:
+- V4 → A1 → V1 → SMA: 1 + 1 + 5 = **7**
+- V4 → A1 → PCC → SMA: 1 + 5 + 5 = 11
+- Routes through MD, VPL or LGN lead only to dlPFC and TPJ, which have no exit to SMA.
+
+The shortest route is therefore unique, with cost 7.
+
+## Checking each edge on that route
+
+- **V4 → A1 (1):** Without it, V4 has no route to SMA at all, so it is critical.
+- **A1 → V1 (1):** Without it, the best alternative is 11 (via PCC), so it is critical.
+- **V1 → SMA (5):** Without it, the best alternative is 11 (via PCC), so it is critical.
+
+No edge off the shortest route can be critical, because removing it leaves the cost at 7.
+
+FINAL ANSWER: 3",8,0,ignored_arrow_direction,stop,
+anthropic/claude-haiku-5.5,connectome_delay_after_failure_L6_s1,ok,22,delay_after_failure,"## Reading the network
+
+The relevant connections, with delays in ms:
+
+- S1 → V4 (4)
+- V4 → V2 (1)
+- V2 → PMd (1), this is **X**
+- V4 → BG (2), this is **Y**
+- BG → PMd (4)
+- V4 → PCC (4)
+- PCC → TPJ (5)
+- TPJ → BG (5)
+- V4 → SMA (4), V2 → SMA (1), BG → SMA (5), V2 → VA (4), FEF → VA (3), FEF → TPJ (3), TPJ → V2 (1), BG → VPL (5), VPL → VA (2), VPL → Pulv (2), Pulv → S1 (1), and PCC/FEF/TPJ edges as listed.
+
+## Original shortest route
+
+S1 → V4 → V2 → PMd = 4 + 1 + 1 = **6 ms**
+
+## After X and Y fail
+
+- **X** removes V2 → PMd, so PMd can only be reached through BG → PMd (4).
+- **Y** removes V4 → BG, so BG can only be reached through TPJ → BG (5).
+- TPJ is reached through PCC → TPJ (5) or FEF → TPJ (3). FEF has no incoming connections from the reachable region, so the route must go through PCC.
+- PCC is reached from V4 → PCC (4).
+
+Checking other branches: SMA and VA have no outgoing connections that lead back to BG or PMd, and V2 can only reach SMA, VA and PMd (now cut). So no other route to BG exists.
+
+The only remaining route is:
+
+S1 → V4 → PCC → TPJ → BG → PMd = 4 + 4 + 5 + 5 + 4 = 22 ms
+
+FINAL ANSWER: 22",22,1,,stop,
+anthropic/claude-haiku-5.5,connectome_delay_after_failure_L6_s2,ok,19,delay_after_failure,"## Reading the network
+
+**Relevant connections (delay in ms):**
+- MT → MGN (1), MT → PPC (3), MT → STS (4), MT receives from V2 (V2 → MT, 4)
+- MGN → FEF (5)
+- FEF → S2 (1), S2 → FEF (3), FEF → STS (1), FEF → PPC (2), FEF → PMd (3)
+- S2 → V2 (4)
+- STS → V2 (1), this is connection **Y**
+- V2 → BG (3), this is connection **X**
+- V2 → M1 (4), M1 → BG (4)
+- BG → MD (5), MD → BG (1), MD → MGN (4)
+- BG → Pulv (1), Pulv → VA (3), VA → PPC (5)
+- M1 → PMd (2)
+
+**Original shortest route:** MT → STS (4) → V2 (1, Y) → BG (3, X) = 8 ms.
+
+## After X and Y fail
+
+- **STS** now has no outgoing connection, since its only outgoing link was Y. That cuts off the MT → STS branch.
+- **BG** can only be entered from M1 (4) or MD (1). MD's only incoming connection comes from BG, so it cannot be used to reach BG.
+- **M1** can only be entered from V2, so the route must reach V2.
+- **V2** can now only be entered from S2 (4), since STS → V2 has failed.
+- **S2** can only be entered from FEF (1).
+- **FEF** can be reached from MGN (5) or S2 (3). MGN is reachable from MT (1).
+
+The only remaining route is therefore:
+
+MT → MGN (1) → FEF (5) → S2 (1) → V2 (4) → M1 (4) → BG (4)
+
+Total: 1 + 5 + 1 + 4 + 4 + 4 = 19 ms.
+
+FINAL ANSWER: 19",19,1,,stop,
+anthropic/claude-haiku-5.5,connectome_delay_after_failure_L6_s3,ok,15,delay_after_failure,"## Reading the network
+
+**Outgoing connections relevant to the route:**
+- S1 → PPC (1), S1 → Pulv (1)
+- PPC → VPL (4), PPC → dLPFC (Y, 2)
+- VPL → MD (2), VPL → Pulv (5), VPL → BG (X, 2)
+- MD → PMv (4)
+- PMv → BG (4), M1 → PMv (4)
+- dLPFC → BG (5), TPJ → BG (3), BG → V4 (1)
+- V4 → VPL (3), V4 → V1 (5), V1 → MD (4), TPJ → V4 (1)
+
+**Original shortest route:** S1 → PPC → VPL → BG = 1 + 4 + 2 = 7 ms.
+
+**After X (VPL → BG) and Y (PPC → dLPFC) fail:**
+- The only remaining incoming connections to BG are dLPFC → BG, TPJ → BG and PMv → BG.
+- dLPFC's only incoming connection was Y, so it is unreachable from S1.
+- TPJ has no incoming connections, so it is unreachable.
+- PMv is reachable through MD → PMv (4) or M1 → PMv (4). M1 has no incoming connections, so the route must go through MD.
+- MD is reached from VPL → MD (2), since VPL is still reachable from S1 via PPC.
+
+**Remaining route:** S1 → PPC → VPL → MD → PMv → BG = 1 + 4 + 2 + 4 + 4 = 15 ms.
+
+The other paths (via Pulv, or via V4/V1 back to MD) either dead-end or are longer.
+
+FINAL ANSWER: 15",15,1,,stop,
+anthropic/claude-haiku-5.5,connectome_delay_after_failure_L6_s4,ok,14,delay_after_failure,"## Reasoning
+
+**Edges relevant to the route (delays in ms):**
+- V2 → V4 (3), V2 → PMd (3), V2 → ... (V2 has only these two outgoing connections)
+- V4 → Cb (3) [this is **Y**], V4 → PMd (3), V4 → VA (4)
+- PMd → Cb (2) [this is **X**], and PMd has no other outgoing connection
+- VA → MGN (4), VA → V4 (4)
+- MGN → Cb (3)
+- Pulv → Cb (2), Pulv → VA (5)
+- BG → MGN (2), BG → PMd (2), BG → STS (3)
+- S2 → VA (4), S2 → dlPFC (5); FEF → S2 (1), FEF → dlPFC (3)
+
+**Original shortest route:** V2 → PMd → Cb = 3 + 2 = 5 ms.
+
+**After X and Y fail:**
+- X removes PMd → Cb, leaving PMd as a dead end (its only outgoing connection was X).
+- Y removes V4 → Cb, so V4 can no longer reach Cb directly.
+
+**Remaining routes into Cb:** Cb can now only be reached through MGN → Cb (3) or Pulv → Cb (2).
+- Pulv has no incoming connections, so it cannot be reached from V2.
+- MGN is reached from VA (4) or BG (2). BG has no incoming connections, so it cannot be reached from V2.
+- VA is reached from V4 (4) or S2 (4). S2 is only reached from FEF, which V2 cannot reach.
+
+So the only feasible route is V2 → V4 → VA → MGN → Cb:
+3 + 4 + 4 + 3 = 14 ms.
+
+FINAL ANSWER: 14",14,1,,stop,
+anthropic/claude-haiku-5.5,connectome_delay_after_failure_L6_s5,ok,16,delay_after_failure,"## Reading the network
+
+**Edges relevant to the route** (arrowhead direction in parentheses):
+- V4 → MT (3), this is connection Y
+- V4 → VPL (4)
+- VPL → LGN (5)
+- LGN → PPC (5)
+- LGN → MT (4)
+- MT → LGN (2)
+- MT → PPC (5)
+- MT → BG (1)
+- BG → PMv (2), this is connection X
+- PPC → PMv (2)
+- V1 → PMv (4). V1 has no incoming connections, so it is unreachable from V4.
+
+**Original shortest route:** V4 → MT → PPC → PMv = 3 + 5 + 2 = 10 ms. The alternative V4 → MT → BG → PMv = 3 + 1 + 2 = 6 ms is shorter, so the original best route is actually V4 → MT → BG → PMv = 6 ms.
+
+## After X and Y fail
+
+- **Y fails:** V4 → MT is gone, so V4 can only leave via V4 → VPL (4).
+- **X fails:** BG → PMv is gone, so PMv can only be entered through PPC → PMv (2), since V1 is unreachable.
+
+Remaining route to PPC: V4 → VPL → LGN → PPC = 4 + 5 + 5 = 14 ms. Then PPC → PMv adds 2 ms, for 16 ms.
+
+Checking alternatives:
+- Via MT: MT can only be reached from LGN (4), so V4 → VPL → LGN → MT = 13 ms. From MT, BG is blocked by X, and PPC costs 5 more, giving 13 + 5 + 2 = 20 ms.
+- Via VA, FEF, TPJ to PPC: 9 + 1 + 5 + 5 + 5 = 25 ms before PMv, which is longer.
+
+The smallest total delay is therefore 16 ms.
+
+FINAL ANSWER: 16",16,1,,stop,
+anthropic/claude-haiku-5.5,connectome_delay_after_failure_L6_s6,ok,11,delay_after_failure,"## Reconstructing the relevant routes
+
+**Original shortest route:** S1 → V2 (5) → V1 (2) → BG (1), total **8 ms**. This uses X (V1 → BG), so it is the first route to fail.
+
+**Next best before failures:** S1 → VPL (3) → MD (4) → BG (2), total 9 ms. This uses Y (VPL → MD), so it also fails.
+
+**Remaining routes after X and Y are removed:**
+
+- **Via V1:** V1's only outgoing connection is X, so V1 becomes a dead end.
+- **Via PPC → PMd → BG:** S1 → V2 (5) → PPC (2) → PMd (5) → BG (4) = 16 ms.
+- **Via Pulv → MD → BG:** S1 → VPL (3) → Pulv (4) → MD (2) → BG (2) = 11 ms. This avoids Y because it reaches MD through Pulv rather than directly from VPL.
+- **Via IT → MT → PMd → BG:** S1 → VPL (3) → IT (1) → MT (4 or via FEF) → PMd (1) → BG (4) ≈ 13 ms or more.
+
+The shortest remaining route is S1 → VPL → Pulv → MD → BG.
+
+I read the arrow directions and labels from the image, and some of the lines near MD, BG and SMA were hard to separate. The answer depends on the MD → BG connection being labelled 2 rather than 4. If it were 4, the route would cost 13 ms instead.
+
+FINAL ANSWER: 11",13,0,ignored_failure_Y,stop,
+openai/gpt-6-luna,connectome_critical_count_L6_s1,ok,2,critical_count,"The shortest route is S1 → BG → SMA, with total delay 2 + 5 = 7 ms. Both connections on this unique shortest route are critical.
+
+FINAL ANSWER: 2",5,0,,stop,
+openai/gpt-6-luna,connectome_critical_count_L6_s2,ok,6,critical_count,"The minimum-delay route is V1 → FEF → VA → PPC → M1 → BG → SMA. Its six connections are all critical.
+
+FINAL ANSWER: 6",7,0,,stop,
+openai/gpt-6-luna,connectome_critical_count_L6_s3,ok,3,critical_count,"The minimum-delay route is V2 → S2 → MT → BG, with total delay 1 + 1 + 5 = 7 ms. Each of its three connections is critical.
+
+FINAL ANSWER: 3",3,1,,stop,
+openai/gpt-6-luna,connectome_critical_count_L6_s4,ok,6,critical_count,"The shortest route is V1 → A1 → dlPFC → TPJ → VA → PMv → M1, with total delay 17 ms. Each of its six connections is critical.
+
+FINAL ANSWER: 6",6,1,,stop,
+openai/gpt-6-luna,connectome_critical_count_L6_s5,ok,1,critical_count,"The minimum delay is 8 ms, with two shortest routes: A1 → MT → M1 → PMv and A1 → V4 → dIPFC → M1 → PMv. They share only the connection M1 → PMv, so only one connection is critical.
+
+FINAL ANSWER: 1",4,0,ignored_arrow_direction,stop,
+openai/gpt-6-luna,connectome_critical_count_L6_s6,ok,5,critical_count,"The minimum-delay route is V4 → MD → VPL → LGN → dlPFC → SMA. Its five connections are critical: removing any one forces a longer route or leaves no route.
+
+FINAL ANSWER: 5",8,0,,stop,
+openai/gpt-6-luna,connectome_delay_after_failure_L6_s1,ok,12,delay_after_failure,"After the failures, the shortest remaining route is S1 → V4 → BG → PMd, with delays 4 + 4 + 4 = 12 ms.
+
+FINAL ANSWER: 12",22,0,ignored_arrow_direction,stop,
+openai/gpt-6-luna,connectome_delay_after_failure_L6_s2,ok,15,delay_after_failure,"After X and Y fail, the quickest remaining route is MT → MGN → FEF → S2 → V2 → BG. Its total delay is 1 + 5 + 1 + 4 + 4 = 15 ms.
+
+FINAL ANSWER: 15",19,0,,stop,
+openai/gpt-6-luna,connectome_delay_after_failure_L6_s3,ok,15,delay_after_failure,"With X and Y failed, the shortest remaining route is S1 → PPC → VPL → MD → PMv → BG. Its total delay is 1 + 4 + 2 + 4 + 4 = 15 ms.
+
+FINAL ANSWER: 15",15,1,,stop,
+openai/gpt-6-luna,connectome_delay_after_failure_L6_s4,ok,10,delay_after_failure,"The remaining route is V2 → PMd → BG → MGN → Cb, with delays 3 + 2 + 2 + 3 = 10 ms. It avoids both failed connections.
+
+FINAL ANSWER: 10",14,0,"ignored_arrow_direction,added_failed_delays",stop,
+openai/gpt-6-luna,connectome_delay_after_failure_L6_s5,ok,16,delay_after_failure,"With X and Y removed, one available route is V4 → VPL → LGN → PPC → PMv, with delays 4 + 5 + 5 + 2 = 16 ms. The other remaining routes are no faster.
+
+FINAL ANSWER: 16",16,1,,stop,
+openai/gpt-6-luna,connectome_delay_after_failure_L6_s6,ok,11,delay_after_failure,"With X and Y failed, a shortest remaining route is S1 → VPL → Pulv → MD → BG. Its delays are 3 + 4 + 2 + 2 = 11 ms.
+
+FINAL ANSWER: 11",13,0,ignored_failure_Y,stop,

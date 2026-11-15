@@ -1,0 +1,8 @@
+# Generation + validation (tested with Python 3.11.13)
+numpy==2.2.5
+matplotlib==3.10.0
+networkx==3.5
+scipy==1.16.0
+pillow==11.1.0
+# Evaluation code in eval/ (not run in this export)
+requests==2.32.4

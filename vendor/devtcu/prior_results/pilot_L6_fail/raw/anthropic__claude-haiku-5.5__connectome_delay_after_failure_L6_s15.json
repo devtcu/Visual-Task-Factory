@@ -1,0 +1,84 @@
+{
+ "status": "ok",
+ "response": "## Reading the network\n\nKey edges on the original shortest route:\n- S2 \u2192 PPC (3) \u2014 this is connection **X**\n- V2 \u2192 MGN (3) \u2014 this is connection **Y**\n- PPC \u2192 STS (1), STS \u2192 Cb (2)\n- S2 \u2192 V2 (5), V2 \u2192 VPL (4), VPL \u2192 MGN (4), MGN \u2192 STS (1)\n\nThe original shortest route is S2 \u2192 PPC \u2192 STS \u2192 Cb = 3 + 1 + 2 = 6 ms. Both X and Y fail, so this route is gone.\n\n## Routes after the failures\n\nS2's only remaining outgoing connection is S2 \u2192 V2 (5 ms), since X was its other outgoing link. From V2, the only remaining option is V2 \u2192 VPL (4 ms), since Y was the other.\n\n- S2 \u2192 V2 \u2192 VPL: 5 + 4 = 9 ms\n- VPL \u2192 MGN (4 ms): 13 ms to reach MGN\n- VPL \u2192 LGN (5 ms) \u2192 MGN (4 ms): 18 ms, which is longer\n- MGN \u2192 STS (1 ms): 14 ms\n- STS \u2192 Cb (2 ms): 16 ms\n\nOther paths are longer. Going MGN \u2192 S1 (2) \u2192 STS (1) reaches STS at 16 ms, then Cb at 18 ms. Routes through V4 are also longer.\n\nThe smallest remaining total delay is 16 ms.\n\nFINAL ANSWER: 16",
+ "finish_reason": "stop",
+ "error": "",
+ "usage": {
+  "prompt_tokens": 3476,
+  "completion_tokens": 3151,
+  "total_tokens": 6627,
+  "cost": 0.0019231,
+  "is_byok": false,
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "cache_write_tokens": 0,
+   "audio_tokens": 0,
+   "video_tokens": 0
+  },
+  "cost_details": {
+   "upstream_inference_cost": 0.0019231,
+   "upstream_inference_prompt_cost": 0.0003476,
+   "upstream_inference_completions_cost": 0.0015755
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 2673,
+   "image_tokens": 0,
+   "audio_tokens": 0
+  }
+ },
+ "raw": {
+  "id": "gen-1794679742-XnUOrelOQjHJ34lQESkw",
+  "object": "chat.completion",
+  "created": 1794679742,
+  "model": "anthropic/claude-haiku-5.5",
+  "provider": "Claude Platform on AWS",
+  "system_fingerprint": null,
+  "service_tier": "default",
+  "choices": [
+   {
+    "index": 0,
+    "logprobs": null,
+    "finish_reason": "stop",
+    "native_finish_reason": "end_turn",
+    "message": {
+     "role": "assistant",
+     "content": "## Reading the network\n\nKey edges on the original shortest route:\n- S2 \u2192 PPC (3) \u2014 this is connection **X**\n- V2 \u2192 MGN (3) \u2014 this is connection **Y**\n- PPC \u2192 STS (1), STS \u2192 Cb (2)\n- S2 \u2192 V2 (5), V2 \u2192 VPL (4), VPL \u2192 MGN (4), MGN \u2192 STS (1)\n\nThe original shortest route is S2 \u2192 PPC \u2192 STS \u2192 Cb = 3 + 1 + 2 = 6 ms. Both X and Y fail, so this route is gone.\n\n## Routes after the failures\n\nS2's only remaining outgoing connection is S2 \u2192 V2 (5 ms), since X was its other outgoing link. From V2, the only remaining option is V2 \u2192 VPL (4 ms), since Y was the other.\n\n- S2 \u2192 V2 \u2192 VPL: 5 + 4 = 9 ms\n- VPL \u2192 MGN (4 ms): 13 ms to reach MGN\n- VPL \u2192 LGN (5 ms) \u2192 MGN (4 ms): 18 ms, which is longer\n- MGN \u2192 STS (1 ms): 14 ms\n- STS \u2192 Cb (2 ms): 16 ms\n\nOther paths are longer. Going MGN \u2192 S1 (2) \u2192 STS (1) reaches STS at 16 ms, then Cb at 18 ms. Routes through V4 are also longer.\n\nThe smallest remaining total delay is 16 ms.\n\nFINAL ANSWER: 16",
+     "refusal": null,
+     "reasoning": "I'm tracing the connecting lines between the nodes, starting with S2 going to V2 with weight 5, then S1 to S2 with weight 1. I'm not sure yet whether the line leaving S2 toward PPC is labeled 3 ms, so I'm still checking where that edge actually ends.\n\nI'm checking the remaining edges from S2 and V4: the line from S2 ends at PPC with a 3 ms label, and I'm working out whether the lines into V4 point toward it or away from it, since the arrowheads near V4 are hard to read.\n\nI'm working out where the line from V4 actually lands, since one arrow near V4 might point in from PPC instead of out to it. I'm leaning toward treating the arrowhead near PPC as the endpoint, but the label placement still leaves that open.\n\nI'm now checking the arrow near V4 again, and it seems the line from PPC runs up to V4 with a label of 1, while the line from V4 continues down to STS with a label of 3. I'm also reading the line from MGN up to S1 as weight 2, and the VPL edges to MGN and LGN as 4 and 5.\n\nI'm checking the remaining edges around STS, Cb, and PMd: STS has weight-2 lines to both Cb and PMd, and Cb has a weight-4 edge to PMd. I'm also reading the link between Cb and SMA as 4, with the arrow pointing from SMA into Cb, and I'm about to check the edge from PMd toward SMA.\n\nI'm checking how the PCC edges connect: PCC appears to feed into Cb with weight 4, and PPC looks like it links to PCC with weight 3, though the arrowhead near PCC is hard to pin down. I'm also weighing whether STS has a weight-1 line running to PCC.\n\nI'm weighing whether the label 1 on the line near (860,1328) belongs to a connection from STS to PCC, since the curve seems to start at STS and rise toward PCC, while the 3 ms line from PPC sits lower.\n\nI'm checking the edge from PPC to STS with weight 1, and then testing a route from S2 to Cb through PPC and STS, which would total 3 + 1 + 2 = 6.\n\nI'm ruling out the S2\u2192PPC edge, so the only way left out of S2 is to V2 at cost 5. From V2 I'm dropping the MGN edge as well and going through VPL, which gives 9 at VPL and 13 at MGN, and then STS and Cb bring the total to 16.\n\nI'm checking whether the 1 ms edge from MGN to STS gives a shorter route, since MGN is reached at 13 and that would put STS at 14 and Cb at 16.\n\nI'm confirming that STS connects to Cb with weight 2, so the path through MGN and STS brings the total to 16.\n\n",
+     "reasoning_details": [
+      {
+       "type": "reasoning.text",
+       "text": "I'm tracing the connecting lines between the nodes, starting with S2 going to V2 with weight 5, then S1 to S2 with weight 1. I'm not sure yet whether the line leaving S2 toward PPC is labeled 3 ms, so I'm still checking where that edge actually ends.\n\nI'm checking the remaining edges from S2 and V4: the line from S2 ends at PPC with a 3 ms label, and I'm working out whether the lines into V4 point toward it or away from it, since the arrowheads near V4 are hard to read.\n\nI'm working out where the line from V4 actually lands, since one arrow near V4 might point in from PPC instead of out to it. I'm leaning toward treating the arrowhead near PPC as the endpoint, but the label placement still leaves that open.\n\nI'm now checking the arrow near V4 again, and it seems the line from PPC runs up to V4 with a label of 1, while the line from V4 continues down to STS with a label of 3. I'm also reading the line from MGN up to S1 as weight 2, and the VPL edges to MGN and LGN as 4 and 5.\n\nI'm checking the remaining edges around STS, Cb, and PMd: STS has weight-2 lines to both Cb and PMd, and Cb has a weight-4 edge to PMd. I'm also reading the link between Cb and SMA as 4, with the arrow pointing from SMA into Cb, and I'm about to check the edge from PMd toward SMA.\n\nI'm checking how the PCC edges connect: PCC appears to feed into Cb with weight 4, and PPC looks like it links to PCC with weight 3, though the arrowhead near PCC is hard to pin down. I'm also weighing whether STS has a weight-1 line running to PCC.\n\nI'm weighing whether the label 1 on the line near (860,1328) belongs to a connection from STS to PCC, since the curve seems to start at STS and rise toward PCC, while the 3 ms line from PPC sits lower.\n\nI'm checking the edge from PPC to STS with weight 1, and then testing a route from S2 to Cb through PPC and STS, which would total 3 + 1 + 2 = 6.\n\nI'm ruling out the S2\u2192PPC edge, so the only way left out of S2 is to V2 at cost 5. From V2 I'm dropping the MGN edge as well and going through VPL, which gives 9 at VPL and 13 at MGN, and then STS and Cb bring the total to 16.\n\nI'm checking whether the 1 ms edge from MGN to STS gives a shorter route, since MGN is reached at 13 and that would put STS at 14 and Cb at 16.\n\nI'm confirming that STS connects to Cb with weight 2, so the path through MGN and STS brings the total to 16.\n\n",
+       "format": "anthropic-claude-v1",
+       "index": 0,
+       "signature": "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.eyJlbmRwb2ludF9zbHVnIjoiYW50aHJvcGljL2NsYXVkZS1oYWlrdS01LjUtMjAyNjEwMDd8Y2xhdWRlLW9uLWF3cyJ9"
+      }
+     ]
+    }
+   }
+  ],
+  "usage": {
+   "prompt_tokens": 3476,
+   "completion_tokens": 3151,
+   "total_tokens": 6627,
+   "cost": 0.0019231,
+   "is_byok": false,
+   "prompt_tokens_details": {
+    "cached_tokens": 0,
+    "cache_write_tokens": 0,
+    "audio_tokens": 0,
+    "video_tokens": 0
+   },
+   "cost_details": {
+    "upstream_inference_cost": 0.0019231,
+    "upstream_inference_prompt_cost": 0.0003476,
+    "upstream_inference_completions_cost": 0.0015755
+   },
+   "completion_tokens_details": {
+    "reasoning_tokens": 2673,
+    "image_tokens": 0,
+    "audio_tokens": 0
+   }
+  }
+ }
+}

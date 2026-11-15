@@ -1,0 +1,84 @@
+{
+ "status": "ok",
+ "response": "**Key route:** MT has only one usable outgoing connection: MT\u2192S2 (excitatory, 4 ms). MT\u2192TPJ is inhibitory and MT\u2192PMv runs into the lesion. S2 leads only to LGN (5 ms). From LGN, the cheapest way toward PMd is LGN\u2192FEF\u2192TPJ\u2192Cb\u2192PMd.\n\n**Shortest route:** MT \u2192(4) S2 \u2192(5) LGN \u2192(2) FEF \u2192(2) TPJ \u2192(3) Cb \u2192(4) PMd\n- Conduction: 4 + 5 + 2 + 2 + 3 + 4 = 20 ms\n- Processing (S2 2, LGN 1, FEF 1, TPJ 3, Cb 4): 11 ms\n- Total: 31 ms\n\n**Checking each edge on this route:**\n1. **MT\u2192S2:** MT's only usable outgoing edge, so removing it cuts off all routes. Critical.\n2. **S2\u2192LGN:** S2's only usable outgoing edge. Critical.\n3. **LGN\u2192FEF:** The alternative LGN\u2192Pulv\u2192TPJ costs 4 + 1 + 5 = 10 ms to reach TPJ, versus 2 + 1 + 2 = 5 ms via FEF. The total rises. Critical.\n4. **FEF\u2192TPJ:** The only other way into TPJ is Pulv\u2192TPJ, which is more expensive. Critical.\n5. **TPJ\u2192Cb:** Cb's only incoming connection. Critical.\n6. **Cb\u2192PMd:** The detour Cb\u2192M1\u2192PMd costs 4 + 3 = 7 ms instead of 4 ms, so the total rises. Critical.\n\nEdges off this route cannot change the shortest path when removed, so they are not critical.\n\nFINAL ANSWER: 6",
+ "finish_reason": "stop",
+ "error": "",
+ "usage": {
+  "prompt_tokens": 3532,
+  "completion_tokens": 3276,
+  "total_tokens": 6808,
+  "cost": 0.0019912,
+  "is_byok": false,
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "cache_write_tokens": 0,
+   "audio_tokens": 0,
+   "video_tokens": 0
+  },
+  "cost_details": {
+   "upstream_inference_cost": 0.0019912,
+   "upstream_inference_prompt_cost": 0.0003532,
+   "upstream_inference_completions_cost": 0.001638
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 2667,
+   "image_tokens": 0,
+   "audio_tokens": 0
+  }
+ },
+ "raw": {
+  "id": "gen-1794676496-h7KN3XOfQUcxsNrtQD9i",
+  "object": "chat.completion",
+  "created": 1794676496,
+  "model": "anthropic/claude-haiku-5.5",
+  "provider": "Claude Platform on AWS",
+  "system_fingerprint": null,
+  "service_tier": "default",
+  "choices": [
+   {
+    "index": 0,
+    "logprobs": null,
+    "finish_reason": "stop",
+    "native_finish_reason": "end_turn",
+    "message": {
+     "role": "assistant",
+     "content": "**Key route:** MT has only one usable outgoing connection: MT\u2192S2 (excitatory, 4 ms). MT\u2192TPJ is inhibitory and MT\u2192PMv runs into the lesion. S2 leads only to LGN (5 ms). From LGN, the cheapest way toward PMd is LGN\u2192FEF\u2192TPJ\u2192Cb\u2192PMd.\n\n**Shortest route:** MT \u2192(4) S2 \u2192(5) LGN \u2192(2) FEF \u2192(2) TPJ \u2192(3) Cb \u2192(4) PMd\n- Conduction: 4 + 5 + 2 + 2 + 3 + 4 = 20 ms\n- Processing (S2 2, LGN 1, FEF 1, TPJ 3, Cb 4): 11 ms\n- Total: 31 ms\n\n**Checking each edge on this route:**\n1. **MT\u2192S2:** MT's only usable outgoing edge, so removing it cuts off all routes. Critical.\n2. **S2\u2192LGN:** S2's only usable outgoing edge. Critical.\n3. **LGN\u2192FEF:** The alternative LGN\u2192Pulv\u2192TPJ costs 4 + 1 + 5 = 10 ms to reach TPJ, versus 2 + 1 + 2 = 5 ms via FEF. The total rises. Critical.\n4. **FEF\u2192TPJ:** The only other way into TPJ is Pulv\u2192TPJ, which is more expensive. Critical.\n5. **TPJ\u2192Cb:** Cb's only incoming connection. Critical.\n6. **Cb\u2192PMd:** The detour Cb\u2192M1\u2192PMd costs 4 + 3 = 7 ms instead of 4 ms, so the total rises. Critical.\n\nEdges off this route cannot change the shortest path when removed, so they are not critical.\n\nFINAL ANSWER: 6",
+     "refusal": null,
+     "reasoning": "I'm reading through the node list and its delay values, which are mostly given per node. The MT node doesn't show a number, so I'm guessing its processing delay is zero or simply not specified.\n\nI'm working through the edges now, checking each arrow and bar to see which connections are excitatory and which are inhibitory. The TPJ-to-IT link and the FEF connections look straightforward, but the bar-ended lines toward PPC and MT need a closer look at their direction.\n\nI'm checking the remaining edges: the arrow at S2 and the lesioned PMv connections, then the links from Cb and M1 into PMv and PMd. I'm also noting that TPJ feeds Cb and Cb feeds M1, and I'm working out whether PMd's line into LGN ends in an arrowhead.\n\nI'm tracing the incoming connections to PMd: Cb and M1 feed it, and the PMv link is blocked by the lesion. Working backward from there, M1 depends on Cb, and Cb depends on TPJ, which in turn depends on FEF and Pulv.\n\nI'm working out the shortest route from MT to PMd: MT feeds S2, S2 feeds LGN, then LGN to FEF, FEF to TPJ, TPJ to Cb, and Cb to PMd, with a second option going through Pulv instead.\n\nI'm checking which way MT can reach PMd, and it only has one usable outgoing edge: MT to S2, then S2 onward to LGN. From LGN the routes branch toward FEF, Pulv, or back to MT, and the FEF branch looks like the one that gets through to TPJ.\n\nI'm tallying the route from MT to PMd, which runs through S2, LGN, FEF, TPJ, and Cb. Adding the conduction delays for those links and the processing at each intermediate node is the next step, and I'm checking whether OUT's own processing counts toward the total.\n\nI'm weighing which edges out of the path are essential: MT's only usable outgoing link goes to S2, so cutting it would disconnect the route, and the same holds for S2's link to LGN. I still need to check whether LGN's link to FEF has an alternative.\n\nI'm checking the remaining critical edges: removing LGN\u2192FEF or FEF\u2192TPJ would push the route through Pulv, which is much longer. TPJ\u2192Cb looks like it's the next link I need to verify, since Cb's only incoming edge comes from TPJ.\n\nI'm checking whether Pulv\u2192TPJ is actually the arrow pointing into TPJ, since it changes whether that bypass counts as a real alternative route.\n\nI'm confirming the Pulv-to-TPJ arrow at that end, which settles the answer at six critical edges.\n\n",
+     "reasoning_details": [
+      {
+       "type": "reasoning.text",
+       "text": "I'm reading through the node list and its delay values, which are mostly given per node. The MT node doesn't show a number, so I'm guessing its processing delay is zero or simply not specified.\n\nI'm working through the edges now, checking each arrow and bar to see which connections are excitatory and which are inhibitory. The TPJ-to-IT link and the FEF connections look straightforward, but the bar-ended lines toward PPC and MT need a closer look at their direction.\n\nI'm checking the remaining edges: the arrow at S2 and the lesioned PMv connections, then the links from Cb and M1 into PMv and PMd. I'm also noting that TPJ feeds Cb and Cb feeds M1, and I'm working out whether PMd's line into LGN ends in an arrowhead.\n\nI'm tracing the incoming connections to PMd: Cb and M1 feed it, and the PMv link is blocked by the lesion. Working backward from there, M1 depends on Cb, and Cb depends on TPJ, which in turn depends on FEF and Pulv.\n\nI'm working out the shortest route from MT to PMd: MT feeds S2, S2 feeds LGN, then LGN to FEF, FEF to TPJ, TPJ to Cb, and Cb to PMd, with a second option going through Pulv instead.\n\nI'm checking which way MT can reach PMd, and it only has one usable outgoing edge: MT to S2, then S2 onward to LGN. From LGN the routes branch toward FEF, Pulv, or back to MT, and the FEF branch looks like the one that gets through to TPJ.\n\nI'm tallying the route from MT to PMd, which runs through S2, LGN, FEF, TPJ, and Cb. Adding the conduction delays for those links and the processing at each intermediate node is the next step, and I'm checking whether OUT's own processing counts toward the total.\n\nI'm weighing which edges out of the path are essential: MT's only usable outgoing link goes to S2, so cutting it would disconnect the route, and the same holds for S2's link to LGN. I still need to check whether LGN's link to FEF has an alternative.\n\nI'm checking the remaining critical edges: removing LGN\u2192FEF or FEF\u2192TPJ would push the route through Pulv, which is much longer. TPJ\u2192Cb looks like it's the next link I need to verify, since Cb's only incoming edge comes from TPJ.\n\nI'm checking whether Pulv\u2192TPJ is actually the arrow pointing into TPJ, since it changes whether that bypass counts as a real alternative route.\n\nI'm confirming the Pulv-to-TPJ arrow at that end, which settles the answer at six critical edges.\n\n",
+       "format": "anthropic-claude-v1",
+       "index": 0,
+       "signature": "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.eyJlbmRwb2ludF9zbHVnIjoiYW50aHJvcGljL2NsYXVkZS1oYWlrdS01LjUtMjAyNjEwMDd8Y2xhdWRlLW9uLWF3cyJ9"
+      }
+     ]
+    }
+   }
+  ],
+  "usage": {
+   "prompt_tokens": 3532,
+   "completion_tokens": 3276,
+   "total_tokens": 6808,
+   "cost": 0.0019912,
+   "is_byok": false,
+   "prompt_tokens_details": {
+    "cached_tokens": 0,
+    "cache_write_tokens": 0,
+    "audio_tokens": 0,
+    "video_tokens": 0
+   },
+   "cost_details": {
+    "upstream_inference_cost": 0.0019912,
+    "upstream_inference_prompt_cost": 0.0003532,
+    "upstream_inference_completions_cost": 0.001638
+   },
+   "completion_tokens_details": {
+    "reasoning_tokens": 2667,
+    "image_tokens": 0,
+    "audio_tokens": 0
+   }
+  }
+ }
+}

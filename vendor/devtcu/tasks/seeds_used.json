@@ -1,0 +1,152 @@
+{
+ "redundant_edge_L1": [
+  1,
+  2,
+  3,
+  4,
+  5
+ ],
+ "redundant_edge_L2": [
+  1,
+  2,
+  4,
+  5,
+  6
+ ],
+ "redundant_edge_L3": [
+  4,
+  5,
+  6,
+  8,
+  9
+ ],
+ "redundant_edge_L4": [
+  1,
+  2,
+  3,
+  4,
+  5,
+  6
+ ],
+ "min_edge_cut_L1": [
+  1,
+  2,
+  3,
+  4,
+  5
+ ],
+ "min_edge_cut_L2": [
+  1,
+  2,
+  3,
+  4,
+  5
+ ],
+ "min_edge_cut_L3": [
+  1,
+  2,
+  3,
+  4,
+  5
+ ],
+ "min_edge_cut_L4": [
+  1,
+  2,
+  3,
+  4,
+  5
+ ],
+ "min_edge_cut_L6": [
+  1,
+  2,
+  3,
+  4,
+  5
+ ],
+ "critical_count_L1": [
+  1,
+  2,
+  3,
+  4,
+  5
+ ],
+ "critical_count_L2": [
+  1,
+  2,
+  3,
+  4,
+  5
+ ],
+ "critical_count_L3": [
+  1,
+  2,
+  3,
+  4,
+  5
+ ],
+ "critical_count_L4": [
+  1,
+  2,
+  3,
+  4,
+  5
+ ],
+ "critical_count_L5": [
+  1,
+  2,
+  3,
+  4,
+  5
+ ],
+ "critical_count_L6": [
+  1,
+  2,
+  3,
+  4,
+  5
+ ],
+ "delay_after_failure_L1": [
+  1,
+  2,
+  3,
+  4,
+  5
+ ],
+ "delay_after_failure_L2": [
+  1,
+  2,
+  3,
+  4,
+  5,
+  6
+ ],
+ "delay_after_failure_L3": [
+  1,
+  2,
+  3,
+  4,
+  5
+ ],
+ "delay_after_failure_L4": [
+  1,
+  2,
+  3,
+  4,
+  5
+ ],
+ "delay_after_failure_L5": [
+  1,
+  2,
+  3,
+  4,
+  5,
+  6
+ ],
+ "delay_after_failure_L6": [
+  1,
+  2,
+  3,
+  4,
+  5
+ ]
+}

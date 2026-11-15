@@ -1,0 +1,340 @@
+{
+ "data": {
+  "nodes": [
+   {
+    "name": "S1",
+    "module": "Sensory",
+    "x": 0.2056,
+    "y": 0.7898
+   },
+   {
+    "name": "V2",
+    "module": "Sensory",
+    "x": 0.2896,
+    "y": 0.6216
+   },
+   {
+    "name": "V1",
+    "module": "Sensory",
+    "x": 0.3709,
+    "y": 0.7876
+   },
+   {
+    "name": "FEF",
+    "module": "Association",
+    "x": 0.3352,
+    "y": 0.2988
+   },
+   {
+    "name": "PPC",
+    "module": "Association",
+    "x": 0.3015,
+    "y": 0.1491
+   },
+   {
+    "name": "PCC",
+    "module": "Association",
+    "x": 0.4949,
+    "y": 0.1146
+   },
+   {
+    "name": "dlPFC",
+    "module": "Association",
+    "x": 0.5009,
+    "y": 0.2854
+   },
+   {
+    "name": "BG",
+    "module": "Motor",
+    "x": 0.7264,
+    "y": 0.6129
+   },
+   {
+    "name": "SMA",
+    "module": "Motor",
+    "x": 0.8716,
+    "y": 0.5212
+   }
+  ],
+  "directed": false,
+  "weighted": false,
+  "edges": [
+   [
+    "BG",
+    "SMA",
+    1,
+    0.0
+   ],
+   [
+    "FEF",
+    "PPC",
+    1,
+    0.0
+   ],
+   [
+    "FEF",
+    "dlPFC",
+    1,
+    0.0
+   ],
+   [
+    "PCC",
+    "SMA",
+    1,
+    0.0
+   ],
+   [
+    "PCC",
+    "dlPFC",
+    1,
+    0.0
+   ],
+   [
+    "PPC",
+    "PCC",
+    1,
+    0.0
+   ],
+   [
+    "S1",
+    "V1",
+    1,
+    0.0
+   ],
+   [
+    "S1",
+    "V2",
+    1,
+    0.0
+   ],
+   [
+    "V1",
+    "BG",
+    1,
+    0.0
+   ],
+   [
+    "V1",
+    "FEF",
+    1,
+    0.0
+   ],
+   [
+    "V2",
+    "BG",
+    1,
+    0.0
+   ],
+   [
+    "V2",
+    "V1",
+    1,
+    0.0
+   ]
+  ],
+  "input": "V2",
+  "output": "SMA",
+  "candidates": {
+   "X": [
+    "BG",
+    "SMA"
+   ],
+   "Y": [
+    "V2",
+    "V1"
+   ]
+  },
+  "label_t": {
+   "BG|SMA": 0.5,
+   "V1|V2": 0.5
+  },
+  "modules": [
+   "Sensory",
+   "Association",
+   "Motor"
+  ],
+  "candidate_style": "failure"
+ },
+ "layout": {
+  "width": 1530,
+  "height": 1605,
+  "texts": [
+   {
+    "text": "X",
+    "x0": 1160.9,
+    "y0": 798.9,
+    "x1": 1175.4,
+    "y1": 817.9,
+    "size": 9.0
+   },
+   {
+    "text": "Y",
+    "x0": 529.4,
+    "y0": 613.5,
+    "x1": 542.9,
+    "y1": 632.5,
+    "size": 9.0
+   },
+   {
+    "text": "S1",
+    "x0": 356.2,
+    "y0": 500.6,
+    "x1": 380.0,
+    "y1": 515.6,
+    "size": 8.0
+   },
+   {
+    "text": "V2",
+    "x0": 469.1,
+    "y0": 727.4,
+    "x1": 493.6,
+    "y1": 742.4,
+    "size": 8.0
+   },
+   {
+    "text": "V1",
+    "x0": 578.7,
+    "y0": 503.6,
+    "x1": 603.2,
+    "y1": 518.6,
+    "size": 8.0
+   },
+   {
+    "text": "FEF",
+    "x0": 525.8,
+    "y0": 1162.6,
+    "x1": 559.9,
+    "y1": 1177.6,
+    "size": 8.0
+   },
+   {
+    "text": "PPC",
+    "x0": 479.1,
+    "y0": 1364.4,
+    "x1": 515.6,
+    "y1": 1379.4,
+    "size": 8.0
+   },
+   {
+    "text": "PCC",
+    "x0": 739.8,
+    "y0": 1410.9,
+    "x1": 776.4,
+    "y1": 1425.9,
+    "size": 8.0
+   },
+   {
+    "text": "dlPFC",
+    "x0": 742.2,
+    "y0": 1180.6,
+    "x1": 790.2,
+    "y1": 1195.6,
+    "size": 7.2
+   },
+   {
+    "text": "BG",
+    "x0": 1057.0,
+    "y0": 739.1,
+    "x1": 1083.4,
+    "y1": 754.1,
+    "size": 8.0
+   },
+   {
+    "text": "SMA",
+    "x0": 1245.2,
+    "y0": 862.7,
+    "x1": 1286.8,
+    "y1": 877.7,
+    "size": 8.0
+   },
+   {
+    "text": "IN",
+    "x0": 385.2,
+    "y0": 676.8,
+    "x1": 409.4,
+    "y1": 695.8,
+    "size": 9.5
+   },
+   {
+    "text": "OUT",
+    "x0": 1339.6,
+    "y0": 855.2,
+    "x1": 1386.2,
+    "y1": 874.2,
+    "size": 9.5
+   },
+   {
+    "text": "Synthetic brain connectivity network (9 regions, 3 modules)",
+    "x0": 45.9,
+    "y0": 43.2,
+    "x1": 829.2,
+    "y1": 69.2,
+    "size": 12.5
+   },
+   {
+    "text": "Lines: bidirectional connections (all equivalent).",
+    "x0": 45.9,
+    "y0": 94.8,
+    "x1": 519.2,
+    "y1": 113.8,
+    "size": 9.5
+   },
+   {
+    "text": "Sensory",
+    "x0": 92.6,
+    "y0": 159.0,
+    "x1": 168.1,
+    "y1": 178.0,
+    "size": 9.0
+   },
+   {
+    "text": "Association",
+    "x0": 231.9,
+    "y0": 159.0,
+    "x1": 338.5,
+    "y1": 178.0,
+    "size": 9.0
+   },
+   {
+    "text": "Motor",
+    "x0": 402.2,
+    "y0": 159.0,
+    "x1": 456.5,
+    "y1": 178.0,
+    "size": 9.0
+   }
+  ],
+  "expected_labels": [
+   "S1",
+   "V2",
+   "V1",
+   "FEF",
+   "PPC",
+   "PCC",
+   "dlPFC",
+   "BG",
+   "SMA",
+   "IN",
+   "OUT",
+   "X",
+   "Y"
+  ],
+  "data_to_px": [
+   90.89999999999995,
+   1572.9,
+   1348.2000000000003,
+   -1348.2
+  ]
+ },
+ "uniqueness": {
+  "ok": true,
+  "why": "a single shortest-path distance: 2 intact, 5 without X, 6 without X and Y"
+ },
+ "facts": {
+  "distance": 2,
+  "without_X": 5,
+  "without_X_and_Y": 6
+ },
+ "level": 1,
+ "trap_margin": 2.0
+}

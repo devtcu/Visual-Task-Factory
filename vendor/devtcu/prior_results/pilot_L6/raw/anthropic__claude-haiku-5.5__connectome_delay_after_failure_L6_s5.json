@@ -1,0 +1,84 @@
+{
+ "status": "ok",
+ "response": "## Reading the network\n\n**Edges relevant to the route** (arrowhead direction in parentheses):\n- V4 \u2192 MT (3), this is connection Y\n- V4 \u2192 VPL (4)\n- VPL \u2192 LGN (5)\n- LGN \u2192 PPC (5)\n- LGN \u2192 MT (4)\n- MT \u2192 LGN (2)\n- MT \u2192 PPC (5)\n- MT \u2192 BG (1)\n- BG \u2192 PMv (2), this is connection X\n- PPC \u2192 PMv (2)\n- V1 \u2192 PMv (4). V1 has no incoming connections, so it is unreachable from V4.\n\n**Original shortest route:** V4 \u2192 MT \u2192 PPC \u2192 PMv = 3 + 5 + 2 = 10 ms. The alternative V4 \u2192 MT \u2192 BG \u2192 PMv = 3 + 1 + 2 = 6 ms is shorter, so the original best route is actually V4 \u2192 MT \u2192 BG \u2192 PMv = 6 ms.\n\n## After X and Y fail\n\n- **Y fails:** V4 \u2192 MT is gone, so V4 can only leave via V4 \u2192 VPL (4).\n- **X fails:** BG \u2192 PMv is gone, so PMv can only be entered through PPC \u2192 PMv (2), since V1 is unreachable.\n\nRemaining route to PPC: V4 \u2192 VPL \u2192 LGN \u2192 PPC = 4 + 5 + 5 = 14 ms. Then PPC \u2192 PMv adds 2 ms, for 16 ms.\n\nChecking alternatives:\n- Via MT: MT can only be reached from LGN (4), so V4 \u2192 VPL \u2192 LGN \u2192 MT = 13 ms. From MT, BG is blocked by X, and PPC costs 5 more, giving 13 + 5 + 2 = 20 ms.\n- Via VA, FEF, TPJ to PPC: 9 + 1 + 5 + 5 + 5 = 25 ms before PMv, which is longer.\n\nThe smallest total delay is therefore 16 ms.\n\nFINAL ANSWER: 16",
+ "finish_reason": "stop",
+ "error": "",
+ "usage": {
+  "prompt_tokens": 3476,
+  "completion_tokens": 3188,
+  "total_tokens": 6664,
+  "cost": 0.0019416,
+  "is_byok": false,
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "cache_write_tokens": 0,
+   "audio_tokens": 0,
+   "video_tokens": 0
+  },
+  "cost_details": {
+   "upstream_inference_cost": 0.0019416,
+   "upstream_inference_prompt_cost": 0.0003476,
+   "upstream_inference_completions_cost": 0.001594
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 2539,
+   "image_tokens": 0,
+   "audio_tokens": 0
+  }
+ },
+ "raw": {
+  "id": "gen-1794679009-j7baOvA1E0Bex7haWJEt",
+  "object": "chat.completion",
+  "created": 1794679009,
+  "model": "anthropic/claude-haiku-5.5",
+  "provider": "Claude Platform on AWS",
+  "system_fingerprint": null,
+  "service_tier": "default",
+  "choices": [
+   {
+    "index": 0,
+    "logprobs": null,
+    "finish_reason": "stop",
+    "native_finish_reason": "end_turn",
+    "message": {
+     "role": "assistant",
+     "content": "## Reading the network\n\n**Edges relevant to the route** (arrowhead direction in parentheses):\n- V4 \u2192 MT (3), this is connection Y\n- V4 \u2192 VPL (4)\n- VPL \u2192 LGN (5)\n- LGN \u2192 PPC (5)\n- LGN \u2192 MT (4)\n- MT \u2192 LGN (2)\n- MT \u2192 PPC (5)\n- MT \u2192 BG (1)\n- BG \u2192 PMv (2), this is connection X\n- PPC \u2192 PMv (2)\n- V1 \u2192 PMv (4). V1 has no incoming connections, so it is unreachable from V4.\n\n**Original shortest route:** V4 \u2192 MT \u2192 PPC \u2192 PMv = 3 + 5 + 2 = 10 ms. The alternative V4 \u2192 MT \u2192 BG \u2192 PMv = 3 + 1 + 2 = 6 ms is shorter, so the original best route is actually V4 \u2192 MT \u2192 BG \u2192 PMv = 6 ms.\n\n## After X and Y fail\n\n- **Y fails:** V4 \u2192 MT is gone, so V4 can only leave via V4 \u2192 VPL (4).\n- **X fails:** BG \u2192 PMv is gone, so PMv can only be entered through PPC \u2192 PMv (2), since V1 is unreachable.\n\nRemaining route to PPC: V4 \u2192 VPL \u2192 LGN \u2192 PPC = 4 + 5 + 5 = 14 ms. Then PPC \u2192 PMv adds 2 ms, for 16 ms.\n\nChecking alternatives:\n- Via MT: MT can only be reached from LGN (4), so V4 \u2192 VPL \u2192 LGN \u2192 MT = 13 ms. From MT, BG is blocked by X, and PPC costs 5 more, giving 13 + 5 + 2 = 20 ms.\n- Via VA, FEF, TPJ to PPC: 9 + 1 + 5 + 5 + 5 = 25 ms before PMv, which is longer.\n\nThe smallest total delay is therefore 16 ms.\n\nFINAL ANSWER: 16",
+     "refusal": null,
+     "reasoning": "I'm listing out the edges between brain regions, starting with TPJ to PPC and FEF to TPJ. For the PPC connection I'm trying to work out whether the curve lands on PMv or PMd from its coordinates.\n\nI'm checking each remaining edge against its coordinates, confirming that PPC points to PMv, TPJ points to PMd, and the LGN links run to VA and PPC.\n\nI'm checking the remaining edges: MT has a line to BG labelled 1, PMv points to V1 with weight 4, and MT connects to PMd with weight 4. I'm also starting to look at V4 and its link to VPL.\n\nI'm working through the remaining connections: V4 links to VPL with weight 4 and to MT with weight 3, and LGN points to MT with weight 4. I'm starting to check the last edge from V1 toward LGN.\n\nI'm working out whether the LGN and MT lines point in opposite directions, with the one labelled 2 running from MT up toward LGN.\n\nI'm sorting out which arrowhead belongs to which line near LGN and MT, since the coordinates are getting tangled. I'm also tracing the line that leads from V4 toward the LGN side to see where it ends.\n\nI'm working out the shortest route from V4 to PMv, so I'm listing V4's outgoing edges: one to MT with weight 3 and one to VPL with weight 4. I'm also checking which edges come into PMv, which are PPC with weight 2 and V1.\n\nI'm finding the shortest route to PMv, and the direct paths from V4 are cut off, so I'm checking the detour through VPL and LGN to PPC, which comes out to 16.\n\nI'm checking whether any path reaches MT without the V4 link, since the direct route is gone, and tracing where that leaves BG and V1.\n\nI'm checking the route through VPL and LGN to MT and BG, which fails since BG only feeds PMv. The PPC route at 16 is the shortest, and the detour through VA, FEF and TPJ costs 25, so that's worse. That gives a final answer of 16.\n\n",
+     "reasoning_details": [
+      {
+       "type": "reasoning.text",
+       "text": "I'm listing out the edges between brain regions, starting with TPJ to PPC and FEF to TPJ. For the PPC connection I'm trying to work out whether the curve lands on PMv or PMd from its coordinates.\n\nI'm checking each remaining edge against its coordinates, confirming that PPC points to PMv, TPJ points to PMd, and the LGN links run to VA and PPC.\n\nI'm checking the remaining edges: MT has a line to BG labelled 1, PMv points to V1 with weight 4, and MT connects to PMd with weight 4. I'm also starting to look at V4 and its link to VPL.\n\nI'm working through the remaining connections: V4 links to VPL with weight 4 and to MT with weight 3, and LGN points to MT with weight 4. I'm starting to check the last edge from V1 toward LGN.\n\nI'm working out whether the LGN and MT lines point in opposite directions, with the one labelled 2 running from MT up toward LGN.\n\nI'm sorting out which arrowhead belongs to which line near LGN and MT, since the coordinates are getting tangled. I'm also tracing the line that leads from V4 toward the LGN side to see where it ends.\n\nI'm working out the shortest route from V4 to PMv, so I'm listing V4's outgoing edges: one to MT with weight 3 and one to VPL with weight 4. I'm also checking which edges come into PMv, which are PPC with weight 2 and V1.\n\nI'm finding the shortest route to PMv, and the direct paths from V4 are cut off, so I'm checking the detour through VPL and LGN to PPC, which comes out to 16.\n\nI'm checking whether any path reaches MT without the V4 link, since the direct route is gone, and tracing where that leaves BG and V1.\n\nI'm checking the route through VPL and LGN to MT and BG, which fails since BG only feeds PMv. The PPC route at 16 is the shortest, and the detour through VA, FEF and TPJ costs 25, so that's worse. That gives a final answer of 16.\n\n",
+       "format": "anthropic-claude-v1",
+       "index": 0,
+       "signature": "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.eyJlbmRwb2ludF9zbHVnIjoiYW50aHJvcGljL2NsYXVkZS1oYWlrdS01LjUtMjAyNjEwMDd8Y2xhdWRlLW9uLWF3cyJ9"
+      }
+     ]
+    }
+   }
+  ],
+  "usage": {
+   "prompt_tokens": 3476,
+   "completion_tokens": 3188,
+   "total_tokens": 6664,
+   "cost": 0.0019416,
+   "is_byok": false,
+   "prompt_tokens_details": {
+    "cached_tokens": 0,
+    "cache_write_tokens": 0,
+    "audio_tokens": 0,
+    "video_tokens": 0
+   },
+   "cost_details": {
+    "upstream_inference_cost": 0.0019416,
+    "upstream_inference_prompt_cost": 0.0003476,
+    "upstream_inference_completions_cost": 0.001594
+   },
+   "completion_tokens_details": {
+    "reasoning_tokens": 2539,
+    "image_tokens": 0,
+    "audio_tokens": 0
+   }
+  }
+ }
+}

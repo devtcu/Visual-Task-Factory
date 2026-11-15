@@ -1,0 +1,171 @@
+model,task_id,status,parsed,question_type,response,ref_answer,correct,trap_hit,finish_reason,error
+anthropic/claude-haiku-5.5,connectome_delay_after_failure_L6_s11,ok,11,delay_after_failure,"## Tracing the route
+
+**Edges relevant to the route** (reading arrowheads and labels):
+- V4 → V1 (3)
+- V1 → MT (3)
+- MT → PMv (4)
+- PMv → M1 (1)
+- V1 → VA (1), VA → SMA (5), SMA → M1 (4)
+- PCC → M1 (Y, 1) and the PCC–V4 connection (X, 3). X and Y sit on the PCC side of the network.
+
+**Original shortest route candidates from V4 to M1:**
+- V4 → V1 → MT → PMv → M1: 3 + 3 + 4 + 1 = 11
+- V4 → V1 → VA → SMA → M1: 3 + 1 + 5 + 4 = 13
+- Any route through PCC (X then Y) would be 4, but I could not read the X arrow direction with certainty, so I cannot be sure it is available from V4.
+
+**After X and Y fail:** Y (PCC → M1) and X (the PCC–V4 link) are removed. Neither lies on the 11 ms route, and the only other way into PCC is from MT, which leads back to the same MT → PMv → M1 segment. The 11 ms route therefore survives, and the 13 ms route is longer.
+
+So the smallest total delay from V4 to M1 after both failures is 11 ms.
+
+FINAL ANSWER: 11",12,0,,stop,
+anthropic/claude-haiku-5.5,connectome_delay_after_failure_L6_s12,ok,14,delay_after_failure,"## Tracing the network
+
+**Relevant connections (from the diagram):**
+- V1 → V2 (5), V1 → LGN (2), S1 → V1 (5), S1 → PPC (1)
+- V2 → PMv (3, but this is the connection labelled **X**, so it carries 1 ms), V2 → Cb (3)
+- LGN → MD (4), LGN → PPC (labelled **Y**, 1 ms)
+- MD → VA (3), MD → SMA (5), TPJ → MD (5)
+- VA → TPJ (2), VA → FEF (2), VA → SMA (3)
+- PPC → LGN (1), PPC → FEF (5), PPC → TPJ (4)
+- TPJ → PMv (3), SMA → Cb (2), FEF → MD (5)
+
+I could not read every arrowhead with full certainty, particularly around LGN, PPC and FEF. The reading above is the one that makes the puzzle consistent.
+
+**Routes into PMv:** only V2 → PMv (X) and TPJ → PMv (3).
+
+**Before any failure:**
+- V1 → V2 → PMv = 5 + 1 = 6 ms (the optimal route).
+
+**After X fails**, PMv must be reached through TPJ:
+- V1 → LGN → PPC → TPJ → PMv = 2 + 1 + 4 + 3 = 10 ms.
+
+**After Y also fails** (LGN → PPC removed), PPC is no longer reachable from V1, since its only remaining incoming edge is from S1, which V1 cannot reach. The remaining route to TPJ is through MD and VA:
+- V1 → LGN → MD → VA → TPJ → PMv = 2 + 4 + 3 + 2 + 3 = 14 ms.
+
+Other paths (via V2 → Cb, or via SMA) do not reach PMv, so they do not help.
+
+FINAL ANSWER: 14",14,1,,stop,
+anthropic/claude-haiku-5.5,connectome_delay_after_failure_L6_s15,ok,16,delay_after_failure,"## Reading the network
+
+Key edges on the original shortest route:
+- S2 → PPC (3) — this is connection **X**
+- V2 → MGN (3) — this is connection **Y**
+- PPC → STS (1), STS → Cb (2)
+- S2 → V2 (5), V2 → VPL (4), VPL → MGN (4), MGN → STS (1)
+
+The original shortest route is S2 → PPC → STS → Cb = 3 + 1 + 2 = 6 ms. Both X and Y fail, so this route is gone.
+
+## Routes after the failures
+
+S2's only remaining outgoing connection is S2 → V2 (5 ms), since X was its other outgoing link. From V2, the only remaining option is V2 → VPL (4 ms), since Y was the other.
+
+- S2 → V2 → VPL: 5 + 4 = 9 ms
+- VPL → MGN (4 ms): 13 ms to reach MGN
+- VPL → LGN (5 ms) → MGN (4 ms): 18 ms, which is longer
+- MGN → STS (1 ms): 14 ms
+- STS → Cb (2 ms): 16 ms
+
+Other paths are longer. Going MGN → S1 (2) → STS (1) reaches STS at 16 ms, then Cb at 18 ms. Routes through V4 are also longer.
+
+The smallest remaining total delay is 16 ms.
+
+FINAL ANSWER: 16",16,1,,stop,
+anthropic/claude-haiku-5.5,connectome_delay_after_failure_L6_s16,ok,15,delay_after_failure,"## Reading the network
+
+**Relevant connections (delays in ms):**
+- S2 → M1 = **X** (2), which fails.
+- V1 → M1 = **Y** (5), which fails. The two lines leaving V1 toward the lower right go to M1 and PMv. The unlabelled ""4"" sits closer to the PMv line, so the remaining 4 ms edge is V1 → PMv, and Y is V1 → M1. This assignment is my best reading of the diagram, and the answer depends on it.
+- S2 → V1 (4)
+- V1 → PMv (4)
+- PMv → SMA (1)
+- SMA → M1 (5)
+- M1 → Cb (1)
+- V4 → M1 (3), but V4 has no incoming connections, so it is unreachable from S2.
+- MGN → M1 (5), but MGN has no incoming connections, so it is unreachable from S2.
+
+**Original shortest route:** S2 → M1 → Cb = 2 + 1 = 3 ms.
+
+**After X and Y fail:** Cb can only be reached through M1 (M1 → Cb). M1's remaining incoming routes are:
+- V4 → M1 and MGN → M1, both unreachable from S2.
+- SMA → M1, which is reachable via PMv → SMA.
+
+So the only surviving route is:
+
+S2 → V1 → PMv → SMA → M1 → Cb = 4 + 4 + 1 + 5 + 1 = 15 ms
+
+The other branches (S2 → dlPFC → IT → STS) end in STS, which has no outgoing connections, so they cannot reach Cb.
+
+FINAL ANSWER: 15",15,1,,stop,
+anthropic/claude-haiku-5.5,connectome_delay_after_failure_L6_s17,ok,11,delay_after_failure,"## Tracing the network
+
+**Edges relevant to the route:**
+- V1 → PPC (2 ms). V1 has no other outgoing connection, so every route starts here.
+- X is the PPC → Cb connection (2 ms).
+- Y is the FEF → Cb connection (5 ms).
+- PPC → FEF (1 ms), PPC → M1 (4 ms), PPC → PCC (4 ms).
+- M1 → Cb (5 ms).
+- V2 → Cb (2 ms) exists, but V2 is only reachable from regions that V1's descendants cannot reach, so it is not usable here.
+
+**Before the failures:** The fastest route is V1 → PPC → Cb via X, costing 2 + 2 = **4 ms**.
+
+**After X and Y fail:** Cb can only be entered through M1 (5 ms) or V2 (2 ms). V2 cannot be reached from V1's reachable set, so the only remaining entry is M1.
+
+- V1 → PPC: 2 ms
+- PPC → M1: 4 ms
+- M1 → Cb: 5 ms
+
+Total: 2 + 4 + 5 = 11 ms.
+
+I checked the other branches: PPC → FEF now leads only to Y, which has failed. PPC → PCC has no onward connection. Routes through BG and S2 do not lead back to Cb faster than the M1 route.
+
+FINAL ANSWER: 11",11,1,,stop,
+anthropic/claude-haiku-5.5,connectome_delay_after_failure_L6_s18,ok,11,delay_after_failure,"## Reading the network
+
+**Relevant connections (delay in ms):**
+- V4 → M1: 2 (**Y**, fails)
+- V1 → Cb: 2 (**X**, fails)
+- V4 → PPC: 2
+- PPC → M1: 4
+- M1 → Cb: 5
+- M1 → V1: 1
+- M1 → PMv: 4
+- PMv → Cb: 2
+- V4 → FEF: 4
+- FEF → M1: 4
+- V4 → MD: 4, MD → V1: 3, V1 → V4: 2, V4 → V2: 5, and the other edges go to or from regions that don't help.
+
+**Original best route:** V4 →(Y, 2)→ M1 →(1)→ V1 →(X, 2)→ Cb, total 5 ms.
+
+**After X and Y fail:**
+- V4 → M1 is gone, so the first hop must go through PPC or FEF.
+- V1 → Cb is gone. V1's only remaining outgoing link is back to V4, so V1 is a dead end.
+- Cb is now reachable only through M1 → Cb (5) or PMv → Cb (2).
+
+**Candidate routes:**
+- V4 → PPC → M1 → Cb: 2 + 4 + 5 = 11
+- V4 → PPC → M1 → PMv → Cb: 2 + 4 + 4 + 2 = 12
+- V4 → FEF → M1 → Cb: 4 + 4 + 5 = 13
+- V4 → FEF → M1 → PMv → Cb: 4 + 4 + 4 + 2 = 14
+
+The smallest is 11 ms.
+
+FINAL ANSWER: 11",11,1,,stop,
+openai/gpt-6-luna,connectome_delay_after_failure_L6_s11,ok,13,delay_after_failure,"After removing connections X and Y, the shortest remaining route is V4 → V1 → VA → SMA → M1. Its total delay is 3 + 1 + 5 + 4 = 13 ms.
+
+FINAL ANSWER: 13",12,0,,stop,
+openai/gpt-6-luna,connectome_delay_after_failure_L6_s12,ok,10,delay_after_failure,"After removing X and Y, the route V1 → LGN → PPC → TPJ → PMv remains. Its total delay is 2 + 1 + 4 + 3 = 10 ms.
+
+FINAL ANSWER: 10",14,0,"ignored_arrow_direction,ignored_failure_Y",stop,
+openai/gpt-6-luna,connectome_delay_after_failure_L6_s15,ok,16,delay_after_failure,"After removing X and Y, the shortest remaining route is S2 → V2 → VPL → MGN → STS → Cb. Its total delay is 5 + 4 + 4 + 1 + 2 = 16 ms.
+
+FINAL ANSWER: 16",16,1,,stop,
+openai/gpt-6-luna,connectome_delay_after_failure_L6_s16,ok,15,delay_after_failure,"After removing X and Y, the shortest remaining route is S2 → V1 → PMv → SMA → M1 → Cb. Its total delay is 4 + 4 + 1 + 5 + 1 = 15 ms.
+
+FINAL ANSWER: 15",15,1,,stop,
+openai/gpt-6-luna,connectome_delay_after_failure_L6_s17,ok,11,delay_after_failure,"With X (PPC→Cb) and Y (FEF→Cb) failed, the quickest remaining route is V1→PPC→M1→Cb, with delays 2+4+5=11 ms.
+
+FINAL ANSWER: 11",11,1,,stop,
+openai/gpt-6-luna,connectome_delay_after_failure_L6_s18,ok,11,delay_after_failure,"After removing X and Y, the route V4 → PPC → M1 → Cb remains, with delays 2 + 4 + 5 = 11 ms.
+
+FINAL ANSWER: 11",11,1,,stop,

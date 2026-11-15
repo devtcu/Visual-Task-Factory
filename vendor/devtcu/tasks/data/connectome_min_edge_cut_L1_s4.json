@@ -1,0 +1,293 @@
+{
+ "data": {
+  "nodes": [
+   {
+    "name": "V2",
+    "module": "Sensory",
+    "x": 0.601,
+    "y": 0.2676
+   },
+   {
+    "name": "A1",
+    "module": "Sensory",
+    "x": 0.4294,
+    "y": 0.2173
+   },
+   {
+    "name": "V1",
+    "module": "Sensory",
+    "x": 0.5454,
+    "y": 0.0886
+   },
+   {
+    "name": "FEF",
+    "module": "Association",
+    "x": 0.6692,
+    "y": 0.7031
+   },
+   {
+    "name": "PPC",
+    "module": "Association",
+    "x": 0.838,
+    "y": 0.6843
+   },
+   {
+    "name": "Cb",
+    "module": "Motor",
+    "x": 0.3217,
+    "y": 0.6316
+   },
+   {
+    "name": "M1",
+    "module": "Motor",
+    "x": 0.184,
+    "y": 0.7265
+   },
+   {
+    "name": "PMv",
+    "module": "Motor",
+    "x": 0.1666,
+    "y": 0.5376
+   }
+  ],
+  "directed": false,
+  "weighted": false,
+  "edges": [
+   [
+    "A1",
+    "PPC",
+    1,
+    0.0
+   ],
+   [
+    "A1",
+    "V1",
+    1,
+    0.0
+   ],
+   [
+    "Cb",
+    "M1",
+    1,
+    0.0
+   ],
+   [
+    "Cb",
+    "PMv",
+    1,
+    0.0
+   ],
+   [
+    "FEF",
+    "Cb",
+    1,
+    0.0
+   ],
+   [
+    "FEF",
+    "PPC",
+    1,
+    0.0
+   ],
+   [
+    "M1",
+    "PMv",
+    1,
+    0.0
+   ],
+   [
+    "V2",
+    "A1",
+    1,
+    0.0
+   ],
+   [
+    "V2",
+    "PMv",
+    1,
+    0.0
+   ],
+   [
+    "V2",
+    "V1",
+    1,
+    0.0
+   ]
+  ],
+  "input": "A1",
+  "output": "PMv",
+  "candidates": {},
+  "label_t": {},
+  "modules": [
+   "Sensory",
+   "Association",
+   "Motor"
+  ]
+ },
+ "layout": {
+  "width": 1530,
+  "height": 1605,
+  "texts": [
+   {
+    "text": "V2",
+    "x0": 888.9,
+    "y0": 1204.6,
+    "x1": 913.4,
+    "y1": 1219.6,
+    "size": 8.0
+   },
+   {
+    "text": "A1",
+    "x0": 657.6,
+    "y0": 1272.4,
+    "x1": 682.1,
+    "y1": 1287.4,
+    "size": 8.0
+   },
+   {
+    "text": "V1",
+    "x0": 814.0,
+    "y0": 1445.9,
+    "x1": 838.5,
+    "y1": 1460.9,
+    "size": 8.0
+   },
+   {
+    "text": "FEF",
+    "x0": 976.1,
+    "y0": 617.5,
+    "x1": 1010.2,
+    "y1": 632.5,
+    "size": 8.0
+   },
+   {
+    "text": "PPC",
+    "x0": 1202.4,
+    "y0": 642.8,
+    "x1": 1238.9,
+    "y1": 657.8,
+    "size": 8.0
+   },
+   {
+    "text": "Cb",
+    "x0": 512.6,
+    "y0": 713.9,
+    "x1": 536.7,
+    "y1": 728.9,
+    "size": 8.0
+   },
+   {
+    "text": "M1",
+    "x0": 324.8,
+    "y0": 585.9,
+    "x1": 353.1,
+    "y1": 600.9,
+    "size": 8.0
+   },
+   {
+    "text": "PMv",
+    "x0": 295.7,
+    "y0": 840.6,
+    "x1": 335.3,
+    "y1": 855.6,
+    "size": 8.0
+   },
+   {
+    "text": "IN",
+    "x0": 634.2,
+    "y0": 1364.6,
+    "x1": 658.4,
+    "y1": 1383.6,
+    "size": 9.5
+   },
+   {
+    "text": "OUT",
+    "x0": 195.7,
+    "y0": 827.7,
+    "x1": 242.4,
+    "y1": 846.7,
+    "size": 9.5
+   },
+   {
+    "text": "Synthetic brain connectivity network (8 regions, 3 modules)",
+    "x0": 45.9,
+    "y0": 43.2,
+    "x1": 829.2,
+    "y1": 69.2,
+    "size": 12.5
+   },
+   {
+    "text": "Lines: bidirectional connections (all equivalent).",
+    "x0": 45.9,
+    "y0": 94.8,
+    "x1": 519.2,
+    "y1": 113.8,
+    "size": 9.5
+   },
+   {
+    "text": "Sensory",
+    "x0": 92.6,
+    "y0": 159.0,
+    "x1": 168.1,
+    "y1": 178.0,
+    "size": 9.0
+   },
+   {
+    "text": "Association",
+    "x0": 231.9,
+    "y0": 159.0,
+    "x1": 338.5,
+    "y1": 178.0,
+    "size": 9.0
+   },
+   {
+    "text": "Motor",
+    "x0": 402.2,
+    "y0": 159.0,
+    "x1": 456.5,
+    "y1": 178.0,
+    "size": 9.0
+   }
+  ],
+  "expected_labels": [
+   "V2",
+   "A1",
+   "V1",
+   "FEF",
+   "PPC",
+   "Cb",
+   "M1",
+   "PMv",
+   "IN",
+   "OUT"
+  ],
+  "data_to_px": [
+   90.89999999999995,
+   1572.9,
+   1348.2000000000003,
+   -1348.2
+  ]
+ },
+ "uniqueness": {
+  "ok": true,
+  "why": "edge connectivity is a single number; one minimum cut: [('Cb', 'FEF'), ('PMv', 'V2')]"
+ },
+ "facts": {
+  "one_minimum_cut": [
+   [
+    "Cb",
+    "FEF"
+   ],
+   [
+    "PMv",
+    "V2"
+   ]
+  ],
+  "degrees": {
+   "A1": 3,
+   "PMv": 3
+  }
+ },
+ "level": 1,
+ "trap_margin": 2.0
+}

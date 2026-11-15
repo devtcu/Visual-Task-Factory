@@ -1,0 +1,103 @@
+{
+ "status": "ok",
+ "response": "The minimum delay is 14 ms, with two routes:\n\n- S2\u2013MT\u2013Ins\u2013PMd\u2013Cb: 2 + 5 + 2 + 5 = 14 ms\n- S2\u2013MT\u2013Ins\u2013Hipp\u2013Cb: 2 + 5 + 3 + 4 = 14 ms\n\nThe connections shared by both shortest routes are S2\u2013MT and MT\u2013Ins, so there are 2 critical connections.\n\nFINAL ANSWER: 2",
+ "finish_reason": "stop",
+ "error": "",
+ "usage": {
+  "prompt_tokens": 3089,
+  "completion_tokens": 1000,
+  "total_tokens": 4089,
+  "cost": 0.00088605,
+  "is_byok": false,
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "cache_write_tokens": 3086,
+   "audio_tokens": 0,
+   "video_tokens": 0
+  },
+  "cost_details": {
+   "upstream_inference_cost": 0.00088605,
+   "upstream_inference_prompt_cost": 0.00038605,
+   "upstream_inference_completions_cost": 0.0005
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 893,
+   "image_tokens": 0,
+   "audio_tokens": 0
+  }
+ },
+ "raw": {
+  "id": "gen-1794674284-UO7ZKiWfpYGMUsWJd51p",
+  "object": "chat.completion",
+  "created": 1794674284,
+  "model": "openai/gpt-6-luna",
+  "provider": "OpenAI",
+  "system_fingerprint": null,
+  "service_tier": "default",
+  "choices": [
+   {
+    "index": 0,
+    "logprobs": null,
+    "finish_reason": "stop",
+    "native_finish_reason": "completed",
+    "message": {
+     "role": "assistant",
+     "content": "The minimum delay is 14 ms, with two routes:\n\n- S2\u2013MT\u2013Ins\u2013PMd\u2013Cb: 2 + 5 + 2 + 5 = 14 ms\n- S2\u2013MT\u2013Ins\u2013Hipp\u2013Cb: 2 + 5 + 3 + 4 = 14 ms\n\nThe connections shared by both shortest routes are S2\u2013MT and MT\u2013Ins, so there are 2 critical connections.\n\nFINAL ANSWER: 2",
+     "refusal": null,
+     "reasoning": "**Analyzing graph edges**\n\nI need to compute the critical edges in a weighted undirected graph that connect S2 to Cb. I\u2019ll identify all shortest paths and the edges that are common to those paths, because removing an edge increases the shortest distance if that edge is part of every shortest path. The nodes and edges include various connections with specified weights, and I need to assess potential routes from S2 through different nodes to Cb while calculating total distances.**Exploring routes to Cb**\n\nI\u2019m analyzing potential routes from the TPJ to Cb by connecting through the FEF and considering various paths. One option totals 18, while another might lead to a longer path of 20. I\u2019m also looking into routes from Ins via Hipp or PMd. The total distance from Ins through Hipp can be as low as 7, so I need to confirm each route's distance to identify the shortest path from Ins to Cb with minimal weight.",
+     "reasoning_details": [
+      {
+       "type": "reasoning.summary",
+       "summary": "**Analyzing graph edges**\n\nI need to compute the critical edges in a weighted undirected graph that connect S2 to Cb. I\u2019ll identify all shortest paths and the edges that are common to those paths, because removing an edge increases the shortest distance if that edge is part of every shortest path. The nodes and edges include various connections with specified weights, and I need to assess potential routes from S2 through different nodes to Cb while calculating total distances.**Exploring routes to Cb**\n\nI\u2019m analyzing potential routes from the TPJ to Cb by connecting through the FEF and considering various paths. One option totals 18, while another might lead to a longer path of 20. I\u2019m also looking into routes from Ins via Hipp or PMd. The total distance from Ins through Hipp can be as low as 7, so I need to confirm each route's distance to identify the shortest path from Ins to Cb with minimal weight.",
+       "format": "openai-responses-v1",
+       "index": 0
+      },
+      {
+       "type": "reasoning.encrypted",
+       "data": "gAAAAABq-I50NFL05CaD0u5cqPoNvqwYQ5TzQYAYxgahJ3C8t-YqHiBp1zfxrO1Uicc7VnyLIUZ5VD0_3A4IwmUBlwh0MebvqGyW2yKaf8yqsn_6FW9WWYcRQugMDaI9VyKzwTk78ToTNrd6PkOlXu70F4gQp8bH2ldQ9iUX59bnbUcVr6HW4cbk17AzFFYdFWzpp9it3G1LetX8SUl_fNTYnuMBhaDxmP7rFuAFqktoWH0ccOf-Ag7_wAhPEO9-suGCk78CaTd2Z9aWvRoiBqNrMW6kYjGxKbb1Ywpwt9K5hUM_Vj1jCUEqlNPTC1vr3pQ1jINyrZzgVX52ebzezwqrRqn2isdBu-nBDAN6AOJev2BVZERO1f8da9_24096bQQYMWdqIV8WqqAzJUjhETgiuBR6BhEBSIelO9JgqV55wI3w2oRosc13BBCAUpzOf6z0fnm49FO3vRki7qnRIT3hYF7A_mDeFKRVKxKDToE1ErhWYbz8oZYo8JelXo7jY1ZY9MYmwtCNEmFRcyTw0PcqCbHHcTB0Sl_A2Rj-2A7ePWsTcKAlfnkdxV62iDHApcVHuer9zjOxYmw7rs8JuHJOQWMB5cfEL46oLND_cXzjYQQeeS7lDhoONrIiVOLU48Tmj6a5Uasia2K0ETqWd0t2RQaLp4UIfwrvd-SS1jl1Sz4s43pherPPL4y2RCQmajSMY2cwLF-gZZrkLdXqRfJaH7Q3qLI-IpIgy11m-KmNMhYpR1dR0xDJ7tAXGbc6RrDAJDMAD1d8c0OXPhici9w6ZnnpDS15qR53df5820KDNZp2NXJX3Ln8zmpGyWR4g8cFV1eKPk5toWmsCHSQx5tvrXahWyv-MVJe_ssS3YWnT-xfPEkyUDeufOTkRn3mJ9LOBYYXhLib0j8et2_LBbR8_wmhiUe_VkNZmEnkRLiRGxKqcdOsPnqcgyH463cKKYX_K2ucxknMec8nqrFKpT6b2y32n5GwbCu5ydxkrylHq7NMAfXbz_KOHOrb-UWPhNlolh8_5q-X5RURn5KC18XkJIsAtUyt3QceZgVoKaSw08wtZMT7J6LXKMoOu2097zm8VkYktrVoEWZ-jW7K5iKN3b9818zmUHjRsvSZf0QDQ69U6XZl48qDLXDKinxVcfQPRhWoGsB24iE7-kuTdjCmZjD6wW9eeAdoK9d9d0GbBIxEwZen5agrUyeRPwIb-i162AAjSADWT5J2yWmQzX7Aus9If-W1vnJK31eSpPVndaHTSJ8OP0Imsz1zFQR7kgbrYTd5_M7JcR_l3PLeiL7i0tfNnHIYAFRBrFZGJpALWhkBn5vQSQLE6NTqfa-VSaRTPPSW7Ku95gZBrG7HfpEuXgE6dkkE6C4nBZ2BKRDabegOM6KhqJ0fGFLtJunZkqagD1ury4MWx5AmWMC4jk3LO4hhXLtr1qt6Oi4xIy3ZdE4fNGmfqfH9NcRBbEb1LbalAM-2dMNwH0MpBuUlK-RS3rPEpPm3x4GdfSQzwU1-5a7DYS3fKRLjA1zwqmFhU9hF-HbbT31y0f4nmNRgtZFCYTVkUVhmekrj0DGY9otM6Tih6-7_mQx3Msw6EgH-AjZoR95or_ecwMQ1goPKTzGqhfIfi3vokg35_jy4fL-5vyx1IBt44geFESuEKXjQ4Uql-EfXa0Z5JFDBcZN8_Nk6vfZvhEem6A_ljx-4_Im0e3E6dS1uVydrdyhNb_AdWtUhEAgGP4utIxCLZuO048HxZ5LwptbzYJUm5ZAZOpSlGY8Uiw_jdgAg2sjRu_0i1TpmDBsJxNFC83FULTGcoZPPyhoIHEwCxTWf6-A80ExrJBvi7_shMWHuh4aUQf1R-ixSMRxucAc_3W6--e1LqeyYkMwhuOsvUvkOPUcOqQfFmdG0YesLOCxEwhLVz3VDmgLOpwNrh7POOLv7qmiY1MG5wHn5uPVsOOnOeD71IqcEjW4Irl_Y2gGOLdB_3xCM6ldABOcsAJ9wp9LtuVxU7w4Nj1jkT1KEaVGis89DEO4OxLEW-BpuD7-joWh8uYsx1xLBSoBtwR6Vhb7n30L9BaFwKcKfI_kywhsHGUdXGYOoJrfuEgg1PZeTOkdwdGAH7o3Qi-NVmRD9Hav1K8tY573trmwimFklI_y4Yr1a8F0nD5ivbMxe6XFWUCKWvujBV50Cl0sZipW4GXAWJ8F2nB0LCh5DuYPqXVRJ9996s_sKP46l4W709N1IfbujtJP8tEx0gX5VO_xqvt6eGRJj00MmY8Df0ewD9Ahl5_rtE0qozA0gSVrJQs_yh-U5LXFRvIcIsY3LjVpJuVqAH_I6eSuLtz7_JbqkkLioE16xkiZ7Xp0PkNTjiWp-YP9fd_Vo8tE5vgWTozkt-mTJsJGJa5G0Ur1QS56uaRJA8uWdR1BA0nNjtxjvGGsN2uULdtBZllF23Bddq8jfDewquC3LuaVikLoF5oAVFmS3piA9jYOdKnwiLV-ss-4KSOV_WGUanssXizSw6swxLc2KtUsSASKpuy5w5AHPJFI90yQVPb93TidR9sPKQV0y_yUGRYaBnlS9r7HBB4KBY-rnZTRsN-lTvc5WGTdTYn2nKuJtbDuVcw2afvz73Llr5HskPiyjIMCcAfcixQxmLzPIYBMhEQuLzIb3kCm49uZeHvpEWnl_3kNQRmpRtFWrTR6PSe9SlcRzcMBYAi2CVhpHV9Dp2AXLo5lz84NyLpyVFc6mh4Z36Q0bnoghFambiKpxyw8nQwAZNqSS_ioowNsc-YIm8p4PFVHwNKE3t-Ybrlaau_Mmb63xWOHKZJdr_m1YPMxe72iYq097MyoH9rJQqFMkijlRcbCHZ8GPN4uYGiJ29WHvBEBPEljj1ljIRszUmqnOBR-CVVUfRzC10BXLU4Fb9I-6b7RQIOERZYdUVV16I9kig5IjSQ3CnPS62b1OBp4R_r4LqzfyJpMIPG1gCS65Iv2_6wpnnQTS2bWmaHC6LbmGg7Q1GpuHrfdxD9p5YurgO7r9WGuynF55xQWH6LRySEP08Q2azc2HJFL3Z0ChVR9d-VOA-QZeJFCde7mRSt6VGNENIIop80AgIsRyIDtorE9tsXEU7-Ceuvo6y4VP63_S71ZAIm7AWalgEZCaXRmxFo0poJioZ2AkdYkZd7lhKxUb_iUkOHJYtAwA5N_r5MkIOvQ-xXZuDRPmLBeFr9sIKVP8FO56N0XZe9voiJq5PhtlS87yQYx32myyK1t4NaOCClf02lHZT6n_DlLiE9K73dQX9dlbZUPznyNHMhdK3S-ExWgVkMEyH1FoFAWlvCKim2k2471LHsrlDXIs60FL909-rGXoNf-Zj-A3bVfw5aMFy6yTZNao3j_zy4fJJfuV_DBMDEnhvJhePQI8qLMmmXkKepF-pZglCDMkR6jUmfRQ02GOzChVppy74AYvD4FaKfaAsCXdvmRP0pBV6ZHuDAHmKGCuh1lgigpAQAf-oeqkH61YfOH4jwOmw1RpxJ_nFlYFy38QSmx4eXDHjbHAhTFhNsGeA9m8CFvzqchOmRQyP4A5xdnv3rO_cX5a2PsTK5sI09a3a56sugk4mXc0kHKbpsvlkNv3abUWPbL1FMniytOSUHd7lCFMtc2vWgorC8HdZgrQIFa4Ib7b0OpHSeERBEbNKUhOsCfkMb7DTj74N4cRdYx3dS5sh0mormzQSvOWl8hh4h7173DRWMRMQkBgSFrf-ec8IH4EsdL5250KIVs1JRuAFhitoI4Go7u_cZSh_B7l6Vp4OnzML1xPF7t5sGwil2ZIvafxTgjqUehHcLkYjmWSUgYsEIq27WSSB6uKW8klsC_AvQ2zy3PPfI50iBhL6Xi6rUWJSVHqe-GJ1N3T9up6Hk3nEZ56Zib_7S2uIxA00d5pm0xkzp917RsGauct1LaAmEDwHw6YVg5BY6Xg4NjloS3eXlLueCLnCrX8Hl38UYkvIPIrpKI8s8j_y74yGONTOCnLSrQ2st35GILEWMEkhaoAXxDCA6ameo8kDnRG2RVF-jwjbmrt6qEIl6wRZ6D8u7T_jz5IeAskAx1E7Ak45coZttyA-X1ASz3IhH0Wnpq4gBvfFGPfDrAsOrUUWad3oSU2cXyDn7cc4wvHdSVDMsUxbp1277XJ8v8tGsIfARpQ2KjNQh3JN5sgIFBeFqo1QXzE-c8rkEmr0j5pxSk5AofcT-MS0mP2QPzs4M5r-7GJhMCsgYQID76GakliTnGnhKC7xldXjMlGuZcv9rWRzSDOGleu_RgE_opglwol-NNYS6p-S9oYcVHUshAQNjdB2C0tBGFFQz8uXotWQv8YWD7gHbDsprb8hQy72jToCR2ABxdHw4ofV3AnpJ-o1RBR746ZCmlIqxxnAEtMCDmKmQM3LH7yEms7WBzJDU4n0ENNNdEaCpegHZ0sgmAYm0EECml8-Dtvwk7i0sjCyEL5DuGWR-b7V8f-N2ykWkU1frGwQqkMZYZam0d9JxjFXJELuumWsv1Ybel64sSTYMRqMfLw2J2KNtWwd8cR1bxEMSH2jWZsKc0P6qvARknVQUh2nxPFeQf5L3kL43gmDPm3kER9yl95jK4-Z_83RsqZGqRjEGUZlRSm47ZrUS6jElRLLKLL0qFdq0V12ouQuW09c3PhFs63hRexkEZt3pCmRLbmA9905kzAexW8YF1ZzkxGyuLxaUyDHk7vebOJfHnv6lpD-nqZyUuJI6QdocolIyoxQmoD3MkQMI5pDlAEdzGJitGAWQYz3739W77ncKTJ6FzjGfV1qj7o7_3zt8hhRJqUo3bmEdvpki3rFPPYXoLNOoU_0EghrBzHLMQgf-swb9vFVm6JPD-9CAdiBaola2ThhMvYSOuNlOG_GojKkvEPmJzNLDvT2fpSOw-BqdhReqyL0nLYOX0MEEaWVRmyKPEaa2KPOiCGvqHnIl96hjrWNu_DzZi4KoKVOOGm4_vVp9s3-CA6hoHyR4OukhgvzcFoFUbnFHeIwZ0Hjw3eKUp_Ml2VKH9VG7u0Kksk-eoI08bIay6uJnlunqA1OwRGxEuOsLUZ92CQcEAcW-CakoQSkNb56nFsaz4SFnVIRXu9VISEmoEVtFQ3Jx-O2JnqhriBlx7gU2OnQGBTYMRlxkSgKhqo4BlaryNpqrr5kX4pZyvSL3b-dkZeQQYSxisd7noVKJqbmHVJtyYcBJ5I-3lApVsskTxEp9edh4OSV2J5oiDn0KpmS54g6hxsSk1HqTTo6N89hwR4XkBFNeLtekpCQAfJ7IQT7EQCiIu0kN8zPIS9NXXDaOjUVwvwaVLh5SaWNn-xSFNIzidB0Vx6K4BlRHupjLzcdzAi6js57vChSozBqt6qvicFzR9JwW7MGyZ3_brMiQtAU6auVFTiDsAkwst3SajfmzL5bh0PFiV7uVMORwZbjSAGtXvjGo8ODK_Juw1L0tJzt6-FOtfH03lW1oSpRJyqWwUWQ0g7mhkBarNTGppVMbIUEMYRZeY9l2A1hxo7KL9ou2SMyNqm-LL6jkOPYn5khE6zHu_OIOuhrXql3IcBx1sJ_nCGG_vAW4e5A9rtlzJf7bUqIoGCOyjh_nb54xm7l9QbbaP_lRWkh3JICC7dlnp_SxGrOlqTT3M15Z7BFRcCEAkLNtqL8i_twFTU_Wo4INI3NfbDIAKVf3O-sVrmMVRRxkeGi_bkJMAsVLzU6RX0FSQ9yBnAPSUrxiyVYAznpbnZBn9kBmXmdaCcnzUdOrV1F5kF1DDlO6Y-DfOxI5H9S0I0eiSosapXqSyHurtefFbk7m_1PQVvlIWNglt5ng4abHA03XWB3-zy5b-vBljRKGinipVKqk1L1rEWnnGuXOxwUfkCYXszPjz19t3BFxpBUBCtRLmseskxZVhtiUsSsk_pETxWq_ERHKfpWudbRAPrHO5HP4pjFsoxl-W4fRbiu88AB3EZahmNt5G6u-pfWLfCBXZ7N4qYmshP6kQ88BmLLzINtXsh8TwSQEgjPed6Mkz6MzfhK3EtAfpcSEbgBSjiOi4y1RA3e1yblE-50ftQkb1YNetl1adv6tk3O3o4UcBOLh998MBY-jvfuXe--_uky0TAVUqcJHvR29erR1WVAgXFZ7xTZaF8KV5OkW3GNPgDmMNdnv2foJwEzoxJgkYv327JytnBwu9rbN0JPz1xt_PQ37FF66wMlS50dE8lwQoYHsQEZQaFTjZDVwkwVbTsVlJel-fjQilBgl8XOdYW_d_Uzw_mLo6WZs7_Hdmx86Lr7GYnipC9wuO517aUgc_UKY9n1QHYmZDtaFekZ-ljZQSOYc7uZBlQUo6VXTRyL9B88BvpLF7nrdRa_41QMHn-OFCfjkd4CEUPcnHjFhSg5VRLl317I1HYxCR7zxN_iQcNCzc9uJPEaGq34jSnV3n1ifSjT11CKkVi42uKl8ZninOjvG8QzIS3F3x26mlVbV-AUFybEzKhoYpwFPfcS7XwWfYBVZDGNJMLbpyNUNHqP3EsBHsQmb8V8ZIgKSOmUDtJ18rrAadbeSupnWNp_mdZ6pk0mB3tnPtrTzKwtWZkm0-NBdLy9A==.eyJlbmRwb2ludF9zbHVnIjoib3BlbmFpL2dwdC02LWx1bmEtMjAyNjA5MjJ8b3BlbmFpIn0",
+       "format": "openai-responses-v1",
+       "id": "rs_07425a42dbe7cb15016af88e6d48b087d197ed4271ce16d677",
+       "index": 1
+      },
+      {
+       "type": "reasoning.summary",
+       "summary": "**Clarifying calculations**\n\nI need to break this down step by step, explaining everything clearly and concisely. It\u2019s essential that I consider every edge, ensuring that each path from Ins to Cb equals 7. I need to keep track of the sums. I want to make sure my final line is accurate and complete, capturing the essence of what I'm trying to convey so that everything makes sense in the end. Alright, let\u2019s get to work!",
+       "format": "openai-responses-v1",
+       "index": 2
+      },
+      {
+       "type": "reasoning.encrypted",
+       "data": "gAAAAABq-I53lGgVJo4V0n4KANeeC3fjFdb4tDzuoKvPi_VIL9jWY1HDNkQ7foU5fGlsyOCtkZFvj-BcK2xpNqVcUzvRaTQNmWnpXA1vc8XL8dQhI1w_X-ChVe0b0lPJcwJehUfDPKKY3KK6_xk1Sf-zgFdpU2ekXNnt9r7cLf84z-9_tOFHVy7a0_VKYx3JvztfbF1t6a8c2ZMHaU21kUNz2HVVAtXwfMOPsWGO49bmgSb3Kh_Q-9IkjT1fkTs-5o_c0vmQLecpC6JIcxZqu6jOcabSCrLUgXqbRe5IvCCzEChdTgi62XGHbUVlVxUUJqJNwgv1wMEgvOo8OTmhzH8xW4OWwfNnIOFMaHpSVMfIitRc0myYgrMHV2b9vkW9JDgVGnwrZQn2jdRSY8czO3W9FWH-F3crdlPx_h-CcDaKDlENwgoava7031eCAAoAMU3MxezzsjLqxPoS7NSduxFyO5cy1TBk3orA4B1hBFR8-foh909Vn06AFgFYyITceqC709lYnPgmAKf3dCQQaSnEoQruJxCnwjnM58MuBCv-3y-s0ENsCDDsGRwL3BZa_Qqt7RpGjR9_x28oKCuX7KkXhk7ZNJBb9FGR07QAb5D3oLTXGDjHE4AYKfJadalDob-VCaNWXAsxMwqJCQlU2Bk7lu73ZK0gWfQpuf-i2j6m24ZE9R8bL6tIPsTqM1hWr2YkbWho0-Di-fabdPRiAulNR6g_1mS8KJR9UrP088ucT20h3lhg3pMNUn5f7XlVE24GmYdtKrQIqSbd4hLX7dA0bWU5OCjnFpEnO-urrsWvOid9sk8sP-bUKuhzpLmPVFJXp9dIkpZG_bm4aNARTy-3u99HI70xh3kZd3fONfZf5cL5y6wm3JvPeIebPMtF-IgQ-5QFHaJ8DMtlcOhuT8QiZq7sjKd6BU8fU9WIUY0hu0ijz7KRszjgHA91xgQA6SgzITdKZruU8g7ZqrUs_hlaxuLO3tfcaUvBOnEZCj_UYeSv9FXeMuDQ3IOtbMPJVmFG6Wi_0oHLMBikpYTGUQPmTrV1h5jA6_JKtOdLWxx-hNXrLzXILH-02FwpPLu9w2K0_jtJwwtq2aAJk2qvCeIGP_2UhLDQWjh3IHWhtkVBjOTnTTPYYboIkpWL9UWnjHXVcApXV3cxovgdtz1b5onQdUXxJbzFfjhBgsCIfLJ3yhaolKqwE6Ire_NyBN4myBRnGw_wPm6rFEVMc_p-YzdnJa5oNUl5lSAr4ET78Mty18xjMQUraHFMKSvJ-yXtl2CBuTRaDT1U5Pk91K24sFgnRl5ReXol-JS_29aqQh7p7VoX4tVj9CBJIPFitn6Qfu7jJ9xnRtiu3Q5jNkq1Hunvb6-eneSnqFqEBjhMpxfFZCzVUybb1r6qhkJBFnA7XemkNFV0ovIjcHH5Mn54P2Omp3_eY_CEUhofQFbYtuVcHod0RG9bv4y8Q76Kj45bgdbU8lWLVw16sh96E4lDTNuf8VW6lJskzg_tpjH3iCE73Pn4Yz2sVTh_6SrN65fjeYOEOsu4nkIGz8VMKPkeTfKoWrvrdJvq3nY3wqbHQTP7H4_G5YgePqHRd0703E4N9zUEiK1FtcEnniBvwlpUIA4zAQd2phDQ2oEXt9pdJoPpYgS8DfcIQlVajPRr9Ru5640T_TrV4zECk4FF2dECp80zSvL-pg_5ImQ3mI5R9RYkBUf5Aad2AoDhfjcLNZbheQHT-dUMTt9zQwlmV5aO9SrRzn1ZBAq1nKgHS_detmPlWfZHurm3OmbkApwN75ma0c8pDeO17W2WxtF2OkkABWUyCGt7oQ3GhkObOFxWxr5sSv1o_7JtMbxaUImPNT0297i6QYlstiFIFCZ4Km7h2ROwvrqnEfJaI25cfmhZXje-RiZpszdb3ee5UOgkSRmmsj0KYlS9j6CJ8Gg_AQceQ4xQy8wQst1l-BDPw77a8XpiZhbGlSIuEoHqDGFSecjWfLDlg_ueeKrrIeLGuLpJbUudaorRoAmVdIWcxN3efMWJCfUELiFYP6Khparl2tr3zx1STfbK4dY2Qp387wTvN-Fkco1cYVtbn0FNwq4ZCNHXDszKJWmw-p05CdYCXFA0B8NZPdSzuCSG6PXkNaiArFK8rhMhCgcnVghlTVsieEcBfkG-iCsozLgqnrDrGQWMyms5FZooNAtOqiEQ01r-gEZINw63EQn14eOiWem1IAexqV9nftBaPljpWmT8PHz2dXvy_4cOLzR8zzXuKf962y9npxZ5P8MBbuB_ImyxdMzB8jKgd88QWhgyUJM4qf1GOXELW6uqSjrQnKIhJ9fxanW8rkWgdn1OiW6IlREVtVXp7Mnl_f7mEkQ9YcreHEBxrlMkkYUIg8pEvuJtQTsklTnvMPi9k4vzXaai2F8bYNzQzQghXpj-_wcE9TnkG-NGc57lIgbIJ3Cyf03qSrSvgEmroeAwHnACMITckGfQppbyPqosgErgvHqs0xyidJ_PrZtnAMk1VpZf4fBVm8rrBM6p0Ep-XZQw9jyLH-Lg0gUvvh3AgOmtOfVOG_EFngkingAKnrkyh2kKB0h6iAsJDk9PGLtpYFWw_3t0yr7Fj3fg2RIrUNfkJVA7RJ_Iri4WjbA2rGOJHM6-8XDWlH0hEOBTXJ6IZE52-_-650nQrIBfZWbJS2bP2PMNJMHYCIeTuaSMdx69VS2ng5m-wYtPsZNfFqCuwFbG-K5WoA81IoQivr-rItc9n0HH2XIw_cgSmiGubP0AH3C26zQUJZUixGhSYLgXQBkY_eigpmcP91XhaOJmV2Xk1EesV8JXitSa5IzgMDRTACGjSV0u7ac6ioLw3zJuRx0T-pb8XQFOdFSocz7s51GyNIab-lLx5CWRTfW4efqjLKIWDUzFoqzfAo5qXRc4TUtjRf2IJpKBZCfZ0EjCBkTci_UpNdZGY7ANrAmahKUyIkUgxfsTsNNRN7V0bOcbtKjwQBL1YIH9gd4PJGWejMp2StxzMPaunM2cHKpuTB-qBSWcmqdu7hVHNKjEGmncl677KrWm8FaEvoBiv8FNFV2RUcPWumtpU2j1ABEjg8CQywlKa5jvetJNk7HHhfdSI1rarbcL-hYi-imo4vTsIXYdog1afzxRNEjejrAxs21nt6Ot0D6FD8_ddVRMqdsinnlI1PMVzHfQSDm68v75TRAa8HJxpFqU6NjVffVBmm-t8-YpJiNTWURlUXjZFPTFgjLG19YLCCMVbFgkNVMqt6GrhhlrziRlWmr9PZV1uCJCq0nafbjz9vr6YqNoXNLq6HvchiVGqulxjl4rgtQZr4cs0QfyLro3k6Lwl4ZsWac150dnO94hv50ieDw6PylAAVxbkROUZgJU0ckI1--_KEp4SuhBZpSj6K1tAyQ3PX25vT2_xFZPli5xRDeCpRyoxbTsVSUbVslGvSJqaJwWK7U0lqobe4OGYRvULmGWhqbIFVgdJvJ5O0gkEXrQuoZK9-xECG3Kamp8vFnxY2BSzOTi-ieiHBxCE0CfAGJ3LWM-ExYXjoFzsL7nSOQeyz3ROodyTsaom_23gLHI8iqF85fIObwjqObedQn4u-rBMByUAOlmce6u_LSEwm-c9tL7Du6Egy25FMxOhOENVWVPuBELpJQQrnSQ82NBt7AxRL4vCElxP6_lbhai4DKRi9vLYetXG3W4VBNVKQAH5NlrOBmjImi5ZWeB2kNzTSjxLHP0N33AYhw2N6cx2yBo38TB-6gH0ITBJ8nIGoHTD3CT5GOf9rlWLBBC2IgcRi723h4_1mNyl-HQaQAFVT_QpEdShVGPOHeIjAWtc1Y_UGRFtM43ZJugJ3TAkmW6P5c1PT3zrJHQyruRVft1Gnlxonh1X9mWRiUwvgNc4-8PJD0i7KCZN0epx1t-euLZx-n63OAjDa3cWXdbrXB_3bIJf5XsgvMMeDH0vulpZiFGNVJg5Y-LbatYlZc4FaIUiWVgej0HBvuF_RvY41F7IkMH-vX92fBkUwli6bQPNbKQj9mtLaQve5jhMBY7BsPoIZoej_099JrMAyIl1BK6t5aiaOsb5K5vwIjQ6GsbaNxjov3jv62GasbuAcetlXluA7bOmGW33Xti9pXgIWp3AuPSTX33daKgtr5K1WDwSOgSzjdBqcN3gOp3B2ppPwKRKmilKJ2FEj_EFHNCU0JUOIIca90HDhpE0WvW0ow87BcQZnfrDQb1jFGdPHSMmrVI07TGTf38xVnuUB748KOE8uzNU9t8zFwnJ5jasjduyilGjSGXhJ0Ci5uWxkqlHMEwX0YQEBsRkEFKpqpHAVhr2WmYj2NTr8BNIcX1mFPY7QpxUqnnOx0W4md-TMtlr3qG62pevKIziWAMpAoZNHhreYMnjr_MMYVg-l4EzE_SbMLfooLiijjIOYRx1aFqn5TNtw_shXVHpe1HgoIGzehIxg4non4pj6bJV9f-11iBAdtZcO8WnuzvKSK9EGhkzHbwotZAHkSwXNGRD6XrsU8wQPGHJsh9hRJ99Wz-y_4_mp8Zx0XeoJNBnGSQQSve9s61kU3P9O-600nOctpqaIGAiPllzHd3kE0QRitAZBubUHGSheOI_Wp_OZjBUuMUnPGwwB6OEF3ChYptElil27_6iq5z8o0aLjTx_ICcHJKeZGDxF-3QL_K3tgKaYVzSh-yv4Pguby_6FG95YsKnBM7Mj9lI3yCS_dETBDL0rr5EJ15ygxnlru68D4UUSG2Hji_TCGBa_iZM7W1wqW_YiQxsIpjm1czANwYqNYjbnfEE8G9hB5tSnsvNjYveKTH1wOQcixyNp7mBWlL9f7kPXGbYrTqW92DKs_j_1NSR5v8Wy4pwSOz3m9aViIR0uFSHcYzF9dBUzUg24ZuT717nBQByS_pqbN4GdHpMBG_ogfdxA5ceeM8SOt-YqZ9JVIarlUJQPajTQjJFdFEZE_IcZty2_Q-g8bl49X63VhzZw_i07L6YxxuiTGNndneYkK30UtsXDTGBQz_V4eldWh0DSWfm7E5LMNNpcStNrG3zlJ97qJRV3no-d7qb7TprbKt6Ld94tPAWwrZnkDkuZ_q4Ga2U_99LtNETm56PQDwbMQUurdtleuRTeTkHZEHEP3RCrQgEOURqrTBIg3DgDevAcD9tZ4wCDH9qHeAsmqNKh98cQi_BLxXTQBiA7SBDKM1xQLPfxG44XNs6mijXA0RMUnao7DZOqccDlqX5_0z7Nu5P9v51cF4K6BWDviC2zWFWyRUjJc2oGt6QEnfejKJBg0Y1huyK7wOGIFZ1z7bgKAQs7R7zWk-MqDz2XeRYcBOru2VahdEgpHmvsC0feOx_oMyErfhJrYZvtekIGAOEdYuhrT36NIr7R8lTMBNNIzx5RzeQEwtui9yYBzlRUUfc2KmEMUif9_kZ8uGBpYryIHjRf8J5o0PApHwKcJMytvat-81hievtYs78b5x87TVWWYCmULo-KEu_oPgEFQ==.eyJlbmRwb2ludF9zbHVnIjoib3BlbmFpL2dwdC02LWx1bmEtMjAyNjA5MjJ8b3BlbmFpIn0",
+       "format": "openai-responses-v1",
+       "id": "rs_07425a42dbe7cb15016af88e741d4487d1a1b937c9059536ff",
+       "index": 3
+      }
+     ]
+    }
+   }
+  ],
+  "usage": {
+   "prompt_tokens": 3089,
+   "completion_tokens": 1000,
+   "total_tokens": 4089,
+   "cost": 0.00088605,
+   "is_byok": false,
+   "prompt_tokens_details": {
+    "cached_tokens": 0,
+    "cache_write_tokens": 3086,
+    "audio_tokens": 0,
+    "video_tokens": 0
+   },
+   "cost_details": {
+    "upstream_inference_cost": 0.00088605,
+    "upstream_inference_prompt_cost": 0.00038605,
+    "upstream_inference_completions_cost": 0.0005
+   },
+   "completion_tokens_details": {
+    "reasoning_tokens": 893,
+    "image_tokens": 0,
+    "audio_tokens": 0
+   }
+  }
+ }
+}

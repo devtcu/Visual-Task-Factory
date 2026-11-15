@@ -1,0 +1,310 @@
+{
+ "data": {
+  "nodes": [
+   {
+    "name": "S1",
+    "module": "Sensory",
+    "x": 0.3066,
+    "y": 0.8114
+   },
+   {
+    "name": "A1",
+    "module": "Sensory",
+    "x": 0.186,
+    "y": 0.6576
+   },
+   {
+    "name": "MT",
+    "module": "Sensory",
+    "x": 0.3506,
+    "y": 0.6418
+   },
+   {
+    "name": "PPC",
+    "module": "Association",
+    "x": 0.4139,
+    "y": 0.283
+   },
+   {
+    "name": "FEF",
+    "module": "Association",
+    "x": 0.4607,
+    "y": 0.1184
+   },
+   {
+    "name": "Cb",
+    "module": "Motor",
+    "x": 0.8893,
+    "y": 0.6689
+   },
+   {
+    "name": "SMA",
+    "module": "Motor",
+    "x": 0.7032,
+    "y": 0.6673
+   },
+   {
+    "name": "BG",
+    "module": "Motor",
+    "x": 0.7011,
+    "y": 0.5136
+   },
+   {
+    "name": "PMv",
+    "module": "Motor",
+    "x": 0.8709,
+    "y": 0.4922
+   }
+  ],
+  "directed": false,
+  "weighted": false,
+  "edges": [
+   [
+    "A1",
+    "MT",
+    1,
+    0.0
+   ],
+   [
+    "BG",
+    "PMv",
+    1,
+    0.0
+   ],
+   [
+    "Cb",
+    "BG",
+    1,
+    0.0
+   ],
+   [
+    "Cb",
+    "PMv",
+    1,
+    0.0
+   ],
+   [
+    "Cb",
+    "SMA",
+    1,
+    0.0
+   ],
+   [
+    "FEF",
+    "BG",
+    1,
+    0.0
+   ],
+   [
+    "MT",
+    "PPC",
+    1,
+    0.0
+   ],
+   [
+    "PPC",
+    "FEF",
+    1,
+    0.0
+   ],
+   [
+    "S1",
+    "A1",
+    1,
+    0.0
+   ],
+   [
+    "S1",
+    "MT",
+    1,
+    0.0
+   ],
+   [
+    "SMA",
+    "BG",
+    1,
+    0.0
+   ]
+  ],
+  "input": "MT",
+  "output": "Cb",
+  "candidates": {},
+  "label_t": {},
+  "modules": [
+   "Sensory",
+   "Association",
+   "Motor"
+  ]
+ },
+ "layout": {
+  "width": 1530,
+  "height": 1605,
+  "texts": [
+   {
+    "text": "S1",
+    "x0": 492.4,
+    "y0": 471.5,
+    "x1": 516.1,
+    "y1": 486.5,
+    "size": 8.0
+   },
+   {
+    "text": "A1",
+    "x0": 329.4,
+    "y0": 678.8,
+    "x1": 353.9,
+    "y1": 693.8,
+    "size": 8.0
+   },
+   {
+    "text": "MT",
+    "x0": 549.5,
+    "y0": 700.1,
+    "x1": 577.6,
+    "y1": 715.1,
+    "size": 8.0
+   },
+   {
+    "text": "PPC",
+    "x0": 630.7,
+    "y0": 1183.9,
+    "x1": 667.2,
+    "y1": 1198.9,
+    "size": 8.0
+   },
+   {
+    "text": "FEF",
+    "x0": 695.0,
+    "y0": 1405.8,
+    "x1": 729.1,
+    "y1": 1420.8,
+    "size": 8.0
+   },
+   {
+    "text": "Cb",
+    "x0": 1277.8,
+    "y0": 663.6,
+    "x1": 1301.9,
+    "y1": 678.6,
+    "size": 8.0
+   },
+   {
+    "text": "SMA",
+    "x0": 1018.1,
+    "y0": 665.7,
+    "x1": 1059.8,
+    "y1": 680.7,
+    "size": 8.0
+   },
+   {
+    "text": "BG",
+    "x0": 1022.9,
+    "y0": 873.0,
+    "x1": 1049.3,
+    "y1": 888.0,
+    "size": 8.0
+   },
+   {
+    "text": "PMv",
+    "x0": 1245.2,
+    "y0": 901.8,
+    "x1": 1284.9,
+    "y1": 916.8,
+    "size": 8.0
+   },
+   {
+    "text": "IN",
+    "x0": 481.1,
+    "y0": 631.3,
+    "x1": 505.2,
+    "y1": 650.3,
+    "size": 9.5
+   },
+   {
+    "text": "OUT",
+    "x0": 1355.6,
+    "y0": 623.0,
+    "x1": 1402.2,
+    "y1": 642.0,
+    "size": 9.5
+   },
+   {
+    "text": "Synthetic brain connectivity network (9 regions, 3 modules)",
+    "x0": 45.9,
+    "y0": 43.2,
+    "x1": 829.2,
+    "y1": 69.2,
+    "size": 12.5
+   },
+   {
+    "text": "Lines: bidirectional connections (all equivalent).",
+    "x0": 45.9,
+    "y0": 94.8,
+    "x1": 519.2,
+    "y1": 113.8,
+    "size": 9.5
+   },
+   {
+    "text": "Sensory",
+    "x0": 92.6,
+    "y0": 159.0,
+    "x1": 168.1,
+    "y1": 178.0,
+    "size": 9.0
+   },
+   {
+    "text": "Association",
+    "x0": 231.9,
+    "y0": 159.0,
+    "x1": 338.5,
+    "y1": 178.0,
+    "size": 9.0
+   },
+   {
+    "text": "Motor",
+    "x0": 402.2,
+    "y0": 159.0,
+    "x1": 456.5,
+    "y1": 178.0,
+    "size": 9.0
+   }
+  ],
+  "expected_labels": [
+   "S1",
+   "A1",
+   "MT",
+   "PPC",
+   "FEF",
+   "Cb",
+   "SMA",
+   "BG",
+   "PMv",
+   "IN",
+   "OUT"
+  ],
+  "data_to_px": [
+   90.89999999999995,
+   1572.9,
+   1348.2000000000003,
+   -1348.2
+  ]
+ },
+ "uniqueness": {
+  "ok": true,
+  "why": "edge connectivity is a single number; one minimum cut: [('BG', 'FEF')]"
+ },
+ "facts": {
+  "one_minimum_cut": [
+   [
+    "BG",
+    "FEF"
+   ]
+  ],
+  "degrees": {
+   "MT": 3,
+   "Cb": 3
+  }
+ },
+ "level": 1,
+ "trap_margin": 4.0
+}

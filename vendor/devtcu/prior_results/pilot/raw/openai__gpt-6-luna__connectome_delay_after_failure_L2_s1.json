@@ -1,0 +1,90 @@
+{
+ "status": "ok",
+ "response": "With X and Y removed, the shortest route is V2 \u2192 S2 \u2192 VPL \u2192 TPJ \u2192 PCC \u2192 M1 \u2192 BG. Its total delay is 8 + 6 + 7 + 6 + 1 + 7 = 35 ms.\n\nFINAL ANSWER: 35",
+ "finish_reason": "stop",
+ "error": "",
+ "usage": {
+  "prompt_tokens": 3088,
+  "completion_tokens": 445,
+  "total_tokens": 3533,
+  "cost": 0.000608425,
+  "is_byok": false,
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "cache_write_tokens": 3085,
+   "audio_tokens": 0,
+   "video_tokens": 0
+  },
+  "cost_details": {
+   "upstream_inference_cost": 0.000608425,
+   "upstream_inference_prompt_cost": 0.000385925,
+   "upstream_inference_completions_cost": 0.0002225
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 378,
+   "image_tokens": 0,
+   "audio_tokens": 0
+  }
+ },
+ "raw": {
+  "id": "gen-1794674300-PAqu7o8E76IjMTKebV6g",
+  "object": "chat.completion",
+  "created": 1794674300,
+  "model": "openai/gpt-6-luna",
+  "provider": "OpenAI",
+  "system_fingerprint": null,
+  "service_tier": "default",
+  "choices": [
+   {
+    "index": 0,
+    "logprobs": null,
+    "finish_reason": "stop",
+    "native_finish_reason": "completed",
+    "message": {
+     "role": "assistant",
+     "content": "With X and Y removed, the shortest route is V2 \u2192 S2 \u2192 VPL \u2192 TPJ \u2192 PCC \u2192 M1 \u2192 BG. Its total delay is 8 + 6 + 7 + 6 + 1 + 7 = 35 ms.\n\nFINAL ANSWER: 35",
+     "refusal": null,
+     "reasoning": "**Calculating response value**\n\nI\u2019m checking the possible values from the calculation with V2-S2-VPL-TPJ-PCC-M1-BG. Adding them up: 8 + 6 + 7 + 6 + 1 + 7 gives a total of 35, which seems right. The user needs a whole number, and it looks like I need to provide the last exact result as well. I\u2019ll keep my response brief while ensuring clarity.",
+     "reasoning_details": [
+      {
+       "type": "reasoning.summary",
+       "summary": "**Calculating response value**\n\nI\u2019m checking the possible values from the calculation with V2-S2-VPL-TPJ-PCC-M1-BG. Adding them up: 8 + 6 + 7 + 6 + 1 + 7 gives a total of 35, which seems right. The user needs a whole number, and it looks like I need to provide the last exact result as well. I\u2019ll keep my response brief while ensuring clarity.",
+       "format": "openai-responses-v1",
+       "index": 0
+      },
+      {
+       "type": "reasoning.encrypted",
+       "data": "gAAAAABq-I6BC1GQ8tzRTs4-k86106VPmkP8eeBBFchb0ekyxLtbB4cCOTaeeJtGXCUypJDrUiljjj4zpkbLmI8mYbdcaUoYEOAIIoZ6NWHG2ljxI_0uFJi9pV1KMdZcijncNOCLFPmFRNYXMp8kTdNK1vc95ONeywAUu9bbxmDfyu8rmV6ZBYJcFnqY0xa8Gj_2Bo4jsTKfyF0-GoXGNP8Is1K5wIIgojgdV8IoY7PoPUkHQycKEszeLRORDYWv6H0WZQ3hr4SurcQNiRSJ86SA8xf-kKVfJ8AodG1q2La70wUtiTism5KSFjLW9_owjK6VBTTD905oI9Bj37jyKMlQ3chCn5CFvPHqE2fJJJqH0fSeW-5nvvw_Loee2A4J1zUGuvdmr2PQPWdAYN6DbkpcP58I5k80zWBP75nmbv-EBfRhqQnWswaivnqh1Lz-3f3rB3Q1Vhw2SkFEZ-dWGuL2z_uZqIoHyD2pEbJD2KcY-fTVEPcb36-JtkB7K05WKV4fM-rIDayFmQH9dnbJ9BO9KS5ykM_nnDJoE7_gWby25GrPdeLEMeMdK-RKp85yf0aVU2P7sB-o9DmZX570zQBCNB7IjNq_g70i-cqYyD-_aka3ND27sULLIoNvME9CAJaa2-8uyev-yTwx3pMMenfNM5cnecHdnCU3JcyJ0-4O4JiddB1BMiQxhsh4NmgoFRPZenY21FY4Rc2gqehGod5MF2lwU4GUj6Jga171DAIKsAJewftq5ZKczliVlmN06z5IR-3wbaNTAR4HZxDJ2QBwOFjEYl3BEaYKq4wKUvUTjORoZjUlzzOmBPoIBS4Wl-zB9BQb8OfhB9EFshxlHsyXyWZsdQfby-2dTAX3IotV1-OGhR3OsYFl0NtS8SUTIT7BJ7gnbq7URj7SqC6GzYKKsVSlc0jYLChRzub_nH3hnWPWYQMhjJt9iKoIuCN2d4S8jcJnSFe_FlWGHDdhEpuAcM0WhAPi_7ycsWAXXQikG_x0jbjg1jmVGydIZ_f_v_tQAcsT43S6mVU1inrdJQWPrK-T40jg7etVwnCUiDGDcH6OVtp0fpJR8o9QVMsi3-GnNU0zeSAK_e7HSpxW5L_A3dvHMDxitzlQo_DzD3Ra2GqtD-2XPdFyez4SSYvOMC44NFH423kH8kMvs2lrRYobps3QG1LkCyGFA0QwB36UUDeUNwnh2ye9rcZehLq7ojn8ilkhsPj9N41vj1yqwxzXfPPAvtsG4jXq_jCmAS-p8NdeF4bQ7GnDryHjXABcP3TRGnMiBh02bNR3PPeLw98Wz79cgI2Z6Q45p3I7wPHD59_7-3bI9aPSSwuA7noisGlh3w-3iBGUv7QLLLbevoEtQ6czr6_00WalpFSS0Eg5YGbTAOdLmT2WXsMWXGVYCsKe2U5t_N8CzumKqOvzxA53NmzZTVMclYC-DRL5jbxYRuvYEN94frVxZU7x3Q3QfI5A5WwegpA1cLAngLpGUZ5oJ2M9ZsCCz2U-uEqPl_1R-nFt1Ynq0N50Vh1VGeo-YkOFrjfm_Sb0H7cRfD6-pmxJIZne1Tr-u2J1OXe3u_SW9gAKKSWmvZtLmzA_dtG9NKXpYeaEiLt4JNSvq02cFKQkztJu6wAqyUIH4i0-JBD27xgSRpgyTg7u4_JwTC3rNFzJ_hVQ03L0DQciBwAqfakf3ki9dd1qc1W3I2sHIzIjUlhkCIZyOaNMffLKTSOWcSShYLYvI10y6PMCTessOla27CGV7YvzsKwyHrRYLHeCxcF6lRvknSw8MucFog--Nt8il885wSlZd3PZw8yn36xrrdWwb3ptciZzB8aGhcU43T9ZOfc05sul6JDYuLzhJKvZTYXds5sAJ9y0zm5lXSufR20_YTZOBmNJ0XrRzTyBnaz3YlnA7ybE-jdCoDhotSow4PhNmyvJ9MCnUQsX-73RXfr8zHWyiGlA81S-KK8ZHZhYK7CEhGSdzDT7qEf9On2f9xJMlBBQN0jrkexS8wCBH6eXTAx4JMo8wiNbHnU2WuyKH-pS7oB-keD01KC6zkoGtSsPNGzw05a-KZVu_rrt9qAT7lnolSLztZa9Ubl9O7_GYDtUA9OUuqLNkMKKaa28i1iGhnPAJllswtplwaIur3x0Losb8qIdD3jRHBpNQxd-y-hPiCspc56t3CZPhnDYMSMtUuAGrXfJu0Lq5eLD7j514l8h7wd-C0zCJYxLIbTNVBbAS0FHS0u9U0BwCy4qfcAsS-klf7qSO7lFC6Guzbt9dwgYomC738hNoceKpQmTGeSEOg8rAUigWWdCA1XFOes1CKwbjGSm1JxLhye9gtG7rjCZF8yubM-4rTlWWiSl0hd6s1fGs2q-q6bvUqMa0RAhMYB-3wlPgAiPIBX-t4KOQd0itkhEpgWtIEZptmjB5AHcFvsLEtcujo2yw2fE3VVAVLDjAQlS9TvtC-xohHElqTnF9cC5cue-A2okJhyA5bTzoxjeCQN3Bo-N0pEhoJTknZuAFWG6A6tJHaEtySsNga4FvldGm0ktyIo8-XNkVMaQnTA992Szbf0GhXlWLPiwP6l-Fu65QdntZV6dustPPUAVwgANaBQwZtX9H_wh1IdZNLQXQntCLpcmuDsA1phl5FDI594QAgJAVSseM45j4yAcef3is2714ca04gnC4fk8qEd8IpV_NyQCH3-vfiXLrS1fc24xahUZBGPUyoqrRU5fNnAFZfy-4T93CT12eY87449mGfP-Ol_P1RgL7BuL9pJ_h4EcskFBfVigtIbP2Mhphp0MdWfuFPntaAT7G2IkhBCaHtlbRq89JgHYNR5On0yluwhD5w_VEmORhDZOXL38gFzBSX9wTkiCcwGxDtsvxTYJ54OUaxGgaN0JSJZf89gqUkkFbWhcSNpIKold4bCkdBAZdGVzeZMHzgGNZTGS8_2idUU2wPBJErvWxJq8Ho2hMDTPibOA8NC6yxV4X1aGPGnB5GM1wOJ_qqSX68ivsMcYtMRJC5ZyfSWISYGcBli4w2rlTfoA1Mj9Li1kHxynmRJ5QrQXub7tAlBvGqnDNcibWUdnZqa7mb596xv-4bzfLrqifyyiDX6Y-Ar0sfBR-rNdlWZrIpsNdO3bbGNSOoS8JuSZGzldlzN7fM7t8Fo8VQQ7w_W790FVWnna-i2swfPJtmfOaanvRT55w7AI2yFd8nX27L5zZsDbgq5anLFlw_rRJ0CqcSjNWIm3MBvo_TvGAgHI0b6qNJIEzSW8-SWwdXmaiQN-ncC9gH3Vp3KqUb23XUB0Xaio4rSv1akThQlXijgs6D1zQKLYPU2wIxG0m4gMQ5CbxIvSh34hn6OrYw7Ta22UB2qyLHmZBCbdCxqXltX4nc-OzXUUT1zMfY4cOIp-McRfCPgyedOY8dxxH3D7uVrvCa2IkG1WcT93bAbtNEJFNIEy8HEJoW3bjgyRWCXZAsbc9FfSu48TqHxnRhx-jadd822IX4KBMlSXDPa33iNRFVxaMr8UpPhesFKWwvBmlajSOMAkpoaX-nGFascrBcKvIec2LWtmCG1CO6Lc9FWyeMFSbreXNpHxmOAEHnSCZykVPiIpGiAxVrlM1CSIHrhWR5g6cvJaY9HT8mImNQFfb23SNwWDp3_rvb3BqGPI_MweB6Jk1cVFwoS4UJRh7ffZIN3qYd_BL1ptclRRbOeOS8KHAfpVSBPmKrKkBqpZ06Y6rGCRGdYK5eKZUt2a-oQ8GI3lp5knyFgzN65l5RL97tRvqfb05m0dxiPWyVG9UJf5A46pGmTvWZ2W9ufmBzVTu7U9fWMkzkyMn5C8nQlgk5rZKW_c6R4OzLvn-9ioo4a6C5kYrQX2YKej5Wur7zVEa3q9EaWNZLqA8SxOShs_4UES_rfW0ZgShQkbNVkiCUWfJhFT8E6pO5LaOfmIsmeKpU4GWd9BJUjFmzFfyNIBC5n3rPWXg7Nd-VK0tP3_hueuqJzbcyKyHHfcHoUNpctkfWshuqr2LrwS8wyh_VT2qKJTRNK3LWjDY82YL70kXYrI9og26PZcUcUn7oZc5NIOJ-B8vqFbgbeh_zq7kXRgirVW59lCLTMjgQvse4sLLBxmbfAFYP0QUUdMYxwKOuMIiJGuSKcuIIoGC1UE4amcEpAo9VlApyhsUd5Q-Yq_9ayUgpDWN8vkx8EVfC1t3POCWEfrkIOzwesxm7oc5lPyf8Q_JovMOFA4pQlUMChhj_qJmdwf_6cbBOSeEGFuFp65gy28uXXKCnQflKYGlA89_Oy_wQpkfxD8ZU9OWx0YCUFf_s8E5nZiwLNUo34yB5Ssz10h_S7Au1RR0DMI6QhDYiS1VsAWPeyWB4wlJmUQTz6KLisGy1hMQLqZsVTmQpcNO0XqZ5s1ej9KNLxTlUvcmtt0DmgwRUZXEjYYZibAp8OHG0GwwB9Gu_W1U34QFupgjIlZdAcdLylyqP4zqJor874_psSkJ9NcNfkWIr64a_hzhFycJNZgNNyedZz4ibq1nz9L4Ydu9tWQx5z2QPHqahjzjL2DXB1Fw57g5np4D4_Nqfu4wCTCQ7Xm_vWwz1ko41YdvHNUjAkD9Bc_Xa5XqWa614W7YTgR4UY5s6bdLcnGcNqO-HEihU41tOpoHO1q6c4KzrD4NmUseaP4zDP5pX5yyereRI-SV3KHufUmqJl7Aq2b5NH_wvZC8sHIO1kGOiPx5aksjm6eykdElw0lk2A266D-nAe68tlG8V9jfVropdI2IShtfmQEHRYRangmPipI3TMEeNzgJgVYC2p5_O0MDXtM3rAsDhOuOLVCGb1awKjyU-kJISeuxbO2Oq3FQMDquf56J7Itx5n4j7f7dC8OHRvgVOAgM_d0Hbj_6gtuRgv9dx_SHk6pV-bvp2cZZMUc809iaAr32snfatfeHMiXJ3Pso0it4iKwvzt88jr_y22c2b9ZNaOuxZR5rdWsBhMYlyTbMsMUjsrjHmqm_Cck4Uu-fjiQPbSyo6e-csJr1XzyIRkZJlaZUpFHSShe2lZghvA3alMqozBv5zBMH83LlBuaCpoaBeh5SDWU_eFlMSULRkZGXRZggNGO02zJZAb-OgAOPc9ypQ==.eyJlbmRwb2ludF9zbHVnIjoib3BlbmFpL2dwdC02LWx1bmEtMjAyNjA5MjJ8b3BlbmFpIn0",
+       "format": "openai-responses-v1",
+       "id": "rs_0fe067a950ca9a2f016af88e7d383087d1982e8cc425037129",
+       "index": 1
+      }
+     ]
+    }
+   }
+  ],
+  "usage": {
+   "prompt_tokens": 3088,
+   "completion_tokens": 445,
+   "total_tokens": 3533,
+   "cost": 0.000608425,
+   "is_byok": false,
+   "prompt_tokens_details": {
+    "cached_tokens": 0,
+    "cache_write_tokens": 3085,
+    "audio_tokens": 0,
+    "video_tokens": 0
+   },
+   "cost_details": {
+    "upstream_inference_cost": 0.000608425,
+    "upstream_inference_prompt_cost": 0.000385925,
+    "upstream_inference_completions_cost": 0.0002225
+   },
+   "completion_tokens_details": {
+    "reasoning_tokens": 378,
+    "image_tokens": 0,
+    "audio_tokens": 0
+   }
+  }
+ }
+}

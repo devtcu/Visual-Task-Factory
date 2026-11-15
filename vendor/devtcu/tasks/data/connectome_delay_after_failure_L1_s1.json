@@ -1,0 +1,313 @@
+{
+ "data": {
+  "nodes": [
+   {
+    "name": "V1",
+    "module": "Sensory",
+    "x": 0.8432,
+    "y": 0.3966
+   },
+   {
+    "name": "A1",
+    "module": "Sensory",
+    "x": 0.8789,
+    "y": 0.5731
+   },
+   {
+    "name": "V4",
+    "module": "Sensory",
+    "x": 0.7061,
+    "y": 0.4999
+   },
+   {
+    "name": "FEF",
+    "module": "Association",
+    "x": 0.4448,
+    "y": 0.7299
+   },
+   {
+    "name": "PCC",
+    "module": "Association",
+    "x": 0.3225,
+    "y": 0.8714
+   },
+   {
+    "name": "TPJ",
+    "module": "Association",
+    "x": 0.2704,
+    "y": 0.703
+   },
+   {
+    "name": "SMA",
+    "module": "Motor",
+    "x": 0.4058,
+    "y": 0.1777
+   },
+   {
+    "name": "M1",
+    "module": "Motor",
+    "x": 0.2866,
+    "y": 0.3007
+   }
+  ],
+  "directed": false,
+  "weighted": false,
+  "edges": [
+   [
+    "A1",
+    "FEF",
+    1,
+    0.0
+   ],
+   [
+    "A1",
+    "V4",
+    1,
+    0.0
+   ],
+   [
+    "FEF",
+    "PCC",
+    1,
+    0.0
+   ],
+   [
+    "FEF",
+    "TPJ",
+    1,
+    0.0
+   ],
+   [
+    "PCC",
+    "TPJ",
+    1,
+    0.0
+   ],
+   [
+    "SMA",
+    "M1",
+    1,
+    0.0
+   ],
+   [
+    "TPJ",
+    "SMA",
+    1,
+    0.0
+   ],
+   [
+    "V1",
+    "A1",
+    1,
+    0.0
+   ],
+   [
+    "V1",
+    "M1",
+    1,
+    0.0
+   ],
+   [
+    "V1",
+    "V4",
+    1,
+    0.0
+   ]
+  ],
+  "input": "V4",
+  "output": "M1",
+  "candidates": {
+   "X": [
+    "V1",
+    "V4"
+   ],
+   "Y": [
+    "V1",
+    "M1"
+   ]
+  },
+  "label_t": {
+   "V1|V4": 0.5,
+   "M1|V1": 0.5
+  },
+  "modules": [
+   "Sensory",
+   "Association",
+   "Motor"
+  ],
+  "candidate_style": "failure"
+ },
+ "layout": {
+  "width": 1530,
+  "height": 1605,
+  "texts": [
+   {
+    "text": "Y",
+    "x0": 845.7,
+    "y0": 1093.4,
+    "x1": 859.2,
+    "y1": 1112.4,
+    "size": 9.0
+   },
+   {
+    "text": "X",
+    "x0": 1128.0,
+    "y0": 959.1,
+    "x1": 1142.5,
+    "y1": 978.1,
+    "size": 9.0
+   },
+   {
+    "text": "V1",
+    "x0": 1215.5,
+    "y0": 1030.7,
+    "x1": 1240.0,
+    "y1": 1045.7,
+    "size": 8.0
+   },
+   {
+    "text": "A1",
+    "x0": 1263.6,
+    "y0": 792.7,
+    "x1": 1288.1,
+    "y1": 807.7,
+    "size": 8.0
+   },
+   {
+    "text": "V4",
+    "x0": 1030.6,
+    "y0": 891.4,
+    "x1": 1055.1,
+    "y1": 906.4,
+    "size": 8.0
+   },
+   {
+    "text": "FEF",
+    "x0": 673.5,
+    "y0": 581.3,
+    "x1": 707.6,
+    "y1": 596.3,
+    "size": 8.0
+   },
+   {
+    "text": "PCC",
+    "x0": 507.4,
+    "y0": 390.6,
+    "x1": 544.0,
+    "y1": 405.6,
+    "size": 8.0
+   },
+   {
+    "text": "TPJ",
+    "x0": 440.6,
+    "y0": 617.6,
+    "x1": 470.3,
+    "y1": 632.6,
+    "size": 8.0
+   },
+   {
+    "text": "SMA",
+    "x0": 617.2,
+    "y0": 1325.8,
+    "x1": 658.8,
+    "y1": 1340.8,
+    "size": 8.0
+   },
+   {
+    "text": "M1",
+    "x0": 463.2,
+    "y0": 1160.0,
+    "x1": 491.4,
+    "y1": 1175.0,
+    "size": 8.0
+   },
+   {
+    "text": "IN",
+    "x0": 1127.9,
+    "y0": 889.5,
+    "x1": 1152.0,
+    "y1": 908.5,
+    "size": 9.5
+   },
+   {
+    "text": "OUT",
+    "x0": 383.0,
+    "y0": 1224.3,
+    "x1": 429.7,
+    "y1": 1243.3,
+    "size": 9.5
+   },
+   {
+    "text": "Synthetic brain connectivity network (8 regions, 3 modules)",
+    "x0": 45.9,
+    "y0": 43.2,
+    "x1": 829.2,
+    "y1": 69.2,
+    "size": 12.5
+   },
+   {
+    "text": "Lines: bidirectional connections (all equivalent).",
+    "x0": 45.9,
+    "y0": 94.8,
+    "x1": 519.2,
+    "y1": 113.8,
+    "size": 9.5
+   },
+   {
+    "text": "Sensory",
+    "x0": 92.6,
+    "y0": 159.0,
+    "x1": 168.1,
+    "y1": 178.0,
+    "size": 9.0
+   },
+   {
+    "text": "Association",
+    "x0": 231.9,
+    "y0": 159.0,
+    "x1": 338.5,
+    "y1": 178.0,
+    "size": 9.0
+   },
+   {
+    "text": "Motor",
+    "x0": 402.2,
+    "y0": 159.0,
+    "x1": 456.5,
+    "y1": 178.0,
+    "size": 9.0
+   }
+  ],
+  "expected_labels": [
+   "V1",
+   "A1",
+   "V4",
+   "FEF",
+   "PCC",
+   "TPJ",
+   "SMA",
+   "M1",
+   "IN",
+   "OUT",
+   "X",
+   "Y"
+  ],
+  "data_to_px": [
+   90.89999999999995,
+   1572.9,
+   1348.2000000000003,
+   -1348.2
+  ]
+ },
+ "uniqueness": {
+  "ok": true,
+  "why": "a single shortest-path distance: 2 intact, 3 without X, 5 without X and Y"
+ },
+ "facts": {
+  "distance": 2,
+  "without_X": 3,
+  "without_X_and_Y": 5
+ },
+ "level": 1,
+ "trap_margin": 4.0
+}

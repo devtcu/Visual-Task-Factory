@@ -1,0 +1,90 @@
+{
+ "status": "ok",
+ "response": "The failed connections are S2\u2013EC (X) and S2\u2013Amyg (Y). The remaining route with the smallest total delay is S2 \u2192 A1 \u2192 MGN \u2192 VA \u2192 FEF \u2192 SMA:\n\n4 + 5 + 3 + 2 + 5 = 19 ms.\n\nFINAL ANSWER: 19",
+ "finish_reason": "stop",
+ "error": "",
+ "usage": {
+  "prompt_tokens": 3088,
+  "completion_tokens": 567,
+  "total_tokens": 3655,
+  "cost": 0.000669425,
+  "is_byok": false,
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "cache_write_tokens": 3085,
+   "audio_tokens": 0,
+   "video_tokens": 0
+  },
+  "cost_details": {
+   "upstream_inference_cost": 0.000669425,
+   "upstream_inference_prompt_cost": 0.000385925,
+   "upstream_inference_completions_cost": 0.0002835
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 492,
+   "image_tokens": 0,
+   "audio_tokens": 0
+  }
+ },
+ "raw": {
+  "id": "gen-1794674305-rgqyoF7JCoWPYWKThYGk",
+  "object": "chat.completion",
+  "created": 1794674305,
+  "model": "openai/gpt-6-luna",
+  "provider": "OpenAI",
+  "system_fingerprint": null,
+  "service_tier": "default",
+  "choices": [
+   {
+    "index": 0,
+    "logprobs": null,
+    "finish_reason": "stop",
+    "native_finish_reason": "completed",
+    "message": {
+     "role": "assistant",
+     "content": "The failed connections are S2\u2013EC (X) and S2\u2013Amyg (Y). The remaining route with the smallest total delay is S2 \u2192 A1 \u2192 MGN \u2192 VA \u2192 FEF \u2192 SMA:\n\n4 + 5 + 3 + 2 + 5 = 19 ms.\n\nFINAL ANSWER: 19",
+     "refusal": null,
+     "reasoning": "**Clarifying connections and assignments**\n\nI'm working through the connections from MGN to SMA and comparing different paths. It seems like I can reach SMA with a total of 19, and I'm considering label assignments like X for line S2-EC and Y for S2-Amyg. I need to ensure I'm clear in my final explanation and be precise with the layout of the connections. I want to double-check everything to confirm I'm on the right track before presenting my answer!",
+     "reasoning_details": [
+      {
+       "type": "reasoning.summary",
+       "summary": "**Clarifying connections and assignments**\n\nI'm working through the connections from MGN to SMA and comparing different paths. It seems like I can reach SMA with a total of 19, and I'm considering label assignments like X for line S2-EC and Y for S2-Amyg. I need to ensure I'm clear in my final explanation and be precise with the layout of the connections. I want to double-check everything to confirm I'm on the right track before presenting my answer!",
+       "format": "openai-responses-v1",
+       "index": 0
+      },
+      {
+       "type": "reasoning.encrypted",
+       "data": "gAAAAABq-I6HDYv3LZYuqkzunpmLDIFgszjV53jjDQzzSewF08BUF16xAYw-7cHZdkIrVGAsDYXqic2_vWL3XpZx6o-MGso8k2vFAwK-aE6PeXOC7bgTKiln5n2nnKrgDk2S4sIoUlVWuhjQaHRHVhWkHT8yW-ZDPmZGaMBcaWt5iK198mh2M-p0K27ztvF9qMUDRw8gUqZ5lelFXQMeUALJiYVs-azaUrVt4oCLH6rYizivrzcZ9hE9rDVFMx1CEnkyPZ-I6pMfwvQGh0zrI5u3E_5OfEYW1giVNgk50RATo1dYPl-NGlWi_e0AFayFUI5sw5x0NzFroNjymrgUgtVt41ntHtqzVIvWjKBb5_reeej79EOmxT5r4cR5unaQbClbB54VZDu4Rp90g01JqrYNbeYbgyG5ljCHKB6pGDGD9KWThF0vZh5LQEridvIb5F3DujXuLSixkpJbnJ-brAKb2c7RoCqJTmXtuGez318VE3C0G9pNWypBB4dwY-36HpzVKipD3779lhMzjOPXr_7b28-6h9ip5bbEvjUarZfE1q86Dv535FqDX4TrCaSokLJAeltzYyvGoEslg1ROmWkCgm5xVJjXn8O7gQOYcIVJvsX_TnTXJsIPToSrOnjAGJb3iLB_-0Mdt1u8fce2SmFOjtwT8aBAa-HASsyYbUXPwy95p0-0YeLVJpYzoAyJmAPVfljaErkJ8DVVo4HYBuGSwvqAm7vvTxNF0uRFQpbGskswM-jbmfIVrqLtR9_YEBTBi9GkhSoNSG0gYKPY2jSJGqqHzj7mnd795YAqDFef8xW9i8e8wNj0pIdsU1Ruaq1y2oNVtHXnXUd08qDWuQSGaT30Pbn4B_FOfFnbv0_LjCXxAxz-z5rNp9adL7WY_VrcG53QuXMUIHQuMPBbKFKo6ffHIHUKIlkY9g8wQ-ml8iqmDTSE_lHnb76thEDXQopB-6YHPbaED6c0KvWpHdGxqZK4OPl4cZwQBw3t1rT2lPCHp-eTpeVGurQNgarzEQXB0YX30yxaBdO0LfWDXrxLizv5O-yt_wlcyu_gx06cfzITX1HBLIC9qwpiLgFiPeCUwyM-SBOgYC-ZoGV7BKZuwYxuypdjhzqfXxe_pZjg7mmB9hRQgwANDL15z54PFUPbnypsPdSN6s0N5UTA5J8fli_myOhT8cPgHFHoAS447jTrAx9K8mazC8MTJGj8_805sVv_SUlSZuPPcaFFSVhRPn0leIg6gNLk0cwXX2yqr3tBw4t2HJ3EMlvfTO2FASNp9OIHezl8dA1tKtTksSYyspqezwnL0ukPn9TUAgfvUDviCDTmyA0QflIAy8uJJjWTwH62g_3W7dt_nYL6aUDTep-m5lTmA6SCiFe3OlkYTixgRyvZSWpfR8ER72kSHChe-b7uzkcQtz9hGju8DNsDgzj2cm01BYCcg_lcDdeK2IOh4SF40Un-Mg91XMh7G2cKkokZsmYSfmyEuFO-ep2tEMiT758rUOiqMck4MTXWgn-xiGuMuHjMpZUeVwrUAeFIMJODmJeU_BXacw1e31b7h_4BTXa5vEEJpPSODsSLYyU_qGknF_CFkCI_Nf1isFEDH1i7UF7d9wf-F7DPqzCE-roKd0v1W6s6TU7Ln6FwtK4hTAmhzXNsgzXbcLr5Y3SXEjNxccUbALNsfpyFxfRi7FAxyhBAxX2tUqw0E1ywBabC1JgH3Q9CQVszYrIsoVnLsJB3r9KKFtYJ6DvFBTsAdYv0Mt5ks4Q15aGGHEPuKUgh7lt69383N2pZaxxwCL1ryQnK1TNFXtZhvXcrBBQPstvle6E_gMNBdTl8huarRtHAFBN-HPs6s_2X-AM3eSFj-cLXYWLHe85SdSyRsrh-NtJBoSoFBp_7K_rn3Dd3eyo00hAS_hzCVQKkv67b_9OX03m855SnzObdlRzZhzK1kUDacqg3KhJVI7FhitKyWiPNUBk9aoeyubMC_kbCTTwk248pzPyb0HkvX231yqbmsEhc7mtFdUAPDOW8Oap88k484CL2dXhf3nx2PVHwLJUG3__zoR_nNTdVtJDtTLgBJN1fuLZe-BMg31Gbuifw8YnMXXRtYMtCVHsMGd_Hhqn6PiSvlZBawpMJ3dhptHu1NstSYtOdELhSR0eNUI4MxDoeYJ460YgGnnevH-oKvWp3IfO2HvwuvyVQokPr62nKDIV-4qMnrwVOczFQqXHlWiKS7QZ4LAXaq5D5MnkiYoQLVghPVWcVj4YGOY_oteG3VluZcd1WReYGjS8GDvop2RS3yEbz2K68F2OqAwCQZmtZSQuqa8JzrxJC_QaZhzzg2GSloo723UDp5oMccUIU5VHeYPKXQZiIgk5raLb3tZAPYA2ycQfX17zEWLhrO8ybIAVolLA-NP1_NCsW_ORqMwiv1bOq62b-b-Hb0CMgutAeiPXuBw-kYDpa6bMc2b6LzY5DjAcccmz6bKk0-6_Xuam5gn-O11OGlVBIl11W8q41Iw3ukhou8jSy8AggvCaCR7YilFeZP-O0CNB63T0QdiFsnsKYoa1cnnTQ_h0BWLsVRhGR-gD2md646F8Wm2emEWy2hb6ifi_Klu8JdSkzUIhM9tH70ZmXIvKGh2zDgSlUUcBRckRfcjkNSeK2wFevo7l1P41qc_TbyBhi3DXsLoOZ_ZBp5qkP7yJH17FWx2WHvcP4jeAvm4K72yglbYasOqcQGGEzw1QcO5lLMZHWSr9sXPbztF8lDL7AvmsWLQJ3nxo21G84IMiyFei2mhEAMiZLp53fqBNg3TzD88k5IfR_d7AcAFzKCPTvBAXnhRTQgxPtBroy9wP7FUQ3O7n1Juep6w_BmkbUfdFrPojN1Ljt3AUUf6_wSlU36ReBgMBWn4tvqYr8oQMSh_7UWIghAfn0L88F_Bvyt2AXTc6hgYcNGCdpa_UkGNyybTeYgvlZ3E0wr90v2pdLtmvQCZxd4OtNsH07YyDWr9zqFGA_ljD1f7BH_FDY1e3XLvFEDuVUKmfmeibikF3-FGZvqQAWEldgGjGmRCdntUg6kUMsN0bg3qhOgaS80RuIYxzwKVeHnNWDUynoOShJU5R9AKFqkIUVVSjyv1ArajZlGHibq7XfG2XL9mgU9GJuc_-_kp834eOQCgJadW_xZHhNygGmA6YszXSs_JM19L2UWTXz7s87TDvMz0TIRGL6r7B5XaXGjXw3S76FNiAXPO7beu2iCJgFAr6A8oKmEiiO4RTek9nBo2uvcQLopOrmnJhnwTtFai4O3NNL2KmA4J2PMZ4lBSnotIpQ8D822QW407ftelntB5GUs18rNkvRspopTxHkVJlYi6O7gXSVv1iuxwgnqgUw5iRLDppTvhm1-NCk9CG3zNJuwwZswfovlcy-E1B6f0wBkfDeFvYmeJdANZ9W5hAj6e22oszeym2R7kFzkBWRP4J5e-QK_GFlCzX5xdUnBAjzauA8LVo2wP6-wQeAztXH9FMJZAzb-N_gL-B1QBEQNXwczL41NRA_zlO5Wen7KZnRFEXNJH8hWddUNvR9u-ahkOzK-ff8zRJ88TdptGOmapH1M9Oj_kuvmBvs3mjZFkRnmx6AISgNwLOTG-e2J4ZU3sfoQUAfMrz8mruFd6gzHt2yyKvBNSoF9deBL9uzhXQtkkdbHl1lV0P8ql6k-Lx7-paxKlUSuPNGAnhXKYmYwHPedvdjKElF0ntjF4L_lieaC7mc9VDgjhp7uttoNXB-uW77UQdHkVySpQRL2u0NCnmuuiXzXW-SYlVAYUE9Na3qDnw_bc1sM5-9VIm0prZQwNwqwj8QtrKBmwLlf_6j_aMG3TboAnN4KovFAMUalwGqyVuWOqqMKPGDw1HayaRdAtnwPleEbB_v9wXhRaEUYp2nwG_cGQf6R-_tOvfzQlLwCTP08JjxDnVfG846g8bGhvbAt2_O6etdJYTwIMYv-AXg18uITQ33IqcMyG8SLx19SoGoZJV17Y5u1xWLitADrm30CUVqrz87CvwgBZ5ho7N24Yfgft-AeVVmxHFUlgqWh3O3eJo-dw8sV9icjC9qIbDlIjkGgctJ5QgCmM35S8a88D3ZgY1BDISdlAsqjmTbrD-G8hCageP-TcXfYnV_jdKBeYizlznyqBgDeRF7qQVrRroVrxjVYgsRQlvSXPSq9Y94HH0AR76G81s4-17ye5V169kwFiCpY-zKeD-rm4UK3A6fj1BGuSv8ZY_HcRvTwFNI3Bcf2f4ZA5bwDpSX0IJjFlWCC4O750BjDEhg7uifXbdkOmEq7llFDYkAVO7d0Li4GncC1I8irKtbuQBE-DR8e88acBwVmPLf1B4WZWrqj6nlpf-V3NLjiboLojvZLnjjLIxYODBOXFcKhU3D7HxFlp55aKsIKb1RNyUogEF2P5TGk6OGyZkVNyUV9KLoc6_b4uznOqSwiIs9BoQpvi2yqQe5_dO3pFKQHEWrecAO6h1wPi_P7YYS0pKbEDSd7AwrfflD2zzwmakZxC27ZHYryVCNetCBnsELEDWrzgl8pkIEQRLzMoBn5Dz1QTSDNZJhwEA4gV8y8y7XeFmPrveVV2agHfBHPe3IzYO7gZYmwPkd9jq4vP-_260PJTVIC0i0NlF_q-REuTTtH22Gqy_b7r8t3lry7xhZqA9nFp9y9DSQ3IuAOH4hOJWWKdhiJ0rwrabReuXqOPW-7-Wyngjnwe2nX8qbi3qyyogKEnQBXM_xz5LcS6hSjiEz1N_Nqs8jjh6i5fco1HXsAZQ0vxgvROMgmgif2Dy2ACH9n1Ui2i9ZSkkUCAhqK3rNvSoV522TSPT5d5ZMxGdRMc-o5OSSpy8N3NAy-35UY9aEqcqGTbvXXBN8iCzojE0CxQ3m4T0TF9vIEIiAl95n4MIzxfgUdy4gODlbEk-XwFaCAwOr9cn6OJikH24faPnCOOr9oJiTsQUBxunY-zIHaTr0n6GskihKVqUiII_jmVQXEdfYFzd5kwM67wlKSCoTX1K-idz1coW8fVjgASO2Fb8iy3HK04ZMIHECbrqBTo2B-Sdx6IP9Ry_Y7Ym1gCFHCYEVGCpMKlTMO4XeZGt9vlyUqHFUdrFnzEdiAAUhfiODnmZ-DmNmmsigy9jHVlGSViVqGWhmZxVc4weFbxEcn3IfRZm0lAAY8Auwb6NBKaR6TfIIeRZOlwvTq5A0SG0dFlM2ofErJEJsJwlAVOj-5jnn16GXPjEmgODBnHqTpCjXV3-YHpWt7aQt0dlya4Rafqx6sdAbvSFNty--tkgbnPjhp5tJrymeFQlrfmELn6P9E3GOvGBHsY_oSBBFRPH3TxyMykHQg3oK1PCaJMTkue8LOXDvYnjXkZXPVXSBL9HX4OIE81YwhuxsfYRsGEjYMczsgo-IeV1IAwZ1LDI1t08rVqvHp0tb-gVBfh84w3gM28qgf5kSofn5CIP-lOcJV9Qc3mdCGANh9E8bI0E4zFXgTtP2a1KZfr-pU151XwZSjy40FzbjMisk95qclZvIx7IDyiq43j5i1zyQekS5msJ7DDR2l9saoadkY_WDuaSHKcP1sUBU-8NpwIs36NRW-_c2dlU9AEaeMkwHnJBwfvBczH3q_y0tsYj4T7NuNFBcPUIgc_H3N9Yn5lbJIbMbdsVgWOh-s6M3o44kKdLsleyAeiB_EBfW3Qq1an0hVx_fFT2K-Xz3GoCCmvrkxrXEJYv7ToPZdVL5ehVBTg5LKKuZrrySbV0Hh6sT7EWShwooONhUsT8SoTDSmA5ohyI7squots6vCuAoYo026LQhkI9-g0zLnoVTU9SfdmHX49zH5oxIgnGEgpPB4RcSDClm1DjAeS-DHrLhfZ5kLu2cQpQT5qneZpeFLCK7TWx1epz9bJLsh0s7Y_b4rmRbNusKEloqU__TtJ1SGYs1Wtc5kEVjLg4ooXeKugtb9mFADaFlX0bdw_ZC8TSsyGYUE4qloxqCXMi32goM4bI6iHjQLl-VXTI6ljLmBksHeeocQLfHCR3eitLSQyMyYF49jaOjgVM01xG2o9p9_YmVSGJq1qoKWdwLtjCtf8M-56knTOHz7pECc71XZnq71VrSwZAXBg0Mw-TbUXK_5zg7xHHfiVEQk-wCccMviOsAYuik158OtJQKC_LIOvpwE0-pIV1q-r0qm-3t.eyJlbmRwb2ludF9zbHVnIjoib3BlbmFpL2dwdC02LWx1bmEtMjAyNjA5MjJ8b3BlbmFpIn0",
+       "format": "openai-responses-v1",
+       "id": "rs_02f17d76356cc079016af88e8279dc87d18a7bd6f9030af57c",
+       "index": 1
+      }
+     ]
+    }
+   }
+  ],
+  "usage": {
+   "prompt_tokens": 3088,
+   "completion_tokens": 567,
+   "total_tokens": 3655,
+   "cost": 0.000669425,
+   "is_byok": false,
+   "prompt_tokens_details": {
+    "cached_tokens": 0,
+    "cache_write_tokens": 3085,
+    "audio_tokens": 0,
+    "video_tokens": 0
+   },
+   "cost_details": {
+    "upstream_inference_cost": 0.000669425,
+    "upstream_inference_prompt_cost": 0.000385925,
+    "upstream_inference_completions_cost": 0.0002835
+   },
+   "completion_tokens_details": {
+    "reasoning_tokens": 492,
+    "image_tokens": 0,
+    "audio_tokens": 0
+   }
+  }
+ }
+}

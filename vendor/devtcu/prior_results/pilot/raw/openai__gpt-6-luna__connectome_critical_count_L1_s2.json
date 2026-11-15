@@ -1,0 +1,90 @@
+{
+ "status": "ok",
+ "response": "The shortest routes are V2\u2013S1\u2013FEF\u2013PMd\u2013PMv and V2\u2013PPC\u2013FEF\u2013PMd\u2013PMv. The two routes share the FEF\u2013PMd and PMd\u2013PMv connections, so those are the critical connections.\n\nFINAL ANSWER: 2",
+ "finish_reason": "stop",
+ "error": "",
+ "usage": {
+  "prompt_tokens": 3087,
+  "completion_tokens": 430,
+  "total_tokens": 3517,
+  "cost": 0.0006008,
+  "is_byok": false,
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "cache_write_tokens": 3084,
+   "audio_tokens": 0,
+   "video_tokens": 0
+  },
+  "cost_details": {
+   "upstream_inference_cost": 0.0006008,
+   "upstream_inference_prompt_cost": 0.0003858,
+   "upstream_inference_completions_cost": 0.000215
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 359,
+   "image_tokens": 0,
+   "audio_tokens": 0
+  }
+ },
+ "raw": {
+  "id": "gen-1794674275-17bmD14qvM2I9fkVWZue",
+  "object": "chat.completion",
+  "created": 1794674275,
+  "model": "openai/gpt-6-luna",
+  "provider": "OpenAI",
+  "system_fingerprint": null,
+  "service_tier": "default",
+  "choices": [
+   {
+    "index": 0,
+    "logprobs": null,
+    "finish_reason": "stop",
+    "native_finish_reason": "completed",
+    "message": {
+     "role": "assistant",
+     "content": "The shortest routes are V2\u2013S1\u2013FEF\u2013PMd\u2013PMv and V2\u2013PPC\u2013FEF\u2013PMd\u2013PMv. The two routes share the FEF\u2013PMd and PMd\u2013PMv connections, so those are the critical connections.\n\nFINAL ANSWER: 2",
+     "refusal": null,
+     "reasoning": "**Analyzing shortest paths in the graph**\n\nI need to count the critical edges to determine the shortest distance from V2 to PMv. So, I'm parsing the graph and listing V2's connections, including A1, S2, S1, and PPC. I see the sensory cluster edges and connections like V2-PPC and S1-FEF. It looks like the shortest routes include V2-S1-FEF-PMd-PMv and V2-PPC-FEF-PMd-PMv, both totaling a length of 4. I need to define any critical edges that increase the distance or disconnect portions of the graph.**Clarifying edge removal effects**\n\nI\u2019m considering how the removal of non-shortest edges doesn't impact the shortest distance. I'm questioning if removing an edge from a shortest path could affect all shortest routes, but it doesn't seem so. So, I need to explain this more clearly and analyze the exact effects on the shortest paths. I'll ensure my final explanation is precise, highlighting that not all edge removals affect the overall shortest route outcomes in the graph.",
+     "reasoning_details": [
+      {
+       "type": "reasoning.summary",
+       "summary": "**Analyzing shortest paths in the graph**\n\nI need to count the critical edges to determine the shortest distance from V2 to PMv. So, I'm parsing the graph and listing V2's connections, including A1, S2, S1, and PPC. I see the sensory cluster edges and connections like V2-PPC and S1-FEF. It looks like the shortest routes include V2-S1-FEF-PMd-PMv and V2-PPC-FEF-PMd-PMv, both totaling a length of 4. I need to define any critical edges that increase the distance or disconnect portions of the graph.**Clarifying edge removal effects**\n\nI\u2019m considering how the removal of non-shortest edges doesn't impact the shortest distance. I'm questioning if removing an edge from a shortest path could affect all shortest routes, but it doesn't seem so. So, I need to explain this more clearly and analyze the exact effects on the shortest paths. I'll ensure my final explanation is precise, highlighting that not all edge removals affect the overall shortest route outcomes in the graph.",
+       "format": "openai-responses-v1",
+       "index": 0
+      },
+      {
+       "type": "reasoning.encrypted",
+       "data": "gAAAAABq-I5rrKK00f4PrI4P9BiNFqHr1Fn-kzWApThHE0WdvPj8z8isKAgkDPS_gAgQs54ZaNsIKxMXUwwPNWq2T5CiA9WWARzcEcosFzLpcwFbV0MTwKANNKPDU2aXZg25MD-5Dz47GckywDrQ5AZG8Nea7Jc5KcKaQd7whw36CkA92o45EU-weTS_EfVsmZDLyTD4Jot4zdA8pfN0z4se1WIsy2LsaGhoOhnPHUGaYZ8hr4OJUbIrtbrxQ52A44SRZxEFpuoPxGzKRbUvZ81qJzuFxPnD96PcuVxBfz-cd7r6GhLjjdrmtpZAeUrQgj7xjtXyLjApPDengXZLZ6bWSFEr0wf7n-8ke-Cxo6eRDKqYpAcXQlTZnD-kI_vAeEkiLZ5iO6Pl_gTSqC0Fa-f0OSkYAmMxuIK52z-8oBbcGPSsKQkqLWy-zi-CU4vDfY45p3pjqFNSzbxs2SS9sCmmEn81W8sV2ncVNK3kcMtXvG9azzWCabw61BEw0v_ceQX4roxJ-8pItM8Qtm-DQM7BlGFigAmqjZjrWXnJIapj0sBr057zbO2yzbbZTVA0SA8pKB6Kwv_810Q7zvoUcOymLFCLC_vixZO4AdoXjs8Sr6AhlDY5ZWdB2Oy3N50ZqJKuMvoz7ixSPLZZvpH2cfjV4Icm4gjy71Uf4vG0MzFF2ltWhT9WZMXifb6UMek7DTptS-lqQ0x8jfEvauu2zfpiEy0s3NznXb_blNjyFl6frlwZLKD8VUQoRw3iotUgX7YPCGNnwrq47MKvByI0BqyXa6oYPphb8rm1y3dV-va2_8hPRjF-9z8Q5GRbB1JbV66dMXhB7E6pr_XZQ6Y0RAETHcQHftJ-X1dnAexJeIdkZfnhyu0U2xKgk3_4cFahj0kS8yUS4d18GHyS-QhiK-FEAW6mqTrgfCCszkmCIe1Lc1ssSR4z_T4IvZK2BGuYLrU-R-kIJMK8YDa7Ts00ssAFLlNDzKS89uz2gBfQAfJfOvS9bVH1GrknopJJ5XEErjpEvVHmaGpWuYFr4i0QjqZb5ZrBHwW8_2ymRWIB-BThODVX7cenH2YBAXxeh-ZfsQi7pZoy9Qo5qztYcRYGIv80_gBP2ZOEQk5-uD0Q3YtMhg8E5B-OtvHCVdBbeWIrfkIuw0qp38fzdBGOv4F9r727-1ByeLHWpFNRlnzflH4R1SQS5VfSoXOC_yhZXxwCDlk7rVlmgdRKgnQ3wGkFoblvZU4ZpCjD8r5s_429HeVz8zHa7yF03okyQguQc9Z5UJ4skOIW8PPzYIZtjzHpxVqrZc_jiWHRZ1KunkwTATsD7EtJoxv-HHpQuuw27gRVBf86lUhKoKZFe6p8rVKLvhcZio4p3Cca7BxzwRHs2oxqxExnu2yXky4sNlW-VVxIYVUIsxyWK763L3V9ZdAzfDpbUAJ1ca8W24tJ1V7iqSd6c3hGi7s5q-VgDFMjABs3o9wzpkOuX9j6mCJfYq8YUQ7w-r6W5BoQt25Tgj5yd7fj_IyDPCut1shjlAshJdGon8DSx5hLX_PcYtfKRraMgU4IIk8CLkx1ODBTG_jGFBNAf_507FkQRiydQOm7ipq1fA1tihnrKe0rzUJhDVvZtSjX4gk-HwrewUWEukJ-nVzpR_JtQPAA1LUHiPd38q6x5fazbRzErepQ8OfFGg3Ig0UF_u1rpjvdx2t3oZutHS5Bw_eg9_9sX0OlUw4Ki4BCIHxp07ovuZ0LH97j3LuAUI-FFqwgaAgs051c2E8o-NURhFbmAUWD_RLw0JkA7LAZB7mRTJYKjfuHliC-AzJyq-XJ-hOQ8Eg5MiSmKA0bdP8gBMZBaVyDK4Lb8AuTd1vwb-zw_zSkoBRTvrXJOdxTvuSqRrjFB2UecykjRxHxMlbVNcoq_2L2XIA1GHCBMEIDuO1SvCLBgqX-n4mL_kk6cYHbRd1Hexn5xN38xYQ8bjz6lZLjfNCh64BlvgAr-z5Mbq3ARQddFVYqBNHjJrNM63oq8M2oj1N-UQkdWn-fxuF3uSRtxC_BsLF5pGORFuI_PWlSBC6NwsGpum0dzJvR9FtLiCWnzfoNARdC3_WEu4DvuStAuqhGDRHM1jjjqXP7JXx59emUf6nduX9zP87uqN5ORGyaF5n38enM_ZWUUCSvGsAvOOjU7PvzLT3E19EoMM7KeOsERhA_3R0YSX29LnrFtwTLEK9oyWmFdP22WVVI-PDQmVapxzfMqEYxw_h75d3UsByzwBe_uVNSBepdqZFYj02sfSQL7QmZzVPxkWcaEqQ1nhw7LBYO4-O24iBeDBaXqb7uppYW7nHr6vMEiBuRBGAZQamvoo8avi3r0HStpdHIs4OUlH5lBwVMYI5lOv3GyY5nik5pqIO5X0jWFpRGzQbcETTOwNJvKYC4jZ1zEt6oP6Y5HrdarmLdPCbsiF8Qa9RcrvoJ1RFSxW48JGdpVjaKvTYqQ1DYePd1h9MEqJDzJ1DZfYeEev6o1eZE85U9R350HpfSuiurVgqXywIwm7R-4foOQxnqv_DhobWbFMKmcuRg-DGa1Ayg2iPbOzku3IYU5ZqrrJ9Ir6MgxbHHBgrGn7J26EnXV5CgYjOUXfQYTSWKlJ9RH6IvrXnJZEtsHNf8FLcyUCP_MOxW6T6HbWXQf613vq_66Ag-JaatplShbq7kdpTKCgpm87PA_LTGuodD4Psecel5OwP2_WEj5azkN3dpDmYKxGmj8da8oHSU6HEn76pDLyze0r8n6nwuNlFi9Vl2GDOhNBBrKvDiP7OQsMTCtNRIcNST0k6i1L9ASX8kC4ouIU6pDtGl-hbNyq_Rj7nhF1zcDZsZNoEZuquA6zvjnhYfGw_V6BbwsTpYZJkZ4LcrekGCFptstzWuRngK0LMs20mQSVRTkOiyr2t9qksigo4yxCnkIfvnLQdmXTCLTCymMzPS61g-UEc_yzqjyxd7brlb9gCfjZqUXuQUAWJefAbh9b9a-R2RvzeTci02yRSsMLkIvDMEqTUX8stDWMtqWP_nYVI2KMw8X-80B8qAA_S7UDM8g3bSH6x_SPdlJVWKBP2idM44GiWQOlGPQvqMv83MMmUJ1M07L4D7f6uxztm-lq7RYJoKBEEQSNRNJPWmj8fJoKr91_nTqCcDzOA3eX1OjIpqRKRDPjFJKqvMWZODrFbSpl5GHNDUCpiPAxWT2zGeL1o2X3n6HuELlHSTUI1_CAnxFOaZPUYpjGX27gxi5d2jPs3SSlDIhf98HuepQlvzVf12NB1b5bmJItmjYHe-82cwnBqcsF5eprAaSxnu5NnWj-WZddEZ4lnFR9A_gkPskGsXqenwqKFfSEf6B_oQuwTs8OoC7ayPf4eSzY0EwV6gtT1ZEpLBYrsdyy0w_NJEFKNqkzWDQydyl0gycZoiJ-gEKr4W3Pf1GIICnHu2pWexVuxML-izYZVpqzMHp-4DPYxzjwrFnAvTKZrex8m72BibPixq1TgESIFZGImiuM3phgAMEuStbCEuM5xsaY6yrkLgNVo7WXG5X0b5skTKpCLaZuBGKO-njicI88WMEB3ZRKrxix7GkCNYya2-sxSaqipOyDE43YdEClPtN83BAoEXDAPqqqu8tze-zwqE9SSZbvoafuJFT4NP2ANrrmkA6k7vJHgbp8tK2g4tU4s6srQpsd7FZzlPdVDQsE-nQbmvEpc9eP4kTN4oJF7Y0b3FxuyEjHS0nrQ9WKSq587c8wnxehpxGMzlr07HzcsAweoHSoM8_bZuNpGc4f5Mr5Uq0mbba0z3s-wjluh1gQDC42i0bXehmnGsTVWzI4Oui-ieIN6T5w1fTTEnKSdevZ3ASAegmMrCNMhgv9Of1aMc-FCJCCZyqIQj7y7G1KMPmLLVHMOfpvN3lfHMgsepC_IMeSKJmAYc2fB4D_uTWvrdZiZ_MltcyKmDEaME-1hW-EXWfLv0JKGenGiMlUZkEyC-qo1jI_gpIqJvyPCpapkTChhcl28AHXzA6Ok0GEGtBgEs93teuCUYMrR1yQvVZAUDmu1TgSsF-dXWPMn1xkZf40sBZBcy-NRXedGjVUBMxvWZ3JBV3VRwL-hximuzHr-ABAJRec42TjMoU2KKUauLsG40nhMsyyQ5zXGGyb_TcF0_ezIhCns7jMsR8lOJ9x-A18YVK5QPNL22gudgmAxSGRHxSXwFSG6P20ekTZ57PLa86hdsD9M0jNvb84pVNfTA_Cx9fw0xD50sypti_Rk2xYPTqOadO9ls1Sixo6FvpLawWw70W9BXuluH1tk3EBXdqE3A9bxM1xK5Iek2vYui8rK_0u5OnzdNdNRrvQCQFfwuPlyoA2lWCZO5QSuhNuQ6llaEZidjfT8O4b4rH3vofYjFSbrog7T1b9DG7kIuuf1b-pRfleLv7hmem4W1_7ocvMSqR3FoSC71sixrEqoVk5zoHrA1V9ZZg7H1m5Yi3DMLp8zTWSNLxxQE1zbga-7aI4hNpKvTjEzavDHk3i1vZbY-1S2F6hYuOVDkvGfDf85R_YIrvhEXEGCAQ_N3cU20j1_VePVlgpQFb2msbqJdZpCAroRP4TifwTOkOmA4W8BQIsRXg9Q4uSfFsk803sUAhH2ByO-zs26hdSG4xCkzEnz_BPpDQlIXACNw8_LnEXPwGjdtqyS4tvDAnJCgDpu8ySDJcVHs7ePloyXDMDcPfsrFU7Ba7I7Cu1zDjc76VdY-yH9Gmj1pgYtBge4_iPfr8xynG-4r4oWrYXmm5et9jYH4N0mOd8teAD72FcbfEBUAQmYaWG0_OzkZ9Zp2UpAXECPokgBY_FAiD1d5r__25z31b8ifP1npIX07ziXLodg1apQ4YMsSQgyKSAZYf_keVwFiK7B_9_lnDePz4U2i1Bn2PEfzPZ2PRU34SZO8MNss80hG569aS7-FYSdL6qyIzHFJkFnsroekB5kNHiDqoPOw-85btigrhWvNKxbo660ufX4BqCnaYyUFIN6ScWNo04r_IiKBcsUnu4w_KIxkV45kgFkEjbwgNTU13CIEqCGyW-E00Lo2T-U3T2M1YfpP2S3nrursrOC-_0QLpsDJEFXi6cikOZk3bEH7LKeLTMb715wPLM14LhNVcMUb4nJkhFRGGID-TVijvNUe2tkFr-7i6QIMH1kkn7IQehpbrb-lA5yphDJ-Ltr3hwKIphc7HgC6nyef1AEV4XnTLXXaE5hEEY-3EfY3brCJk5nfE-6SJ2Rt1--B8VcEv076O90ksqg__k0dRkxATz5dvi0kJNSFNq6IUYbIDcrvqNoD7bwT_KUusyBWr7jU3lwrq5-9bie1P08idm6x-1BGUUoA8gduqM4xdLZ1Riv2tnjEm06iOVKQeu1Q5_YQXFPUkm2M-GrGAVGKEONwa-tkjcyM-EwwVmwUkyGl7YowYJqDPe4XgP3jq-agB8KBc80Yoc9z0yKznH8uEmhI8BrJN_ZOFHuPtSucasG9KvgQI0Po6Fuh1oCOxrho2t9VYhnVZBjlknw7ToTpgJwvLUuuZKsiNU7qoT_gVH00-RHz3Y1nztR15ZNYiPxPydn5axnUAnVcVXROUPQ2apuC5m2Z.eyJlbmRwb2ludF9zbHVnIjoib3BlbmFpL2dwdC02LWx1bmEtMjAyNjA5MjJ8b3BlbmFpIn0",
+       "format": "openai-responses-v1",
+       "id": "rs_036d699206dc67be016af88e654a4887d1bf37e0513f5b8ed3",
+       "index": 1
+      }
+     ]
+    }
+   }
+  ],
+  "usage": {
+   "prompt_tokens": 3087,
+   "completion_tokens": 430,
+   "total_tokens": 3517,
+   "cost": 0.0006008,
+   "is_byok": false,
+   "prompt_tokens_details": {
+    "cached_tokens": 0,
+    "cache_write_tokens": 3084,
+    "audio_tokens": 0,
+    "video_tokens": 0
+   },
+   "cost_details": {
+    "upstream_inference_cost": 0.0006008,
+    "upstream_inference_prompt_cost": 0.0003858,
+    "upstream_inference_completions_cost": 0.000215
+   },
+   "completion_tokens_details": {
+    "reasoning_tokens": 359,
+    "image_tokens": 0,
+    "audio_tokens": 0
+   }
+  }
+ }
+}

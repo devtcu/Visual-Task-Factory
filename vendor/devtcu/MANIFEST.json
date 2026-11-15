@@ -1,0 +1,208 @@
+{
+ "member": "devtcu",
+ "generator_package": "generators/devtcu",
+ "generator_version": "devtcu-1.1",
+ "entry_points": {
+  "generate": "adapter.generate_task",
+  "validate": "adapter.validate_task"
+ },
+ "domain": "Brain Connections: synthetic brain-network (connectome) resilience questions",
+ "image_types": [
+  "node-and-link connectome diagram (levels 1-5)",
+  "circular connectogram (level 6)"
+ ],
+ "question_types": [
+  "redundant_edge_L1",
+  "redundant_edge_L2",
+  "redundant_edge_L3",
+  "redundant_edge_L4",
+  "min_edge_cut_L1",
+  "min_edge_cut_L2",
+  "min_edge_cut_L3",
+  "min_edge_cut_L4",
+  "min_edge_cut_L6",
+  "critical_count_L1",
+  "critical_count_L2",
+  "critical_count_L3",
+  "critical_count_L4",
+  "critical_count_L5",
+  "critical_count_L6",
+  "delay_after_failure_L1",
+  "delay_after_failure_L2",
+  "delay_after_failure_L3",
+  "delay_after_failure_L4",
+  "delay_after_failure_L5",
+  "delay_after_failure_L6"
+ ],
+ "answer_types": [
+  "integer",
+  "multiple_choice"
+ ],
+ "language": "python",
+ "python_version": "3.11",
+ "requirements": "requirements.txt",
+ "system_packages": "system_packages.txt",
+ "seeds_used": {
+  "redundant_edge_L1": [
+   1,
+   2,
+   3,
+   4,
+   5
+  ],
+  "redundant_edge_L2": [
+   1,
+   2,
+   4,
+   5,
+   6
+  ],
+  "redundant_edge_L3": [
+   4,
+   5,
+   6,
+   8,
+   9
+  ],
+  "redundant_edge_L4": [
+   1,
+   2,
+   3,
+   4,
+   5,
+   6
+  ],
+  "min_edge_cut_L1": [
+   1,
+   2,
+   3,
+   4,
+   5
+  ],
+  "min_edge_cut_L2": [
+   1,
+   2,
+   3,
+   4,
+   5
+  ],
+  "min_edge_cut_L3": [
+   1,
+   2,
+   3,
+   4,
+   5
+  ],
+  "min_edge_cut_L4": [
+   1,
+   2,
+   3,
+   4,
+   5
+  ],
+  "min_edge_cut_L6": [
+   1,
+   2,
+   3,
+   4,
+   5
+  ],
+  "critical_count_L1": [
+   1,
+   2,
+   3,
+   4,
+   5
+  ],
+  "critical_count_L2": [
+   1,
+   2,
+   3,
+   4,
+   5
+  ],
+  "critical_count_L3": [
+   1,
+   2,
+   3,
+   4,
+   5
+  ],
+  "critical_count_L4": [
+   1,
+   2,
+   3,
+   4,
+   5
+  ],
+  "critical_count_L5": [
+   1,
+   2,
+   3,
+   4,
+   5
+  ],
+  "critical_count_L6": [
+   1,
+   2,
+   3,
+   4,
+   5
+  ],
+  "delay_after_failure_L1": [
+   1,
+   2,
+   3,
+   4,
+   5
+  ],
+  "delay_after_failure_L2": [
+   1,
+   2,
+   3,
+   4,
+   5,
+   6
+  ],
+  "delay_after_failure_L3": [
+   1,
+   2,
+   3,
+   4,
+   5
+  ],
+  "delay_after_failure_L4": [
+   1,
+   2,
+   3,
+   4,
+   5
+  ],
+  "delay_after_failure_L5": [
+   1,
+   2,
+   3,
+   4,
+   5,
+   6
+  ],
+  "delay_after_failure_L6": [
+   1,
+   2,
+   3,
+   4,
+   5
+  ]
+ },
+ "n_tasks": 108,
+ "n_valid": 105,
+ "deterministic": true,
+ "has_own_eval_code": true,
+ "known_issues": [
+  "Hard levels generate slowly: level 5-6 tasks take about 10-60 s each (under 1% of candidate layouts pass every fairness rule).",
+  "The shared ocr_numbers check needs the tesseract binary; without it the check is SKIPPED and reported as passing.",
+  "connectome_min_edge_cut_L1_s1 and connectome_critical_count_L1_s1 share one diagram (two different questions, two answers).",
+  "Pilot results in prior_results/ come from earlier generator versions; the tasks in tasks/ have not been evaluated.",
+  "Region names are real abbreviations, but the wiring and delays are synthetic (stated in every image title)."
+ ]
+}

@@ -1,0 +1,306 @@
+{
+ "data": {
+  "nodes": [
+   {
+    "name": "V1",
+    "module": "Sensory",
+    "x": 0.8747,
+    "y": 0.465
+   },
+   {
+    "name": "V4",
+    "module": "Sensory",
+    "x": 0.7367,
+    "y": 0.3641
+   },
+   {
+    "name": "IT",
+    "module": "Association",
+    "x": 0.3321,
+    "y": 0.787
+   },
+   {
+    "name": "dlPFC",
+    "module": "Association",
+    "x": 0.5033,
+    "y": 0.7978
+   },
+   {
+    "name": "SMA",
+    "module": "Motor",
+    "x": 0.2019,
+    "y": 0.1875
+   },
+   {
+    "name": "PMv",
+    "module": "Motor",
+    "x": 0.3668,
+    "y": 0.1907
+   },
+   {
+    "name": "M1",
+    "module": "Motor",
+    "x": 0.3656,
+    "y": 0.3684
+   },
+   {
+    "name": "BG",
+    "module": "Motor",
+    "x": 0.1915,
+    "y": 0.3601
+   }
+  ],
+  "directed": false,
+  "weighted": false,
+  "edges": [
+   [
+    "IT",
+    "BG",
+    1,
+    0.0
+   ],
+   [
+    "IT",
+    "dlPFC",
+    1,
+    0.0
+   ],
+   [
+    "M1",
+    "BG",
+    1,
+    0.0
+   ],
+   [
+    "PMv",
+    "M1",
+    1,
+    0.0
+   ],
+   [
+    "SMA",
+    "BG",
+    1,
+    0.0
+   ],
+   [
+    "SMA",
+    "PMv",
+    1,
+    0.0
+   ],
+   [
+    "V1",
+    "V4",
+    1,
+    0.0
+   ],
+   [
+    "V4",
+    "dlPFC",
+    1,
+    0.0
+   ]
+  ],
+  "input": "V1",
+  "output": "PMv",
+  "candidates": {},
+  "label_t": {},
+  "modules": [
+   "Sensory",
+   "Association",
+   "Motor"
+  ]
+ },
+ "layout": {
+  "width": 1530,
+  "height": 1605,
+  "texts": [
+   {
+    "text": "V1",
+    "x0": 1257.9,
+    "y0": 938.5,
+    "x1": 1282.4,
+    "y1": 953.5,
+    "size": 8.0
+   },
+   {
+    "text": "V4",
+    "x0": 1071.9,
+    "y0": 1074.5,
+    "x1": 1096.4,
+    "y1": 1089.5,
+    "size": 8.0
+   },
+   {
+    "text": "IT",
+    "x0": 529.8,
+    "y0": 504.4,
+    "x1": 547.4,
+    "y1": 519.4,
+    "size": 8.0
+   },
+   {
+    "text": "dlPFC",
+    "x0": 745.4,
+    "y0": 489.8,
+    "x1": 793.4,
+    "y1": 504.8,
+    "size": 7.2
+   },
+   {
+    "text": "SMA",
+    "x0": 342.3,
+    "y0": 1312.6,
+    "x1": 383.9,
+    "y1": 1327.6,
+    "size": 8.0
+   },
+   {
+    "text": "PMv",
+    "x0": 565.6,
+    "y0": 1308.3,
+    "x1": 605.2,
+    "y1": 1323.3,
+    "size": 8.0
+   },
+   {
+    "text": "M1",
+    "x0": 569.7,
+    "y0": 1068.7,
+    "x1": 597.9,
+    "y1": 1083.7,
+    "size": 8.0
+   },
+   {
+    "text": "BG",
+    "x0": 335.9,
+    "y0": 1079.9,
+    "x1": 362.3,
+    "y1": 1094.9,
+    "size": 8.0
+   },
+   {
+    "text": "IN",
+    "x0": 1354.8,
+    "y0": 945.5,
+    "x1": 1378.9,
+    "y1": 964.5,
+    "size": 9.5
+   },
+   {
+    "text": "OUT",
+    "x0": 523.7,
+    "y0": 1395.5,
+    "x1": 570.3,
+    "y1": 1414.5,
+    "size": 9.5
+   },
+   {
+    "text": "Synthetic brain connectivity network (8 regions, 3 modules)",
+    "x0": 45.9,
+    "y0": 43.2,
+    "x1": 829.2,
+    "y1": 69.2,
+    "size": 12.5
+   },
+   {
+    "text": "Lines: bidirectional connections (all equivalent).",
+    "x0": 45.9,
+    "y0": 94.8,
+    "x1": 519.2,
+    "y1": 113.8,
+    "size": 9.5
+   },
+   {
+    "text": "Sensory",
+    "x0": 92.6,
+    "y0": 159.0,
+    "x1": 168.1,
+    "y1": 178.0,
+    "size": 9.0
+   },
+   {
+    "text": "Association",
+    "x0": 231.9,
+    "y0": 159.0,
+    "x1": 338.5,
+    "y1": 178.0,
+    "size": 9.0
+   },
+   {
+    "text": "Motor",
+    "x0": 402.2,
+    "y0": 159.0,
+    "x1": 456.5,
+    "y1": 178.0,
+    "size": 9.0
+   }
+  ],
+  "expected_labels": [
+   "V1",
+   "V4",
+   "IT",
+   "dlPFC",
+   "SMA",
+   "PMv",
+   "M1",
+   "BG",
+   "IN",
+   "OUT"
+  ],
+  "data_to_px": [
+   90.89999999999995,
+   1572.9,
+   1348.2000000000003,
+   -1348.2
+  ]
+ },
+ "uniqueness": {
+  "ok": true,
+  "why": "every one of the 8 connections tested by removal; 4 raise the distance 6"
+ },
+ "facts": {
+  "distance": 6,
+  "critical": [
+   [
+    "IT",
+    "BG"
+   ],
+   [
+    "IT",
+    "dlPFC"
+   ],
+   [
+    "V1",
+    "V4"
+   ],
+   [
+    "V4",
+    "dlPFC"
+   ]
+  ],
+  "fastest_routes": [
+   [
+    "V1",
+    "V4",
+    "dlPFC",
+    "IT",
+    "BG",
+    "M1",
+    "PMv"
+   ],
+   [
+    "V1",
+    "V4",
+    "dlPFC",
+    "IT",
+    "BG",
+    "SMA",
+    "PMv"
+   ]
+  ]
+ },
+ "level": 1,
+ "trap_margin": 4.0
+}

@@ -1,0 +1,304 @@
+{
+ "data": {
+  "nodes": [
+   {
+    "name": "S2",
+    "module": "Sensory",
+    "x": 0.2402,
+    "y": 0.3485
+   },
+   {
+    "name": "MT",
+    "module": "Sensory",
+    "x": 0.1518,
+    "y": 0.4959
+   },
+   {
+    "name": "TPJ",
+    "module": "Association",
+    "x": 0.7322,
+    "y": 0.1748
+   },
+   {
+    "name": "PCC",
+    "module": "Association",
+    "x": 0.7972,
+    "y": 0.3424
+   },
+   {
+    "name": "dlPFC",
+    "module": "Association",
+    "x": 0.6219,
+    "y": 0.322
+   },
+   {
+    "name": "SMA",
+    "module": "Motor",
+    "x": 0.5363,
+    "y": 0.6862
+   },
+   {
+    "name": "PMd",
+    "module": "Motor",
+    "x": 0.688,
+    "y": 0.7334
+   },
+   {
+    "name": "PMv",
+    "module": "Motor",
+    "x": 0.6479,
+    "y": 0.9025
+   },
+   {
+    "name": "Cb",
+    "module": "Motor",
+    "x": 0.4768,
+    "y": 0.8551
+   }
+  ],
+  "directed": false,
+  "weighted": false,
+  "edges": [
+   [
+    "MT",
+    "SMA",
+    1,
+    0.0
+   ],
+   [
+    "PCC",
+    "PMd",
+    1,
+    0.0
+   ],
+   [
+    "PCC",
+    "dlPFC",
+    1,
+    0.0
+   ],
+   [
+    "PMd",
+    "PMv",
+    1,
+    0.0
+   ],
+   [
+    "PMv",
+    "Cb",
+    1,
+    0.0
+   ],
+   [
+    "S2",
+    "MT",
+    1,
+    0.0
+   ],
+   [
+    "SMA",
+    "Cb",
+    1,
+    0.0
+   ],
+   [
+    "SMA",
+    "PMd",
+    1,
+    0.0
+   ],
+   [
+    "TPJ",
+    "PCC",
+    1,
+    0.0
+   ],
+   [
+    "TPJ",
+    "dlPFC",
+    1,
+    0.0
+   ]
+  ],
+  "input": "MT",
+  "output": "Cb",
+  "candidates": {},
+  "label_t": {},
+  "modules": [
+   "Sensory",
+   "Association",
+   "Motor"
+  ]
+ },
+ "layout": {
+  "width": 1530,
+  "height": 1605,
+  "texts": [
+   {
+    "text": "S2",
+    "x0": 402.9,
+    "y0": 1095.6,
+    "x1": 426.6,
+    "y1": 1110.6,
+    "size": 8.0
+   },
+   {
+    "text": "MT",
+    "x0": 281.5,
+    "y0": 896.8,
+    "x1": 309.6,
+    "y1": 911.8,
+    "size": 8.0
+   },
+   {
+    "text": "TPJ",
+    "x0": 1063.2,
+    "y0": 1329.7,
+    "x1": 1092.9,
+    "y1": 1344.7,
+    "size": 8.0
+   },
+   {
+    "text": "PCC",
+    "x0": 1147.4,
+    "y0": 1103.8,
+    "x1": 1184.0,
+    "y1": 1118.8,
+    "size": 8.0
+   },
+   {
+    "text": "dlPFC",
+    "x0": 905.3,
+    "y0": 1131.3,
+    "x1": 953.3,
+    "y1": 1146.3,
+    "size": 7.2
+   },
+   {
+    "text": "SMA",
+    "x0": 793.1,
+    "y0": 640.3,
+    "x1": 834.8,
+    "y1": 655.3,
+    "size": 8.0
+   },
+   {
+    "text": "PMd",
+    "x0": 998.1,
+    "y0": 576.6,
+    "x1": 1038.8,
+    "y1": 591.6,
+    "size": 8.0
+   },
+   {
+    "text": "PMv",
+    "x0": 944.6,
+    "y0": 348.6,
+    "x1": 984.2,
+    "y1": 363.6,
+    "size": 8.0
+   },
+   {
+    "text": "Cb",
+    "x0": 721.7,
+    "y0": 412.6,
+    "x1": 745.8,
+    "y1": 427.6,
+    "size": 8.0
+   },
+   {
+    "text": "IN",
+    "x0": 186.4,
+    "y0": 896.0,
+    "x1": 210.6,
+    "y1": 915.0,
+    "size": 9.5
+   },
+   {
+    "text": "OUT",
+    "x0": 704.1,
+    "y0": 313.7,
+    "x1": 750.7,
+    "y1": 332.7,
+    "size": 9.5
+   },
+   {
+    "text": "Synthetic brain connectivity network (9 regions, 3 modules)",
+    "x0": 45.9,
+    "y0": 43.2,
+    "x1": 829.2,
+    "y1": 69.2,
+    "size": 12.5
+   },
+   {
+    "text": "Lines: bidirectional connections (all equivalent).",
+    "x0": 45.9,
+    "y0": 94.8,
+    "x1": 519.2,
+    "y1": 113.8,
+    "size": 9.5
+   },
+   {
+    "text": "Sensory",
+    "x0": 92.6,
+    "y0": 159.0,
+    "x1": 168.1,
+    "y1": 178.0,
+    "size": 9.0
+   },
+   {
+    "text": "Association",
+    "x0": 231.9,
+    "y0": 159.0,
+    "x1": 338.5,
+    "y1": 178.0,
+    "size": 9.0
+   },
+   {
+    "text": "Motor",
+    "x0": 402.2,
+    "y0": 159.0,
+    "x1": 456.5,
+    "y1": 178.0,
+    "size": 9.0
+   }
+  ],
+  "expected_labels": [
+   "S2",
+   "MT",
+   "TPJ",
+   "PCC",
+   "dlPFC",
+   "SMA",
+   "PMd",
+   "PMv",
+   "Cb",
+   "IN",
+   "OUT"
+  ],
+  "data_to_px": [
+   90.89999999999995,
+   1572.9,
+   1348.2000000000003,
+   -1348.2
+  ]
+ },
+ "uniqueness": {
+  "ok": true,
+  "why": "edge connectivity is a single number; one minimum cut: [('MT', 'SMA')]"
+ },
+ "facts": {
+  "one_minimum_cut": [
+   [
+    "MT",
+    "SMA"
+   ]
+  ],
+  "degrees": {
+   "MT": 2,
+   "Cb": 2
+  }
+ },
+ "level": 1,
+ "trap_margin": 2.0
+}

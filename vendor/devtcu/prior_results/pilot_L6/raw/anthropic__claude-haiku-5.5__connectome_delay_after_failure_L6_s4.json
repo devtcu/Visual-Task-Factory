@@ -1,0 +1,84 @@
+{
+ "status": "ok",
+ "response": "## Reasoning\n\n**Edges relevant to the route (delays in ms):**\n- V2 \u2192 V4 (3), V2 \u2192 PMd (3), V2 \u2192 ... (V2 has only these two outgoing connections)\n- V4 \u2192 Cb (3) [this is **Y**], V4 \u2192 PMd (3), V4 \u2192 VA (4)\n- PMd \u2192 Cb (2) [this is **X**], and PMd has no other outgoing connection\n- VA \u2192 MGN (4), VA \u2192 V4 (4)\n- MGN \u2192 Cb (3)\n- Pulv \u2192 Cb (2), Pulv \u2192 VA (5)\n- BG \u2192 MGN (2), BG \u2192 PMd (2), BG \u2192 STS (3)\n- S2 \u2192 VA (4), S2 \u2192 dlPFC (5); FEF \u2192 S2 (1), FEF \u2192 dlPFC (3)\n\n**Original shortest route:** V2 \u2192 PMd \u2192 Cb = 3 + 2 = 5 ms.\n\n**After X and Y fail:**\n- X removes PMd \u2192 Cb, leaving PMd as a dead end (its only outgoing connection was X).\n- Y removes V4 \u2192 Cb, so V4 can no longer reach Cb directly.\n\n**Remaining routes into Cb:** Cb can now only be reached through MGN \u2192 Cb (3) or Pulv \u2192 Cb (2).\n- Pulv has no incoming connections, so it cannot be reached from V2.\n- MGN is reached from VA (4) or BG (2). BG has no incoming connections, so it cannot be reached from V2.\n- VA is reached from V4 (4) or S2 (4). S2 is only reached from FEF, which V2 cannot reach.\n\nSo the only feasible route is V2 \u2192 V4 \u2192 VA \u2192 MGN \u2192 Cb:\n3 + 4 + 4 + 3 = 14 ms.\n\nFINAL ANSWER: 14",
+ "finish_reason": "stop",
+ "error": "",
+ "usage": {
+  "prompt_tokens": 3476,
+  "completion_tokens": 3121,
+  "total_tokens": 6597,
+  "cost": 0.0019081,
+  "is_byok": false,
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "cache_write_tokens": 0,
+   "audio_tokens": 0,
+   "video_tokens": 0
+  },
+  "cost_details": {
+   "upstream_inference_cost": 0.0019081,
+   "upstream_inference_prompt_cost": 0.0003476,
+   "upstream_inference_completions_cost": 0.0015605
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 2519,
+   "image_tokens": 0,
+   "audio_tokens": 0
+  }
+ },
+ "raw": {
+  "id": "gen-1794679005-Ua1kydnZUqzxvf3mHGt5",
+  "object": "chat.completion",
+  "created": 1794679005,
+  "model": "anthropic/claude-haiku-5.5",
+  "provider": "Claude Platform on AWS",
+  "system_fingerprint": null,
+  "service_tier": "default",
+  "choices": [
+   {
+    "index": 0,
+    "logprobs": null,
+    "finish_reason": "stop",
+    "native_finish_reason": "end_turn",
+    "message": {
+     "role": "assistant",
+     "content": "## Reasoning\n\n**Edges relevant to the route (delays in ms):**\n- V2 \u2192 V4 (3), V2 \u2192 PMd (3), V2 \u2192 ... (V2 has only these two outgoing connections)\n- V4 \u2192 Cb (3) [this is **Y**], V4 \u2192 PMd (3), V4 \u2192 VA (4)\n- PMd \u2192 Cb (2) [this is **X**], and PMd has no other outgoing connection\n- VA \u2192 MGN (4), VA \u2192 V4 (4)\n- MGN \u2192 Cb (3)\n- Pulv \u2192 Cb (2), Pulv \u2192 VA (5)\n- BG \u2192 MGN (2), BG \u2192 PMd (2), BG \u2192 STS (3)\n- S2 \u2192 VA (4), S2 \u2192 dlPFC (5); FEF \u2192 S2 (1), FEF \u2192 dlPFC (3)\n\n**Original shortest route:** V2 \u2192 PMd \u2192 Cb = 3 + 2 = 5 ms.\n\n**After X and Y fail:**\n- X removes PMd \u2192 Cb, leaving PMd as a dead end (its only outgoing connection was X).\n- Y removes V4 \u2192 Cb, so V4 can no longer reach Cb directly.\n\n**Remaining routes into Cb:** Cb can now only be reached through MGN \u2192 Cb (3) or Pulv \u2192 Cb (2).\n- Pulv has no incoming connections, so it cannot be reached from V2.\n- MGN is reached from VA (4) or BG (2). BG has no incoming connections, so it cannot be reached from V2.\n- VA is reached from V4 (4) or S2 (4). S2 is only reached from FEF, which V2 cannot reach.\n\nSo the only feasible route is V2 \u2192 V4 \u2192 VA \u2192 MGN \u2192 Cb:\n3 + 4 + 4 + 3 = 14 ms.\n\nFINAL ANSWER: 14",
+     "refusal": null,
+     "reasoning": "I'm going through the edges one by one: VA points to MGN with weight 4, Pulv points to VA with weight 5, and MGN points down to Cb with weight 3. I'm now checking the line from BG up to MGN, which carries weight 2.\n\nI'm checking the arrows near MGN, VA, and STS, and sorting out which label belongs to which line.\n\nI'm working through the remaining edges around V4 and VA: VA appears to point to V4 with weight 4, and there may also be a weight-4 line going back from V4 to VA. I'm also noting V2 to V4 at weight 3, V2 to PMd at weight 3, and V4 to PMd at weight 3, and I'm starting to check the V4 to Cb line.\n\nI'm sorting out the remaining edges: Pulv points to Cb with weight 2, and the arrow on the dlPFC line points from S2 to dlPFC with weight 5. I'm also noting PMd to Cb at weight 2, BG to PMd at weight 2, VA to MGN at weight 4, and MGN to Cb at weight 3.\n\nI'm working out the shortest path from V2 to Cb: going through PMd and then to Cb gives a total of 5, while going through V4 gives 6. Removing the PMd-to-Cb and V4-to-Cb edges leaves MGN and Pulv as the routes into Cb, and I'm now checking what feeds into MGN and Pulv.\n\nI'm tracing the paths into Cb now: from V2 through V4, then VA, then MGN, then Cb, which comes to a total of 14. I'm checking whether PMd has any outgoing edge besides the one to Cb that I just removed.\n\nI'm checking whether V4 actually feeds back into VA, since that decides whether there's a route from V2 to Cb through VA and MGN. Depending on the arrow direction at VA, the path either exists or it doesn't.\n\nI'm checking which way the weight-4 line between VA and V4 points, since that decides whether there's a route from V4 back into VA.\n\nI'm confirming that V4 feeds into VA with weight 4, and S2 also feeds into VA with weight 4, so both routes land on VA. From there VA goes on to V4 and to MGN, also at weight 4.\n\nI'm confirming the path V2\u2192V4\u2192VA\u2192MGN\u2192Cb adds up to 14, and that the other routes from V2 through PMd are dead ends, so 14 is the answer.\n\n",
+     "reasoning_details": [
+      {
+       "type": "reasoning.text",
+       "text": "I'm going through the edges one by one: VA points to MGN with weight 4, Pulv points to VA with weight 5, and MGN points down to Cb with weight 3. I'm now checking the line from BG up to MGN, which carries weight 2.\n\nI'm checking the arrows near MGN, VA, and STS, and sorting out which label belongs to which line.\n\nI'm working through the remaining edges around V4 and VA: VA appears to point to V4 with weight 4, and there may also be a weight-4 line going back from V4 to VA. I'm also noting V2 to V4 at weight 3, V2 to PMd at weight 3, and V4 to PMd at weight 3, and I'm starting to check the V4 to Cb line.\n\nI'm sorting out the remaining edges: Pulv points to Cb with weight 2, and the arrow on the dlPFC line points from S2 to dlPFC with weight 5. I'm also noting PMd to Cb at weight 2, BG to PMd at weight 2, VA to MGN at weight 4, and MGN to Cb at weight 3.\n\nI'm working out the shortest path from V2 to Cb: going through PMd and then to Cb gives a total of 5, while going through V4 gives 6. Removing the PMd-to-Cb and V4-to-Cb edges leaves MGN and Pulv as the routes into Cb, and I'm now checking what feeds into MGN and Pulv.\n\nI'm tracing the paths into Cb now: from V2 through V4, then VA, then MGN, then Cb, which comes to a total of 14. I'm checking whether PMd has any outgoing edge besides the one to Cb that I just removed.\n\nI'm checking whether V4 actually feeds back into VA, since that decides whether there's a route from V2 to Cb through VA and MGN. Depending on the arrow direction at VA, the path either exists or it doesn't.\n\nI'm checking which way the weight-4 line between VA and V4 points, since that decides whether there's a route from V4 back into VA.\n\nI'm confirming that V4 feeds into VA with weight 4, and S2 also feeds into VA with weight 4, so both routes land on VA. From there VA goes on to V4 and to MGN, also at weight 4.\n\nI'm confirming the path V2\u2192V4\u2192VA\u2192MGN\u2192Cb adds up to 14, and that the other routes from V2 through PMd are dead ends, so 14 is the answer.\n\n",
+       "format": "anthropic-claude-v1",
+       "index": 0,
+       "signature": "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.eyJlbmRwb2ludF9zbHVnIjoiYW50aHJvcGljL2NsYXVkZS1oYWlrdS01LjUtMjAyNjEwMDd8Y2xhdWRlLW9uLWF3cyJ9"
+      }
+     ]
+    }
+   }
+  ],
+  "usage": {
+   "prompt_tokens": 3476,
+   "completion_tokens": 3121,
+   "total_tokens": 6597,
+   "cost": 0.0019081,
+   "is_byok": false,
+   "prompt_tokens_details": {
+    "cached_tokens": 0,
+    "cache_write_tokens": 0,
+    "audio_tokens": 0,
+    "video_tokens": 0
+   },
+   "cost_details": {
+    "upstream_inference_cost": 0.0019081,
+    "upstream_inference_prompt_cost": 0.0003476,
+    "upstream_inference_completions_cost": 0.0015605
+   },
+   "completion_tokens_details": {
+    "reasoning_tokens": 2519,
+    "image_tokens": 0,
+    "audio_tokens": 0
+   }
+  }
+ }
+}

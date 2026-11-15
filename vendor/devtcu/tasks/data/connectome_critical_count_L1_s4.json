@@ -1,0 +1,354 @@
+{
+ "data": {
+  "nodes": [
+   {
+    "name": "A1",
+    "module": "Sensory",
+    "x": 0.2616,
+    "y": 0.4529
+   },
+   {
+    "name": "S1",
+    "module": "Sensory",
+    "x": 0.1804,
+    "y": 0.3023
+   },
+   {
+    "name": "PPC",
+    "module": "Association",
+    "x": 0.7012,
+    "y": 0.1975
+   },
+   {
+    "name": "PCC",
+    "module": "Association",
+    "x": 0.8538,
+    "y": 0.2544
+   },
+   {
+    "name": "IT",
+    "module": "Association",
+    "x": 0.7795,
+    "y": 0.4283
+   },
+   {
+    "name": "TPJ",
+    "module": "Association",
+    "x": 0.6306,
+    "y": 0.3514
+   },
+   {
+    "name": "PMd",
+    "module": "Motor",
+    "x": 0.6498,
+    "y": 0.8621
+   },
+   {
+    "name": "M1",
+    "module": "Motor",
+    "x": 0.4934,
+    "y": 0.9197
+   },
+   {
+    "name": "Cb",
+    "module": "Motor",
+    "x": 0.4203,
+    "y": 0.7877
+   },
+   {
+    "name": "PMv",
+    "module": "Motor",
+    "x": 0.5939,
+    "y": 0.6975
+   }
+  ],
+  "directed": false,
+  "weighted": false,
+  "edges": [
+   [
+    "A1",
+    "S1",
+    1,
+    0.0
+   ],
+   [
+    "Cb",
+    "PMv",
+    1,
+    0.0
+   ],
+   [
+    "IT",
+    "PMd",
+    1,
+    0.0
+   ],
+   [
+    "IT",
+    "TPJ",
+    1,
+    0.0
+   ],
+   [
+    "M1",
+    "Cb",
+    1,
+    0.0
+   ],
+   [
+    "M1",
+    "PMv",
+    1,
+    0.0
+   ],
+   [
+    "PCC",
+    "IT",
+    1,
+    0.0
+   ],
+   [
+    "PMd",
+    "M1",
+    1,
+    0.0
+   ],
+   [
+    "PMd",
+    "PMv",
+    1,
+    0.0
+   ],
+   [
+    "PPC",
+    "PCC",
+    1,
+    0.0
+   ],
+   [
+    "PPC",
+    "TPJ",
+    1,
+    0.0
+   ],
+   [
+    "S1",
+    "PPC",
+    1,
+    0.0
+   ]
+  ],
+  "input": "A1",
+  "output": "PMd",
+  "candidates": {},
+  "label_t": {},
+  "modules": [
+   "Sensory",
+   "Association",
+   "Motor"
+  ]
+ },
+ "layout": {
+  "width": 1530,
+  "height": 1605,
+  "texts": [
+   {
+    "text": "A1",
+    "x0": 431.3,
+    "y0": 954.8,
+    "x1": 455.8,
+    "y1": 969.8,
+    "size": 8.0
+   },
+   {
+    "text": "S1",
+    "x0": 322.2,
+    "y0": 1157.8,
+    "x1": 346.0,
+    "y1": 1172.8,
+    "size": 8.0
+   },
+   {
+    "text": "PPC",
+    "x0": 1018.0,
+    "y0": 1299.1,
+    "x1": 1054.5,
+    "y1": 1314.1,
+    "size": 8.0
+   },
+   {
+    "text": "PCC",
+    "x0": 1223.7,
+    "y0": 1222.4,
+    "x1": 1260.3,
+    "y1": 1237.4,
+    "size": 8.0
+   },
+   {
+    "text": "IT",
+    "x0": 1133.0,
+    "y0": 988.0,
+    "x1": 1150.6,
+    "y1": 1003.0,
+    "size": 8.0
+   },
+   {
+    "text": "TPJ",
+    "x0": 926.2,
+    "y0": 1091.6,
+    "x1": 955.9,
+    "y1": 1106.6,
+    "size": 8.0
+   },
+   {
+    "text": "PMd",
+    "x0": 946.6,
+    "y0": 403.1,
+    "x1": 987.3,
+    "y1": 418.1,
+    "size": 8.0
+   },
+   {
+    "text": "M1",
+    "x0": 742.0,
+    "y0": 325.5,
+    "x1": 770.2,
+    "y1": 340.5,
+    "size": 8.0
+   },
+   {
+    "text": "Cb",
+    "x0": 645.5,
+    "y0": 503.4,
+    "x1": 669.6,
+    "y1": 518.4,
+    "size": 8.0
+   },
+   {
+    "text": "PMv",
+    "x0": 871.8,
+    "y0": 625.0,
+    "x1": 911.4,
+    "y1": 640.0,
+    "size": 8.0
+   },
+   {
+    "text": "IN",
+    "x0": 336.3,
+    "y0": 971.6,
+    "x1": 360.4,
+    "y1": 990.6,
+    "size": 9.5
+   },
+   {
+    "text": "OUT",
+    "x0": 980.8,
+    "y0": 311.4,
+    "x1": 1027.4,
+    "y1": 330.4,
+    "size": 9.5
+   },
+   {
+    "text": "Synthetic brain connectivity network (10 regions, 3 modules)",
+    "x0": 45.9,
+    "y0": 43.2,
+    "x1": 845.8,
+    "y1": 69.2,
+    "size": 12.5
+   },
+   {
+    "text": "Lines: bidirectional connections (all equivalent).",
+    "x0": 45.9,
+    "y0": 94.8,
+    "x1": 519.2,
+    "y1": 113.8,
+    "size": 9.5
+   },
+   {
+    "text": "Sensory",
+    "x0": 92.6,
+    "y0": 159.0,
+    "x1": 168.1,
+    "y1": 178.0,
+    "size": 9.0
+   },
+   {
+    "text": "Association",
+    "x0": 231.9,
+    "y0": 159.0,
+    "x1": 338.5,
+    "y1": 178.0,
+    "size": 9.0
+   },
+   {
+    "text": "Motor",
+    "x0": 402.2,
+    "y0": 159.0,
+    "x1": 456.5,
+    "y1": 178.0,
+    "size": 9.0
+   }
+  ],
+  "expected_labels": [
+   "A1",
+   "S1",
+   "PPC",
+   "PCC",
+   "IT",
+   "TPJ",
+   "PMd",
+   "M1",
+   "Cb",
+   "PMv",
+   "IN",
+   "OUT"
+  ],
+  "data_to_px": [
+   90.89999999999995,
+   1572.9,
+   1348.2000000000003,
+   -1348.2
+  ]
+ },
+ "uniqueness": {
+  "ok": true,
+  "why": "every one of the 12 connections tested by removal; 3 raise the distance 5"
+ },
+ "facts": {
+  "distance": 5,
+  "critical": [
+   [
+    "A1",
+    "S1"
+   ],
+   [
+    "IT",
+    "PMd"
+   ],
+   [
+    "S1",
+    "PPC"
+   ]
+  ],
+  "fastest_routes": [
+   [
+    "A1",
+    "S1",
+    "PPC",
+    "PCC",
+    "IT",
+    "PMd"
+   ],
+   [
+    "A1",
+    "S1",
+    "PPC",
+    "TPJ",
+    "IT",
+    "PMd"
+   ]
+  ]
+ },
+ "level": 1,
+ "trap_margin": 4.0
+}
