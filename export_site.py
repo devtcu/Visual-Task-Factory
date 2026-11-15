@@ -43,8 +43,9 @@ def recorded(task, folder, model):
 
 def main():
     app.load_gallery()
-    if SITE.exists():
-        shutil.rmtree(SITE)
+    for old in (SITE.iterdir() if SITE.exists() else []):   # rebuild, but keep .vercel (the link to the Vercel project)
+        if old.name != ".vercel":
+            shutil.rmtree(old) if old.is_dir() else old.unlink()
     (SITE / "img").mkdir(parents=True)
     out = []
     for tid, entry in TASKS.items():
